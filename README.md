@@ -31,7 +31,7 @@ Test to see that gulp is installed and working.
 gulp
 ```
 
-Watch styles and javascript while updating theme.
+Run gulp watch every time you update anything in the ./assets folder. This command compiles the styles and javascript while you edit these files. Watch also runs the style and javascript linters. These linters will report errors and the line they are on in your terminal or command prompt when made. Errors will prevent your code from compiling and your page from updating. Errors found in gulp watch will prevent a gulp production run. This will prevent automatic pipeline deploys. We use these tools to ensure quality websites and deployments with no downtime. Pull requests with watch errors will immediately be rejected.
 ```
 gulp watch
 ```
