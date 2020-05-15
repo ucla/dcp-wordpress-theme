@@ -1,0 +1,14 @@
+#header {
+  .header-logo {
+    display: block;
+    background: $default-state;
+    padding: 12px;
+    max-height: 48px;
+
+    img {
+      display: block;
+      height: 24px;
+      position: relative;
+    }
+  }
+}

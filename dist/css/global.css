@@ -1,3 +1,16 @@
+#header .header-logo {
+  display: block;
+  background: #00598C;
+  padding: 12px;
+  max-height: 48px;
+}
+
+#header .header-logo img {
+  display: block;
+  height: 24px;
+  position: relative;
+}
+
 h1 {
   font-weight: bold;
   font-size: 36px;

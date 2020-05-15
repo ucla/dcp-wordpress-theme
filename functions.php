@@ -19,18 +19,30 @@ function ucla_setup() {
   // Load Scripts and Styles
   add_action( 'wp_enqueue_scripts', 'ucla_load_scripts' );
   function ucla_load_scripts() {
-    // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-sc/dist/css/ucla-components-library/global.css' );
-    // Install the WordPress Theme Styles
-    wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
-    // Install the WordPress Theme Scripts
-    wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
+    // Install the UCLA Component library styles
+    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-sc/dist/css/ucla-components-library/global.css' );
     // Install the UCLA Component Library  scripts
     wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-sc/dist/js/ucla-components-library/scripts.js' );
+    // Install the WordPress Theme Styles
+    wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
+    // Install the WordPress Theme Scripts
+    wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
   }
 
+
+  // Categories for pages
+  add_action( 'init', 'ucla_page_categories' );
+  function ucla_page_categories() {
+    register_taxonomy_for_object_type( 'category', 'page' );
+  }
+
+  // Taxonomy for pages
+  add_action( 'init', 'ucla_page_tags');
+  function ucla_page_tags() {
+    register_taxonomy_for_object_type( 'post_tag', 'page' );
+  }
 
   // Title Seperator
   add_filter( 'document_title_separator', 'ucla_document_title_separator' );

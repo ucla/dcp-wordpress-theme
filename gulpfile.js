@@ -13,6 +13,7 @@ sass.compiler = require('node-sass');
 function defaultTask(cb) {
   cb();
 }
+
 // Compile the theme styles
 function themeStyles() {
   return src('assets/scss/**/*.scss')
@@ -68,11 +69,9 @@ function themeConcatJs() {
 
 // watch the theme scritps while linting
 function watchJavascript(done) {
-watch('assets/js/*.js', series(lintJavascript));
-done();
+  watch('assets/js/*.js', series(lintJavascript));
+  done();
 }
-
-
 
 exports.default = defaultTask
 

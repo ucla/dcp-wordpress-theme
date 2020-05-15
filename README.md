@@ -7,18 +7,51 @@
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+*Get Started*
+
+Run WordPress on your choice of local setup. Pull the repository into a wp-content/themes/ucla-sc. The ucla-sc folder should be your root folder of the theme.
+
+
+To edit this theme please install NPM and follow the steps below. -https://www.npmjs.com/get-npm
+
+
+Run npm install
+```
+npm install
+```
+
+Installing gulp on your project may require another step. -- https://gulpjs.com/docs/en/getting-started/quick-start
+
+Use terminal on mac or PC command prompt equivalent and navigate to the theme folder.
+
+*Build Commands*
+
+Test to see that gulp is installed and working.
+```
+gulp
+```
+
+Watch styles and javascript while updating theme.
+```
+gulp watch
+```
+
+Build uncompiled css and javascript assets in ./dist for quicker and cheaper pipelines to dev site.
+```
+gulp build
+```
+
+Build compiled assets. Causes slightly longer build times in pipelines, but produces faster loading times on a production site.
+**EACH TIME YOU PULL UPDATES FROM THE REPO YOU MUST RUN "gulp production" TO ENSURE YOU HAVE THE PROPER ASSETS IN THE ./dist FOLDER.**
+```
+gulp production
+```
+
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Code review is preformed by Strategic Communications and DCP if necessary.
+* All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 
 ### Who do I talk to? ###
 
