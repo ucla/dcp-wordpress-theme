@@ -1,0 +1,227 @@
+.foot {
+  font-size: 14px;
+
+  // This is the $ucla-blue background section of the footer with the signature logo.
+  &-upper {
+    padding: 32px 24px 0 24px;
+    background: $ucla-blue;
+    color: $white;
+    font-weight: bold;
+
+    @media (min-width: breakpoint-min(lg)) {
+      padding-bottom: 32px;
+    }
+
+    a {
+      color: $white;
+    }
+
+    &-wrap {
+      display: block;
+      max-width: 1176px;
+      margin: 0 auto;
+    }
+
+    &_address {
+      padding: 0 0 32px 0;
+      line-height: 20px;
+      max-width: 240px;
+      margin-right: 12%;
+
+      @media (min-width: breakpoint-min(md)) {
+        display: inline-block;
+        position: relative;
+        width: 50%;
+      }
+
+      @media (min-width: breakpoint-min(lg)) {
+        width: 30%;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 32px;
+      }
+
+      // This target the direct sibling list of .foot-upper_address. The social media icons
+      & + ul {
+        display: block;
+        padding: 0 0 56px 0;
+
+        @media (min-width: breakpoint-min(md)) {
+          display: inline-block;
+          position: relative;
+          width: 49% !important;
+          padding: 0 0 12px 0;
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+          display: block;
+          width: 30% !important;
+          padding: 0 0 32px 0;
+        }
+
+        li {
+          float: left;
+        }
+      }
+    }
+
+    &_info-menu {
+      display: block;
+      width: 100%;
+
+      @media (min-width: breakpoint-min(lg)) {
+        display: inline-block;
+        float: right;
+        width: 66%;
+        margin-top: -100px;
+      }
+
+      nav#block-footer {
+        ul {
+          @media (min-width: breakpoint-min(md)) {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          li {
+            width: 48%;
+            display: inline-block;
+            padding: 0 0 32px 0;
+            font-size: 12px;
+
+            @media (min-width: breakpoint-min(md)) {
+              width: unset;
+              display: block;
+            }
+
+            a {
+              &:hover {
+                background: $hover-state-dark;
+                color: $grey-80;
+              }
+
+              &:focus {
+                outline: 1px dotted $white;
+              }
+            }
+
+            // &:last-of-type {
+            //   margin-right: 0;
+            // }
+          }
+        }
+      }
+    }
+  }
+
+  // This is the $white background section of the footer with the copyright.
+  &-lower {
+    background: $white;
+    padding: 32px 24px 0 24px;
+
+    a {
+      color: $ucla-blue;
+      font-weight: bold;
+    }
+
+    &-wrap {
+      display: block;
+      position: relative;
+      max-width: 1176px;
+      margin: 0 auto;
+
+      @media (min-width: breakpoint-min(lg)) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-copyright {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-bottom: 24px;
+      font-size: 12.8px;
+
+      @media (min-width: breakpoint-min(md)) {
+        width: 50%;
+      }
+
+      @media (min-width: breakpoint-min(lg)) {
+        width: auto;
+      }
+    }
+
+    &-toc {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-bottom: 32px;
+
+      @media (min-width: breakpoint-min(md)) {
+        width: 50%;
+      }
+
+      @media (min-width: breakpoint-min(lg)) {
+        width: auto;
+      }
+
+      ul {
+        li {
+          // List reset
+          &::before {
+            display: none;
+          }
+
+          @media (min-width: breakpoint-min(md)) {
+            float: left;
+            padding-right: 16px;
+
+            &:last-of-type {
+              padding-right: 0;
+            }
+          }
+
+          a {
+            display: block;
+            position: relative;
+            margin-bottom: 12px;
+            width: fit-content;
+            width: max-content;
+
+            &:hover {
+              background: $ucla-blue;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    &-social {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 291px;
+      margin-bottom: 28px;
+
+      @media (min-width: breakpoint-min(md)) {
+        width: 48%;
+        right: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      @media (min-width: breakpoint-min(lg)) {
+        width: auto;
+        right: unset;
+        position: relative;
+        top: unset;
+      }
+    }
+  }
+}

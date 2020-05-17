@@ -1,0 +1,14 @@
+body.no-scroll {
+  height: 100vh;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ucla.campus {
+  display: block;
+  max-width: 1176px;
+  margin: 0 auto;
+}

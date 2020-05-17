@@ -9,6 +9,16 @@ function ucla_setup() {
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form' ) );
 
+  /**
+ * Enable features from Soil when plugin is activated
+ * @link https://roots.io/plugins/soil/
+ */
+  add_theme_support('soil-clean-up');
+  add_theme_support('soil-js-to-footer');
+  add_theme_support('soil-nav-walker');
+  add_theme_support('soil-nice-search');
+  add_theme_support('soil-relative-urls');
+
   global $content_width;
 
 
@@ -16,20 +26,28 @@ function ucla_setup() {
     register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'ucla' ) ) );
   }
 
-  // Load Scripts and Styles
+  // Load Theme Scripts and Styles
   add_action( 'wp_enqueue_scripts', 'ucla_load_scripts' );
   function ucla_load_scripts() {
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
     // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-sc/dist/css/ucla-components-library/global.css' );
+    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-sc/dist/css/ucla-components-library/ucla-lib.min.css' );
     // Install the UCLA Component Library  scripts
-    wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-sc/dist/js/ucla-components-library/scripts.js' );
+    wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-sc/dist/js/ucla-components-library/ucla-lib-scripts.min.js' );
     // Install the WordPress Theme Styles
     wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // Install the WordPress Theme Scripts
     wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
   }
+
+  // Load ADMIN Login Styles
+  add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
+  function my_login_page_remove_back_to_link() {
+    // Path the admin page login styles
+    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-sc/admin-styles.css' );
+  }
+
 
 
   // Categories for pages

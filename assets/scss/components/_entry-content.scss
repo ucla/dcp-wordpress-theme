@@ -1,0 +1,20 @@
+.entry-content.col {
+  margin: 1% 0;
+
+  time {
+    display: block;
+    position: relative;
+    color: $grey-60;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  h2 {
+    a {
+      color: $default-state;
+      font-size: 24px;
+      line-height: 27px;
+      text-decoration: none;
+    }
+  }
+}

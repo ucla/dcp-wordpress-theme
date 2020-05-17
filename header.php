@@ -9,28 +9,30 @@
 
   <body <?php body_class(); ?>>
 
-    <header id="header">
+    <header id="header" class="">
 
       <div class="header-logo">
         <div class="header-logo__wrap">
-       	  <img class="header-logo__image" src="/wp-content/themes/ucla-sc/assets/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
+       	  <img class="header-logo__image" src="/wp-content/themes/ucla-sc/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
         </div>
       </div>
 
-      <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
+      <div class="site-name">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-      <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+      </div>
 
-      <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
-    	  <span class="hamburger-box">
-    	    <span class="hamburger-inner"></span>
-    	  </span>
-    	</button>
+      <div class="nav-wrap">
+        <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
+      	  <span class="hamburger-box">
+      	    <span class="hamburger-inner"></span>
+      	  </span>
+      	</button>
 
-      <nav id="menu">
-        <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-      </nav>
+        <nav id="menu">
+          <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+        </nav>
+      </div>
 
-      <div id="search"><?php get_search_form(); ?></div>
+      <!-- <div id="search"><?php // get_search_form(); ?></div> -->
 
     </header>

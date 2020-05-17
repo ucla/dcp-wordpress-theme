@@ -1,22 +1,33 @@
-<?php /* Template Name: No Sidebar */ ?>
+<?php /* Template Name: No Sidebar */
+
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+
+?>
 
 <?php get_header(); ?>
 
-<main class="ucla campus">
+<main class="main">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-  <article id="post-<?php the_ID(); ?>" <?php post_class('col span_12_of_12'); ?> class="col span_9_of_12">
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="header">
-      <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+    <header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
+      <div class="ucla campus">
+        <div class="col span_12_of_12">
+          <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+        </div>
+      </div>
     </header>
 
-    <div class="entry-content">
+    <div class="ucla campus entry-content">
 
       <div class="">
         <div class="col span_12_of_12">
-          <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
+            <h2>Latest Campus Updates</h2>
+          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+
 
           <?php the_content(); ?>
 

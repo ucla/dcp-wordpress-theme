@@ -1,5 +1,5 @@
 {
-  "ignoreFiles": './resources/assets/sass/utilities/**/*.scss',
+  "ignoreFiles": './assets/scss/utilities/**/*.scss',
   "rules": {
     "at-rule-empty-line-before": [ "always", {
       except: [

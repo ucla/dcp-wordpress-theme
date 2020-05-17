@@ -1,11 +1,20 @@
 // Add more stylesheets here. Use @imports to bring in style sheets per element.
 
 // Utilities
+@import "./utilities/_variables";
 @import "./utilities/_colors";
+@import "./utilities/mixins/_breakpoints";
+@import "./utilities/_spacing";
+@import "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 // Components
+@import "./common/_common";
+@import "./components/_entry-content";
+@import "./components/_footer";
+@import "./components/_hamburger";
 @import "./components/_header";
-@import "./components/_headings";
+@import "./components/_primary-nav";
+@import "./components/_social-icons";
 
 // Layouts
-@import "./layouts/_home-page";
+@import "./layouts/_page-single-col";

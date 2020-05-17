@@ -1,0 +1,27 @@
+body.login {
+  background: white;
+}
+
+.login #backtoblog {
+  display: none;
+}
+
+body.login div#login h1 {
+  margin-bottom: 15px;
+}
+
+body.login div#login h1 a {
+  background-color: #2774AE;
+  background-image: url(./images/ucla_logo_white.svg);
+  background-size: 280px;
+  background-position: center;
+  width: 300px;
+  height: 108px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.login form {
+  border: 0;
+  box-shadow: none;
+}

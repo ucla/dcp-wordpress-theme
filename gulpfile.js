@@ -18,10 +18,11 @@ function defaultTask(cb) {
 function themeStyles() {
   return src('assets/scss/**/*.scss')
     .pipe(sass.sync({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(concat('global.css'))
     .pipe(dest('dist/css'));
 }
 
-// watch styles
+// Lint Theme styles
 function lintSassWatch() {
   return src('assets/scss/**/*.scss')
     .pipe(gulpStylelint({
@@ -31,6 +32,7 @@ function lintSassWatch() {
     }));
 }
 
+// Watch Theme style
 function watchStyles(done) {
   watch('assets/scss/**/*.scss', series(themeStyles, lintSassWatch)),
   done();
@@ -38,7 +40,7 @@ function watchStyles(done) {
 
 //get the styles from the components library and add them to the theme.
 function libraryStyles() {
-  return src('./node_modules/ucla-bruin-components/public/css/global.css')
+  return src('./node_modules/ucla-bruin-components/public/css/ucla-lib.min.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(dest('dist/css/ucla-components-library'));
 }
@@ -55,21 +57,20 @@ function lintJavascript() {
 
 // install bruin component library JS
 function libraryConcatJs() {
-  return src('./node_modules/ucla-bruin-components/public/js/scripts.js')
-    .pipe(concat('scripts.js'))
+  return src('./node_modules/ucla-bruin-components/public/js/ucla-lib-scripts.min.js')
     .pipe(dest('dist/js/ucla-components-library'));
 }
 
 // Bundle the js added in the theme.
 function themeConcatJs() {
-  return src('assets/js/scripts.js')
+  return src('assets/js/**/*.js')
     .pipe(concat('scripts.js'))
     .pipe(dest('dist/js'));
 }
 
 // watch the theme scritps while linting
 function watchJavascript(done) {
-  watch('assets/js/*.js', series(lintJavascript));
+  watch('assets/js/*.js', series(themeConcatJs, lintJavascript));
   done();
 }
 

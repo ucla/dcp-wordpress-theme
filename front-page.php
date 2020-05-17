@@ -23,19 +23,43 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
     <div class="ucla campus entry-content">
 
       <div class="">
-        <div class="col span_9_of_12">
-          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-            <h2>Latest Campus Updates</h2>
-          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
+        <div class="col span_12_of_12">
 
+          <h2 class="mb-32 mt-64">Latest Campus Updates</h2>
 
           <?php the_content(); ?>
 
-          <div class="entry-links"><?php wp_link_pages(); ?></div>
-        </div>
+          <?php
+          // Example argument that defines three posts per page.
+          $args = array(
+            'posts_per_page' => 2
+           );
 
-        <div class="col span_3_of_12">
-          <?php get_sidebar(); ?>
+          // Variable to call WP_Query.
+          $the_query = new WP_Query( $args );
+
+          if ( $the_query->have_posts() ) :
+
+              // Start the Loop
+              while ( $the_query->have_posts() ) : $the_query->the_post();
+
+              // Loop Content
+              include 'templates/entry-content.php';
+
+              // End the Loop
+              endwhile;
+
+          else:
+
+          // If no posts match this query, output this text.
+              _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+          endif;
+
+          wp_reset_postdata();
+          ?>
+
+          <div class="entry-links"><?php wp_link_pages(); ?></div>
+
         </div>
       </div>
 
