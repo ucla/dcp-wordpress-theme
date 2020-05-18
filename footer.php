@@ -6,7 +6,7 @@
         <div class="foot-upper">
           <div class="foot-upper-wrap">
             <div class="foot-upper_address">
-              <img src="/themes/custom/admissions2020/images/admission-dept-logo-wht.svg" alt="Undergraduate Admissions Logo" />
+              <img src="/wp-content/themes/ucla-sc/images/stratcomm_logo_white.svg" alt="UCLA Strategic Communications Logo" />
               <p>
                 10889 Wilshire Blvd., Suite 1400<br/>
                 Los Angeles, CA 90024

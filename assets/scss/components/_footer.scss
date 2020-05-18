@@ -24,9 +24,14 @@
 
     &_address {
       padding: 0 0 32px 0;
-      line-height: 20px;
       max-width: 240px;
       margin-right: 12%;
+
+      p {
+        color: $white;
+        font-size: 14px;
+        line-height: 21px;
+      }
 
       @media (min-width: breakpoint-min(md)) {
         display: inline-block;
@@ -144,8 +149,8 @@
       display: block;
       position: relative;
       width: 100%;
-      margin-bottom: 24px;
       font-size: 12.8px;
+      padding-top: 20px;
 
       @media (min-width: breakpoint-min(md)) {
         width: 50%;
@@ -160,7 +165,6 @@
       display: block;
       position: relative;
       width: 100%;
-      margin-bottom: 32px;
 
       @media (min-width: breakpoint-min(md)) {
         width: 50%;
@@ -207,7 +211,6 @@
       position: relative;
       width: 100%;
       max-width: 291px;
-      margin-bottom: 28px;
 
       @media (min-width: breakpoint-min(md)) {
         width: 48%;
