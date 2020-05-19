@@ -6,7 +6,6 @@ pipelines:
           image: atlassian/default-image:2
           caches:
             - node
-      - step:
           script:
             - npm install
             - npm install -g gulp
