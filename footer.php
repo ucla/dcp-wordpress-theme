@@ -1,6 +1,8 @@
 
       </div>
 
+      <?php include 'templates/blades/resources.php'; ?>
+
       <footer role="contentinfo" class="foot container">
 
         <div class="foot-upper">

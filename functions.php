@@ -48,7 +48,26 @@ function ucla_setup() {
     wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-sc/admin-styles.css' );
   }
 
-
+  // Breadcrumbs
+  function get_breadcrumb() {
+      echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+      if ( is_single()) {
+          echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+          echo get_post_type( get_the_ID() );
+              if (is_single()) {
+                  echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
+                  the_title();
+              }
+      } elseif (is_page()) {
+          echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+          echo the_title();
+      } elseif (is_search()) {
+          echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;Search Results for... ";
+          echo '"<em>';
+          echo the_search_query();
+          echo '</em>"';
+      }
+  }
 
   // Categories for pages
   add_action( 'init', 'ucla_page_categories' );
@@ -83,7 +102,8 @@ function ucla_setup() {
   add_filter( 'the_content_more_link', 'ucla_read_more_link' );
   function ucla_read_more_link() {
     if ( ! is_admin() ) {
-      return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">...</a>';
+      return '';
+      // return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">More on this topic.</a>';
     }
   }
 
@@ -92,9 +112,16 @@ function ucla_setup() {
   function ucla_excerpt_read_more_link( $more ) {
     if ( ! is_admin() ) {
       global $post;
-      return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">...</a>';
+      return '';
+      // return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">More on this topic.</a>';
     }
   }
+
+  // Filter the except length to 20 words.
+  // function wpdocs_custom_excerpt_length( $length ) {
+  //     return 20;
+  // }
+  // add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
   // Image Sizing
   add_filter( 'intermediate_image_sizes_advanced', 'ucla_image_insert_override' );
@@ -111,6 +138,15 @@ function ucla_setup() {
       'id' => 'primary-widget-area',
       'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
       'after_widget' => '</li>',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name' => esc_html__( 'View Updates by Tags', 'ucla' ),
+      'id' => 'tags-widget-area',
+      'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
+      'after_widget' => '</span>',
       'before_title' => '<h3 class="widget-title">',
       'after_title' => '</h3>',
     ) );

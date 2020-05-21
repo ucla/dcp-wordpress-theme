@@ -1,4 +1,4 @@
-<div class="entry-content col span_9_of_12">
+<div class="entry-content">
   <?php // Entry Meta ?>
   <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 

@@ -27,10 +27,39 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
         <?php the_content(); ?>
 
+        <?php
+        // Example argument that defines three posts per page.
+        $args = array(
+          'posts_per_page' => 0
+         );
+
+        // Variable to call WP_Query.
+        $the_query = new WP_Query( $args );
+
+        if ( $the_query->have_posts() ) :
+
+            // Start the Loop
+            while ( $the_query->have_posts() ) : $the_query->the_post();
+
+            // Loop Content
+            include 'templates/entry-content.php';
+
+            // End the Loop
+            endwhile;
+
+        else:
+
+        // If no posts match this query, output this text.
+            _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+        endif;
+
+        wp_reset_postdata();
+        ?>
+
       </div>
 
       <div class="col span_3_of_12">
-        <?php get_sidebar(); ?>
+        <?php dynamic_sidebar('Tags Widget Area'); ?>
       </div>
 
     </div>
