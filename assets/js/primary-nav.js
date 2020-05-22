@@ -49,12 +49,16 @@ $(document).ready(function (){
   // }
   //End Browser Detect
 
+  // ad ID attribut to primary nav search form
+  $('.search-form').attr('id', 'menu-search');
 
   // Commonly used IDs
   let hamButton = document.getElementById('primary-ham');
   let priNav = document.getElementById('menu');
-  //searchForm = document.getElementById('block-admissions2020-search'),
+  let searchForm = document.getElementById('menu-search');
   let header = document.getElementById('header');
+
+
 
   // Primary Navigation Hamburger click functionality
   hamButton.onclick = function hamClick () {
@@ -81,17 +85,17 @@ $(document).ready(function (){
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
-  // function desktopSubmenuResize () {
-  //   let w = $('.adm-header--primary-nav').width() - 62,
-  //     negOffset = (w + 8) * -1;
-  //
-  //   //Add the width off the header wrap to the search dropdown
-  //   $('.search-block-form').css({ // <a class="has-child--link">
-  //     'width': w,
-  //     'margin-left': negOffset
-  //   });
-  //   //console.log(w); // For Debuggin' Only
-  // }
+  function desktopSubmenuResize () {
+    let w = $('.nav-wrap').width() - 62,
+      negOffset = (w + 8) * -1;
+
+    //Add the width off the header wrap to the search dropdown
+    $('.search-block-form').css({ // <a class="has-child--link">
+      'width': w,
+      'margin-left': negOffset
+    });
+    // console.log(w); // For Debuggin' Only
+  }
 
   /*==================================================================
 	1.0 Desktop Functionality
@@ -103,10 +107,13 @@ $(document).ready(function (){
     // console.log(desktop); // For Debuggin' Only
     // console.log('desktop'); // For Debuggin' Only
 
-    //desktopSubmenuResize();
+    desktopSubmenuResize();
 
     // Disable Click functionality for mobile nav submenu.
     $('.has-child--button').attr('tabindex', '-1');
+
+    // Put the search form at the end of the nav
+    $('#block-search').append(searchForm);
 
     // if ($('li.has-child > a').is(':focus')) {
     //   $(this).siblings('ul').css('display', 'block');
@@ -114,7 +121,7 @@ $(document).ready(function (){
 
     $('a.current-page').next('.has-child--button').addClass('current-page');
 
-    // // Desktop Menu keyboard functionality
+    // Desktop Menu keyboard functionality
     // document.onkeydown = function (evt) {
     //
     //   let element = document.activeElement;
@@ -189,6 +196,9 @@ $(document).ready(function (){
     // let desktop = 1024; // For Debuggin' Only
     // console.log('mobile'); // For Debuggin' Only
     // console.log(desktop); // For Debuggin' Only
+
+    // Put the search form at the beginning of the nav
+    $('nav#menu').prepend(searchForm);
 
     /* Disable Mobile scroll when menu is open CSS for no-scroll in stylesheet*/
     $('#primary-ham').on('click', scrollDisable);
@@ -326,7 +336,7 @@ $(document).ready(function (){
     if (window.innerWidth >= desktop) {
 
       // Reset or remove any menu classes
-      $('.has-child--button, #main-menu, .hamburger, .header, .has-child > ul').removeClass('is-active');
+      $('.has-child--button, #menu, .hamburger, .header, .sub-menu').removeClass('is-active');
       $('body').removeClass('no-scroll');
 
       // Get and Run the dektop functionality
@@ -361,9 +371,9 @@ $(document).ready(function (){
     }
 
     //Resize the submenu on all resizes above 1024px.
-    // if (window.innerWidth >= 1024) {
-    //   desktopSubmenuResize();
-    // }
+    if (window.innerWidth >= 1024) {
+      desktopSubmenuResize();
+    }
 
   });
 

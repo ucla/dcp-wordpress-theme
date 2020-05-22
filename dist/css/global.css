@@ -5670,13 +5670,58 @@ body.no-scroll {
   display: block;
   max-width: 1176px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
-.entry-content.col {
-  margin: 1% 0;
+@media (min-width: 1024px) {
+  .ucla.campus {
+    padding: 0;
+  }
 }
 
-.entry-content.col time {
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  width: fit-content;
+  width: max-content;
+}
+
+.btn.white {
+  padding: 10px 14px 6px;
+  background: #FFFFFF;
+  color: #00598C !important;
+  border: 2px solid #00598C;
+  border-radius: 2px;
+}
+
+.btn.white:hover, .btn.white:focus {
+  background: #0079BF;
+  color: #FFFFFF !important;
+  border: 2px solid #0079BF;
+}
+
+.btn.white:focus {
+  outline: 1px dotted #212121;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.btn.white:active {
+  background: #003B5C;
+  color: #FFFFFF !important;
+  border: 2px solid #003B5C;
+}
+
+.btn.white:disabled {
+  color: #757575 !important;
+  border: 2px solid #757575;
+}
+
+.btn.white:disabled:hover {
+  background: #FFFFFF;
+  cursor: default;
+}
+
+.entry-content time {
   display: block;
   position: relative;
   color: #666;
@@ -5684,11 +5729,15 @@ body.no-scroll {
   line-height: 24px;
 }
 
-.entry-content.col h2 a {
+.entry-content h2 a {
   color: #00598C;
   font-size: 24px;
   line-height: 27px;
   text-decoration: none;
+}
+
+.entry-content h2 a:hover {
+  color: #FFFFFF;
 }
 
 .foot {
@@ -5966,6 +6015,12 @@ body.no-scroll {
   opacity: 1;
 }
 
+@media (min-width: 768px) {
+  .hamburger {
+    top: -40px;
+  }
+}
+
 @media (min-width: 1024px) {
   .hamburger {
     display: none;
@@ -6002,9 +6057,17 @@ body.no-scroll {
 #header {
   display: block;
   position: relative;
+  border-bottom: 1px solid #CCCCCC;
+  height: 113px;
 }
 
 @media (min-width: 768px) {
+  #header {
+    min-height: 128px;
+  }
+}
+
+@media (min-width: 1024px) {
   #header {
     min-height: 183px;
   }
@@ -6079,13 +6142,10 @@ nav#menu ul#menu-main-menu li a:hover {
   color: #FFFFFF;
 }
 
-nav#menu ul#menu-main-menu li a:focus {
-  outline: 0;
-}
-
 #menu {
   display: block;
   right: -102%;
+  top: 113px;
   transition: right 0.5s ease;
   position: fixed;
   background: #FFFFFF;
@@ -6094,6 +6154,7 @@ nav#menu ul#menu-main-menu li a:focus {
   z-index: 10;
   overflow-y: scroll;
   overflow-x: hidden;
+  border: 1px solid #CCCCCC;
 }
 
 #menu::-webkit-scrollbar {
@@ -6106,6 +6167,7 @@ nav#menu ul#menu-main-menu li a:focus {
 @media (min-width: 768px) {
   #menu {
     width: 320px;
+    top: 128px;
   }
 }
 
@@ -6119,86 +6181,100 @@ nav#menu ul#menu-main-menu li a:focus {
     max-width: 1176px;
     margin: 0 auto;
     right: 0;
-    top: 0;
+    top: 31px;
     overflow: visible;
+    border: 0;
   }
 }
 
 #menu.is-active {
   display: block;
   right: 0;
-  top: 113px;
   transition: right 0.5s ease;
 }
 
-#menu ul {
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container {
+    display: inline-block;
+  }
+}
+
+#menu .menu-main-menu-container ul {
   padding-inline-start: 0;
   width: 100%;
   background: #FFFFFF;
   position: absolute;
   right: 0;
+  margin-block-start: 0;
 }
 
 @media (min-width: 1024px) {
-  #menu ul {
+  #menu .menu-main-menu-container ul {
     width: auto;
     position: relative;
     display: inline-block;
   }
 }
 
-#menu ul li {
+#menu .menu-main-menu-container ul li {
   max-width: 100%;
 }
 
 @media (min-width: 1024px) {
-  #menu ul li {
+  #menu .menu-main-menu-container ul li {
     height: 44px;
     float: left;
     position: relative;
   }
-  #menu ul li a ~ ul {
+  #menu .menu-main-menu-container ul li a ~ ul {
     position: absolute;
     left: 0;
     top: 44px;
   }
-  #menu ul li:hover {
+  #menu .menu-main-menu-container ul li a:focus {
+    outline: 1px dotted #0079BF;
+    outline-offset: -4px;
+  }
+  #menu .menu-main-menu-container ul li a:focus ~ ul {
+    display: block;
+  }
+  #menu .menu-main-menu-container ul li:hover {
     background: #0079BF;
   }
-  #menu ul li:hover a {
+  #menu .menu-main-menu-container ul li:hover a {
     color: #FFFFFF;
   }
-  #menu ul li:hover .has-child--button {
+  #menu .menu-main-menu-container ul li:hover .has-child--button {
     background: #0079BF;
     border-bottom: 0 !important;
     -moz-appearance: none;
     -webkit-appearance: none;
   }
-  #menu ul li:hover .has-child--button.current-page {
+  #menu .menu-main-menu-container ul li:hover .has-child--button.current-page {
     border-bottom: 4px solid #FFD100 !important;
   }
-  #menu ul li:hover .has-child--button svg g .Path-polygon {
+  #menu .menu-main-menu-container ul li:hover .has-child--button svg g .Path-polygon {
     fill: #FFFFFF;
   }
-  #menu ul li:hover ul {
+  #menu .menu-main-menu-container ul li:hover ul {
     display: block;
     position: absolute;
     left: 0;
     top: 44px;
   }
-  #menu ul li:hover ul li a {
+  #menu .menu-main-menu-container ul li:hover ul li a {
     color: #2774AE;
   }
-  #menu ul li:last-of-type a {
+  #menu .menu-main-menu-container ul li:last-of-type a {
     border-bottom: 0 !important;
   }
 }
 
-#menu ul li:last-of-type a {
+#menu .menu-main-menu-container ul li:last-of-type a {
   border-bottom: 1px solid #CCCCCC;
 }
 
-#menu ul li a {
+#menu .menu-main-menu-container ul li a {
   padding: 14px 0 14px 24px;
   font-weight: bold;
   font-size: 16px;
@@ -6207,65 +6283,55 @@ nav#menu ul#menu-main-menu li a:focus {
   border-top: 1px solid #CCCCCC;
 }
 
-#menu ul li a:hover {
+#menu .menu-main-menu-container ul li a:hover {
   background: #0079BF;
   color: #FFFFFF;
 }
 
 @media (min-width: 1024px) {
-  #menu ul li a:focus {
-    outline: 1px dotted #0079BF;
-    outline-offset: -4px;
-  }
-  #menu ul li a:focus ~ ul {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
-  #menu ul li a {
+  #menu .menu-main-menu-container ul li a {
     border-top: 0;
     padding: 9px 16px 9px 16px;
     width: auto;
   }
 }
 
-#menu ul li a.current-page {
+#menu .menu-main-menu-container ul li a.current-page {
   border-left: 4px solid #FFD100;
 }
 
 @media (min-width: 1024px) {
-  #menu ul li a.current-page {
+  #menu .menu-main-menu-container ul li a.current-page {
     border-left: 0;
     border-bottom: 4px solid #FFD100;
   }
-  #menu ul li a.current-page + .has-child--button.current-page {
+  #menu .menu-main-menu-container ul li a.current-page + .has-child--button.current-page {
     border-bottom: 4px solid #FFD100;
   }
 }
 
-#menu ul li a.current-page:hover {
+#menu .menu-main-menu-container ul li a.current-page:hover {
   border-left: 0;
 }
 
-#menu ul li a:focus {
+#menu .menu-main-menu-container ul li a:focus {
   outline: 1px dotted #0079BF;
   outline-offset: -8px;
 }
 
-#menu ul li a.menu-item-has-children--link {
+#menu .menu-main-menu-container ul li a.menu-item-has-children--link {
   width: calc(100% - 71px);
 }
 
 @media (min-width: 1024px) {
-  #menu ul li a.menu-item-has-children--link {
+  #menu .menu-main-menu-container ul li a.menu-item-has-children--link {
     width: auto;
     padding-right: 0;
   }
-  #menu ul li a.menu-item-has-children--link:focus {
+  #menu .menu-main-menu-container ul li a.menu-item-has-children--link:focus {
     outline: 0;
   }
-  #menu ul li a.menu-item-has-children--link:focus::after {
+  #menu .menu-main-menu-container ul li a.menu-item-has-children--link:focus::after {
     display: block;
     content: '';
     z-index: 1;
@@ -6278,7 +6344,7 @@ nav#menu ul#menu-main-menu li a:focus {
   }
 }
 
-#menu ul li .has-child--button {
+#menu .menu-main-menu-container ul li .has-child--button {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: #FFFFFF;
@@ -6293,7 +6359,7 @@ nav#menu ul#menu-main-menu li a:focus {
 }
 
 @media (min-width: 1024px) {
-  #menu ul li .has-child--button {
+  #menu .menu-main-menu-container ul li .has-child--button {
     position: relative;
     display: inline-block;
     width: auto;
@@ -6302,38 +6368,38 @@ nav#menu ul#menu-main-menu li a:focus {
   }
 }
 
-#menu ul li .has-child--button:hover {
+#menu .menu-main-menu-container ul li .has-child--button:hover {
   background: #0079BF;
   cursor: pointer;
 }
 
-#menu ul li .has-child--button:hover svg g .Path-polygon {
+#menu .menu-main-menu-container ul li .has-child--button:hover svg g .Path-polygon {
   fill: #FFFFFF;
 }
 
-#menu ul li .has-child--button:focus {
+#menu .menu-main-menu-container ul li .has-child--button:focus {
   outline: 1px dotted #0079BF;
   outline-offset: -4px;
 }
 
-#menu ul li .has-child--button.is-active svg {
+#menu .menu-main-menu-container ul li .has-child--button.is-active svg {
   display: block;
   margin: 0 auto;
   position: relative;
   transform: rotate(180deg);
 }
 
-#menu ul li ul {
+#menu .menu-main-menu-container ul li ul {
   display: none;
 }
 
-#menu ul li ul.is-active {
+#menu .menu-main-menu-container ul li ul.is-active {
   display: block;
   position: inherit;
 }
 
 @media (min-width: 1024px) {
-  #menu ul li ul.is-active {
+  #menu .menu-main-menu-container ul li ul.is-active {
     display: block;
     position: absolute;
     left: 0;
@@ -6341,17 +6407,17 @@ nav#menu ul#menu-main-menu li a:focus {
   }
 }
 
-#menu ul li ul li:last-of-type a {
+#menu .menu-main-menu-container ul li ul li:last-of-type a {
   border-bottom: 0;
 }
 
 @media (min-width: 1024px) {
-  #menu ul li ul li:last-of-type a {
+  #menu .menu-main-menu-container ul li ul li:last-of-type a {
     border-bottom: 1px solid #CCCCCC !important;
   }
 }
 
-#menu ul li ul li a {
+#menu .menu-main-menu-container ul li ul li a {
   padding: 14px 24px;
   width: calc(100% - 50px);
   font-weight: bold;
@@ -6364,7 +6430,7 @@ nav#menu ul#menu-main-menu li a:focus {
 }
 
 @media (min-width: 1024px) {
-  #menu ul li ul li a {
+  #menu .menu-main-menu-container ul li ul li a {
     padding: 14px 24px 14px 24px;
     background: #FFFFFF;
     width: calc(320px - 48px);
@@ -6372,18 +6438,28 @@ nav#menu ul#menu-main-menu li a:focus {
 }
 
 @media (min-width: 1024px) {
-  #menu ul li ul li a.is-active {
+  #menu .menu-main-menu-container ul li ul li a.is-active {
     border-left: 4px solid #FFD100;
     width: calc(320px - 51px);
   }
-  #menu ul li ul li a.is-active:hover {
+  #menu .menu-main-menu-container ul li ul li a.is-active:hover {
     width: calc(320px - 47px);
   }
 }
 
-#menu ul li ul li a:hover {
+#menu .menu-main-menu-container ul li ul li a:hover {
   background: #0079BF;
   color: #FFFFFF;
+}
+
+#menu .menu-main-menu-container ul li ul li a.current-page {
+  border-left: 4px solid #FFD100 !important;
+}
+
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li ul li a.current-page {
+    width: calc(320px - 51px);
+  }
 }
 
 /************************
@@ -6405,6 +6481,150 @@ Firefox Only styles
 @media (min-width: 1024px) {
   html.firefox body #menu ul li .has-child--button {
     top: 1.5px;
+  }
+}
+
+.search-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .search-desktop {
+    display: inline-block;
+    height: 44px;
+    width: 56px;
+    position: relative;
+    top: -34px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-desktop #block-search {
+    display: none;
+    background: #FFFFFF;
+    padding: 17px 32px 15px 32px;
+    border: 1px solid #CCCCCC;
+  }
+  .search-desktop #block-search.is-active {
+    display: block;
+    position: absolute;
+  }
+}
+
+.search-desktop #search-button {
+  dispay: none;
+}
+
+@media (min-width: 1024px) {
+  .search-desktop #search-button {
+    display: block;
+    height: 44px;
+    width: 56px;
+    background: #FFFFFF;
+    -webkit-appearance: none;
+    border: 0;
+  }
+}
+
+.search-desktop #search-button:hover {
+  background: #0079BF;
+  cursor: pointer;
+}
+
+.search-desktop #search-button:hover svg g g g g #Shape {
+  fill: #FFFFFF;
+  background: #0079BF;
+}
+
+.search-desktop #search-button.is-active {
+  background: #0079BF;
+}
+
+.search-desktop #search-button.is-active:focus {
+  background: #0079BF;
+  outline: 1px dotted #FFFFFF;
+  outline-offset: -8px;
+}
+
+.search-desktop #search-button.is-active:focus svg g #Shape {
+  fill: #FFFFFF;
+}
+
+.search-desktop #search-button.is-active:focus:hover {
+  background: #0079BF;
+  outline: 1px dotted #0079BF;
+  outline-offset: -8px;
+}
+
+.search-desktop #search-button.is-active:focus:hover svg g #Shape {
+  fill: #FFFFFF;
+}
+
+form.search-form {
+  display: block;
+  position: relative;
+}
+
+form.search-form::before {
+  display: block;
+  content: ' ';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  background-image: url(/wp-content/themes/ucla-sc/images/icons/search-grey60.svg);
+  background-position: center;
+  background-size: contain;
+  margin: 12px;
+  background-size: cover;
+  z-index: 2;
+}
+
+form.search-form label {
+  width: 100%;
+  display: block;
+  position: inherit;
+}
+
+@media (min-width: 1024px) {
+  form.search-form label {
+    display: inline-block;
+    width: 91%;
+    margin: 0;
+    border: 1px solid #333;
+  }
+}
+
+form.search-form label input {
+  width: 100%;
+  padding: 11px 12px 11px 38px;
+  background: #EBEBEB;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+form.search-form .search-submit {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  form.search-form .search-submit {
+    display: inline-block;
+    width: 8%;
+    padding: 12px !important;
+    -webkit-appearance: none;
+    background: #00598C;
+    color: #FFFFFF;
+    border: 0px;
+    border-radius: 0 2px 2px 0;
+    margin-left: -5px;
+  }
+  form.search-form .search-submit:hover {
+    background: #0079BF;
+    cursor: pointer;
+  }
+  form.search-form .search-submit:focus {
+    outline: 1px dotted #FFFFFF;
+    outline-offset: -8px;
   }
 }
 
@@ -6531,6 +6751,10 @@ Firefox Only styles
 
 #block-socialmedia ul li a.foot-tictok:hover svg g g {
   display: none;
+}
+
+body.home .btn.white {
+  margin-top: 30px;
 }
 
 .header {

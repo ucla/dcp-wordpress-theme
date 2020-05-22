@@ -5,7 +5,7 @@
 </div>
 <div class="ucla campus">
   <div class="col span_3_of_9">
-    <div>
+    <div class="card">
       <img src="">
       <h3>Campus Support</h3>
       <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>

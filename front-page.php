@@ -63,7 +63,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
         wp_reset_postdata();
         ?>
 
-        <a href="/updates">Read All Updates</a>
+        <a class="btn white" href="/updates">
+          <span>Read All Updates</span>
+        </a>
+
       </div>
 
 

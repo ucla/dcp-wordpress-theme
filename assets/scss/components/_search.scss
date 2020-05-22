@@ -1,0 +1,155 @@
+.search-desktop {
+  display: none;
+
+  @media (min-width: breakpoint-min(lg)) {
+    display: inline-block;
+    height: 44px;
+    width: 56px;
+    position: relative;
+    top: -34px;
+  }
+
+  #block-search {
+    @media (min-width: breakpoint-min(lg)) {
+      display: none;
+      background: $white;
+      padding: 17px 32px 15px 32px;
+      border: 1px solid $medium-grey3;
+
+      &.is-active {
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+
+  #search-button {
+    dispay: none;
+
+    @media (min-width: breakpoint-min(lg)) {
+      display: block;
+      height: 44px;
+      width: 56px;
+      background: $white;
+      -webkit-appearance: none;
+      border: 0;
+    }
+
+    &:hover {
+      background: $hover-state;
+      cursor: pointer;
+
+      svg g g g g #Shape {
+        fill: $white;
+        background: $hover-state;
+      }
+    }
+
+    &.is-active {
+      background: $hover-state;
+
+      &:focus {
+        background: $hover-state;
+        outline: 1px dotted $white;
+        outline-offset: -8px;
+
+        svg g #Shape {
+          fill: $white;
+        }
+
+        &:hover {
+          background: $hover-state;
+          outline: 1px dotted $hover-state;
+          outline-offset: -8px;
+
+          svg g #Shape {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+form.search-form {
+  display: block;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: ' ';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-image: url(/wp-content/themes/ucla-sc/images/icons/search-grey60.svg);
+    background-position: center;
+    background-size: contain;
+    margin: 12px;
+    background-size: cover;
+    z-index: 2;
+  }
+
+  label {
+    width: 100%;
+    display: block;
+    position: inherit;
+
+    @media (min-width: breakpoint-min(lg)) {
+      display: inline-block;
+      width: 91%;
+      margin: 0;
+      border: 1px solid $grey-80;
+    }
+
+    input {
+      width: 100%;
+      padding: 11px 12px 11px 38px;
+      background: $lightest-grey-2;
+      border: 0;
+      -webkit-appearance: none;
+    }
+  }
+
+  .search-submit {
+    display: none;
+
+    @media (min-width: breakpoint-min(lg)) {
+      display: inline-block;
+      width: 8%;
+      padding: 12px !important;
+      -webkit-appearance: none;
+      background: $default-state;
+      color: $white;
+      border: 0px;
+      border-radius: 0 2px 2px 0;
+      margin-left: -5px;
+
+      &:hover {
+        background: $hover-state;
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: 1px dotted $white;
+        outline-offset: -8px;
+      }
+    }
+  }
+}
+
+// form.search-form {
+//   input.search-field {
+//     width: 100%;
+//     display: block;
+//     position: inherit;
+//     padding-left: 38px !important;
+//   }
+//
+//   .search-submit {
+//     display: none;
+//
+//     @media (min-width: breakpoint-min(lg)) {
+//       display: block;
+//     }
+//   }
+// }

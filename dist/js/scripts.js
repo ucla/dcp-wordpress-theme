@@ -1,6 +1,9 @@
 $(document).ready(function () {
   // GLOBAL THEME JAVASCRIPT
 
+  // Visually Hide any preset classes from wordpress
+  $('.screen-reader-text').addClass('visuallyhidden');
+
   $('[href]').each(function () {
     if (this.href === window.location.href) {
       $(this).addClass('current-page');
@@ -60,12 +63,16 @@ $(document).ready(function (){
   // }
   //End Browser Detect
 
+  // ad ID attribut to primary nav search form
+  $('.search-form').attr('id', 'menu-search');
 
   // Commonly used IDs
   let hamButton = document.getElementById('primary-ham');
   let priNav = document.getElementById('menu');
-  //searchForm = document.getElementById('block-admissions2020-search'),
+  let searchForm = document.getElementById('menu-search');
   let header = document.getElementById('header');
+
+
 
   // Primary Navigation Hamburger click functionality
   hamButton.onclick = function hamClick () {
@@ -92,17 +99,17 @@ $(document).ready(function (){
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
-  // function desktopSubmenuResize () {
-  //   let w = $('.adm-header--primary-nav').width() - 62,
-  //     negOffset = (w + 8) * -1;
-  //
-  //   //Add the width off the header wrap to the search dropdown
-  //   $('.search-block-form').css({ // <a class="has-child--link">
-  //     'width': w,
-  //     'margin-left': negOffset
-  //   });
-  //   //console.log(w); // For Debuggin' Only
-  // }
+  function desktopSubmenuResize () {
+    let w = $('.nav-wrap').width() - 62,
+      negOffset = (w + 8) * -1;
+
+    //Add the width off the header wrap to the search dropdown
+    $('.search-block-form').css({ // <a class="has-child--link">
+      'width': w,
+      'margin-left': negOffset
+    });
+    // console.log(w); // For Debuggin' Only
+  }
 
   /*==================================================================
 	1.0 Desktop Functionality
@@ -114,10 +121,13 @@ $(document).ready(function (){
     // console.log(desktop); // For Debuggin' Only
     // console.log('desktop'); // For Debuggin' Only
 
-    //desktopSubmenuResize();
+    desktopSubmenuResize();
 
     // Disable Click functionality for mobile nav submenu.
     $('.has-child--button').attr('tabindex', '-1');
+
+    // Put the search form at the end of the nav
+    $('#block-search').append(searchForm);
 
     // if ($('li.has-child > a').is(':focus')) {
     //   $(this).siblings('ul').css('display', 'block');
@@ -125,7 +135,7 @@ $(document).ready(function (){
 
     $('a.current-page').next('.has-child--button').addClass('current-page');
 
-    // // Desktop Menu keyboard functionality
+    // Desktop Menu keyboard functionality
     // document.onkeydown = function (evt) {
     //
     //   let element = document.activeElement;
@@ -200,6 +210,9 @@ $(document).ready(function (){
     // let desktop = 1024; // For Debuggin' Only
     // console.log('mobile'); // For Debuggin' Only
     // console.log(desktop); // For Debuggin' Only
+
+    // Put the search form at the beginning of the nav
+    $('nav#menu').prepend(searchForm);
 
     /* Disable Mobile scroll when menu is open CSS for no-scroll in stylesheet*/
     $('#primary-ham').on('click', scrollDisable);
@@ -337,7 +350,7 @@ $(document).ready(function (){
     if (window.innerWidth >= desktop) {
 
       // Reset or remove any menu classes
-      $('.has-child--button, #main-menu, .hamburger, .header, .has-child > ul').removeClass('is-active');
+      $('.has-child--button, #menu, .hamburger, .header, .sub-menu').removeClass('is-active');
       $('body').removeClass('no-scroll');
 
       // Get and Run the dektop functionality
@@ -372,11 +385,43 @@ $(document).ready(function (){
     }
 
     //Resize the submenu on all resizes above 1024px.
-    // if (window.innerWidth >= 1024) {
-    //   desktopSubmenuResize();
-    // }
+    if (window.innerWidth >= 1024) {
+      desktopSubmenuResize();
+    }
 
   });
 
+
+});
+
+$(document).ready(function (){
+
+  $('.search-desktop_button').click(function (){
+
+    let secondLevelNav = $('li.has-child > ul');
+
+    if ($(this).hasClass('is-active')) {
+      $('.search-block-form').removeClass('is-active');
+      $(this).removeClass('is-active');
+      $('.search-desktop_button > svg').replaceWith('<svg role="img" aria-label="Search Icon" class="search-icon" width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Search Icon</title><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="search-nav-icon-primary" transform="translate(-15.000000, -15.000000)"><g id="Nav-Item"><g id="Icon/Search" transform="translate(12.000000, 12.000000)"><polygon class="Path-polygon" points="0 0 24 0 24 24 0 24"></polygon><path d="M15.5,14 L14.71,14 L14.43,13.73 C15.41,12.59 16,11.11 16,9.5 C16,5.91 13.09,3 9.5,3 C5.91,3 3,5.91 3,9.5 C3,13.09 5.91,16 9.5,16 C11.11,16 12.59,15.41 13.73,14.43 L14,14.71 L14,15.5 L19,20.49 L20.49,19 L15.5,14 Z M9.5,14 C7.01,14 5,11.99 5,9.5 C5,7.01 7.01,5 9.5,5 C11.99,5 14,7.01 14,9.5 C14,11.99 11.99,14 9.5,14 Z" id="Shape" fill="#00598C" fill-rule="evenodd"></path></g></g></g></g></svg>');
+
+      // Display other submenus is search menu is not active
+      for (let i = 0; i < secondLevelNav.length; i += 1) {
+        secondLevelNav[i].style.display = '';
+      }
+
+
+    } else {
+      $('.search-block-form').addClass('is-active');
+      $(this).addClass('is-active');
+      $('.search-desktop_button > svg').replaceWith('<svg role="img" aria-label="Close" class="close-x" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Icon Close</title><g id="Icon/Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon id="Shape" fill="#ffffff" points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"></polygon></g></svg>');
+
+      // DO NOT Display other submenus is search menu is not active
+      for (let i = 0; i < secondLevelNav.length; i += 1) {
+        secondLevelNav[i].style.display = 'none';
+      }
+
+    }
+  });
 
 });

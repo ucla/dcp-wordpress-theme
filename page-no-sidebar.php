@@ -22,17 +22,9 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
     <div class="ucla campus entry-content">
 
-      <div class="">
-        <div class="col span_12_of_12">
-          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?>
-            <h2>Latest Campus Updates</h2>
-          <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?>
-
-
-          <?php the_content(); ?>
-
-          <div class="entry-links"><?php wp_link_pages(); ?></div>
-        </div>
+      <div class="col span_12_of_12">
+        <?php the_content(); ?>
+        <div class="entry-links"><?php wp_link_pages(); ?></div>
       </div>
 
     </div>

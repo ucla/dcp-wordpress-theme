@@ -16,10 +16,6 @@ nav#menu {
           text-decoration: none;
           color: $white;
         }
-
-        &:focus {
-          outline: 0;
-        }
       }
     }
   }
@@ -29,6 +25,7 @@ nav#menu {
 #menu {
   display: block;
   right: -102%;
+  top: 113px;
   transition: right 0.5s ease;
   position: fixed;
   background: $white;
@@ -37,6 +34,7 @@ nav#menu {
   z-index: 10;
   overflow-y: scroll;
   overflow-x: hidden;
+  border: 1px solid $medium-grey3;
 
   &::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
@@ -45,6 +43,7 @@ nav#menu {
 
   @media (min-width: breakpoint-min(md)) {
     width: 320px;
+    top: 128px;
   }
 
   @media (min-width: breakpoint-min(lg)) {
@@ -56,65 +55,212 @@ nav#menu {
     max-width: 1176px;
     margin: 0 auto;
     right: 0;
-    top: 0;
+    top: 31px;
     overflow: visible;
+    border: 0;
   }
 
   &.is-active {
     display: block;
     right: 0;
-    top: 113px;
     transition: right 0.5s ease;
   }
 
-  ul {
-    padding-inline-start: 0;
-    width: 100%;
-    background: $white;
-    position: absolute;
-    right: 0;
-
+  .menu-main-menu-container {
     @media (min-width: breakpoint-min(lg)) {
-      width: auto;
-      position: relative;
       display: inline-block;
     }
 
-    li {
-      max-width: 100%;
+    ul {
+      padding-inline-start: 0;
+      width: 100%;
+      background: $white;
+      position: absolute;
+      right: 0;
+      margin-block-start: 0;
 
-      // START LARGE BREAKPOINT
       @media (min-width: breakpoint-min(lg)) {
-        height: 44px;
-        float: left;
+        width: auto;
         position: relative;
+        display: inline-block;
+      }
 
-        a {
-          ~ ul {
-            position: absolute;
-            left: 0;
-            top: 44px;
+      li {
+        max-width: 100%;
+
+        // START LARGE BREAKPOINT
+        @media (min-width: breakpoint-min(lg)) {
+          height: 44px;
+          float: left;
+          position: relative;
+
+          a {
+            ~ ul {
+              position: absolute;
+              left: 0;
+              top: 44px;
+            }
+
+            &:focus {
+              outline: 1px dotted $hover-state;
+              outline-offset: -4px;
+
+              ~ ul {
+                display: block;
+              }
+            }
+          }
+
+          // START LARGE MENU HOVER STATES
+          &:hover {
+            background: $hover-state;
+
+            a {
+              color: $white;
+            }
+
+            .has-child {
+              &--button {
+                background: $hover-state;
+                border-bottom: 0 !important;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+
+                &.current-page {
+                  border-bottom: 4px solid $ucla-gold !important;
+                }
+
+                svg {
+                  g {
+                    .Path-polygon {
+                      fill: $white;
+                    }
+                  }
+                }
+              }
+            }
+
+            ul {
+              display: block;
+              position: absolute;
+              left: 0;
+              top: 44px;
+
+              li {
+                a {
+                  color: $ucla-blue;
+                }
+              }
+            }
+          }
+          // END LARGE MENU HOVER STATES
+
+          &:last-of-type {
+            a {
+              border-bottom: 0 !important;
+            }
+          }
+        }
+        // END LARGE BREAKPOINT
+
+        &:last-of-type {
+          a {
+            border-bottom: 1px solid $medium-grey3;
           }
         }
 
-        // START LARGE MENU HOVER STATES
-        &:hover {
-          background: $hover-state;
+        a {
+          padding: 14px 0 14px 24px;
+          font-weight: bold;
+          font-size: 16px;
+          display: inline-block;
+          width: calc(100% - 25px);
+          border-top: 1px solid $medium-grey3;
 
-          a {
+          &:hover {
+            background: $hover-state;
             color: $white;
           }
 
-          .has-child {
-            &--button {
-              background: $hover-state;
-              border-bottom: 0 !important;
-              -moz-appearance: none;
-              -webkit-appearance: none;
+          @media (min-width: breakpoint-min(lg)) {
+            border-top: 0;
+            padding: 9px 16px 9px 16px;
+            width: auto;
+          }
 
-              &.current-page {
-                border-bottom: 4px solid $ucla-gold !important;
+          &.current-page {
+            border-left: 4px solid $ucla-gold;
+
+            @media (min-width: breakpoint-min(lg)) {
+              border-left: 0;
+              border-bottom: 4px solid $ucla-gold;
+
+              + .has-child--button.current-page {
+                border-bottom: 4px solid $ucla-gold;
               }
+            }
+
+            &:hover {
+              border-left: 0;
+            }
+          }
+
+          &:focus {
+            outline: 1px dotted $hover-state;
+            outline-offset: -8px;
+          }
+
+          &.menu-item-has-children--link {
+            width: calc(100% - 71px);
+
+            @media (min-width: breakpoint-min(lg)) {
+              width: auto;
+              padding-right: 0;
+
+              &:focus {
+                outline: 0;
+
+                &::after {
+                  display: block;
+                  content: '';
+                  z-index: 1;
+                  width: 96%;
+                  height: 26px;
+                  border: 1px dotted $hover-state;
+                  position: absolute;
+                  left: 0;
+                  top: 2px;
+                }
+              }
+            }
+          }
+        }
+
+        .has-child {
+          &--button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: $white;
+            height: 46px;
+            width: 48px;
+            display: block;
+            position: absolute;
+            right: 0;
+            margin-top: -45px;
+            border: 1px solid $medium-grey3;
+            border-right: 0;
+
+            @media (min-width: breakpoint-min(lg)) {
+              position: relative;
+              display: inline-block;
+              width: auto;
+              height: 35px;
+              border: 0;
+            }
+
+            &:hover {
+              background: $hover-state;
+              cursor: pointer;
 
               svg {
                 g {
@@ -124,224 +270,90 @@ nav#menu {
                 }
               }
             }
-          }
-
-          ul {
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 44px;
-
-            li {
-              a {
-                color: $ucla-blue;
-              }
-            }
-          }
-        }
-        // END LARGE MENU HOVER STATES
-
-        &:last-of-type {
-          a {
-            border-bottom: 0 !important;
-          }
-        }
-      }
-      // END LARGE BREAKPOINT
-
-      &:last-of-type {
-        a {
-          border-bottom: 1px solid $medium-grey3;
-        }
-      }
-
-      a {
-        padding: 14px 0 14px 24px;
-        font-weight: bold;
-        font-size: 16px;
-        display: inline-block;
-        width: calc(100% - 25px);
-        border-top: 1px solid $medium-grey3;
-
-        &:hover {
-          background: $hover-state;
-          color: $white;
-        }
-
-        @media (min-width: breakpoint-min(lg)) {
-          &:focus {
-            outline: 1px dotted $hover-state;
-            outline-offset: -4px;
-
-            ~ ul {
-              display: block;
-            }
-          }
-        }
-
-        @media (min-width: breakpoint-min(lg)) {
-          border-top: 0;
-          padding: 9px 16px 9px 16px;
-          width: auto;
-        }
-
-        &.current-page {
-          border-left: 4px solid $ucla-gold;
-
-          @media (min-width: breakpoint-min(lg)) {
-            border-left: 0;
-            border-bottom: 4px solid $ucla-gold;
-
-            + .has-child--button.current-page {
-              border-bottom: 4px solid $ucla-gold;
-            }
-          }
-
-          &:hover {
-            border-left: 0;
-          }
-        }
-
-        &:focus {
-          outline: 1px dotted $hover-state;
-          outline-offset: -8px;
-        }
-
-        &.menu-item-has-children--link {
-          width: calc(100% - 71px);
-
-          @media (min-width: breakpoint-min(lg)) {
-            width: auto;
-            padding-right: 0;
 
             &:focus {
-              outline: 0;
-
-              &::after {
-                display: block;
-                content: '';
-                z-index: 1;
-                width: 96%;
-                height: 26px;
-                border: 1px dotted $hover-state;
-                position: absolute;
-                left: 0;
-                top: 2px;
-              }
-            }
-          }
-        }
-      }
-
-      .has-child {
-        &--button {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          background: $white;
-          height: 46px;
-          width: 48px;
-          display: block;
-          position: absolute;
-          right: 0;
-          margin-top: -45px;
-          border: 1px solid $medium-grey3;
-          border-right: 0;
-
-          @media (min-width: breakpoint-min(lg)) {
-            position: relative;
-            display: inline-block;
-            width: auto;
-            height: 35px;
-            border: 0;
-          }
-
-          &:hover {
-            background: $hover-state;
-            cursor: pointer;
-
-            svg {
-              g {
-                .Path-polygon {
-                  fill: $white;
-                }
-              }
-            }
-          }
-
-          &:focus {
-            outline: 1px dotted $hover-state;
-            outline-offset: -4px;
-          }
-
-          &.is-active {
-            svg {
-              display: block;
-              margin: 0 auto;
-              position: relative;
-              transform: rotate(180deg);
-            }
-          }
-        }
-      }
-
-      // This affects the second level ul or submenu items only
-      ul {
-        display: none;
-
-        &.is-active {
-          display: block;
-          position: inherit;
-
-          @media (min-width: breakpoint-min(lg)) {
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 44px;
-          }
-        }
-
-        li {
-          &:last-of-type {
-            a {
-              border-bottom: 0;
-
-              @media (min-width: breakpoint-min(lg)) {
-                border-bottom: 1px solid $medium-grey3 !important;
-              }
-            }
-          }
-
-          a {
-            padding: 14px 24px;
-            width: calc(100% - 50px);
-            font-weight: bold;
-            font-size: 16px;
-            display: inline-block;
-            border-top: 1px solid $medium-grey3;
-            border-left: 1px solid $medium-grey3;
-            border-right: 1px solid $medium-grey3;
-            background: $lightest-grey-2;
-
-            @media (min-width: breakpoint-min(lg)) {
-              padding: 14px 24px 14px 24px;
-              background: $white;
-              width: calc(320px - 48px);
+              outline: 1px dotted $hover-state;
+              outline-offset: -4px;
             }
 
             &.is-active {
-              @media (min-width: breakpoint-min(lg)) {
-                border-left: 4px solid $ucla-gold;
-                width: calc(320px - 51px);
+              svg {
+                display: block;
+                margin: 0 auto;
+                position: relative;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
 
-                &:hover {
-                  width: calc(320px - 47px);
+        // This affects the second level ul or submenu items only
+        ul {
+          display: none;
+
+          &.is-active {
+            display: block;
+            position: inherit;
+
+            @media (min-width: breakpoint-min(lg)) {
+              display: block;
+              position: absolute;
+              left: 0;
+              top: 44px;
+            }
+          }
+
+          li {
+            &:last-of-type {
+              a {
+                border-bottom: 0;
+
+                @media (min-width: breakpoint-min(lg)) {
+                  border-bottom: 1px solid $medium-grey3 !important;
                 }
               }
             }
 
-            &:hover {
-              background: $hover-state;
-              color: $white;
+            a {
+              padding: 14px 24px;
+              width: calc(100% - 50px);
+              font-weight: bold;
+              font-size: 16px;
+              display: inline-block;
+              border-top: 1px solid $medium-grey3;
+              border-left: 1px solid $medium-grey3;
+              border-right: 1px solid $medium-grey3;
+              background: $lightest-grey-2;
+
+              @media (min-width: breakpoint-min(lg)) {
+                padding: 14px 24px 14px 24px;
+                background: $white;
+                width: calc(320px - 48px);
+              }
+
+              &.is-active {
+                @media (min-width: breakpoint-min(lg)) {
+                  border-left: 4px solid $ucla-gold;
+                  width: calc(320px - 51px);
+
+                  &:hover {
+                    width: calc(320px - 47px);
+                  }
+                }
+              }
+
+              &:hover {
+                background: $hover-state;
+                color: $white;
+              }
+
+              &.current-page {
+                border-left: 4px solid $ucla-gold !important;
+
+                @media (min-width: breakpoint-min(lg)) {
+                  width: calc(320px - 51px);
+                }
+              }
             }
           }
         }

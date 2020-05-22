@@ -1,8 +1,14 @@
 #header {
   display: block;
   position: relative;
+  border-bottom: 1px solid $medium-grey3;
+  height: 113px;
 
   @media (min-width: breakpoint-min(md)) {
+    min-height: 128px;
+  }
+
+  @media (min-width: breakpoint-min(lg)) {
     min-height: 183px;
   }
 
