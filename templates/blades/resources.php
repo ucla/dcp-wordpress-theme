@@ -1,5 +1,9 @@
 <div class="ucla campus">
-  <h2>Recommended COVID-19 Resources</h2>
+  <div class="col span_12_of_12">
+    <h2>Recommended COVID-19 Resources</h2>
+  </div>
+</div>
+<div class="ucla campus">
   <div class="col span_3_of_9">
     <div>
       <img src="">
