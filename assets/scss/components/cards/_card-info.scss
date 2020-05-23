@@ -1,0 +1,84 @@
+.blade-links {
+  width: 100%;
+  display: block;
+  position: relative;
+  height: 102px;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+  margin: auto;
+  margin-bottom: 20px;
+
+  @media (min-width: breakpoint-min(md)) {
+    display: block;
+    height: 185px;
+    margin: 0;
+  }
+
+  .blade-links__box {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 185px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+
+    @media (min-width: breakpoint-min(md)) {
+      display: block;
+      position: relative;
+      height: 134px;
+    }
+
+    &-link {
+      width: 100%;
+      background: $default-state;
+      height: 70px;
+      display: block;
+      position: relative;
+      color: $white;
+      font-size: 24px;
+      font-weight: 27px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding: 16px 16px 40px 24px;
+      text-decoration: none;
+
+      @media (min-width: breakpoint-min(md)) {
+        width: 100%;
+        padding: 24px 16px 40px 16px;
+      }
+
+      &:hover {
+        background: $hover-state !important;
+      }
+
+      &::before {
+        display: block;
+        content: '';
+        width: 25px;
+        height: 4px;
+        background: $ucla-gold;
+        margin-bottom: 12px;
+
+        @media (min-width: breakpoint-min(md)) {
+          margin-bottom: 28px;
+        }
+      }
+    }
+  }
+
+  &.grey {
+    .blade-links__box {
+      &-link {
+        background: $lightest-grey-2 !important;
+        color: $default-state;
+
+        &:hover {
+          background: $light-grey !important;
+        }
+      }
+    }
+  }
+}

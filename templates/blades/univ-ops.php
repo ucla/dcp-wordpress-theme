@@ -6,8 +6,10 @@
 </div>
 <div class="ucla campus">
   <div class="col span_3_of_12">
-    <div>
-      <a target="_blank" href="/confirmed-cases-of-covid-19-among-the-ucla-campus-community/">Campus Operations</a>
+    <div class="blade-links">
+      <div class="blade-links__box">
+        <a href="/" class="blade-links__box-link" href="/confirmed-cases-of-covid-19-among-the-ucla-campus-community/">Campus Operations</a>
+      </div>
     </div>
   </div>
   <div class="col span_3_of_12">Card 2.</div>

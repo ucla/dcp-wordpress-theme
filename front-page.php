@@ -73,6 +73,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
     </div>
 
+    <?php include 'templates/blades/information.php'; ?>
     <?php include 'templates/blades/health-safety.php'; ?>
     <?php include 'templates/blades/univ-ops.php'; ?>
 
