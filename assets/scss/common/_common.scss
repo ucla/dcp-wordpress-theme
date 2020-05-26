@@ -16,10 +16,10 @@ body.no-scroll {
   position: relative;
   max-width: 1176px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 24px;
 
   @media (min-width: breakpoint-min(lg)) {
-    padding: 0;
+    padding: 0 12px;
   }
 
   // First child fix if you put a title above span. See example on templates/health-saftey.php

@@ -1,6 +1,10 @@
 .card-hs {
   background: $white;
   padding: 32px;
+  max-width: 312px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 
   p {
     font-size: 16px;

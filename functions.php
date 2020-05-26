@@ -130,6 +130,8 @@ function ucla_setup() {
     return $sizes;
   }
 
+  add_image_size( 'actual_size', 1427, 280 );
+
   // Add Sidebar widget
   add_action( 'widgets_init', 'ucla_widgets_init' );
   function ucla_widgets_init() {

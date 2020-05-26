@@ -15,8 +15,12 @@
   .header-logo {
     display: block;
     background: $ucla-blue;
-    padding: 12px;
+    padding: 12px 24px;
     max-height: 48px;
+
+    @media (min-width: breakpoint-min(lg)) {
+      padding: 12px;
+    }
 
     &__wrap {
       display: block;
@@ -35,7 +39,11 @@
     display: block;
     max-width: 1176px;
     margin: 0 auto;
-    padding-top: 24px;
+    padding: 24px 24px 0;
+
+    @media (min-width: breakpoint-min(lg)) {
+      padding: 24px 12px 0;
+    }
 
     a {
       color: $black;
