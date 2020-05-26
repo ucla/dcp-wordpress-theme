@@ -16,11 +16,36 @@
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychogical Services</a>
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources (doc)</a>
           <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Committee</a>
-          </dv>
         </div>
       </div>
     </div>
-    <div class="col span_3_of_9">Card 2.</div>
-    <div class="col sspan_3_of_9">Card 3.</div>
+    <div class="col span_3_of_9">
+      <div class="card-resources">
+        <img src="/wp-content/themes/ucla-sc/images/r1.png">
+        <div class="card-resources_content">
+          <h3 class="mb-16">Campus Support</h3>
+          <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
+          <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Service Hours</a>
+          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Service Hours</a>
+          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychogical Services</a>
+          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources (doc)</a>
+          <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Committee</a>
+        </div>
+      </div>
+    </div>
+    <div class="col span_3_of_9">
+      <div class="card-resources">
+        <img src="/wp-content/themes/ucla-sc/images/r1.png">
+        <div class="card-resources_content">
+          <h3 class="mb-16">Campus Support</h3>
+          <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
+          <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Service Hours</a>
+          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Service Hours</a>
+          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychogical Services</a>
+          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources (doc)</a>
+          <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Committee</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
