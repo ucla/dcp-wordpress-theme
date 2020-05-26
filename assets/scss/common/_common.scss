@@ -51,17 +51,25 @@ body.no-scroll {
 .light-grey {
   background: $light-grey;
 
-  &.tall-75 {
+  &.tall-75,
+  &.tall-65 {
     position: relative;
 
-    .white-25 {
+    .white-25,
+    .white-35 {
       display: block;
       position: absolute;
       width: 100%;
       background: $white;
-      height: 25%;
       top: 0;
-      // z-index: -1;
+    }
+
+    .white-25 {
+      height: 25%;
+    }
+
+    .white-35 {
+      height: 35%;
     }
   }
 }

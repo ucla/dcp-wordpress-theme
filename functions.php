@@ -123,6 +123,14 @@ function ucla_setup() {
   // }
   // add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
+
+  add_filter ('get_the_excerpt','wpse240352_filter_excerpt');
+
+  function wpse240352_filter_excerpt ($post_excerpt) {
+    $post_excerpt = '<p class="mb-32">' . $post_excerpt . '</p>';
+    return $post_excerpt;
+    }
+
   // Image Sizing
   add_filter( 'intermediate_image_sizes_advanced', 'ucla_image_insert_override' );
   function ucla_image_insert_override( $sizes ) {

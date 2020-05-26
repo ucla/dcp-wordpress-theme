@@ -1,18 +1,21 @@
 .card-hs {
+  display: block;
+  position: relative;
   background: $white;
   padding: 32px;
   max-width: 312px;
-  width: 100%;
-  display: block;
   margin: 0 auto;
+  overflow: hidden;
 
-  p {
-    font-size: 16px;
-    line-height: 24px;
-  }
+  &--content {
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
 
-  a {
-    text-decoration: none;
-    font-weight: bold;
+    a {
+      text-decoration: none;
+      font-weight: bold;
+    }
   }
 }

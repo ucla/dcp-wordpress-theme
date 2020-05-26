@@ -1,4 +1,4 @@
-<div class="light-grey tall-75">
+<div class="light-grey tall-65 blade-resources">
   <div class="ucla campus">
     <div class="col span_12_of_12">
       <h2>Recommended COVID-19 Resources</h2>

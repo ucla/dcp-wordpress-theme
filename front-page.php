@@ -1,6 +1,10 @@
 <?php /* Template Name: No Sidebar */
 
-$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'medium_large' ) );
+$thumb_id = get_post_thumbnail_id( $id );
+if ( '' != $thumb_id ) {
+  $thumb_url  = wp_get_attachment_image_src( $thumb_id, 'actual_size', true );
+  $image      = $thumb_url[0];
+}
 
 ?>
 
@@ -12,7 +16,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'med
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
+    <header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $image; ?>);" <?php } ?>>
       <div class="ucla campus">
         <div class="col span_12_of_12">
           <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
@@ -29,48 +33,43 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'med
       </div>
 
     </div>
-    <div class="ucla campus">
-      <div class="col span_9_of_12">
+    <div class="latest-campus">
+      <div class="ucla campus">
+        <div class="col span_9_of_12">
 
-        <h2 class="mb-32 mt-64">Latest Messages from Campus</h2>
+          <h2 class="mb-32 mt-64">Latest Messages from Campus</h2>
 
-        <?php
-        // Example argument that defines three posts per page.
-        $args = array(
-          'posts_per_page' => 2
-         );
+          <?php
+          // Example argument that defines three posts per page.
+          $args = array(
+            'posts_per_page' => 2
+           );
 
-        // Variable to call WP_Query.
-        $the_query = new WP_Query( $args );
+          // Variable to call WP_Query.
+          $the_query = new WP_Query( $args );
 
-        if ( $the_query->have_posts() ) :
+          if ( $the_query->have_posts() ) :
+              // Start the Loop
+              while ( $the_query->have_posts() ) : $the_query->the_post();
+              // Loop Content
+              include 'templates/entry-content.php';
+              // End the Loop
+              endwhile;
+          else:
+              // If no posts match this query, output this text.
+              _e( 'Sorry, no results match your criteria.', 'textdomain' );
+          endif;
 
-            // Start the Loop
-            while ( $the_query->have_posts() ) : $the_query->the_post();
+          wp_reset_postdata();
+          ?>
 
-            // Loop Content
-            include 'templates/entry-content.php';
+          <a class="btn white mb-lg-80 mb-xs-64 mt-32" href="/updates">
+            <span>Read All Updates</span>
+          </a>
 
-            // End the Loop
-            endwhile;
-
-        else:
-
-        // If no posts match this query, output this text.
-            _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-        endif;
-
-        wp_reset_postdata();
-        ?>
-
-        <a class="btn white" href="/updates">
-          <span>Read All Updates</span>
-        </a>
+        </div>
 
       </div>
-
-
-
     </div>
 
     <?php include 'templates/blades/information.php'; ?>

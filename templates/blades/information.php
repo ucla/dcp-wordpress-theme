@@ -1,4 +1,4 @@
-<div class="ucla campus">
+<div class="ucla campus info-blade">
   <div class="col span_3_of_12">
     <div class="blade-links grey">
       <div class="blade-links__box">

@@ -4,5 +4,5 @@
 
   <?php // Entry content ?>
   <h2><a href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h2>
-  <?php the_excerpt(); ?>
+  <?php the_excerpt('mb-32'); ?>
 </div>

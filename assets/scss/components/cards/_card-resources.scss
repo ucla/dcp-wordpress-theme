@@ -4,6 +4,11 @@
   background: $white;
   max-width: 376px;
   margin: 0 auto;
+  border: 1px solid $light-grey;
+
+  @media (min-width: breakpoint-min(lg)) {
+    border: 0;
+  }
 
   img {
     display: block;
