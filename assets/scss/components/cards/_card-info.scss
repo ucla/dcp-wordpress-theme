@@ -83,7 +83,8 @@
         color: $default-state;
 
         &:hover {
-          background: $light-grey !important;
+          background: $hover-state !important;
+          color: $white;
         }
       }
     }

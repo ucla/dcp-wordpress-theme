@@ -29,12 +29,9 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
     </div>
 
-    <?php if ( comments_open() && ! post_password_required() ) { comments_template( '', true ); } ?>
-
     <?php endwhile; endif; ?>
 
   </article>
-
 
 </main>
 

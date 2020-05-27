@@ -1,7 +1,7 @@
 
       </div>
 
-      <?php include 'templates/blades/resources.php'; ?>
+      <?php include 'templates/blades/rec-resources.php'; ?>
 
       <footer role="contentinfo" class="foot container">
 
