@@ -23,7 +23,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
     <div class="ucla campus entry-content">
 
-      <div class="col span_9_of_12">
+      <div class="col span_7_of_12">
 
         <?php the_content(); ?>
 
@@ -57,7 +57,8 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
         ?>
 
       </div>
-
+      <div class="col span_2_of_12">
+      </div>
       <div class="col span_3_of_12">
         <?php dynamic_sidebar('Tags Widget Area'); ?>
       </div>

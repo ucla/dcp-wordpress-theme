@@ -5695,6 +5695,14 @@ body.no-scroll {
   }
 }
 
+.ucla.campus .fluid .expander-container p {
+  margin-bottom: 16px;
+}
+
+.widget-title {
+  font-size: 20px;
+}
+
 .blade-hs {
   padding: 32px 0 !important;
 }
@@ -5707,6 +5715,22 @@ body.no-scroll {
 
 .grey-mar {
   background: #F7F7F7;
+}
+
+.breadcrumb {
+  color: #666;
+  padding-top: 40px;
+}
+
+@media (min-width: 1024px) {
+  .breadcrumb {
+    padding-top: 80px;
+  }
+}
+
+.breadcrumb a {
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .btn {
@@ -5900,6 +5924,7 @@ body.no-scroll {
   max-width: 100%;
   width: fit-content;
   width: max-content;
+  overflow-wrap: break-word;
   text-decoration: none;
   font-weight: bold;
   margin-bottom: 16px;
@@ -6319,6 +6344,35 @@ body.no-scroll {
   margin: 0 auto;
   padding-top: 24px;
   position: relative;
+}
+
+.header {
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    margin-bottom: 64px;
+  }
+}
+
+.header h1 {
+  padding: 20px 0 40px 0 !important;
+}
+
+.header p.intro {
+  font-size: 24px;
+  line-height: 30px;
+  color: #333;
+  max-width: 776px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  .header p.intro {
+    padding-bottom: 80px;
+  }
 }
 
 nav#menu ul#menu-main-menu li {
@@ -6948,6 +7002,20 @@ form.search-form .search-submit {
 
 #block-socialmedia ul li a.foot-tictok:hover svg g g {
   display: none;
+}
+
+.tagcloud .tag-cloud-link {
+  border: 2px solid #00598C;
+  border-radius: 18px;
+  font-size: 12px !important;
+  line-height: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 2px 10px;
+  width: fit-content;
+  width: max-content;
+  display: inline-block;
+  margin-bottom: 3px;
 }
 
 body.home .latest-campus,

@@ -19,7 +19,7 @@ get_header(); ?>
 
     <div class="ucla campus entry-content">
 
-      <div class="col span_9_of_12">
+      <div class="col span_7_of_12">
 
         <div class="archive-meta"><?php if ( '' != the_archive_description() ) { echo esc_html( the_archive_description() ); } ?></div>
 
@@ -66,6 +66,7 @@ get_header(); ?>
 
       </div>
 
+      <div class="col span_2_of_12"></div>
       <div class="col span_3_of_12">
         <?php dynamic_sidebar('Tags Widget Area'); ?>
       </div>

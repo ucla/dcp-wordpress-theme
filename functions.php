@@ -9,16 +9,6 @@ function ucla_setup() {
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form' ) );
 
-  /**
- * Enable features from Soil when plugin is activated
- * @link https://roots.io/plugins/soil/
- */
-  add_theme_support('soil-clean-up');
-  add_theme_support('soil-js-to-footer');
-  add_theme_support('soil-nav-walker');
-  add_theme_support('soil-nice-search');
-  add_theme_support('soil-relative-urls');
-
   global $content_width;
 
 
@@ -157,7 +147,7 @@ function ucla_setup() {
       'id' => 'tags-widget-area',
       'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
       'after_widget' => '</span>',
-      'before_title' => '<h3 class="widget-title">',
+      'before_title' => '<h3 class="widget-title mb-16">',
       'after_title' => '</h3>',
     ) );
   }
