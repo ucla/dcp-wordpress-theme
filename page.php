@@ -37,11 +37,11 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
     <?php
       if ( is_page( 66 ) ) {
+
         include 'templates/blades/univ-ops.php';
-        include 'templates/blades/add-resources.php';
-      } else if(is_page( [72, 74] )) {
-        include 'templates/blades/add-resources.php';
+        
       }
+
       ?>
 
     <?php endwhile; endif; ?>

@@ -161,3 +161,15 @@ function ucla_setup() {
       'after_title' => '</h3>',
     ) );
   }
+
+  // Add Dashboard Training Widget
+  add_action('wp_dashboard_setup', 'ucla_custom_dashboard_widgets');
+
+  function ucla_custom_dashboard_widgets() {
+    global $wp_meta_boxes;
+    wp_add_dashboard_widget('custom_help_widget', 'UCLA Strat. Comm. Theme Support', 'custom_dashboard_help');
+  }
+
+  function custom_dashboard_help() {
+    echo '<p>Welcome to the Strategic UCLA Communications Theme.</p><p><strong>For WordPress Resources:</strong></p><p>UCLA Spaces Page: <em><a href="https://spaces.ais.ucla.edu/display/ucomm/WordPress" target="_blank">UCLA WordPress</a></em></p><p><strong>Theme Specific Video Resources:</strong></p><p>Fluid Class: <em><a href="https://youtu.be/7A__xe3MuSY" target="_blank">Expand Backgound past content containter</a></em></p>';
+  }

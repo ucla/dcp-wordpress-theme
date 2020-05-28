@@ -5670,6 +5670,31 @@ body.no-scroll {
   margin-left: 0;
 }
 
+.ucla.campus .fluid {
+  display: block;
+  position: relative;
+}
+
+.ucla.campus .fluid .expander {
+  display: block;
+  position: absolute;
+  width: 100%;
+  background: #F7F7F7;
+}
+
+.ucla.campus .fluid .expander-container {
+  display: block;
+  max-width: 1176px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+@media (min-width: 1024px) {
+  .ucla.campus .fluid .expander-container {
+    padding: 80px 12px;
+  }
+}
+
 .blade-hs {
   padding: 32px 0 !important;
 }
