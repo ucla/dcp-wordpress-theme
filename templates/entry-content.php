@@ -1,4 +1,5 @@
 <div class="entry-content">
+  <p>things</p>
   <?php // Entry Meta ?>
   <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 

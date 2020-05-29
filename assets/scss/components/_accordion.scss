@@ -1,0 +1,37 @@
+.accordion {
+  display: block;
+  border-top: 1px solid $grey-10;
+  padding: 22px 22px 5px;
+  max-width: 776px;
+
+  &:last-of-type {
+    border-bottom: 1px solid $grey-10;
+  }
+
+  &-title {
+    color: $default-state;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &-content {
+    display: none;
+
+    &.show-me {
+      display: block;
+    }
+  }
+}

@@ -5688,7 +5688,7 @@ body.no-scroll {
 
 .ucla.campus .fluid .expander-container {
   display: block;
-  max-width: 1176px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 40px 24px;
 }
@@ -5719,6 +5719,44 @@ body.no-scroll {
 
 .grey-mar {
   background: #F7F7F7;
+}
+
+.accordion {
+  display: block;
+  border-top: 1px solid #E5E5E5;
+  padding: 22px 22px 5px;
+  max-width: 776px;
+}
+
+.accordion:last-of-type {
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.accordion-title {
+  color: #00598C;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+.accordion-title:hover {
+  cursor: pointer;
+}
+
+.accordion-title img {
+  position: absolute;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.accordion-content {
+  display: none;
+}
+
+.accordion-content.show-me {
+  display: block;
 }
 
 .breadcrumb {

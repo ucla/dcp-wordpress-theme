@@ -19,6 +19,16 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
       <div class="col span_9_of_12">
 
         <div class="ucla campus">
+
+        <?php
+          if ( is_page( 34 ) ) {
+
+            include 'templates/faq-loop.php';
+
+          }
+
+          ?>
+
         <?php the_content(); ?>
 
       </div>
