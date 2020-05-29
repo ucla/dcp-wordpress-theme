@@ -5670,6 +5670,10 @@ body.no-scroll {
   margin-left: 0;
 }
 
+.ucla.campus p {
+  margin-bottom: 16px;
+}
+
 .ucla.campus .fluid {
   display: block;
   position: relative;

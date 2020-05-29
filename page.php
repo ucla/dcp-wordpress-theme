@@ -18,6 +18,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
       <div class="col span_9_of_12">
 
+        <div class="ucla campus entry-content">
         <?php the_content(); ?>
 
       </div>
