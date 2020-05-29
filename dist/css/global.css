@@ -5733,15 +5733,27 @@ body.no-scroll {
 }
 
 .accordion-title {
+  width: 100%;
+  text-align: left;
   color: #00598C;
   font-size: 24px;
   line-height: 24px;
   font-weight: bold;
   position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  padding-right: 30px;
 }
 
 .accordion-title:hover {
   cursor: pointer;
+}
+
+.accordion-title:focus {
+  outline: 2px solid #00598C;
+  outline-offset: 2px;
 }
 
 .accordion-title img {

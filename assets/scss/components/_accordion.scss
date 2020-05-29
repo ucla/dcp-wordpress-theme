@@ -9,14 +9,25 @@
   }
 
   &-title {
+    width: 100%;
+    text-align: left;
     color: $default-state;
     font-size: 24px;
     line-height: 24px;
     font-weight: bold;
     position: relative;
-
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    padding-right: 30px;
     &:hover {
       cursor: pointer;
+    }
+
+    &:focus {
+      outline: 2px solid $default-state;
+      outline-offset: 2px;
     }
 
     img {

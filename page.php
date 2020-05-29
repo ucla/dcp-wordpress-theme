@@ -21,7 +21,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
         <div class="ucla campus">
 
         <?php
-          if ( is_page( 34 ) ) {
+          if ( is_page([34, 36, 38, 40, 42, 44, 46, 48]) ) {
 
             include 'templates/faq-loop.php';
 
