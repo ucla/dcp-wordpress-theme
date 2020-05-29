@@ -4,6 +4,24 @@ $(document).ready(function () {
   // Visually Hide any preset classes from wordpress
   $('.screen-reader-text').addClass('visuallyhidden');
 
+  // let aLink = document.getElementsByTagName('a');
+  //
+  // console.log(aLink);
+  //
+  // aLink.setAttribute('rel', 'nopener');
+
+
+  function relnoopener () {
+    const a = document.querySelectorAll('a[target="_blank"]');
+    a.forEach(function (element) {
+      if (!element.hasAttribute('rel')) {
+        element.setAttribute('rel', 'noopener');
+      }
+    });
+  }
+
+  relnoopener();
+
   // Add current Page style that link to current page (i.e. Yellow borders in nav links)
   $('[href]').each(function () {
     if (this.href === window.location.href) {

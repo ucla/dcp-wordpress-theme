@@ -4,6 +4,17 @@ $(document).ready(function () {
   // Visually Hide any preset classes from wordpress
   $('.screen-reader-text').addClass('visuallyhidden');
 
+  // Add rel="noopener" to all target blank links
+  function relnoopener () {
+    const a = document.querySelectorAll('a[target="_blank"]');
+    a.forEach(function (element) {
+      if (!element.hasAttribute('rel')) {
+        element.setAttribute('rel', 'noopener');
+      }
+    });
+  }
+  relnoopener();
+
   // Add current Page style that link to current page (i.e. Yellow borders in nav links)
   $('[href]').each(function () {
     if (this.href === window.location.href) {
@@ -11,11 +22,7 @@ $(document).ready(function () {
     }
   });
 
-  // // Insert white divat top of grey color background making the top 30% of the wrap white, leaving the bottom 70% grey.
-  // $('.light-grey.tall-75').prepend('<div class="white-25"></div>');
-  // $('.light-grey.tall-65').prepend('<div class="white-35"></div>');
-
-  // add the expander div
+  // Add the expander div for full width backgrounds. https://youtu.be/aUKAs9iMDDA
   $('.fluid').wrapInner('<div class="expander"><div class="expander-container"></div></div>');
   $('.fluid').closest('.col').css('margin', 0);
 
@@ -25,8 +32,6 @@ $(document).ready(function () {
       bodyW =$('.ucla.campus').width(),
       negOffset = ((w - bodyW) / 2) * -1,
       contentH =$('.expander').height();
-
-
 
     //Add the width off the windo wrap to the expander div that was added
     $('.expander').css({
@@ -48,7 +53,7 @@ $(document).ready(function () {
     if (window.innerWidth >= 300) {
       fluidBlockResize();
     }
-    //console.log(window.innerWidth);
+    //console.log(window.innerWidth); // For Debuggin' Only
   });
 
 });

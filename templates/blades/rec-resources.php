@@ -7,7 +7,7 @@
   <div class="ucla campus">
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg">
+        <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
         <div class="card-resources_content">
           <h3 class="mb-16">Campus Support</h3>
           <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
@@ -21,7 +21,7 @@
     </div>
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resource-health.jpg">
+        <img src="/wp-content/themes/ucla-sc/images/resource-health.jpg" alt="Image of Corona Virus">
         <div class="card-resources_content">
           <h3 class="mb-16">Health Information</h3>
           <a target="_blank" href="https://www.uclahealth.org/coronavirus">UCLA Health COVID-19 FAQ</a>
@@ -36,7 +36,7 @@
     </div>
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg">
+        <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg"  alt="Man Streaming in Video">
         <div class="card-resources_content">
           <h3 class="mb-16">News and Media</h3>
           <p class="mb-16">UCLA experts can speak about the coronavirus on topics such as public health and epidemiology, virology and vaccines, mental health and well-being, education and students, and much more.</p>
