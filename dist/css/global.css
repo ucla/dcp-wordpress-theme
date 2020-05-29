@@ -5751,6 +5751,10 @@ body.no-scroll {
   height: 30px;
 }
 
+.accordion-title img.flip {
+  transform: rotate(180deg);
+}
+
 .accordion-content {
   display: none;
 }
