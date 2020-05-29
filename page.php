@@ -1,4 +1,4 @@
-<?php /* Template Name: No Sidebar */
+<?php
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'post-thumbnail size' ) );
 
@@ -14,11 +14,11 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
     <?php include 'templates/page-header.php'; ?>
 
-    <div class="ucla campus entry-content">
+    <div class="ucla campus">
 
       <div class="col span_9_of_12">
 
-        <div class="ucla campus entry-content">
+        <div class="ucla campus">
         <?php the_content(); ?>
 
       </div>

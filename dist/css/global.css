@@ -7022,6 +7022,10 @@ form.search-form .search-submit {
   margin-bottom: 3px;
 }
 
+img {
+  max-width: 100%;
+}
+
 body.home .latest-campus,
 body.home .univ-ops {
   border-bottom: 1px solid #E5E5E5;
