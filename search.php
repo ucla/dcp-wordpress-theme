@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main id="content">
+<main id="main">
   <div class="ucla campus">
     <?php if ( have_posts() ) : ?>
     <header class="header">

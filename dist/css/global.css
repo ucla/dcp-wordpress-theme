@@ -5752,8 +5752,8 @@ body.no-scroll {
 }
 
 .accordion-title:focus {
-  outline: 2px solid #00598C;
-  outline-offset: 2px;
+  outline: 1px dotted #00598C;
+  outline-offset: 3px;
 }
 
 .accordion-title img {
@@ -5997,6 +5997,10 @@ body.no-scroll {
   line-height: 24px;
 }
 
+.entry-content h2 {
+  line-height: 24px;
+}
+
 .entry-content h2 a {
   color: #00598C;
   font-size: 24px;
@@ -6146,6 +6150,7 @@ body.no-scroll {
 .foot-lower a {
   color: #2774AE;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .foot-lower-wrap {
@@ -6937,6 +6942,65 @@ form.search-form .search-submit {
   }
 }
 
+/*******
+Skip Navigation necessary on every page of the site and should go above the header in your page template.
+
+1. The href attribute should contain the ID name of the area you would like to skip to, preceeded by the "#" symbol.
+
+<div id="skip-nav" class="skip-nav" role="navigation" aria-label="Skip navigation">
+  <a class="button" href="#main-content">Skip to Main Content</a>
+	<a class="button" href="#footer">Skip to Footer Links</a>
+</div>
+*******/
+.skip-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 5px;
+  z-index: 500;
+}
+
+.skip-nav__desktop-search, .skip-nav__desktop-nav {
+  display: none;
+}
+
+.skip-nav .button {
+  position: absolute;
+  left: -300px;
+  top: -300px;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  color: #00598C;
+  text-decoration: underline;
+}
+
+.skip-nav .button:hover {
+  color: #00598C;
+}
+
+.skip-nav .button:focus {
+  position: absolute;
+  outline: 1;
+  left: 0;
+  top: 0;
+  padding: 8px;
+  width: 200px;
+  overflow: visible;
+  background-color: #FFFFFF;
+  border: 1px dotted #000000;
+}
+
+.skip-nav .button.mobile {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .skip-nav .button.mobile {
+    display: none;
+  }
+}
+
 /******* White Icons on Blue background hover *******/
 .social-icons li {
   margin-right: 14px;
@@ -7074,6 +7138,10 @@ form.search-form .search-submit {
   width: max-content;
   display: inline-block;
   margin-bottom: 3px;
+}
+
+.tagcloud .tag-cloud-link:hover {
+  border: 2px solid #0079BF;
 }
 
 img {

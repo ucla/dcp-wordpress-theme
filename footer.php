@@ -3,7 +3,7 @@
 
       <?php include 'templates/blades/rec-resources.php'; ?>
 
-      <footer role="contentinfo" class="foot container">
+      <footer id="footer" role="contentinfo" class="foot container">
 
         <div class="foot-upper">
           <div class="foot-upper-wrap">

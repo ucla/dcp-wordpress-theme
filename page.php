@@ -6,7 +6,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
 <?php get_header(); ?>
 
-<main class="main">
+<main id="main" class="main">
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

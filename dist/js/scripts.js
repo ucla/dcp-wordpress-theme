@@ -181,35 +181,34 @@ $(document).ready(function (){
     $('a.current-page').next('.has-child--button').addClass('current-page');
 
     // Desktop Menu keyboard functionality
-    // document.onkeydown = function (evt) {
+    document.onkeydown = function () {
     //
-    //   let element = document.activeElement;
-    //   evt = evt || window.event;
-    //
-    //   if ($('li.has-child > a').is(':focus')) {
-    //
-    //     $(element).siblings('ul').css('display', 'block');
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //       setTimeout(function () {
-    //         $(element).siblings('ul').css('display', '');
-    //       }, 100);
-    //     } else if (evt.keyCode === 9) {
-    //       // add styles to top level nav when sublevel is focused
-    //       $(element).parent().css('background', '#0079BF'); // <li class="has-child">
-    //       $(element).css({ // <a class="has-child--link">
-    //         'border-bottom': '0',
-    //         'color': '#fff'
-    //       });
-    //       $(element).next('button').css({ // <a class="has-child--link">
-    //         'border-bottom': '0',
-    //         'background': '#0079BF'
-    //       });
-    //       $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
-    //     }
-    //
-    //
-    //   } else if ($('li.has-child > ul > li:first-of-type > a').is(':focus')) {
+      let element = document.activeElement,
+        evt = evt || window.event;
+
+      if ($('.menu-item-has-children--link').is(':focus')) {
+
+        $(element).siblings('ul').css('display', 'block');
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+          setTimeout(function () {
+            $(element).siblings('ul').css('display', '');
+          }, 100);
+        } else if (evt.keyCode === 9) {
+          // add styles to top level nav when sublevel is focused
+          $(element).parent().css('background', '#0079BF'); // <li class="has-child">
+          $(element).css({ // <a class="has-child--link">
+            'border-bottom': '0',
+            'color': '#fff'
+          });
+          $(element).next('button').css({ // <a class="has-child--link">
+            'border-bottom': '0',
+            'background': '#0079BF'
+          });
+          $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
+        }
+
+      } //else if ($('li.has-child > ul > li:first-of-type > a').is(':focus')) {
     //
     //     if (evt.keyCode === 9 && event.shiftKey) {
     //
@@ -242,7 +241,7 @@ $(document).ready(function (){
     //   }
     //
     //
-    // };
+    };
 
   }
 

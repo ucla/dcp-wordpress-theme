@@ -11,5 +11,9 @@
     width: max-content;
     display: inline-block;
     margin-bottom: 3px;
+
+    &:hover {
+      border: 2px solid $hover-state;
+    }
   }
 }

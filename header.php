@@ -9,6 +9,13 @@
 
   <body <?php body_class(); ?>>
 
+    <div id="skip-nav" class="skip-nav" role="navigation" aria-label="Skip navigation">
+      <a class="button" href="#menu">Skip to Navigation</a>
+      <a class="button mobile" href="#menu">Skip to Navigation</a>
+      <a class="button" href="#main">Skip to Main Content</a>
+    	<a class="button" href="#footer">Skip to Footer Links</a>
+    </div>
+
     <header id="header" class="">
 
       <div class="header-logo">
