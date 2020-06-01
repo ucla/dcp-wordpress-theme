@@ -102,12 +102,12 @@ $(document).ready(function (){
 
     // Desktop Menu keyboard functionality
     document.onkeydown = function () {
-    //
-      let element = document.activeElement,
-        evt = evt || window.event;
+
+      let element = document.activeElement;
+      let evt = evt || window.event;
 
       if ($('.menu-item-has-children--link').is(':focus')) {
-
+        console.log('yep');
         $(element).siblings('ul').css('display', 'block');
 
         if (evt.keyCode === 9 && event.shiftKey) {

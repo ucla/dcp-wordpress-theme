@@ -28,12 +28,20 @@ body.no-scroll {
   .fluid {
     display: block;
     position: relative;
+    margin: 0;
+    padding: 0;
 
     .expander {
       display: block;
       position: absolute;
-      width: 100%;
       background: #F7F7F7;
+      margin: 0;
+      padding: 0;
+      left: -24px;
+
+      @media (min-width: breakpoint-min(lg)) {
+        left: -12px;
+      }
 
       &-container {
         display: block;
