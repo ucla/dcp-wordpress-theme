@@ -1,10 +1,10 @@
-<div class="univ-ops pt-xs-40 pt-md-80 pb-40">
+<div class="univ-ops">
   <div class="ucla campus">
     <div class="col span_9_of_12">
 
       <?php if ( is_page(66) ) { ?>
 
-          <h2 class="mb-12">FPO More answers on these topics</h2>
+          <h2 class="mb-12 mt-xs-40 mt-lg-72">FPO More answers on these topics</h2>
 
         <?php } else { ?>
 

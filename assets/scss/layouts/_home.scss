@@ -3,13 +3,4 @@ body.home {
   .univ-ops {
     border-bottom: 1px solid $grey-10;
   }
-
-  .info-blade,
-  .blade-resources {
-    padding: 40px 0;
-
-    @media (min-width: breakpoint-min(md)) {
-      padding: 80px 0 40px 0;
-    }
-  }
 }

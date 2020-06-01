@@ -11,6 +11,16 @@ body.no-scroll {
   overflow: hidden;
 }
 
+.univ-ops,
+.info-blade,
+.blade-resources {
+  padding: 40px 0;
+
+  @media (min-width: breakpoint-min(md)) {
+    padding: 80px 0 40px 0;
+  }
+}
+
 .ucla.campus {
   // First child fix if you put a title above span. See example on templates/health-saftey.php
   .first-child.col {

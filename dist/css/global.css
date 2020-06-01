@@ -5666,6 +5666,20 @@ body.no-scroll {
   overflow: hidden;
 }
 
+.univ-ops,
+.info-blade,
+.blade-resources {
+  padding: 40px 0;
+}
+
+@media (min-width: 768px) {
+  .univ-ops,
+  .info-blade,
+  .blade-resources {
+    padding: 80px 0 40px 0;
+  }
+}
+
 .ucla.campus .first-child.col {
   margin-left: 0;
 }
@@ -7161,18 +7175,6 @@ img {
 body.home .latest-campus,
 body.home .univ-ops {
   border-bottom: 1px solid #E5E5E5;
-}
-
-body.home .info-blade,
-body.home .blade-resources {
-  padding: 40px 0;
-}
-
-@media (min-width: 768px) {
-  body.home .info-blade,
-  body.home .blade-resources {
-    padding: 80px 0 40px 0;
-  }
 }
 
 .header {
