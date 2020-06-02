@@ -291,7 +291,20 @@ $(document).ready(function (){
       var evt = evt || window.event;
       /*eslint-enable */
       // Start with hamburger at top of page.
-      if ($('.hamburger.hamburger--squeeze').is(':focus')) {
+      if ($('.button.mobile').is(':focus')) {
+        if (evt.keyCode === 13) {
+
+          if ($('#primary-ham').hasClass('is-active')) {
+            event.preventDefault();
+            $('#menu-item-31').focus();
+          } else {
+            $('#primary-ham').trigger('click');
+            $('#menu-item-31').focus();
+          }
+
+        }
+
+      } else if ($('.hamburger.hamburger--squeeze').is(':focus')) {
 
         if (evt.keyCode === 9 && event.shiftKey) {
 
@@ -309,20 +322,20 @@ $(document).ready(function (){
           if ($('.hamburger.hamburger--squeeze').hasClass('is-active')) {
             // do nothing
           } else {
+
             event.preventDefault();
             setTimeout(function () {
-              $('main > a').focus();
+              $('#main').find('a:first').focus();
             }, 100);
           }
 
         }
 
-
-      } else if ($('li.has-child > a').is(':focus')) {
+      } else if ($('li.menu-item-has-children > a').is(':focus')) {
 
         $(element).siblings('ul').removeAttr('style');
 
-      } else if ($('#menu > ul > li:last-of-type > a.has-child--link:last-of-type').is(':focus')) {
+      } else if ($('.menu-main-menu-container > ul > li:last-of-type > a.menu-item-has-children--link:last-of-type').is(':focus')) {
 
         if (evt.keyCode === 9) {
           setTimeout(function () {
@@ -331,7 +344,7 @@ $(document).ready(function (){
         }
 
       // If you're focused on the last link in the main menu
-      } else if ($('#menu > ul > li:last-of-type > a:last-of-type').is(':focus')) {
+      } else if ($('.menu-main-menu-container > ul > li:last-of-type > a:last-of-type').is(':focus')) {
 
         // If you're focused on the last link in the main menu shitf + tab.
         if (evt.keyCode === 9 && event.shiftKey) {
@@ -348,7 +361,7 @@ $(document).ready(function (){
 
         }
 
-      } else if (!$('#menu > ul > li:last-of-type > button').hasClass('is-active') && $('#menu > ul > li:last-of-type > button').is(':focus')) {
+      } else if (!$('.menu-main-menu-container > ul > li:last-of-type > button').hasClass('is-active') && $('#menu > ul > li:last-of-type > button').is(':focus')) {
 
         if (evt.keyCode === 9) {
           event.preventDefault();
@@ -366,7 +379,7 @@ $(document).ready(function (){
           }, 100);
         }
 
-      } else if ($('main > a').is(':focus')) {
+      } else if ($('#main').find('a:first').is(':focus')) {
         if (evt.keyCode === 9 && event.shiftKey) {
           event.preventDefault();
           setTimeout(function () {

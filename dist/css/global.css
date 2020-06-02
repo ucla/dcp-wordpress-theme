@@ -5929,6 +5929,11 @@ body.no-scroll {
   background: #0079BF !important;
 }
 
+.blade-links .blade-links__box-link:focus {
+  outline: 1px dotted #FFFFFF;
+  outline-offset: -8px;
+}
+
 .blade-links .blade-links__box-link::before {
   display: block;
   content: '';
@@ -5974,6 +5979,11 @@ body.no-scroll {
 .blade-links.grey .blade-links__box-link:hover {
   background: #0079BF !important;
   color: #FFFFFF;
+}
+
+.blade-links.grey .blade-links__box-link:focus {
+  outline: 1px dotted #0079BF;
+  outline-offset: -8px;
 }
 
 .card-resources {
@@ -6431,6 +6441,7 @@ body.no-scroll {
   margin: 0 auto;
   padding-top: 24px;
   position: relative;
+  top: 0;
 }
 
 .header {
@@ -6483,9 +6494,9 @@ nav#menu ul#menu-main-menu li a:hover {
 #menu {
   display: block;
   right: -102%;
-  top: 113px;
+  top: 17px;
   transition: right 0.5s ease;
-  position: fixed;
+  position: absolute;
   background: #FFFFFF;
   width: 100%;
   height: calc(100vh - 112px);
@@ -6505,7 +6516,7 @@ nav#menu ul#menu-main-menu li a:hover {
 @media (min-width: 768px) {
   #menu {
     width: 320px;
-    top: 128px;
+    top: 20px;
   }
 }
 
@@ -6997,6 +7008,13 @@ Skip Navigation necessary on every page of the site and should go above the head
   font-weight: bold;
   color: #00598C;
   text-decoration: underline;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .skip-nav .button {
+    display: block;
+  }
 }
 
 .skip-nav .button:hover {

@@ -43,6 +43,11 @@
         background: $hover-state !important;
       }
 
+      &:focus {
+        outline: 1px dotted $white;
+        outline-offset: -8px;
+      }
+
       &::before {
         display: block;
         content: '';
@@ -85,6 +90,11 @@
         &:hover {
           background: $hover-state !important;
           color: $white;
+        }
+
+        &:focus {
+          outline: 1px dotted $hover-state;
+          outline-offset: -8px;
         }
       }
     }

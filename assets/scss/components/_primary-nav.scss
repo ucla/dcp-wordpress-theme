@@ -25,9 +25,9 @@ nav#menu {
 #menu {
   display: block;
   right: -102%;
-  top: 113px;
+  top: 17px;
   transition: right 0.5s ease;
-  position: fixed;
+  position: absolute;
   background: $white;
   width: 100%;
   height: calc(100vh - 112px);
@@ -43,7 +43,7 @@ nav#menu {
 
   @media (min-width: breakpoint-min(md)) {
     width: 320px;
-    top: 128px;
+    top: 20px;
   }
 
   @media (min-width: breakpoint-min(lg)) {

@@ -30,6 +30,11 @@ Skip Navigation necessary on every page of the site and should go above the head
     font-weight: bold;
     color: $default-state;
     text-decoration: underline;
+    display: none;
+
+    @media (min-width: breakpoint-min(lg)) {
+      display: block;
+    }
 
     &:hover {
       color: $default-state;
