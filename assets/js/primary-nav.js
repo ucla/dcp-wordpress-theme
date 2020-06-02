@@ -104,10 +104,12 @@ $(document).ready(function (){
     document.onkeydown = function () {
 
       let element = document.activeElement;
-      let evt = evt || window.event;
+      /*eslint-disable */
+      var evt = evt || window.event;
+      /*eslint-enable */
 
       if ($('.menu-item-has-children--link').is(':focus')) {
-        console.log('yep');
+
         $(element).siblings('ul').css('display', 'block');
 
         if (evt.keyCode === 9 && event.shiftKey) {
@@ -116,8 +118,8 @@ $(document).ready(function (){
           }, 100);
         } else if (evt.keyCode === 9) {
           // add styles to top level nav when sublevel is focused
-          $(element).parent().css('background', '#0079BF'); // <li class="has-child">
-          $(element).css({ // <a class="has-child--link">
+          $(element).parent().css('background', '#0079BF'); // <li class="menu-item-has-children--link">
+          $(element).css({ // <a>
             'border-bottom': '0',
             'color': '#fff'
           });
@@ -128,39 +130,39 @@ $(document).ready(function (){
           $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
         }
 
-      } //else if ($('li.has-child > ul > li:first-of-type > a').is(':focus')) {
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //
-    //       setTimeout(function () {
-    //         // Remove styles to top level nav when sublevel is focused
-    //         $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-    //         $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-    //         $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-    //         $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-    //       }, 100);
-    //
-    //     } else if (evt.keyCode === 9) {
-    //       // do nothing
-    //     }
-    //
-    //   } else if ($('li.has-child > ul > li:last-of-type > a').is(':focus')) {
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //       // do nothing
-    //     } else if (evt.keyCode === 9) {
-    //
-    //       $(element).parent().parent().removeAttr('style'); // <ul>
-    //       // Remove styles to top level nav when sublevel is focused
-    //       $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-    //       $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-    //       $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-    //       $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-    //
-    //     }
-    //   }
-    //
-    //
+      } else if ($('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus')) {
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+
+          setTimeout(function () {
+            // Remove styles to top level nav when sublevel is focused
+            $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+            $(element).parent().parent().prev().prev('a').removeAttr('style'); // <a class="has-child--link">
+            $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+            $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+          }, 100);
+
+        } else if (evt.keyCode === 9) {
+          // do nothing
+        }
+
+      } else if ($('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+          // do nothing
+        } else if (evt.keyCode === 9) {
+
+          $(element).parent().parent().removeAttr('style'); // <ul>
+          // Remove styles to top level nav when sublevel is focused
+          $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+          $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+
+        }
+      }
+
+
     };
 
   }
@@ -208,8 +210,9 @@ $(document).ready(function (){
     document.onkeydown = function (evt) {
 
       let element = document.activeElement;
-      evt = evt || window.event;
-
+      /*eslint-disable */
+      var evt = evt || window.event;
+      /*eslint-enable */
       // Start with hamburger at top of page.
       if ($('.hamburger.hamburger--squeeze').is(':focus')) {
 

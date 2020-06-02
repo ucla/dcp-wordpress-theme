@@ -10,10 +10,7 @@ $(document).ready(function (){
     if ($('.accordion-title').hasClass('active')) {
       $(this).attr('aria-expanded', 'true');
     } else {
-      $('.accordion__title-button').attr('aria-expanded', 'false');
+      $('.accordion-title').attr('aria-expanded', 'false');
     }
-
   });
-
-
 });
