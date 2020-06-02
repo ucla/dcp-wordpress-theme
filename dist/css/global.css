@@ -5669,14 +5669,14 @@ body.no-scroll {
 .univ-ops,
 .info-blade,
 .blade-resources {
-  padding: 40px 0;
+  padding: 40px 0 !important;
 }
 
 @media (min-width: 768px) {
   .univ-ops,
   .info-blade,
   .blade-resources {
-    padding: 80px 0 40px 0;
+    padding: 80px 0 40px 0 !important;
   }
 }
 
