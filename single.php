@@ -22,18 +22,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
       <div class="col span_9_of_12">
         <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-        <p><?php
-
-
-
-
-                //
-                // function no_dashes($author_id) {
-                //   return str_replace('-', ' ', $author_id);
-                // }
-                // add_filter('sanitize_nicename', 'no_dashes' , 9999);
-
-                echo get_the_author_meta( 'user_login', $author_id ); ?></p>
+        <p><?php echo get_the_author_meta( 'user_login', $author_id ); ?></p>
         <?php the_content(); ?>
 
         <?php

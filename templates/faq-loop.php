@@ -35,7 +35,6 @@
   ?>
 
 <div class="mb-32">
-<h2 class="mb-40">Frequently Asked Questions</h2>
 <?php //FAQ Loop
 $args = array(
     'post_type' => 'faq',
