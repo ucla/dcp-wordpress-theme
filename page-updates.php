@@ -1,18 +1,22 @@
-<?php /* Templates for all archive includings tags,  categories, dates, authors, etc. https://wphierarchy.com/ */
+<?php /* Template Name: No Sidebar */
 
-get_header(); ?>
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+
+?>
+
+<?php get_header(); ?>
 
 <main id="main" class="main">
 
-  <?php // if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <header class="header">
+    <header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
       <div class="ucla campus">
         <div class="col span_12_of_12">
           <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-          <h1 class="entry-title"><?php single_term_title(); ?></h1>
+          <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
         </div>
       </div>
     </header>
@@ -21,24 +25,12 @@ get_header(); ?>
 
       <div class="col span_7_of_12">
 
-        <div class="archive-meta"><?php if ( '' != the_archive_description() ) { echo esc_html( the_archive_description() ); } ?></div>
+        <?php the_content(); ?>
 
         <?php
-
-        $tag = get_queried_object();
-
         // Example argument that defines three posts per page.
         $args = array(
-          'posts_per_page' => 0,
-          'tax_query'  => array(
-            array(
-               'taxonomy'  => 'post_tag',
-               'field'     => 'slug',
-               'terms'     =>  array(
-                 $tag->slug,
-               ),
-             ),
-           ),
+          'posts_per_page' => 0
          );
 
         // Variable to call WP_Query.
@@ -65,19 +57,19 @@ get_header(); ?>
         ?>
 
       </div>
-
-      <div class="col span_2_of_12"></div>
+      <div class="col span_2_of_12">
+      </div>
       <div class="col span_3_of_12">
         <?php dynamic_sidebar('Tags Widget Area'); ?>
       </div>
 
     </div>
 
+    <?php if ( comments_open() && ! post_password_required() ) { comments_template( '', true ); } ?>
 
-    <?php //endwhile; endif; ?>
+    <?php endwhile; endif; ?>
 
   </article>
-
 
 
 </main>

@@ -1,0 +1,13 @@
+.breadcrumb {
+  color: $grey-60;
+  padding-top: 40px;
+
+  @media (min-width: breakpoint-min(lg)) {
+    padding-top: 80px;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
