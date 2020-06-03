@@ -1,10 +1,10 @@
 <div class="light-grey pb-lg-80 pb-xs-40">
   <div class="ucla campus blade-hs">
-    <h2 class="mb-32 mx-xs-24 mx-lg-0">Health & Safety</h2>
+    <h2 class="mb-32 mx-xs-24 mx-lg-0">Health and safety</h2>
     <div class="first-child col span_3_of_9">
       <div class="card-hs">
         <div class="card-hs--content">
-          <h3 class="mb-16">Current Confirmed Cases in Campus Commuinity</h3>
+          <h3 class="mb-16">Current confirmed cases in campus commuinity</h3>
           <?php
           // Get the Post
           $post_24 = get_post(24);
@@ -20,7 +20,7 @@
     <div class="col span_3_of_9">
       <div class="card-hs">
         <div class="card-hs--content">
-          <h3 class="mb-16">Face Covering Required Outside Home</h3>
+          <h3 class="mb-16">Face covering required outside home</h3>
           <?php
           // Get the Post
           $post_22 = get_post(22);
@@ -36,7 +36,7 @@
     <div class="col span_3_of_9">
       <div class="card-hs">
         <div class="card-hs--content">
-          <h3 class="mb-16">Program to Help You STAND against Anxiety</h3>
+          <h3 class="mb-16">Program to help you STAND against anxiety</h3>
           <?php
           // Get the Post
           $post_26 = get_post(26);

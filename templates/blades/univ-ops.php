@@ -19,14 +19,14 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '34' ) ); ?>"><span>Campus Operations</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '34' ) ); ?>"><span>Campus operations</span></a>
         </div>
       </div>
     </div>
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '36' ) ); ?>"><span>Classes and Academic Continuity</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '36' ) ); ?>"><span>Classes</span></a>
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '40' ) ); ?>"><span>Tuition & Fees</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '40' ) ); ?>"><span>Tuition and fees</span></a>
         </div>
       </div>
     </div>
@@ -49,14 +49,14 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '42' ) ); ?>"><span>Technology for Remote Learning</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '42' ) ); ?>"><span>Technology for remote learning</span></a>
         </div>
       </div>
     </div>
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '44' ) ); ?>"><span>Student Housing</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '44' ) ); ?>"><span>Student housing</span></a>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
       <div class="col span_3_of_12">
         <div class="blade-links">
           <div class="blade-links__box">
-            <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '46' ) ); ?>"><span>Human Resources</span></a>
+            <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '46' ) ); ?>"><span>Human resources</span></a>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '48' ) ); ?>"><span>Traveling Abroad</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '48' ) ); ?>"><span>Study abroad and international travel</span></a>
         </div>
       </div>
     </div>

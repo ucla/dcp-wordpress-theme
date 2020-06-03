@@ -13,7 +13,7 @@ pipelines:
             - gulp production
             - apt-get update
             - apt-get install -y zip
-            - zip -r application.zip .
+            - zip application.zip -r * .[^.]* -x *.git* -x bitbucket-pipelines.yml -x node_modules/\* -x README.md
             - pipe: atlassian/aws-code-deploy:0.2.9
               variables:
                 AWS_ACCESS_KEY_ID: 'AKIAX3FU5UAQSFPXDSBO'
@@ -49,7 +49,7 @@ pipelines:
             - gulp production
             - apt-get update
             - apt-get install -y zip
-            - zip -r application.zip .
+            - zip application.zip -r * .[^.]* -x *.git* -x bitbucket-pipelines.yml -x node_modules/\* -x README.md
             - pipe: atlassian/aws-code-deploy:0.2.9
               variables:
                 AWS_ACCESS_KEY_ID: 'AKIAX3FU5UAQSFPXDSBO'

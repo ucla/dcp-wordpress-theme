@@ -37,7 +37,7 @@ if ( '' != $thumb_id ) {
       <div class="ucla campus">
         <div class="col span_9_of_12">
 
-          <h2 class="mb-32 mt-64">Latest Messages from Campus</h2>
+          <h2 class="mb-32 mt-64">Latest messages to the UCLA community </h2>
 
           <?php
           // Example argument that defines three posts per page.
@@ -63,8 +63,8 @@ if ( '' != $thumb_id ) {
           wp_reset_postdata();
           ?>
 
-          <a class="btn white mb-lg-80 mb-xs-64 mt-32 words" href="/updates">
-            <span>Read All Updates</span>
+          <a class="btn white mb-lg-80 mb-xs-64 mt-32" href="/updates">
+            <span>Read all updates</span>
           </a>
 
         </div>
