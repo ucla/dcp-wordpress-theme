@@ -1,6 +1,4 @@
-.entry-content.col {
-  margin: 1% 0;
-
+.entry-content {
   time {
     display: block;
     position: relative;
@@ -10,11 +8,17 @@
   }
 
   h2 {
+    line-height: 24px;
+
     a {
       color: $default-state;
       font-size: 24px;
       line-height: 27px;
       text-decoration: none;
+
+      &:hover {
+        color: $white;
+      }
     }
   }
 }

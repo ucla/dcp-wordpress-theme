@@ -1,0 +1,53 @@
+.accordion {
+  display: block;
+  border-top: 1px solid $grey-10;
+  padding: 22px 22px 5px;
+  max-width: 776px;
+
+  &:last-of-type {
+    border-bottom: 1px solid $grey-10;
+  }
+
+  &-title {
+    width: 100%;
+    text-align: left;
+    color: $default-state;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    position: relative;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    padding-right: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 1px dotted $default-state;
+      outline-offset: 3px;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      width: 30px;
+      height: 30px;
+
+      &.flip {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-content {
+    display: none;
+
+    &.show-me {
+      display: block;
+    }
+  }
+}

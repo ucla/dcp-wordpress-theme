@@ -23,37 +23,20 @@
 // ------------------------------------------- * * *
 // (3.1) Pick Menu
 //
-//
-//
-//
 
 $(document).ready(function (){
-
 
   /*==================================================================
 	0.0 General functions and variables
 	================================================================= */
 
-  //Detect Browser, https://gist.github.com/darryl-snow/3822361
-  // eval(function (p, a, c, k, e){e=function (c){return (c<a?'':e(c/a))+String.fromCharCode(c%a+161);};while (c--){if (k[c]){p=p.replace(new RegExp(e(c), 'g'), k[c]);}} return p;}('Ö ¡(){® Ø={\'¥\':¡(){¢ £.¥},\'©\':{\'±\':¡(){¢ £.©.±},\'¯\':¡(){¢ £.©.¯}},\'¬\':¡(){¢ £.¬},\'¶\':¡(){¢ £.¶},\'º\':¡(){¢ £.º},\'Á\':¡(){¢ £.Á},\'À\':¡(){¢ £.À},\'½\':¡(){¢ £.½},\'¾\':¡(){¢ £.¾},\'¼\':¡(){¢ £.¼},\'·\':¡(){¢ £.·},\'Â\':¡(){¢ £.Â},\'³\':¡(){¢ £.³},\'Ä\':¡(){¢ £.Ä},\'Ã\':¡(){¢ £.Ã},\'Å\':¡(){¢ £.Å},\'¸\':¡(){¢ £.¸}};$.¥=Ø;® £={\'¥\':\'¿\',\'©\':{\'±\':²,\'¯\':\'¿\'},\'¬\':\'¿\',\'¶\':§,\'º\':§,\'Á\':§,\'À\':§,\'½\':§,\'¾\':§,\'¼\':§,\'·\':§,\'Â\':§,\'³\':§,\'Ä\':§,\'Ã\':§,\'Å\':§,\'¸\':§};Î(® i=0,«=».ì,°=».í,¦=[{\'¤\':\'Ý\',\'¥\':¡(){¢/Ù/.¨(°)}},{\'¤\':\'Ú\',\'¥\':¡(){¢ Û.³!=²}},{\'¤\':\'È\',\'¥\':¡(){¢/È/.¨(°)}},{\'¤\':\'Ü\',\'¥\':¡(){¢/Þ/.¨(°)}},{\'ª\':\'¶\',\'¤\':\'ß Ñ\',\'¥\':¡(){¢/à á â/.¨(«)},\'©\':¡(){¢ «.¹(/ã(\\d+(?:\\.\\d+)+)/)}},{\'¤\':\'Ì\',\'¥\':¡(){¢/Ì/.¨(«)}},{\'¤\':\'Í\',\'¥\':¡(){¢/Í/.¨(°)}},{\'¤\':\'Ï\',\'¥\':¡(){¢/Ï/.¨(«)}},{\'¤\':\'Ð\',\'¥\':¡(){¢/Ð/.¨(«)}},{\'ª\':\'·\',\'¤\':\'å Ñ\',\'¥\':¡(){¢/Ò/.¨(«)},\'©\':¡(){¢ «.¹(/Ò (\\d+(?:\\.\\d+)+(?:b\\d*)?)/)}},{\'¤\':\'Ó\',\'¥\':¡(){¢/æ|Ó/.¨(«)},\'©\':¡(){¢ «.¹(/è:(\\d+(?:\\.\\d+)+)/)}}];i<¦.Ë;i++){µ(¦[i].¥()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¥=¦[i].¤;® ­;µ(¦[i].©!=²&&(­=¦[i].©())){£.©.¯=­[1];£.©.±=Ê(­[1])}ê{® Ç=Ö ë(¦[i].¤+\'(?:\\\\s|\\\\/)(\\\\d+(?:\\\\.\\\\d+)+(?:(?:a|b)\\\\d*)?)\');­=«.¹(Ç);µ(­!=²){£.©.¯=­[1];£.©.±=Ê(­[1])}}×}};Î(® i=0,´=».ä,¦=[{\'ª\':\'¸\',\'¤\':\'ç\',\'¬\':¡(){¢/é/.¨(´)}},{\'¤\':\'Ô\',\'¬\':¡(){¢/Ô/.¨(´)}},{\'¤\':\'Æ\',\'¬\':¡(){¢/Æ/.¨(´)}}];i<¦.Ë;i++){µ(¦[i].¬()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¬=¦[i].¤;×}}}();', 77, 77, 'function|return|Private|name|browser|data|false|test|version|identifier|ua|OS|result|var|string|ve|number|undefined|opera|pl|if|aol|msie|win|match|camino|navigator|mozilla|icab|konqueror|Unknown|flock|firefox|netscape|linux|safari|mac|Linux|re|iCab|true|parseFloat|length|Flock|Camino|for|Firefox|Netscape|Explorer|MSIE|Mozilla|Mac|toLowerCase|new|break|Public|Apple|Opera|window|Konqueror|Safari|KDE|AOL|America|Online|Browser|rev|platform|Internet|Gecko|Windows|rv|Win|else|RegExp|userAgent|vendor'.split('|')));
-  //
-  // //let safari = $.browser.safri(); // Safari
-  // //let firefox = $.browser.firefox(); // Firefox
-  // let userbrowser = $.browser.browser(); // Detected user browser
-  //
-  // // add class to <html>
-  // if (userbrowser === 'Safari') {
-  //   $('html').addClass('safari');
-  // } else if (userbrowser === 'Firefox') {
-  //   $('html').addClass('firefox');
-  // }
-  //End Browser Detect
-
+  // ad ID attribut to primary nav search form
+  $('.search-form').attr('id', 'menu-search');
 
   // Commonly used IDs
   let hamButton = document.getElementById('primary-ham');
   let priNav = document.getElementById('menu');
-  //searchForm = document.getElementById('block-admissions2020-search'),
+  let searchForm = document.getElementById('menu-search');
   let header = document.getElementById('header');
 
   // Primary Navigation Hamburger click functionality
@@ -81,17 +64,17 @@ $(document).ready(function (){
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
-  // function desktopSubmenuResize () {
-  //   let w = $('.adm-header--primary-nav').width() - 62,
-  //     negOffset = (w + 8) * -1;
-  //
-  //   //Add the width off the header wrap to the search dropdown
-  //   $('.search-block-form').css({ // <a class="has-child--link">
-  //     'width': w,
-  //     'margin-left': negOffset
-  //   });
-  //   //console.log(w); // For Debuggin' Only
-  // }
+  function desktopSubmenuResize () {
+    let w = $('.nav-wrap').width() - 62,
+      negOffset = (w + 8) * -1;
+
+    //Add the width off the header wrap to the search dropdown
+    $('.search-block-form').css({ // <a class="has-child--link">
+      'width': w,
+      'margin-left': negOffset
+    });
+    // console.log(w); // For Debuggin' Only
+  }
 
   /*==================================================================
 	1.0 Desktop Functionality
@@ -103,10 +86,13 @@ $(document).ready(function (){
     // console.log(desktop); // For Debuggin' Only
     // console.log('desktop'); // For Debuggin' Only
 
-    //desktopSubmenuResize();
+    desktopSubmenuResize();
 
     // Disable Click functionality for mobile nav submenu.
     $('.has-child--button').attr('tabindex', '-1');
+
+    // Put the search form at the end of the nav
+    $('#block-search').append(searchForm);
 
     // if ($('li.has-child > a').is(':focus')) {
     //   $(this).siblings('ul').css('display', 'block');
@@ -114,69 +100,70 @@ $(document).ready(function (){
 
     $('a.current-page').next('.has-child--button').addClass('current-page');
 
-    // // Desktop Menu keyboard functionality
-    // document.onkeydown = function (evt) {
-    //
-    //   let element = document.activeElement;
-    //   evt = evt || window.event;
-    //
-    //   if ($('li.has-child > a').is(':focus')) {
-    //
-    //     $(element).siblings('ul').css('display', 'block');
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //       setTimeout(function () {
-    //         $(element).siblings('ul').css('display', '');
-    //       }, 100);
-    //     } else if (evt.keyCode === 9) {
-    //       // add styles to top level nav when sublevel is focused
-    //       $(element).parent().css('background', '#0079BF'); // <li class="has-child">
-    //       $(element).css({ // <a class="has-child--link">
-    //         'border-bottom': '0',
-    //         'color': '#fff'
-    //       });
-    //       $(element).next('button').css({ // <a class="has-child--link">
-    //         'border-bottom': '0',
-    //         'background': '#0079BF'
-    //       });
-    //       $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
-    //     }
-    //
-    //
-    //   } else if ($('li.has-child > ul > li:first-of-type > a').is(':focus')) {
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //
-    //       setTimeout(function () {
-    //         // Remove styles to top level nav when sublevel is focused
-    //         $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-    //         $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-    //         $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-    //         $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-    //       }, 100);
-    //
-    //     } else if (evt.keyCode === 9) {
-    //       // do nothing
-    //     }
-    //
-    //   } else if ($('li.has-child > ul > li:last-of-type > a').is(':focus')) {
-    //
-    //     if (evt.keyCode === 9 && event.shiftKey) {
-    //       // do nothing
-    //     } else if (evt.keyCode === 9) {
-    //
-    //       $(element).parent().parent().removeAttr('style'); // <ul>
-    //       // Remove styles to top level nav when sublevel is focused
-    //       $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-    //       $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-    //       $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-    //       $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-    //
-    //     }
-    //   }
-    //
-    //
-    // };
+    // Desktop Menu keyboard functionality
+    document.onkeydown = function () {
+
+      let element = document.activeElement;
+      /*eslint-disable */
+      var evt = evt || window.event;
+      /*eslint-enable */
+
+      if ($('.menu-item-has-children--link').is(':focus')) {
+
+        $(element).siblings('ul').css('display', 'block');
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+          setTimeout(function () {
+            $(element).siblings('ul').css('display', '');
+          }, 100);
+        } else if (evt.keyCode === 9) {
+          // add styles to top level nav when sublevel is focused
+          $(element).parent().css('background', '#0079BF'); // <li class="menu-item-has-children--link">
+          $(element).css({ // <a>
+            'border-bottom': '0',
+            'color': '#fff'
+          });
+          $(element).next('button').css({ // <a class="has-child--link">
+            'border-bottom': '0',
+            'background': '#0079BF'
+          });
+          $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
+        }
+
+      } else if ($('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus')) {
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+
+          setTimeout(function () {
+            // Remove styles to top level nav when sublevel is focused
+            $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+            $(element).parent().parent().prev().prev('a').removeAttr('style'); // <a class="has-child--link">
+            $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+            $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+          }, 100);
+
+        } else if (evt.keyCode === 9) {
+          // do nothing
+        }
+
+      } else if ($('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
+
+        if (evt.keyCode === 9 && event.shiftKey) {
+          // do nothing
+        } else if (evt.keyCode === 9) {
+
+          $(element).parent().parent().removeAttr('style'); // <ul>
+          // Remove styles to top level nav when sublevel is focused
+          $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+          $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+
+        }
+      }
+
+
+    };
 
   }
 
@@ -189,6 +176,9 @@ $(document).ready(function (){
     // let desktop = 1024; // For Debuggin' Only
     // console.log('mobile'); // For Debuggin' Only
     // console.log(desktop); // For Debuggin' Only
+
+    // Put the search form at the beginning of the nav
+    $('nav#menu').prepend(searchForm);
 
     /* Disable Mobile scroll when menu is open CSS for no-scroll in stylesheet*/
     $('#primary-ham').on('click', scrollDisable);
@@ -220,10 +210,24 @@ $(document).ready(function (){
     document.onkeydown = function (evt) {
 
       let element = document.activeElement;
-      evt = evt || window.event;
-
+      /*eslint-disable */
+      var evt = evt || window.event;
+      /*eslint-enable */
       // Start with hamburger at top of page.
-      if ($('.hamburger.hamburger--squeeze').is(':focus')) {
+      if ($('.button.mobile').is(':focus')) {
+        if (evt.keyCode === 13) {
+
+          if ($('#primary-ham').hasClass('is-active')) {
+            event.preventDefault();
+            $('#menu-item-31').focus();
+          } else {
+            $('#primary-ham').trigger('click');
+            $('#menu-item-31').focus();
+          }
+
+        }
+
+      } else if ($('.hamburger.hamburger--squeeze').is(':focus')) {
 
         if (evt.keyCode === 9 && event.shiftKey) {
 
@@ -241,20 +245,20 @@ $(document).ready(function (){
           if ($('.hamburger.hamburger--squeeze').hasClass('is-active')) {
             // do nothing
           } else {
+
             event.preventDefault();
             setTimeout(function () {
-              $('main > a').focus();
+              $('#main').find('a:first').focus();
             }, 100);
           }
 
         }
 
-
-      } else if ($('li.has-child > a').is(':focus')) {
+      } else if ($('li.menu-item-has-children > a').is(':focus')) {
 
         $(element).siblings('ul').removeAttr('style');
 
-      } else if ($('#menu > ul > li:last-of-type > a.has-child--link:last-of-type').is(':focus')) {
+      } else if ($('.menu-main-menu-container > ul > li:last-of-type > a.menu-item-has-children--link:last-of-type').is(':focus')) {
 
         if (evt.keyCode === 9) {
           setTimeout(function () {
@@ -263,7 +267,7 @@ $(document).ready(function (){
         }
 
       // If you're focused on the last link in the main menu
-      } else if ($('#menu > ul > li:last-of-type > a:last-of-type').is(':focus')) {
+      } else if ($('.menu-main-menu-container > ul > li:last-of-type > a:last-of-type').is(':focus')) {
 
         // If you're focused on the last link in the main menu shitf + tab.
         if (evt.keyCode === 9 && event.shiftKey) {
@@ -280,7 +284,7 @@ $(document).ready(function (){
 
         }
 
-      } else if (!$('#menu > ul > li:last-of-type > button').hasClass('is-active') && $('#menu > ul > li:last-of-type > button').is(':focus')) {
+      } else if (!$('.menu-main-menu-container > ul > li:last-of-type > button').hasClass('is-active') && $('#menu > ul > li:last-of-type > button').is(':focus')) {
 
         if (evt.keyCode === 9) {
           event.preventDefault();
@@ -298,7 +302,7 @@ $(document).ready(function (){
           }, 100);
         }
 
-      } else if ($('main > a').is(':focus')) {
+      } else if ($('#main').find('a:first').is(':focus')) {
         if (evt.keyCode === 9 && event.shiftKey) {
           event.preventDefault();
           setTimeout(function () {
@@ -326,7 +330,7 @@ $(document).ready(function (){
     if (window.innerWidth >= desktop) {
 
       // Reset or remove any menu classes
-      $('.has-child--button, #main-menu, .hamburger, .header, .has-child > ul').removeClass('is-active');
+      $('.has-child--button, #menu, .hamburger, .header, .sub-menu').removeClass('is-active');
       $('body').removeClass('no-scroll');
 
       // Get and Run the dektop functionality
@@ -361,9 +365,9 @@ $(document).ready(function (){
     }
 
     //Resize the submenu on all resizes above 1024px.
-    // if (window.innerWidth >= 1024) {
-    //   desktopSubmenuResize();
-    // }
+    if (window.innerWidth >= 1024) {
+      desktopSubmenuResize();
+    }
 
   });
 
