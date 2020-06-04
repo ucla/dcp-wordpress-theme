@@ -8,7 +8,7 @@
 
         <?php } else { ?>
 
-          <h2 class="mb-12">University Operations</h2>
+          <h2 class="mb-12">University operations</h2>
           <p>The campus is working to develop plans despite rapidly evolving data and shifting circumstances. We understand these plans will impact all of you, and we are committed to a thoughtful approach that is inclusive of the broader campus community.</p>
 
         <?php } ?>

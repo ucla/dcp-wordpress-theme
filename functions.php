@@ -163,7 +163,7 @@ function ucla_setup() {
   function custom_dashboard_help() {
     echo '<p>Welcome to the Strategic UCLA Communications Theme.</p><p><strong>For WordPress Resources:</strong></p><p>UCLA Spaces Page: <em><a href="https://spaces.ais.ucla.edu/display/ucomm/WordPress" target="_blank">UCLA WordPress</a></em></p><p><strong>Theme Specific Video Resources:</strong></p><iframe width="100%" height="270px" src="https://www.youtube.com/embed/PxB7V7rSvUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Page Intros: <em><a href="https://youtu.be/PxB7V7rSvUE" target="_blank">Add Page Intro Sentence</a></em></p><p>Fluid Class: <em><a href="https://youtu.be/aUKAs9iMDDA" target="_blank">Expand Backgound past content containter</a></em></p>';
   }
- 
+
   // function maintenace_mode() {
   //
   //   if ( !current_user_can( 'administrator' ) ) {
