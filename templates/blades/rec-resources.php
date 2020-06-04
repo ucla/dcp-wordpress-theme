@@ -10,7 +10,7 @@
         <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
         <div class="card-resources_content">
           <h3 class="mb-16">Campus support</h3>
-          <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
+          <a target="_blank" href="https://www.bso.ucla.edu/">Bruins Safe Online</a>
           <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Affairs service hours</a>
           <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Offices service hours</a>
           <a target="_blank" href="https://www.counseling.ucla.edu/">Counseling & Psychogical Services</a>
@@ -26,10 +26,10 @@
           <h3 class="mb-16">COVID-19 information</h3>
           <a target="_blank" href="https://www.uclahealth.org/coronavirus">UCLA Health COVID-19 information</a>
           <a target="_blank" href="https://corona-virus.la/resources">City of Los Angeles</a>
-          <a target="_blank" href="http://publichealth.lacounty.gov/media/Coronavirus/">County of Los Angeles Public</a>
+          <a target="_blank" href="http://publichealth.lacounty.gov/media/Coronavirus/">County of Los Angeles Public Health</a>
           <a target="_blank" href="https://covid19.ca.gov/">State of California</a>
-          <a target="_blank" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">John Hopkins COVID-19 dashboard</a>
-          <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/">Center for Disease Control</a>
+          <a target="_blank" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Johns Hopkins COVID-19 dashboard</a>
+          <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/">Centers for Disease Control</a>
           <a target="_blank" href="https://covid19.who.int/">World Health Organization</a>
         </div>
       </div>
