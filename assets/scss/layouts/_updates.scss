@@ -1,0 +1,10 @@
+.page-id-19 {
+  .entry-content {
+    border-bottom: 1px solid $grey-10;
+    padding: 36px 12px;
+
+    @media (min-width: breakpoint-min(lg)) {
+      padding: 46px 0;
+    }
+  }
+}

@@ -4,5 +4,10 @@
 
   <?php // Entry content ?>
   <h2 class="mb-8"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h2>
-  <?php the_excerpt('mb-32'); ?>
+
+  <?php if (is_page(19)) {
+   // Do Nothing
+  } else {
+     the_excerpt('mb-32');
+   } ?>
 </div>

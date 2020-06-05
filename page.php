@@ -30,8 +30,11 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
           ?>
 
           <?php
-            if ( is_page(24) ) {
+            if ( is_page(24) ) { ?>
 
+              <p><?php printf( __( 'Last modified: %s', 'textdomain' ), get_the_modified_date( 'F j, Y' ) ) ?></p>
+
+            <?php
               include 'templates/confirmed-case-loop.php';
 
             }

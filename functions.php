@@ -29,6 +29,8 @@ function ucla_setup() {
     wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // Install the WordPress Theme Scripts
     wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
+    // Match height
+    wp_enqueue_script( 'match-height', '/wp-content/themes/ucla-sc/dist/js/jquery.matchHeight-min.js' );
   }
 
   // Load ADMIN Login Styles

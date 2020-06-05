@@ -1,6 +1,12 @@
 $(document).ready(function () {
   // GLOBAL THEME JAVASCRIPT
 
+  function match () {
+    $('.card-resources').matchHeight();
+  }
+
+  match();
+
   // Visually Hide any preset classes from wordpress
   $('.screen-reader-text').addClass('visuallyhidden');
 

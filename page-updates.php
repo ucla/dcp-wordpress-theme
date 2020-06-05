@@ -29,8 +29,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 
         <?php
         // Example argument that defines three posts per page.
+        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $args = array(
-          'posts_per_page' => 0
+          'posts_per_page' => 10,
+          'paged' => $paged
          );
 
         // Variable to call WP_Query.
@@ -47,6 +49,32 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
             // End the Loop
             endwhile;
 
+            ?>
+
+            <div class="pagination">
+                <?php echo paginate_links([
+                  'format'  => 'page/%#%',
+                  'current' => $paged,
+                  'total'   => $the_query->max_num_pages,
+                  'mid_size'        => 2,
+                  'prev_text'       => __('<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Arrow Left</title>
+    <g id="Icon/arrow-left-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon class="Shape" fill="#00598C" transform="translate(24.590000, 24.000000) scale(-1, 1) translate(-24.590000, -24.000000) " points="17.18 33.18 26.34 24 17.18 14.82 20 12 32 24 20 36"></polygon>
+    </g>
+</svg>'),
+                  'next_text'       => __('<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Arrow Right</title>
+    <g id="Icon/arrow-right-black" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Background" points="0 0 48 0 48 48 0 48"></polygon>
+        <polygon class="Shape" fill="#00598C" points="18 33.18 26.6531714 24 18 14.82 20.6639676 12 32 24 20.6639676 36"></polygon>
+    </g>
+</svg>')
+                ]); ?>
+            </div>
+
+
+        <?php
         else:
 
         // If no posts match this query, output this text.

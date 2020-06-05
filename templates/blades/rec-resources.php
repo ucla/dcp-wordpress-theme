@@ -6,7 +6,7 @@
   </div>
   <div class="ucla campus">
     <div class="col span_3_of_9">
-      <div class="card-resources">
+      <div class="card-resources matchheight">
         <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
         <div class="card-resources_content">
           <h3 class="mb-16">Campus support</h3>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col span_3_of_9">
-      <div class="card-resources">
+      <div class="card-resources matchheight">
         <img src="/wp-content/themes/ucla-sc/images/resource-health.jpg" alt="Image of Corona Virus">
         <div class="card-resources_content">
           <h3 class="mb-16">COVID-19 information</h3>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="col span_3_of_9">
-      <div class="card-resources">
+      <div class="card-resources matchheight">
         <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg"  alt="Man Streaming in Video">
         <div class="card-resources_content">
           <h3 class="mb-16">For journalists</h3>

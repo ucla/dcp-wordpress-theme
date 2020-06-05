@@ -5657,6 +5657,10 @@
   transform: rotate(-90deg);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body.no-scroll {
   height: 100vh;
   scrollbar-width: none;
@@ -6473,6 +6477,23 @@ body.no-scroll {
   }
 }
 
+.pagination {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px 10px;
+}
+
+.pagination span,
+.pagination a {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.pagination svg:hover g polygon.Shape {
+  fill: #FFFFFF !important;
+}
+
 nav#menu ul#menu-main-menu li {
   margin-bottom: 0;
   line-height: 16px;
@@ -7203,4 +7224,15 @@ body.home .univ-ops {
 
 .header h1 {
   padding: 40px 0;
+}
+
+.page-id-19 .entry-content {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 36px 12px;
+}
+
+@media (min-width: 1024px) {
+  .page-id-19 .entry-content {
+    padding: 46px 0;
+  }
 }
