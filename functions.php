@@ -150,7 +150,7 @@ function ucla_setup() {
       'before_title' => '<h3 class="widget-title mb-16">',
       'after_title' => '</h3>',
     ) );
-  }
+  } 
 
   // Add Dashboard Training Widget
   add_action('wp_dashboard_setup', 'ucla_custom_dashboard_widgets');
