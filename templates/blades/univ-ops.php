@@ -4,7 +4,7 @@
 
       <?php if ( is_page(66) ) { ?>
 
-          <h2 class="mb-12 mt-xs-40 mt-lg-72">FPO More answers on these topics</h2>
+          <h2 class="mb-12 mt-xs-40 mt-lg-72">FPO more answers on these topics</h2>
 
         <?php } else { ?>
 

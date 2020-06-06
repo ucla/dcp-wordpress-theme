@@ -43,7 +43,14 @@ function ucla_setup() {
   // Breadcrumbs
   function get_breadcrumb() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-      if ( is_single()) {
+      if ( is_singular( 'post' )) {
+        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+        echo '<a href="http://covid-19.ucla.edu/updates">Updates</a>';
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
+                the_title();
+            }
+      } elseif ( is_single()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
           echo get_post_type( get_the_ID() );
               if (is_single()) {
