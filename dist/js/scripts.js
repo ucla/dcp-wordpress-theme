@@ -20,6 +20,7 @@ $(document).ready(function () {
 
   function match () {
     $('.card-resources').matchHeight();
+    $('.card-hs').matchHeight();
   }
 
   match();
