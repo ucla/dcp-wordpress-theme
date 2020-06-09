@@ -5684,6 +5684,16 @@ body.no-scroll {
   }
 }
 
+.info-blade {
+  padding: 40px 24px !important;
+}
+
+@media (min-width: 768px) {
+  .info-blade {
+    padding: 80px 24px 40px 24px !important;
+  }
+}
+
 .ucla.campus .first-child.col {
   margin-left: 0;
 }
@@ -5736,12 +5746,12 @@ body.no-scroll {
 }
 
 .blade-hs {
-  padding: 32px 0 !important;
+  padding: 32px 24px !important;
 }
 
 @media (min-width: 1024px) {
   .blade-hs {
-    padding: 52px 0 !important;
+    padding: 52px 24px !important;
   }
 }
 
@@ -5801,6 +5811,19 @@ body.no-scroll {
 
 .accordion-content.show-me {
   display: block;
+}
+
+.archive-alert {
+  border: 2px solid #8BB8E8;
+  padding: 18px;
+  width: fit-content;
+  width: max-content;
+}
+
+.archive-alert svg {
+  width: 20px;
+  height: 20px;
+  margin-top: -2px;
 }
 
 .breadcrumb {

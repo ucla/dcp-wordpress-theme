@@ -12,7 +12,7 @@
           <h3 class="mb-16">Campus support</h3>
           <a target="_blank" href="https://www.bso.ucla.edu/">Bruins Safe Online</a>
           <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Affairs service hours</a>
-          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Offices service hours</a>
+          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative offices service hours</a>
           <a target="_blank" href="https://www.counseling.ucla.edu/">Counseling & Psychogical Services</a>
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources</a>
           <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Commission</a>
@@ -36,7 +36,7 @@
     </div>
     <div class="col span_3_of_9">
       <div class="card-resources matchheight">
-        <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg"  alt="Man Streaming in Video">
+        <img src="/wp-content/themes/ucla-sc/images/UCLA-COVID-experts.jpg"  alt="UCLA Covid experts">
         <div class="card-resources_content">
           <h3 class="mb-16">For journalists</h3>
           <p class="mb-16">UCLA faculty members are available for interviews with news media on a wide range of topics related to COVID-19, including public health and epidemiology, virology and vaccines, mental health, education, law, politics and the economy.</p>

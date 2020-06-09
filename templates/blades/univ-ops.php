@@ -33,7 +33,7 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '38' ) ); ?>"><span>Research</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '38' ) ); ?>"><span>Research operations</span></a>
         </div>
       </div>
     </div>

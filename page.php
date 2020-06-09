@@ -35,6 +35,8 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
         <?php
           if ( is_page(24) ) {
             include 'templates/confirmed-case-loop.php';
+
+            echo 'UCLA Health data is reported separately and <a href="https://www.uclahealth.org/coronavirus" target="_blank">more information can be found here.</a>';
           }
           ?>
 

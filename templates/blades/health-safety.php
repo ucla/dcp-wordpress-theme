@@ -13,14 +13,14 @@
           // Display the Excerpt
           echo  '<p class="mb-16">' . $excerpt_24 . '</p>';
           ?>
-          <p><a href="<?php echo esc_url( get_permalink( '24' ) ); ?>">More on confirmed cases.</a></p>
+          <p><a href="<?php echo esc_url( get_permalink( '24' ) ); ?>">More on confirmed cases</a></p>
         </div>
       </div>
     </div>
     <div class="col span_3_of_6">
       <div class="card-hs">
         <div class="card-hs--content">
-          <h3 class="mb-16">Prevention, testing and treatment.</h3>
+          <h3 class="mb-16">Prevention, testing and treatment</h3>
           <?php
           // Get the Post
           $post_22 = get_post(22);
@@ -29,7 +29,7 @@
           // Display the Excerpt
           echo  '<p class="mb-16">' . $excerpt_22 . '</p>';
           ?>
-          <p><a href="<?php echo esc_url( get_permalink( '22' ) ); ?>">More on prevention, testing and treatment.</a></p>
+          <p><a href="<?php echo esc_url( get_permalink( '22' ) ); ?>">More on prevention, testing and treatment</a></p>
         </div>
       </div>
     </div>

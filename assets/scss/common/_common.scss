@@ -21,6 +21,14 @@ body.no-scroll {
   }
 }
 
+.info-blade {
+  padding: 40px 24px !important;
+
+  @media (min-width: breakpoint-min(md)) {
+    padding: 80px 24px 40px 24px !important;
+  }
+}
+
 .ucla.campus {
   // First child fix if you put a title above span. See example on templates/health-saftey.php
   .first-child.col {
@@ -76,10 +84,10 @@ body.no-scroll {
 }
 
 .blade-hs {
-  padding: 32px 0 !important;
+  padding: 32px 24px !important;
 
   @media (min-width: breakpoint-min(lg)) {
-    padding: 52px 0 !important;
+    padding: 52px 24px !important;
   }
 }
 
