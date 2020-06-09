@@ -39,7 +39,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
         <?php } ?>
 
         <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-        <p><?php echo get_the_author_meta( 'user_login', $author_id ); ?></p>
+
         <?php the_content(); ?>
 
         <?php
