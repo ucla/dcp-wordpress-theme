@@ -6908,15 +6908,19 @@ nav#menu ul#menu-main-menu li a:hover {
 /************************
 Safari Only styles
 ************************/
-html.safari body header.header {
+html.safari body header {
   overflow: visible !important;
+}
+
+html.safari body #menu .menu-main-menu-container ul li .has-child--button {
+  height: 46px;
 }
 
 /************************
 Firefox Only styles
 ************************/
 html.firefox body #menu .menu-main-menu-container ul li .has-child--button {
-  height: 35px;
+  height: 46px;
 }
 
 @media (min-width: 1024px) {
@@ -7299,11 +7303,11 @@ body.home .univ-ops {
 
 .page-id-19 .entry-content {
   border-bottom: 1px solid #E5E5E5;
-  padding: 36px 12px;
+  padding: 36px 24px;
 }
 
 @media (min-width: 1024px) {
   .page-id-19 .entry-content {
-    padding: 46px 0;
+    padding: 46px 12px;
   }
 }

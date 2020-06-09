@@ -45,7 +45,7 @@ function ucla_setup() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
       if ( is_singular( 'post' )) {
         echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
-        echo '<a href="http://covid-19.ucla.edu/updates">Updates</a>';
+        echo '<a href="/updates">Updates</a>';
             if (is_single()) {
                 echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
                 the_title();

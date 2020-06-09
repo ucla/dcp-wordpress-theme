@@ -38,7 +38,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
           ?></p>
         <?php } ?>
 
-        <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
+        <time datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date(); ?></time>
 
         <?php the_content(); ?>
 

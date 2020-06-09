@@ -12,7 +12,7 @@ $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
   <div class="accordion">
-    <button class="accordion-title mb-16" aria-expanded="false"><?php print the_title(); ?><img class"accordion-title--arrow" src="/wp-content/themes/ucla-sc/images/icons/arrow-down-defaultblue.svg" alt="Accordion Open/Close Arrown"></button>
+    <button class="accordion-title mb-16" aria-expanded="false"><?php print the_title(); ?><img class="accordion-title--arrow" src="/wp-content/themes/ucla-sc/images/icons/arrow-down-defaultblue.svg" alt="Accordion Open/Close Arrown"></button>
     <div class="accordion-content mt-32 mt-48">
       <p><?php the_content(); ?></p>
     </div>

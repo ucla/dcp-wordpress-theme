@@ -368,7 +368,7 @@ Safari Only styles
 ************************/
 html.safari {
   body {
-    header.header {
+    header {
       overflow: visible !important;
     }
 
@@ -376,7 +376,7 @@ html.safari {
       .menu-main-menu-container {
         ul li {
           .has-child--button {
-            height: 35px;
+            height: 46px;
           }
         }
       }
@@ -393,7 +393,7 @@ html.firefox {
       .menu-main-menu-container {
         ul li {
           .has-child--button {
-            height: 35px;
+            height: 46px;
 
             &.current-page {
               @media (min-width: breakpoint-min(lg)) {
