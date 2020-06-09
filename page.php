@@ -48,14 +48,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
     </div>
 
-    <?php
-      if ( is_page( 66 ) ) {
 
-        include 'templates/blades/univ-ops.php';
-
-      }
-
-      ?>
 
     <?php endwhile; endif; ?>
 

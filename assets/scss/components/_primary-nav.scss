@@ -371,6 +371,16 @@ html.safari {
     header.header {
       overflow: visible !important;
     }
+
+    #menu {
+      .menu-main-menu-container {
+        ul li {
+          .has-child--button {
+            height: 35px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -380,14 +390,16 @@ Firefox Only styles
 html.firefox {
   body {
     #menu {
-      @media (min-width: breakpoint-min(lg)) {
-        top: 89px;
-      }
+      .menu-main-menu-container {
+        ul li {
+          .has-child--button {
+            height: 35px;
 
-      ul li {
-        .has-child--button {
-          @media (min-width: breakpoint-min(lg)) {
-            top: 1.5px;
+            &.current-page {
+              @media (min-width: breakpoint-min(lg)) {
+                height: 37px;
+              }
+            }
           }
         }
       }

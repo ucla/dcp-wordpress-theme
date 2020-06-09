@@ -9,7 +9,7 @@
         <?php } else { ?>
 
           <h2 class="mb-12">University operations</h2>
-          <p>The campus is working to develop plans despite rapidly evolving data and shifting circumstances. We understand these plans will impact all of you, and we are committed to a thoughtful approach that is inclusive of the broader campus community.</p>
+          <p>The campus is working to develop plans that take into account the latest data and shifting circumstances related to COVID-19. We understand that these plans will affect all of you, and we are committed to a thoughtful approach that is inclusive of the broader campus community.</p>
 
         <?php } ?>
 

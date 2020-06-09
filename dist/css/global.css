@@ -5759,6 +5759,50 @@ body.no-scroll {
   background: #F7F7F7;
 }
 
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: #FFFFFF;
+  /* Set a background color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 1px;
+  /* Some padding */
+  border-radius: 15px;
+  /* Rounded corners */
+  font-size: 12px;
+  /* Increase font size */
+  -webkit-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
+}
+
+#myBtn:hover {
+  background-color: #0079BF;
+  /* Add a dark-grey background on hover */
+}
+
+#myBtn:hover svg g polygon {
+  fill: #FFFFFF;
+}
+
+#myBtn svg {
+  width: 30px;
+  height: 30px;
+}
+
 .accordion {
   display: block;
   border-top: 1px solid #E5E5E5;
@@ -6871,15 +6915,13 @@ html.safari body header.header {
 /************************
 Firefox Only styles
 ************************/
-@media (min-width: 1024px) {
-  html.firefox body #menu {
-    top: 89px;
-  }
+html.firefox body #menu .menu-main-menu-container ul li .has-child--button {
+  height: 35px;
 }
 
 @media (min-width: 1024px) {
-  html.firefox body #menu ul li .has-child--button {
-    top: 1.5px;
+  html.firefox body #menu .menu-main-menu-container ul li .has-child--button.current-page {
+    height: 37px;
   }
 }
 
