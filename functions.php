@@ -68,7 +68,7 @@ function ucla_setup() {
       }
   }
 
-  // Categories for pages
+  // Categories for pages 
   add_action( 'init', 'ucla_page_categories' );
   function ucla_page_categories() {
     register_taxonomy_for_object_type( 'category', 'page' );
