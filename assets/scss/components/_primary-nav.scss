@@ -41,7 +41,13 @@ nav#menu {
     background: transparent;  /* Optional: just make scrollbar invisible */
   }
 
+  // TEMPORARY FIX BY KEVIN TO FIX CHROME MENU ISSUE
+  @media (min-width: 0px) {
+    display: none;
+  }
+
   @media (min-width: breakpoint-min(md)) {
+    display: none; // TEMPORARY FIX BY KEVIN TO FIX CHROME MENU ISSUE
     width: 320px;
     top: 20px;
   }
