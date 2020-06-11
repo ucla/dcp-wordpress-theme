@@ -27,7 +27,9 @@ if ( '' != $thumb_id ) {
     <div class="ucla campus entry-content">
 
       <div class="col span_12_of_12">
-
+        <?php
+          echo "<p><strong>" . date(" F d, Y") . "</strong></p>";
+          ?>
         <?php the_content(); ?>
 
       </div>

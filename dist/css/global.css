@@ -5764,9 +5764,9 @@ body.no-scroll {
   /* Hidden by default */
   position: fixed;
   /* Fixed/sticky position */
-  bottom: 20px;
+  bottom: 80px;
   /* Place the button at the bottom of the page */
-  right: 30px;
+  right: 15px;
   /* Place the button 30px from the right */
   z-index: 99;
   /* Make sure it does not overlap */
@@ -5787,6 +5787,18 @@ body.no-scroll {
   -webkit-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
   -moz-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
   box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
+}
+
+@media (min-width: 768px) {
+  #myBtn {
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #myBtn {
+    bottom: 80px;
+  }
 }
 
 #myBtn:hover {
@@ -6607,8 +6619,15 @@ nav#menu ul#menu-main-menu li a:hover {
   /* Optional: just make scrollbar invisible */
 }
 
+@media (min-width: 0px) {
+  #menu {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   #menu {
+    display: none;
     width: 320px;
     top: 20px;
   }
@@ -7185,6 +7204,7 @@ Skip Navigation necessary on every page of the site and should go above the head
 }
 
 #block-socialmedia ul {
+  padding-inline-start: 0px;
   display: flex;
   justify-content: space-between;
   position: relative;
