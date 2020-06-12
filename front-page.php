@@ -49,7 +49,7 @@ if ( '' != $thumb_id ) {
       <div class="ucla campus">
         <div class="col span_7_of_12">
 
-          <h2 class="mb-32">Latest messages to the UCLA community </h2>
+          <h2 class="mb-32">Latest updates from campus leadership</h2>
 
           <?php
           // Example argument that defines three posts per page.
