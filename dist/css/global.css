@@ -7289,22 +7289,38 @@ Skip Navigation necessary on every page of the site and should go above the head
   display: none;
 }
 
-#custom_html-2,
-#custom_html-3 {
+#custom_html-2 {
   display: block;
+  position: relative;
   border-top: 3px solid #FFD100;
   padding-bottom: 60px;
 }
 
-#custom_html-2 p,
-#custom_html-3 p {
+#custom_html-2 h3 {
+  padding-left: 40px;
+}
+
+#custom_html-2 h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: url(/wp-content/themes/ucla-sc/images/icons/social-icons/twitter-color.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 20px;
+}
+
+#custom_html-2 p {
   font-size: 12.8px;
   line-height: 18px;
   color: #333;
 }
 
-#custom_html-2 a,
-#custom_html-3 a {
+#custom_html-2 a {
   font-weight: bold;
   text-decoration: none;
 }
