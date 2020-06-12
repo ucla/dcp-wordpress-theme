@@ -7347,9 +7347,27 @@ img {
   max-width: 100%;
 }
 
+body.home h1 {
+  font-size: 36px;
+  padding: 76px 0 12px 0 !important;
+}
+
+body.home p.intro {
+  max-width: 606px;
+  font-size: 18px;
+  line-height: 27px;
+  padding-bottom: 70px;
+}
+
 body.home .latest-campus,
 body.home .univ-ops {
   border-bottom: 1px solid #E5E5E5;
+}
+
+body.home .fp-date {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #666;
 }
 
 .header {
