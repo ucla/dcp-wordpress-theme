@@ -68,7 +68,7 @@ function ucla_setup() {
       }
   }
 
-  // Categories for pages 
+  // Categories for pages
   add_action( 'init', 'ucla_page_categories' );
   function ucla_page_categories() {
     register_taxonomy_for_object_type( 'category', 'page' );
@@ -157,6 +157,15 @@ function ucla_setup() {
       'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
       'after_widget' => '</span>',
       'before_title' => '<h3 class="widget-title mb-16">',
+      'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+      'name' => esc_html__( 'Social Media Sidebar', 'ucla' ),
+      'id' => 'social-widget-area',
+      'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
+      'after_widget' => '</span>',
+      'before_title' => '<h3 class="widget-title mb-12 mt-24">',
       'after_title' => '</h3>',
     ) );
   }

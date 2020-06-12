@@ -1,0 +1,17 @@
+#custom_html-2,
+#custom_html-3 {
+  display: block;
+  border-top: 3px solid $ucla-gold;
+  padding-bottom: 60px;
+
+  p {
+    font-size: 12.8px;
+    line-height: 18px;
+    color: $grey-80;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

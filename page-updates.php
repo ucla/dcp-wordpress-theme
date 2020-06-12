@@ -21,7 +21,7 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
       </div>
     </header>
 
-    <div class="ucla campus entry-content">
+    <div class="ucla campus">
 
       <div class="col span_7_of_12">
 

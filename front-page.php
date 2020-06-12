@@ -24,7 +24,7 @@ if ( '' != $thumb_id ) {
       </div>
     </header>
 
-    <div class="ucla campus entry-content">
+    <div class="ucla campus">
 
       <div class="col span_12_of_12">
         <?php
@@ -37,7 +37,7 @@ if ( '' != $thumb_id ) {
     </div>
     <div class="latest-campus">
       <div class="ucla campus">
-        <div class="col span_9_of_12">
+        <div class="col span_7_of_12">
 
           <h2 class="mb-32">Latest messages to the UCLA community </h2>
 
@@ -69,6 +69,10 @@ if ( '' != $thumb_id ) {
             <span>Read all updates</span>
           </a>
 
+        </div>
+        <div class="col span_2_of_12"></div>
+        <div class="col span_3_of_12">
+          <?php dynamic_sidebar('Social Widget Area'); ?>
         </div>
 
       </div>

@@ -6112,12 +6112,17 @@ body.no-scroll {
   overflow-wrap: break-word;
 }
 
+.entry-content {
+  border-bottom: 1px solid #E5E5E5;
+}
+
 .entry-content time {
   display: block;
   position: relative;
   color: #666;
   font-size: 16px;
   line-height: 24px;
+  text-transform: uppercase;
 }
 
 .entry-content h2 {
@@ -7282,6 +7287,26 @@ Skip Navigation necessary on every page of the site and should go above the head
 
 #block-socialmedia ul li a.foot-tictok:hover svg g g {
   display: none;
+}
+
+#custom_html-2,
+#custom_html-3 {
+  display: block;
+  border-top: 3px solid #FFD100;
+  padding-bottom: 60px;
+}
+
+#custom_html-2 p,
+#custom_html-3 p {
+  font-size: 12.8px;
+  line-height: 18px;
+  color: #333;
+}
+
+#custom_html-2 a,
+#custom_html-3 a {
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .tagcloud .tag-cloud-link {
