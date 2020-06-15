@@ -1,14 +1,14 @@
 body.home {
   h1 {
     font-size: 36px;
-    padding: 76px 0 12px 0 !important;
+    padding: 56px 0 12px 0 !important;
   }
 
   p.intro {
     max-width: 606px;
     font-size: 18px;
     line-height: 27px;
-    padding-bottom: 70px;
+    padding-bottom: 56px;
   }
 
   .latest-campus,
@@ -20,5 +20,6 @@ body.home {
     font-weight: 800;
     text-transform: uppercase;
     color: $grey-60;
+    margin-bottom: 0;
   }
 }

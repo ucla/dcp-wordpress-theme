@@ -7349,14 +7349,14 @@ img {
 
 body.home h1 {
   font-size: 36px;
-  padding: 76px 0 12px 0 !important;
+  padding: 56px 0 12px 0 !important;
 }
 
 body.home p.intro {
   max-width: 606px;
   font-size: 18px;
   line-height: 27px;
-  padding-bottom: 70px;
+  padding-bottom: 56px;
 }
 
 body.home .latest-campus,
@@ -7368,6 +7368,7 @@ body.home .fp-date {
   font-weight: 800;
   text-transform: uppercase;
   color: #666;
+  margin-bottom: 0;
 }
 
 .header {
