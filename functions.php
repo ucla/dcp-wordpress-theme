@@ -166,11 +166,11 @@ function ucla_setup() {
 
   function maintenace_mode() {
 
-    if ( !current_user_can( 'administrator' ) ) {
+    // if ( !current_user_can( 'administrator' ) ) {
 
-    wp_die('UCLA Covid-19 informational website coming Soon.');
+    // wp_die('UCLA Covid-19 informational website coming Soon.');
 
-    }
+    // }
 
   }
 
