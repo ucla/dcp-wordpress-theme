@@ -20,26 +20,14 @@ if ( '' != $thumb_id ) {
       <div class="ucla campus">
         <div class="col span_12_of_12">
           <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
-          <?php if ( get_post_custom_values( 'intro' ) !== NULL )  { ?>
-            <p class="intro"><?php
-            $key_values = get_post_custom_values( 'intro' );
-
-            foreach ( $key_values as $key => $value ) {
-                echo $value;
-            }
-
-            ?></p>
-          <?php } ?>
         </div>
       </div>
     </header>
 
-    <div class="ucla campus">
+    <div class="ucla campus entry-content">
 
       <div class="col span_12_of_12">
-        <?php
-          echo '<p class="fp-date">' . date(' F d, Y') . '</p>';
-          ?>
+
         <?php the_content(); ?>
 
       </div>
@@ -47,9 +35,9 @@ if ( '' != $thumb_id ) {
     </div>
     <div class="latest-campus">
       <div class="ucla campus">
-        <div class="col span_7_of_12">
+        <div class="col span_9_of_12">
 
-          <h2 class="mb-32" style="font-size: 35px;">Latest updates from campus leadership</h2>
+          <h2 class="mb-32 mt-64">Latest messages to the UCLA community </h2>
 
           <?php
           // Example argument that defines three posts per page.
@@ -79,10 +67,6 @@ if ( '' != $thumb_id ) {
             <span>Read all updates</span>
           </a>
 
-        </div>
-        <div class="col span_2_of_12"></div>
-        <div class="col span_3_of_12">
-          <?php dynamic_sidebar('Social Widget Area'); ?>
         </div>
 
       </div>

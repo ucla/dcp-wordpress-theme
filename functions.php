@@ -29,8 +29,6 @@ function ucla_setup() {
     wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // Install the WordPress Theme Scripts
     wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
-    // Match height
-    wp_enqueue_script( 'match-height', '/wp-content/themes/ucla-sc/dist/js/jquery.matchHeight-min.js' );
   }
 
   // Load ADMIN Login Styles
@@ -43,14 +41,7 @@ function ucla_setup() {
   // Breadcrumbs
   function get_breadcrumb() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-      if ( is_singular( 'post' )) {
-        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
-        echo '<a href="/updates">Updates</a>';
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
-                the_title();
-            }
-      } elseif ( is_single()) {
+      if ( is_single()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
           echo get_post_type( get_the_ID() );
               if (is_single()) {
@@ -157,15 +148,6 @@ function ucla_setup() {
       'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
       'after_widget' => '</span>',
       'before_title' => '<h3 class="widget-title mb-16">',
-      'after_title' => '</h3>',
-    ) );
-
-    register_sidebar( array(
-      'name' => esc_html__( 'Social Media Sidebar', 'ucla' ),
-      'id' => 'social-widget-area',
-      'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
-      'after_widget' => '</span>',
-      'before_title' => '<h3 class="widget-title mb-12 mt-24">',
       'after_title' => '</h3>',
     ) );
   }
