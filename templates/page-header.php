@@ -9,14 +9,18 @@
         <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php } ?>
       <?php edit_post_link(); ?>
-      <p class="intro"><?php
-      $key_values = get_post_custom_values( 'intro' );
 
-      foreach ( $key_values as $key => $value ) {
-          echo $value;
-      }
+      <?php if ( get_post_custom_values( 'intro' ) !== NULL )  { ?>
+        <p class="intro"><?php
+        $key_values = get_post_custom_values( 'intro' );
 
-      ?></p>
+        foreach ( $key_values as $key => $value ) {
+            echo $value;
+        }
+
+        ?></p>
+      <?php } ?>
+
 
     </div>
   </div>

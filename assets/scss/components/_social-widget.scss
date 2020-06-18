@@ -1,0 +1,35 @@
+#custom_html-2 {
+  display: block;
+  position: relative;
+  border-top: 3px solid $ucla-gold;
+  padding-bottom: 60px;
+
+  h3 {
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      background: url(/wp-content/themes/ucla-sc/images/icons/social-icons/twitter-color.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      left: 0;
+      top: 20px;
+    }
+  }
+
+  p {
+    font-size: 12.8px;
+    line-height: 18px;
+    color: $grey-80;
+  }
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
