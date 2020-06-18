@@ -27,18 +27,18 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
           }
 
-          if ( is_page(24) ) { ?>
-            <p><strong><?php printf( __( 'Last modified: %s', 'textdomain' ), get_the_modified_date( 'F j, Y' ) ) ?></strong></p>
-        <?php } ?>
-        <?php the_content(); ?>
-
-        <?php
-          if ( is_page(24) ) {
-            include 'templates/confirmed-case-loop.php';
-
-            echo 'UCLA Health data is reported separately and <a href="https://www.uclahealth.org/coronavirus" target="_blank">more information can be found here.</a>';
-          }
           ?>
+
+          <?php
+            if ( is_page(24) ) {
+
+              include 'templates/confirmed-case-loop.php';
+
+            }
+
+            ?>
+
+        <?php the_content(); ?>
 
       </div>
 
@@ -48,7 +48,14 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID. 'pos
 
     </div>
 
+    <?php
+      if ( is_page( 66 ) ) {
 
+        include 'templates/blades/univ-ops.php';
+
+      }
+
+      ?>
 
     <?php endwhile; endif; ?>
 

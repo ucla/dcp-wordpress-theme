@@ -41,13 +41,7 @@ nav#menu {
     background: transparent;  /* Optional: just make scrollbar invisible */
   }
 
-  // TEMPORARY FIX BY KEVIN TO FIX CHROME MENU ISSUE
-  @media (min-width: 0px) {
-    display: none;
-  }
-
   @media (min-width: breakpoint-min(md)) {
-    display: none; // TEMPORARY FIX BY KEVIN TO FIX CHROME MENU ISSUE
     width: 320px;
     top: 20px;
   }
@@ -374,18 +368,8 @@ Safari Only styles
 ************************/
 html.safari {
   body {
-    header {
+    header.header {
       overflow: visible !important;
-    }
-
-    #menu {
-      .menu-main-menu-container {
-        ul li {
-          .has-child--button {
-            height: 46px;
-          }
-        }
-      }
     }
   }
 }
@@ -396,16 +380,14 @@ Firefox Only styles
 html.firefox {
   body {
     #menu {
-      .menu-main-menu-container {
-        ul li {
-          .has-child--button {
-            height: 46px;
+      @media (min-width: breakpoint-min(lg)) {
+        top: 89px;
+      }
 
-            &.current-page {
-              @media (min-width: breakpoint-min(lg)) {
-                height: 37px;
-              }
-            }
+      ul li {
+        .has-child--button {
+          @media (min-width: breakpoint-min(lg)) {
+            top: 1.5px;
           }
         }
       }

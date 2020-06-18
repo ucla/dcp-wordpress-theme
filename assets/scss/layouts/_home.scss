@@ -1,25 +1,6 @@
 body.home {
-  h1 {
-    font-size: 36px;
-    padding: 56px 0 12px 0 !important;
-  }
-
-  p.intro {
-    max-width: 606px;
-    font-size: 18px;
-    line-height: 27px;
-    padding-bottom: 40px;
-  }
-
   .latest-campus,
   .univ-ops {
     border-bottom: 1px solid $grey-10;
-  }
-
-  .fp-date {
-    font-weight: 800;
-    text-transform: uppercase;
-    color: $grey-60;
-    margin-bottom: 0;
   }
 }

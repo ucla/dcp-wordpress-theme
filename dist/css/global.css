@@ -5657,10 +5657,6 @@
   transform: rotate(-90deg);
 }
 
-body {
-  overflow-x: hidden;
-}
-
 body.no-scroll {
   height: 100vh;
   scrollbar-width: none;
@@ -5681,16 +5677,6 @@ body.no-scroll {
   .info-blade,
   .blade-resources {
     padding: 80px 0 40px 0 !important;
-  }
-}
-
-.info-blade {
-  padding: 40px 24px !important;
-}
-
-@media (min-width: 768px) {
-  .info-blade {
-    padding: 80px 24px 40px 24px !important;
   }
 }
 
@@ -5746,73 +5732,17 @@ body.no-scroll {
 }
 
 .blade-hs {
-  padding: 32px 24px !important;
+  padding: 32px 0 !important;
 }
 
 @media (min-width: 1024px) {
   .blade-hs {
-    padding: 52px 24px !important;
+    padding: 52px 0 !important;
   }
 }
 
 .grey-mar {
   background: #F7F7F7;
-}
-
-#myBtn {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Fixed/sticky position */
-  bottom: 80px;
-  /* Place the button at the bottom of the page */
-  right: 15px;
-  /* Place the button 30px from the right */
-  z-index: 99;
-  /* Make sure it does not overlap */
-  border: none;
-  /* Remove borders */
-  outline: none;
-  /* Remove outline */
-  background-color: #FFFFFF;
-  /* Set a background color */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
-  padding: 1px;
-  /* Some padding */
-  border-radius: 15px;
-  /* Rounded corners */
-  font-size: 12px;
-  /* Increase font size */
-  -webkit-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
-  -moz-box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
-  box-shadow: 0px 0px 3px -1px rgba(0, 0, 0, 0.52);
-}
-
-@media (min-width: 768px) {
-  #myBtn {
-    bottom: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  #myBtn {
-    bottom: 80px;
-  }
-}
-
-#myBtn:hover {
-  background-color: #0079BF;
-  /* Add a dark-grey background on hover */
-}
-
-#myBtn:hover svg g polygon {
-  fill: #FFFFFF;
-}
-
-#myBtn svg {
-  width: 30px;
-  height: 30px;
 }
 
 .accordion {
@@ -5867,19 +5797,6 @@ body.no-scroll {
 
 .accordion-content.show-me {
   display: block;
-}
-
-.archive-alert {
-  border: 2px solid #8BB8E8;
-  padding: 18px;
-  width: fit-content;
-  width: max-content;
-}
-
-.archive-alert svg {
-  width: 20px;
-  height: 20px;
-  margin-top: -2px;
 }
 
 .breadcrumb {
@@ -5948,12 +5865,6 @@ body.no-scroll {
   max-width: 312px;
   margin: 0 auto;
   overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .card-hs {
-    max-width: 512px;
-  }
 }
 
 .card-hs--content p {
@@ -6112,17 +6023,12 @@ body.no-scroll {
   overflow-wrap: break-word;
 }
 
-.entry-content {
-  border-bottom: 1px solid #E5E5E5;
-}
-
 .entry-content time {
   display: block;
   position: relative;
   color: #666;
   font-size: 16px;
   line-height: 24px;
-  text-transform: uppercase;
 }
 
 .entry-content h2 {
@@ -6567,23 +6473,6 @@ body.no-scroll {
   }
 }
 
-.pagination {
-  text-align: center;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 20px 10px;
-}
-
-.pagination span,
-.pagination a {
-  padding: 10px;
-  text-decoration: none;
-}
-
-.pagination svg:hover g polygon.Shape {
-  fill: #FFFFFF !important;
-}
-
 nav#menu ul#menu-main-menu li {
   margin-bottom: 0;
   line-height: 16px;
@@ -6624,15 +6513,8 @@ nav#menu ul#menu-main-menu li a:hover {
   /* Optional: just make scrollbar invisible */
 }
 
-@media (min-width: 0px) {
-  #menu {
-    display: none;
-  }
-}
-
 @media (min-width: 768px) {
   #menu {
-    display: none;
     width: 320px;
     top: 20px;
   }
@@ -6932,24 +6814,22 @@ nav#menu ul#menu-main-menu li a:hover {
 /************************
 Safari Only styles
 ************************/
-html.safari body header {
+html.safari body header.header {
   overflow: visible !important;
-}
-
-html.safari body #menu .menu-main-menu-container ul li .has-child--button {
-  height: 46px;
 }
 
 /************************
 Firefox Only styles
 ************************/
-html.firefox body #menu .menu-main-menu-container ul li .has-child--button {
-  height: 46px;
+@media (min-width: 1024px) {
+  html.firefox body #menu {
+    top: 89px;
+  }
 }
 
 @media (min-width: 1024px) {
-  html.firefox body #menu .menu-main-menu-container ul li .has-child--button.current-page {
-    height: 37px;
+  html.firefox body #menu ul li .has-child--button {
+    top: 1.5px;
   }
 }
 
@@ -7209,7 +7089,6 @@ Skip Navigation necessary on every page of the site and should go above the head
 }
 
 #block-socialmedia ul {
-  padding-inline-start: 0px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -7289,42 +7168,6 @@ Skip Navigation necessary on every page of the site and should go above the head
   display: none;
 }
 
-#custom_html-2 {
-  display: block;
-  position: relative;
-  border-top: 3px solid #FFD100;
-  padding-bottom: 60px;
-}
-
-#custom_html-2 h3 {
-  padding-left: 40px;
-}
-
-#custom_html-2 h3::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  background: url(/wp-content/themes/ucla-sc/images/icons/social-icons/twitter-color.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  left: 0;
-  top: 20px;
-}
-
-#custom_html-2 p {
-  font-size: 12.8px;
-  line-height: 18px;
-  color: #333;
-}
-
-#custom_html-2 a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
 .tagcloud .tag-cloud-link {
   border: 2px solid #00598C;
   border-radius: 18px;
@@ -7347,28 +7190,9 @@ img {
   max-width: 100%;
 }
 
-body.home h1 {
-  font-size: 36px;
-  padding: 56px 0 12px 0 !important;
-}
-
-body.home p.intro {
-  max-width: 606px;
-  font-size: 18px;
-  line-height: 27px;
-  padding-bottom: 40px;
-}
-
 body.home .latest-campus,
 body.home .univ-ops {
   border-bottom: 1px solid #E5E5E5;
-}
-
-body.home .fp-date {
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #666;
-  margin-bottom: 0;
 }
 
 .header {
@@ -7379,15 +7203,4 @@ body.home .fp-date {
 
 .header h1 {
   padding: 40px 0;
-}
-
-.page-id-19 .entry-content {
-  border-bottom: 1px solid #E5E5E5;
-  padding: 36px 24px;
-}
-
-@media (min-width: 1024px) {
-  .page-id-19 .entry-content {
-    padding: 46px 12px;
-  }
 }
