@@ -29,6 +29,8 @@ function ucla_setup() {
     wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // Install the WordPress Theme Scripts
     wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
+    // Match height
+    wp_enqueue_script( 'match-height', '/wp-content/themes/ucla-sc/dist/js/jquery.matchHeight-min.js' );
   }
 
   // Load ADMIN Login Styles
@@ -41,7 +43,14 @@ function ucla_setup() {
   // Breadcrumbs
   function get_breadcrumb() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-      if ( is_single()) {
+      if ( is_singular( 'post' )) {
+        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+        echo '<a href="/updates">Updates</a>';
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
+                the_title();
+            }
+      } elseif ( is_single()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
           echo get_post_type( get_the_ID() );
               if (is_single()) {
@@ -150,6 +159,15 @@ function ucla_setup() {
       'before_title' => '<h3 class="widget-title mb-16">',
       'after_title' => '</h3>',
     ) );
+
+    register_sidebar( array(
+      'name' => esc_html__( 'Social Media Sidebar', 'ucla' ),
+      'id' => 'social-widget-area',
+      'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
+      'after_widget' => '</span>',
+      'before_title' => '<h3 class="widget-title mb-12 mt-24">',
+      'after_title' => '</h3>',
+    ) );
   }
 
   // Add Dashboard Training Widget
@@ -164,14 +182,14 @@ function ucla_setup() {
     echo '<p>Welcome to the Strategic UCLA Communications Theme.</p><p><strong>For WordPress Resources:</strong></p><p>UCLA Spaces Page: <em><a href="https://spaces.ais.ucla.edu/display/ucomm/WordPress" target="_blank">UCLA WordPress</a></em></p><p><strong>Theme Specific Video Resources:</strong></p><iframe width="100%" height="270px" src="https://www.youtube.com/embed/PxB7V7rSvUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Page Intros: <em><a href="https://youtu.be/PxB7V7rSvUE" target="_blank">Add Page Intro Sentence</a></em></p><p>Fluid Class: <em><a href="https://youtu.be/aUKAs9iMDDA" target="_blank">Expand Backgound past content containter</a></em></p>';
   }
 
-  function maintenace_mode() {
-
-    // if ( !current_user_can( 'administrator' ) ) {
-
-    // wp_die('UCLA Covid-19 informational website coming Soon.');
-
-    // }
-
-  }
-
-  add_action('get_header', 'maintenace_mode');
+  // function maintenace_mode() {
+  //
+  //   if ( !current_user_can( 'administrator' ) ) {
+  //
+  //   wp_die('UCLA Covid-19 informational website coming Soon.');
+  //
+  //   }
+  //
+  // }
+  //
+  // add_action('get_header', 'maintenace_mode');

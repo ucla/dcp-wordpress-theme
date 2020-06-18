@@ -1,0 +1,22 @@
+.pagination {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px 10px;
+
+  span,
+  a {
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  svg {
+    &:hover {
+      g {
+        polygon.Shape {
+          fill: $white !important;
+        }
+      }
+    }
+  }
+}

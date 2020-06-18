@@ -4,12 +4,12 @@
 
       <?php if ( is_page(66) ) { ?>
 
-          <h2 class="mb-12 mt-xs-40 mt-lg-72">FPO More answers on these topics</h2>
+          <h2 class="mb-12 mt-xs-40 mt-lg-72">FPO more answers on these topics</h2>
 
         <?php } else { ?>
 
-          <h2 class="mb-12">University Operations</h2>
-          <p>The campus is working to develop plans despite rapidly evolving data and shifting circumstances. We understand these plans will impact all of you, and we are committed to a thoughtful approach that is inclusive of the broader campus community.</p>
+          <h2 class="mb-12">University operations</h2>
+          <p>The campus is working to develop plans that take into account the latest data and shifting circumstances related to COVID-19. We understand that these plans will affect all of you, and we are committed to a thoughtful approach that is inclusive of the broader campus community.</p>
 
         <?php } ?>
 
@@ -33,7 +33,7 @@
     <div class="col span_3_of_12">
       <div class="blade-links">
         <div class="blade-links__box">
-          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '38' ) ); ?>"><span>Research</span></a>
+          <a class="blade-links__box-link" href="<?php echo esc_url( get_permalink( '38' ) ); ?>"><span>Research operations</span></a>
         </div>
       </div>
     </div>

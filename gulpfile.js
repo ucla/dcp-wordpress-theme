@@ -61,6 +61,12 @@ function libraryConcatJs() {
     .pipe(dest('dist/js/ucla-components-library'));
 }
 
+// install match height library JS https://brm.io/jquery-match-height/
+function libraryConcatJs() {
+  return src('./node_modules/jquery-match-height/dist/jquery.matchHeight-min.js')
+    .pipe(dest('dist/js/'));
+}
+
 // Bundle the js added in the theme.
 function themeConcatJs() {
   return src('assets/js/**/*.js')

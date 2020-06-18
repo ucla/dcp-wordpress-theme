@@ -6,42 +6,42 @@
   </div>
   <div class="ucla campus">
     <div class="col span_3_of_9">
-      <div class="card-resources">
+      <div class="card-resources matchheight">
         <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
         <div class="card-resources_content">
           <h3 class="mb-16">Campus support</h3>
-          <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
+          <a target="_blank" href="https://www.bso.ucla.edu/">Bruins Safe Online</a>
           <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Affairs service hours</a>
-          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Offices service hours</a>
-          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychogical Services</a>
+          <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative offices service hours</a>
+          <a target="_blank" href="https://www.counseling.ucla.edu/">Counseling & Psychogical Services</a>
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources</a>
           <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Commission</a>
         </div>
       </div>
     </div>
     <div class="col span_3_of_9">
-      <div class="card-resources">
+      <div class="card-resources matchheight">
         <img src="/wp-content/themes/ucla-sc/images/resource-health.jpg" alt="Image of Corona Virus">
         <div class="card-resources_content">
           <h3 class="mb-16">COVID-19 information</h3>
           <a target="_blank" href="https://www.uclahealth.org/coronavirus">UCLA Health COVID-19 information</a>
           <a target="_blank" href="https://corona-virus.la/resources">City of Los Angeles</a>
-          <a target="_blank" href="http://publichealth.lacounty.gov/media/Coronavirus/">County of Los Angeles Public uclahealth</a>
+          <a target="_blank" href="http://publichealth.lacounty.gov/media/Coronavirus/">County of Los Angeles Public Health</a>
           <a target="_blank" href="https://covid19.ca.gov/">State of California</a>
-          <a target="_blank" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">John Hopkins COVID-19 dashboard</a>
-          <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/">Center for Disease Control</a>
+          <a target="_blank" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">Johns Hopkins COVID-19 dashboard</a>
+          <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/">Centers for Disease Control</a>
           <a target="_blank" href="https://covid19.who.int/">World Health Organization</a>
         </div>
       </div>
     </div>
     <div class="col span_3_of_9">
-      <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg"  alt="Man Streaming in Video">
+      <div class="card-resources matchheight">
+        <img src="/wp-content/themes/ucla-sc/images/UCLA-COVID-experts.jpg"  alt="UCLA Covid experts">
         <div class="card-resources_content">
-          <h3 class="mb-16">For Journalists</h3>
+          <h3 class="mb-16">For journalists</h3>
           <p class="mb-16">UCLA faculty members are available for interviews with news media on a wide range of topics related to COVID-19, including public health and epidemiology, virology and vaccines, mental health, education, law, politics and the economy.</p>
-          <a target="_blank" href="https://newsroom.ucla.edu/covid-19-experts-main-page">UCLA COVID-19 Experts</a>
-          <a target="_blank" href="https://newsroom.ucla.edu/search?t=COVID-19">UCLA COVID-19 News Stories</a>
+          <a target="_blank" href="https://newsroom.ucla.edu/covid-19-experts-main-page">UCLA COVID-19 experts</a>
+          <a target="_blank" href="https://newsroom.ucla.edu/search?t=COVID-19">UCLA COVID-19 news stories</a>
         </div>
       </div>
     </div>
