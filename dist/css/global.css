@@ -7371,6 +7371,10 @@ body.home .fp-date {
   margin-bottom: 0;
 }
 
+body.home .fp-date span {
+  text-transform: none;
+}
+
 .header {
   background-repeat: no-repeat;
   background-position: center;
