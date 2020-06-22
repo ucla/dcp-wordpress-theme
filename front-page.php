@@ -38,7 +38,7 @@ if ( '' != $thumb_id ) {
 
       <div class="col span_12_of_12">
         <?php
-          echo '<p class="fp-date">' . date(' F d, Y') . '</p>';
+          echo '<p class="fp-date">Updated ' . date(' F d, Y') . '</p>';
           ?>
         <?php the_content(); ?>
 

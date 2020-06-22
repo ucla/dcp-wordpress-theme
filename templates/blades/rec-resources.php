@@ -16,6 +16,7 @@
           <a target="_blank" href="https://www.counseling.ucla.edu/">Counseling & Psychogical Services</a>
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources</a>
           <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Commission</a>
+          <a target="_blank" href="https://www.studenthealth.ucla.edu/">Arthur Ashe Student Health & Wellness Center</a>
         </div>
       </div>
     </div>
