@@ -21,5 +21,9 @@ body.home {
     text-transform: uppercase;
     color: $grey-60;
     margin-bottom: 0;
+
+    span {
+      text-transform: none;
+    }
   }
 }
