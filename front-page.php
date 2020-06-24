@@ -37,9 +37,10 @@ if ( '' != $thumb_id ) {
     <div class="ucla campus">
 
       <div class="col span_12_of_12">
-        <?php
-          echo '<p class="fp-date"><span>Updated</span> ' . date(' F d, Y') . '</p>';
-          ?>
+          <?php
+            $date = new DateTime(wp_date( DATE_RSS ));
+            echo '<p class="fp-date"><span>Updated</span> ' . $date->format('F j, Y') . '</p>';
+            ?>
         <?php the_content(); ?>
 
       </div>
