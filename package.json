@@ -15,7 +15,7 @@
     "jquery-match-height": "^0.7.2",
     "node-sass": "^4.14.1",
     "stylelint": "^13.3.3",
-    "ucla-bruin-components": "git+ssh://git@bitbucket.org/uclaucomm/ucla-bruin-components.git"
+    "ucla-bruin-components": "git+ssh://git@bitbucket.org/uclaucomm/ucla-bruin-components.git#beta"
   },
   "devDependencies": {},
   "scripts": {
