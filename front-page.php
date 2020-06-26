@@ -76,7 +76,7 @@ if ( '' != $thumb_id ) {
           wp_reset_postdata();
           ?>
 
-          <a class="btn white mb-lg-80 mb-xs-64 mt-32" href="/updates">
+          <a class="btn white mb-80 mb-xs-64 mt-32" href="/updates">
             <span>Read all updates</span>
           </a>
 
