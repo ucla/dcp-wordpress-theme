@@ -88,6 +88,14 @@ nav#menu {
       li {
         max-width: 100%;
 
+        &:last-of-type {
+          padding-bottom: 50px;
+
+          @media (min-width: breakpoint-min(lg)) {
+            padding-bottom: 0;
+          }
+        }
+
         // START LARGE BREAKPOINT
         @media (min-width: breakpoint-min(lg)) {
           height: 44px;
@@ -305,6 +313,8 @@ nav#menu {
 
           li {
             &:last-of-type {
+              padding-bottom: 0;
+
               a {
                 border-bottom: 0;
 
@@ -315,7 +325,7 @@ nav#menu {
             }
 
             a {
-              padding: 14px 24px;
+              padding: 14px 24px 14px 40px;
               width: calc(100% - 50px);
               font-weight: bold;
               font-size: 16px;

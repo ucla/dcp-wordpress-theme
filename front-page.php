@@ -63,7 +63,7 @@ if ( '' != $thumb_id ) {
           wp_reset_postdata();
           ?>
 
-          <a class="btn white mb-lg-80 mb-xs-64 mt-32" href="/updates">
+          <a class="btn white mb-80 mb-xs-64 mt-32" href="/updates">
             <span>Read all updates</span>
           </a>
 
@@ -72,9 +72,9 @@ if ( '' != $thumb_id ) {
       </div>
     </div>
 
-    <?php include 'templates/blades/information.php'; ?>
-    <?php include 'templates/blades/health-safety.php'; ?>
-    <?php include 'templates/blades/univ-ops.php'; ?>
+    <?php // include 'templates/blades/information.php'; ?>
+    <?php // include 'templates/blades/health-safety.php'; ?>
+    <?php // include 'templates/blades/univ-ops.php'; ?>
 
     <?php endwhile; endif; ?>
 

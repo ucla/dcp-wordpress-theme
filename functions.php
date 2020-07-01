@@ -92,8 +92,7 @@ function ucla_setup() {
   add_filter( 'the_content_more_link', 'ucla_read_more_link' );
   function ucla_read_more_link() {
     if ( ! is_admin() ) {
-      return '';
-      // return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">More on this topic.</a>';
+      return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">More on this topic.</a>';
     }
   }
 
@@ -103,15 +102,15 @@ function ucla_setup() {
     if ( ! is_admin() ) {
       global $post;
       return '';
-      // return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">More on this topic.</a>';
+      return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">More on this topic.</a>';
     }
   }
 
   // Filter the except length to 20 words.
-  // function wpdocs_custom_excerpt_length( $length ) {
-  //     return 20;
-  // }
-  // add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+  function wpdocs_custom_excerpt_length( $length ) {
+      return 20;
+  }
+  add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
   add_filter ('get_the_excerpt','wpse240352_filter_excerpt');
@@ -141,15 +140,6 @@ function ucla_setup() {
       'before_title' => '<h3 class="widget-title">',
       'after_title' => '</h3>',
     ) );
-
-    register_sidebar( array(
-      'name' => esc_html__( 'View Updates by Tags', 'ucla' ),
-      'id' => 'tags-widget-area',
-      'before_widget' => '<span id="%1$s" class="widget-container %2$s">',
-      'after_widget' => '</span>',
-      'before_title' => '<h3 class="widget-title mb-16">',
-      'after_title' => '</h3>',
-    ) );
   }
 
   // Add Dashboard Training Widget
@@ -163,15 +153,3 @@ function ucla_setup() {
   function custom_dashboard_help() {
     echo '<p>Welcome to the Strategic UCLA Communications Theme.</p><p><strong>For WordPress Resources:</strong></p><p>UCLA Spaces Page: <em><a href="https://spaces.ais.ucla.edu/display/ucomm/WordPress" target="_blank">UCLA WordPress</a></em></p><p><strong>Theme Specific Video Resources:</strong></p><iframe width="100%" height="270px" src="https://www.youtube.com/embed/PxB7V7rSvUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Page Intros: <em><a href="https://youtu.be/PxB7V7rSvUE" target="_blank">Add Page Intro Sentence</a></em></p><p>Fluid Class: <em><a href="https://youtu.be/aUKAs9iMDDA" target="_blank">Expand Backgound past content containter</a></em></p>';
   }
-
-  // function maintenace_mode() {
-  //
-  //   if ( !current_user_can( 'administrator' ) ) {
-  //
-  //   wp_die('UCLA Covid-19 informational website coming Soon.');
-  //
-  //   }
-  //
-  // }
-  //
-  // add_action('get_header', 'maintenace_mode');

@@ -5747,16 +5747,13 @@ body.no-scroll {
 
 .accordion {
   display: block;
-  border-top: 1px solid #E5E5E5;
   padding: 22px 22px 5px;
   max-width: 776px;
 }
 
-.accordion:last-of-type {
-  border-bottom: 1px solid #E5E5E5;
-}
-
 .accordion-title {
+  border: 0;
+  border-top: 1px solid #E5E5E5;
   width: 100%;
   text-align: left;
   color: #00598C;
@@ -5767,32 +5764,74 @@ body.no-scroll {
   -moz-appearance: none;
   -webkit-appearance: none;
   background: rgba(0, 0, 0, 0);
-  border: 0;
-  padding-right: 30px;
+  padding: 20px 50px 20px 30px;
+}
+
+@media (min-width: 1024px) {
+  .accordion-title {
+    height: 64px;
+    padding: 0 30px;
+  }
+}
+
+.accordion-title.active::after {
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.accordion-title:last-of-type {
+  border-bottom: 1px solid #E5E5E5;
 }
 
 .accordion-title:hover {
+  background: #2774AE;
+  color: #FFFFFF;
   cursor: pointer;
+}
+
+.accordion-title:hover::after {
+  background: url(/wp-content/themes/ucla-sc/images/icons/arrow-down-white.svg);
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  right: 24px;
+  top: 15px;
+  width: 35px;
+  height: 35px;
+}
+
+.accordion-title:hover:focus {
+  outline: 1px dotted #FFFFFF;
+  outline-offset: -6px;
 }
 
 .accordion-title:focus {
   outline: 1px dotted #00598C;
-  outline-offset: 3px;
+  outline-offset: -6px;
 }
 
-.accordion-title img {
+.accordion-title::after {
+  display: block;
+  content: "";
+  background: url(/wp-content/themes/ucla-sc/images/icons/arrow-down-defaultblue.svg);
+  background-position: center;
+  background-size: contain;
   position: absolute;
-  right: 0;
-  width: 30px;
-  height: 30px;
+  right: 24px;
+  top: 15px;
+  width: 35px;
+  height: 35px;
 }
 
-.accordion-title img.flip {
+.accordion-title::after.flip {
   transform: rotate(180deg);
 }
 
 .accordion-content {
   display: none;
+  padding: 0 24px;
 }
 
 .accordion-content.show-me {
@@ -6569,6 +6608,16 @@ nav#menu ul#menu-main-menu li a:hover {
   max-width: 100%;
 }
 
+#menu .menu-main-menu-container ul li:last-of-type {
+  padding-bottom: 50px;
+}
+
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li:last-of-type {
+    padding-bottom: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li {
     height: 44px;
@@ -6756,6 +6805,10 @@ nav#menu ul#menu-main-menu li a:hover {
   }
 }
 
+#menu .menu-main-menu-container ul li ul li:last-of-type {
+  padding-bottom: 0;
+}
+
 #menu .menu-main-menu-container ul li ul li:last-of-type a {
   border-bottom: 0;
 }
@@ -6767,7 +6820,7 @@ nav#menu ul#menu-main-menu li a:hover {
 }
 
 #menu .menu-main-menu-container ul li ul li a {
-  padding: 14px 24px;
+  padding: 14px 24px 14px 40px;
   width: calc(100% - 50px);
   font-weight: bold;
   font-size: 16px;
