@@ -13,7 +13,7 @@ function ucla_setup() {
 
 
   if ( ! isset( $content_width ) ) { $content_width = 1920; }
-    register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'ucla' ) ) );
+    register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu (Menu name must be "Main Menu")', 'ucla' ) ) );
   }
 
   // Load Theme Scripts and Styles
@@ -141,6 +141,85 @@ function ucla_setup() {
       'after_title' => '</h3>',
     ) );
   }
+
+  function theme_settings_page(){
+    ?>
+	    <div class="wrap">
+	    <h1>Theme Settings</h1>
+	    <form method="post" action="options.php">
+	        <?php
+	            settings_fields("section");
+	            do_settings_sections("theme-options");
+	            submit_button();
+	        ?>
+	    </form>
+		</div>
+	  <?php
+  }
+
+  function add_theme_menu_item() {
+  	add_menu_page("Theme Settings", "Theme Settings", "manage_options", "theme-panel", "theme_settings_page", null, 2);
+  }
+
+  add_action("admin_menu", "add_theme_menu_item");
+
+
+function logo_display()
+{
+	?>
+        <input type="file" name="logo" />
+        <?php echo get_option('logo'); ?>
+   <?php
+}
+
+function handle_logo_upload($option){
+    if(!function_exists('wp_handle_upload'))
+    {
+
+        require_once(ABSPATH .'wp-admin/includes/file.php');
+    }
+    //you are using empty version make sure your php version is higher than 5.2 https://stackoverflow.com/questions/46516267/wordpress-wp-handle-upload-not-moving-the-file
+    if(!empty($_FILES["logo"])){
+        $move_logo = wp_handle_upload( $_FILES["site_logo_custom"], array('test_form' => false) );
+        if ( $move_logo && !isset($move_logo['error']) ) {
+            $wp_upload_dir = wp_upload_dir();
+            $attachment = array(
+                'guid' => $wp_upload_dir['url'] . '/' . basename($move_logo['file']),
+                'post_mime_type' => $move_logo['type'],
+                'post_title' => preg_replace( '/\.[^.]+$/', '', basename($move_logo['file']) ),
+                'post_content' => '',
+                'post_status' => 'inherit'
+            );
+            $logo_attach_id = wp_insert_attachment($attachment, $move_logo['file']);
+            $image_attributes = wp_get_attachment_image_src( $logo_attach_id );
+            if ( $image_attributes ) {
+              return $image_attributes[0];
+             }
+             else
+             {
+                return $option;
+             }
+        }else{
+            return $option;
+        }
+    }else{
+        return $option;
+    }
+
+}
+
+function display_theme_panel_fields()
+{
+	add_settings_section("section", "All Settings", null, "theme-options");
+
+    add_settings_field("logo", "Logo", "logo_display", "theme-options", "section");
+
+    register_setting("section", "logo", "handle_logo_upload");
+}
+
+add_action("admin_init", "display_theme_panel_fields");
+
+
 
   // Add Dashboard Training Widget
   add_action('wp_dashboard_setup', 'ucla_custom_dashboard_widgets');

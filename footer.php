@@ -1,14 +1,17 @@
 
       </div>
 
-      <?php // include 'templates/blades/rec-resources.php'; ?>
+      <?php
+         $foot_signature = get_option('logo');
+      ?>
 
       <footer id="footer" role="contentinfo" class="foot container">
 
         <div class="foot-upper">
           <div class="foot-upper-wrap">
             <div class="foot-upper_address">
-              <img src="/wp-content/themes/ucla-sc/images/stratcomm_logo_white.svg" alt="UCLA Strategic Communications Logo" />
+
+              <img src="/wp-content/themes/ucla-sc/images/<?php echo $foot_signature ?>" alt="UCLA Strategic Communications Logo" />
               <p>
                 10889 Wilshire Blvd., Suite 1400<br/>
                 Los Angeles, CA 90024

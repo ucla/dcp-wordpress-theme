@@ -72,10 +72,6 @@ if ( '' != $thumb_id ) {
       </div>
     </div>
 
-    <?php // include 'templates/blades/information.php'; ?>
-    <?php // include 'templates/blades/health-safety.php'; ?>
-    <?php // include 'templates/blades/univ-ops.php'; ?>
-
     <?php endwhile; endif; ?>
 
   </article>
