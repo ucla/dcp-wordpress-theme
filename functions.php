@@ -13,7 +13,10 @@ function ucla_setup() {
 
 
   if ( ! isset( $content_width ) ) { $content_width = 1920; }
-    register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu (Menu name must be "Main Menu")', 'ucla' ) ) );
+    register_nav_menus( array(
+      'main-menu' => esc_html__( 'Main Menu (Menu name must be "Main Menu")', 'ucla' ),
+      'foot-menu' => esc_html__( 'Foot Menu (Menu name must be "Foot Menu")', 'ucla-foot' )
+    ));
   }
 
   // Load Theme Scripts and Styles
@@ -142,11 +145,24 @@ function ucla_setup() {
     ) );
   }
 
+  // https://stuntcoders.com/snippets/wordpress-custom-theme-options/
+  // https://codex.wordpress.org/Creating_Options_Pages
+  function display_theme_panel_fields() {
+    add_settings_section("section", "All Settings", null, "theme-options");
+    add_settings_field("logo", "Footer Logo", "logo_display", "theme-options", "section");
+    add_settings_field("address", "Address", "address_setting", "theme-options", "section");
+    register_setting("section", "logo", "handle_logo_upload");
+    register_setting("section", "address", "address_setting");
+  }
+
+  add_action("admin_init", "display_theme_panel_fields");
+
   function theme_settings_page(){
     ?>
 	    <div class="wrap">
-	    <h1>Theme Settings</h1>
-	    <form method="post" action="options.php">
+	    <h1>Theme Settings</h1
+        <p>This page is not functional and is currently a work in progress.</p>
+	    <form method="post" action="options.php" enctype="multipart/form-data">
 	        <?php
 	            settings_fields("section");
 	            do_settings_sections("theme-options");
@@ -164,60 +180,36 @@ function ucla_setup() {
   add_action("admin_menu", "add_theme_menu_item");
 
 
-function logo_display()
-{
-	?>
-        <input type="file" name="logo" />
-        <?php echo get_option('logo'); ?>
-   <?php
-}
+  // Address info
+  function address_setting() {
+    ?> <textarea name='address' rows='2' cols='60' type='textarea'>{$settings['address_information']}</textarea> <?php
+      echo get_option('address');
+  }
 
-function handle_logo_upload($option){
-    if(!function_exists('wp_handle_upload'))
-    {
+  function logo_display() {
+  	?> <input type="file" name="logo" /> <?php
+    echo get_option('logo');
+  }
 
-        require_once(ABSPATH .'wp-admin/includes/file.php');
-    }
-    //you are using empty version make sure your php version is higher than 5.2 https://stackoverflow.com/questions/46516267/wordpress-wp-handle-upload-not-moving-the-file
-    if(!empty($_FILES["logo"])){
-        $move_logo = wp_handle_upload( $_FILES["site_logo_custom"], array('test_form' => false) );
-        if ( $move_logo && !isset($move_logo['error']) ) {
-            $wp_upload_dir = wp_upload_dir();
-            $attachment = array(
-                'guid' => $wp_upload_dir['url'] . '/' . basename($move_logo['file']),
-                'post_mime_type' => $move_logo['type'],
-                'post_title' => preg_replace( '/\.[^.]+$/', '', basename($move_logo['file']) ),
-                'post_content' => '',
-                'post_status' => 'inherit'
-            );
-            $logo_attach_id = wp_insert_attachment($attachment, $move_logo['file']);
-            $image_attributes = wp_get_attachment_image_src( $logo_attach_id );
-            if ( $image_attributes ) {
-              return $image_attributes[0];
-             }
-             else
-             {
-                return $option;
-             }
-        }else{
-            return $option;
-        }
-    }else{
-        return $option;
+  function handle_logo_upload($option) {
+    if(!empty($_FILES["logo"]["tmp_name"])) {
+
+        $urls = wp_handle_upload($_FILES["logo"], array('test_form' => FALSE));
+        $temp = $urls["url"];
+        return $temp;
+
+    } elseif (empty($_FILES["logo"]["tmp_name"]) && var_dump(isset($temp))) {
+
+      return $temp;
+
+    } else {
+      return "Sorry there was an error with your file. It is either too big or not the correct file type.";
     }
 
-}
+    return $option;
+  }
 
-function display_theme_panel_fields()
-{
-	add_settings_section("section", "All Settings", null, "theme-options");
 
-    add_settings_field("logo", "Logo", "logo_display", "theme-options", "section");
-
-    register_setting("section", "logo", "handle_logo_upload");
-}
-
-add_action("admin_init", "display_theme_panel_fields");
 
 
 

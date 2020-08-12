@@ -1,4 +1,4 @@
-<?php /* Template Name: No Sidebar */
+<?php /* Template Name: Front Page */
 
 $thumb_id = get_post_thumbnail_id( $id );
 if ( '' != $thumb_id ) {

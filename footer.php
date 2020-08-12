@@ -11,7 +11,7 @@
           <div class="foot-upper-wrap">
             <div class="foot-upper_address">
 
-              <img src="/wp-content/themes/ucla-sc/images/<?php echo $foot_signature ?>" alt="UCLA Strategic Communications Logo" />
+              <img src="<?php echo $foot_signature ?>" alt="Footer Logo" />
               <p>
                 10889 Wilshire Blvd., Suite 1400<br/>
                 Los Angeles, CA 90024
@@ -19,7 +19,7 @@
             </div>
 
           	<div class="foot-upper_info-menu">
-
+              <?php wp_nav_menu( array( 'theme_location' => 'foot-menu' ) ); ?>
           	</div>
           </div>
         </div>

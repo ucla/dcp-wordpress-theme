@@ -14,6 +14,7 @@
 
     a {
       color: $white;
+      text-decoration: none;
     }
 
     &-wrap {
@@ -82,7 +83,6 @@
         display: inline-block;
         float: right;
         width: 66%;
-        margin-top: -100px;
       }
 
       nav#block-footer {

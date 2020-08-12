@@ -6104,6 +6104,7 @@ body.no-scroll {
 
 .foot-upper a {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .foot-upper-wrap {
@@ -6181,7 +6182,6 @@ body.no-scroll {
     display: inline-block;
     float: right;
     width: 66%;
-    margin-top: -100px;
   }
 }
 

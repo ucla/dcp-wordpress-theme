@@ -27,7 +27,7 @@
     </div>
 
     <header id="header" class="">
-
+    
       <div class="header-logo">
         <div class="header-logo__wrap">
        	  <a href="http://ucla.edu"><img class="header-logo__image" src="/wp-content/themes/ucla-sc/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
