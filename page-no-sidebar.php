@@ -1,4 +1,4 @@
-<?php /* Template Name: Sans Sidebar */
+<?php /* Template Name: No Sidebar */
 
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 

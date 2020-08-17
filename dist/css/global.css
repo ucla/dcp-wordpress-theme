@@ -7030,6 +7030,18 @@ form.search-form .search-submit {
   }
 }
 
+#sidebar ul li::before {
+  position: absolute;
+}
+
+#sidebar .search-form {
+  display: flex;
+}
+
+#sidebar .search-submit {
+  width: fit-content;
+}
+
 /*******
 Skip Navigation necessary on every page of the site and should go above the header in your page template.
 
