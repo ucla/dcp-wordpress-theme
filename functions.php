@@ -29,9 +29,9 @@ function ucla_setup() {
     // Install the UCLA Component Library  scripts
     wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-sc/dist/js/ucla-components-library/ucla-lib-scripts.min.js' );
     // Install the WordPress Theme Styles
-    wp_enqueue_style( 'theme-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
+    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
     // Install the WordPress Theme Scripts
-    wp_enqueue_script( 'theme-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
+    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
   }
 
   // Load ADMIN Login Styles
