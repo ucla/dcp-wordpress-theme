@@ -1,0 +1,17 @@
+#sidebar {
+  ul {
+    li {
+      &::before {
+        position: absolute;
+      }
+    }
+  }
+
+  .search-form {
+    display: flex;
+  }
+
+  .search-submit {
+    width: fit-content;
+  }
+}

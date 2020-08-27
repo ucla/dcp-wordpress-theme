@@ -1,4 +1,4 @@
-<?php /* Template Name: No Sidebar */
+<?php /* Template Name: Loop Posts */
 
 $thumb_id = get_post_thumbnail_id( $id );
 if ( '' != $thumb_id ) {
@@ -20,6 +20,14 @@ if ( '' != $thumb_id ) {
       <div class="ucla campus">
         <div class="col span_12_of_12">
           <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+          <p class="intro"><?php
+          $key_values = get_post_custom_values( 'intro' );
+
+          foreach ( $key_values as $key => $value ) {
+              echo $value;
+          }
+
+          ?></p>
         </div>
       </div>
     </header>

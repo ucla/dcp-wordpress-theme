@@ -5657,6 +5657,10 @@
   transform: rotate(-90deg);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body.no-scroll {
   height: 100vh;
   scrollbar-width: none;
@@ -6104,6 +6108,7 @@ body.no-scroll {
 
 .foot-upper a {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .foot-upper-wrap {
@@ -6180,8 +6185,7 @@ body.no-scroll {
   .foot-upper_info-menu {
     display: inline-block;
     float: right;
-    width: 66%;
-    margin-top: -100px;
+    width: 64%;
   }
 }
 
@@ -6237,6 +6241,7 @@ body.no-scroll {
   .foot-lower-wrap {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -6256,7 +6261,7 @@ body.no-scroll {
 
 @media (min-width: 1024px) {
   .foot-lower-copyright {
-    width: auto;
+    width: fit-content;
   }
 }
 
@@ -6276,6 +6281,10 @@ body.no-scroll {
   .foot-lower-toc {
     width: auto;
   }
+}
+
+.foot-lower-toc ul {
+  padding-inline-start: 0;
 }
 
 .foot-lower-toc ul li::before {
@@ -7030,6 +7039,18 @@ form.search-form .search-submit {
   }
 }
 
+#sidebar ul li::before {
+  position: absolute;
+}
+
+#sidebar .search-form {
+  display: flex;
+}
+
+#sidebar .search-submit {
+  width: fit-content;
+}
+
 /*******
 Skip Navigation necessary on every page of the site and should go above the header in your page template.
 
@@ -7219,6 +7240,10 @@ Skip Navigation necessary on every page of the site and should go above the head
 
 #block-socialmedia ul li a.foot-tictok:hover svg g g {
   display: none;
+}
+
+#block-socialmedia ul {
+  padding-inline-start: 0;
 }
 
 .tagcloud .tag-cloud-link {
