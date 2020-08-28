@@ -5657,7 +5657,7 @@
   transform: rotate(-90deg);
 }
 
-body {
+html, body {
   overflow-x: hidden;
 }
 
