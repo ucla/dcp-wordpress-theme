@@ -10,15 +10,23 @@
         <div class="foot-upper">
           <div class="foot-upper-wrap">
             <div class="foot-upper_address">
-              <?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
-                  <?php dynamic_sidebar( 'footer-widget-area' ); ?>
-              <?php else : ?>
-                <img src="/wp-content/themes/ucla-sc/images/ucla_logo_white.svg" alt="Footer Logo" />
-                <p>
-                  10889 Wilshire Blvd., Suite 1400<br/>
-                  Los Angeles, CA 90024
-                </p>
-              <?php endif; ?>
+
+              <img src="/wp-content/themes/ucla-sc/images/ucla_logo_white.svg">
+
+
+              <?php
+                // get the footer address from theme options
+                if ( myprefix_get_theme_option( 'address_input_one' ) !== NULL )  {
+                  $address_one = myprefix_get_theme_option( 'address_input_one' );
+                  $address_two = myprefix_get_theme_option( 'address_input_two' );
+                  echo '<p>' . $address_one . '<br/>' . $address_two . '</p>';
+                } else { ?>
+                 <p>
+                   10889 Wilshire Blvd., Suite 1400<br/>
+                   Los Angeles, CA 90024
+                 </p>
+             <?php } ?>
+
             </div>
 
           	<div class="foot-upper_info-menu">
