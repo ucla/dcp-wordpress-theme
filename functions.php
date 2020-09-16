@@ -1,5 +1,9 @@
 <?php
 
+// Create Theme Options Page
+require_once( __DIR__ . '/options.php' );
+
+// Theme specific funcitons
 add_action( 'after_setup_theme', 'ucla_setup' );
 
 function ucla_setup() {
