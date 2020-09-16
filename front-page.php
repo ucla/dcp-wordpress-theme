@@ -1,10 +1,13 @@
 <?php /* Template Name: Loop Posts */
 
-$thumb_id = get_post_thumbnail_id( $id );
-if ( '' != $thumb_id ) {
-  $thumb_url  = wp_get_attachment_image_src( $thumb_id, 'actual_size', true );
-  $image      = $thumb_url[0];
-}
+  global $id;
+
+  $thumb_id = get_post_thumbnail_id( $id );
+
+  if ( '' != $thumb_id ) {
+    $thumb_url  = wp_get_attachment_image_src( $thumb_id, 'actual_size', true );
+    $image      = $thumb_url[0];
+  }
 
 ?>
 
@@ -20,14 +23,16 @@ if ( '' != $thumb_id ) {
       <div class="ucla campus">
         <div class="col span_12_of_12">
           <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
-          <p class="intro"><?php
-          $key_values = get_post_custom_values( 'intro' );
+          <?php if ( get_post_custom_values( 'intro' ) !== NULL )  { ?>
+            <p class="intro"><?php
+            $key_values = get_post_custom_values( 'intro' );
 
-          foreach ( $key_values as $key => $value ) {
-              echo $value;
-          }
+            foreach ( $key_values as $key => $value ) {
+                echo $value;
+            }
 
-          ?></p>
+            ?></p>
+          <?php } ?>
         </div>
       </div>
     </header>
