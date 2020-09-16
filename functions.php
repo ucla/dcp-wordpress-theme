@@ -143,75 +143,16 @@ function ucla_setup() {
       'before_title' => '<h3 class="widget-title">',
       'after_title' => '</h3>',
     ) );
+
+    register_sidebar( array(
+      'name' => esc_html__( 'Footer Adress', 'ucla' ),
+      'id' => 'footer-widget-area',
+      'before_widget' => '<p>',
+      'after_widget' => '</p>',
+      'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
+    ) );
   }
-
-  // https://stuntcoders.com/snippets/wordpress-custom-theme-options/
-  // https://codex.wordpress.org/Creating_Options_Pages
-  function display_theme_panel_fields() {
-    add_settings_section("section", "All Settings", null, "theme-options");
-    add_settings_field("logo", "Footer Logo", "logo_display", "theme-options", "section");
-    add_settings_field("address", "Address", "address_setting", "theme-options", "section");
-    register_setting("section", "logo", "handle_logo_upload");
-    register_setting("section", "address", "address_setting");
-  }
-
-  add_action("admin_init", "display_theme_panel_fields");
-
-  function theme_settings_page(){
-    ?>
-	    <div class="wrap">
-	    <h1>Theme Settings</h1
-        <p>This page is not functional and is currently a work in progress.</p>
-	    <form method="post" action="options.php" enctype="multipart/form-data">
-	        <?php
-	            settings_fields("section");
-	            do_settings_sections("theme-options");
-	            submit_button();
-	        ?>
-	    </form>
-		</div>
-	  <?php
-  }
-
-  function add_theme_menu_item() {
-  	add_menu_page("Theme Settings", "Theme Settings", "manage_options", "theme-panel", "theme_settings_page", null, 2);
-  }
-
-  add_action("admin_menu", "add_theme_menu_item");
-
-
-  // Address info
-  function address_setting() {
-    ?> <textarea name='address' rows='2' cols='60' type='textarea'>{$settings['address_information']}</textarea> <?php
-      echo get_option('address');
-  }
-
-  function logo_display() {
-  	?> <input type="file" name="logo" /> <?php
-    echo get_option('logo');
-  }
-
-  function handle_logo_upload($option) {
-    if(!empty($_FILES["logo"]["tmp_name"])) {
-
-        $urls = wp_handle_upload($_FILES["logo"], array('test_form' => FALSE));
-        $temp = $urls["url"];
-        return $temp;
-
-    } elseif (empty($_FILES["logo"]["tmp_name"]) && var_dump(isset($temp))) {
-
-      return $temp;
-
-    } else {
-      return "Sorry there was an error with your file. It is either too big or not the correct file type.";
-    }
-
-    return $option;
-  }
-
-
-
-
 
   // Add Dashboard Training Widget
   add_action('wp_dashboard_setup', 'ucla_custom_dashboard_widgets');

@@ -104,28 +104,23 @@ $(document).ready(function (){
   /*==================================================================
 	0.0 General functions and variables
 	================================================================= */
-  //Detect Safari, https://gist.github.com/darryl-snow/3822361
-  eval(function (p, a, c, k, e){e=function (c){return (c<a?'':e(c/a))+String.fromCharCode(c%a+161);};while (c--){if (k[c]){p=p.replace(new RegExp(e(c), 'g'), k[c]);}} return p;}('Ö ¡(){® Ø={\'¥\':¡(){¢ £.¥},\'©\':{\'±\':¡(){¢ £.©.±},\'¯\':¡(){¢ £.©.¯}},\'¬\':¡(){¢ £.¬},\'¶\':¡(){¢ £.¶},\'º\':¡(){¢ £.º},\'Á\':¡(){¢ £.Á},\'À\':¡(){¢ £.À},\'½\':¡(){¢ £.½},\'¾\':¡(){¢ £.¾},\'¼\':¡(){¢ £.¼},\'·\':¡(){¢ £.·},\'Â\':¡(){¢ £.Â},\'³\':¡(){¢ £.³},\'Ä\':¡(){¢ £.Ä},\'Ã\':¡(){¢ £.Ã},\'Å\':¡(){¢ £.Å},\'¸\':¡(){¢ £.¸}};$.¥=Ø;® £={\'¥\':\'¿\',\'©\':{\'±\':²,\'¯\':\'¿\'},\'¬\':\'¿\',\'¶\':§,\'º\':§,\'Á\':§,\'À\':§,\'½\':§,\'¾\':§,\'¼\':§,\'·\':§,\'Â\':§,\'³\':§,\'Ä\':§,\'Ã\':§,\'Å\':§,\'¸\':§};Î(® i=0,«=».ì,°=».í,¦=[{\'¤\':\'Ý\',\'¥\':¡(){¢/Ù/.¨(°)}},{\'¤\':\'Ú\',\'¥\':¡(){¢ Û.³!=²}},{\'¤\':\'È\',\'¥\':¡(){¢/È/.¨(°)}},{\'¤\':\'Ü\',\'¥\':¡(){¢/Þ/.¨(°)}},{\'ª\':\'¶\',\'¤\':\'ß Ñ\',\'¥\':¡(){¢/à á â/.¨(«)},\'©\':¡(){¢ «.¹(/ã(\\d+(?:\\.\\d+)+)/)}},{\'¤\':\'Ì\',\'¥\':¡(){¢/Ì/.¨(«)}},{\'¤\':\'Í\',\'¥\':¡(){¢/Í/.¨(°)}},{\'¤\':\'Ï\',\'¥\':¡(){¢/Ï/.¨(«)}},{\'¤\':\'Ð\',\'¥\':¡(){¢/Ð/.¨(«)}},{\'ª\':\'·\',\'¤\':\'å Ñ\',\'¥\':¡(){¢/Ò/.¨(«)},\'©\':¡(){¢ «.¹(/Ò (\\d+(?:\\.\\d+)+(?:b\\d*)?)/)}},{\'¤\':\'Ó\',\'¥\':¡(){¢/æ|Ó/.¨(«)},\'©\':¡(){¢ «.¹(/è:(\\d+(?:\\.\\d+)+)/)}}];i<¦.Ë;i++){µ(¦[i].¥()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¥=¦[i].¤;® ­;µ(¦[i].©!=²&&(­=¦[i].©())){£.©.¯=­[1];£.©.±=Ê(­[1])}ê{® Ç=Ö ë(¦[i].¤+\'(?:\\\\s|\\\\/)(\\\\d+(?:\\\\.\\\\d+)+(?:(?:a|b)\\\\d*)?)\');­=«.¹(Ç);µ(­!=²){£.©.¯=­[1];£.©.±=Ê(­[1])}}×}};Î(® i=0,´=».ä,¦=[{\'ª\':\'¸\',\'¤\':\'ç\',\'¬\':¡(){¢/é/.¨(´)}},{\'¤\':\'Ô\',\'¬\':¡(){¢/Ô/.¨(´)}},{\'¤\':\'Æ\',\'¬\':¡(){¢/Æ/.¨(´)}}];i<¦.Ë;i++){µ(¦[i].¬()){® ª=¦[i].ª?¦[i].ª:¦[i].¤.Õ();£[ª]=É;£.¬=¦[i].¤;×}}}();', 77, 77, 'function|return|Private|name|browser|data|false|test|version|identifier|ua|OS|result|var|string|ve|number|undefined|opera|pl|if|aol|msie|win|match|camino|navigator|mozilla|icab|konqueror|Unknown|flock|firefox|netscape|linux|safari|mac|Linux|re|iCab|true|parseFloat|length|Flock|Camino|for|Firefox|Netscape|Explorer|MSIE|Mozilla|Mac|toLowerCase|new|break|Public|Apple|Opera|window|Konqueror|Safari|KDE|AOL|America|Online|Browser|rev|platform|Internet|Gecko|Windows|rv|Win|else|RegExp|userAgent|vendor'.split('|')));
-
-  let userbrowser = $.browser.browser(); //detected user browser
-
-  if (userbrowser === 'Safari') {
-    $('html').addClass('safari');
-  }
-
-  if (userbrowser === 'Firefox') {
-    $('html').addClass('firefox');
-  }
-
 
   // ad ID attribut to primary nav search form
   $('.search-form').attr('id', 'menu-search');
-
+  $('#menu-main-menu > li > a:first').attr('id', 'first-nav-link');
   // Commonly used IDs
   let hamButton = document.getElementById('primary-ham');
   let priNav = document.getElementById('menu');
   let searchForm = document.getElementById('menu-search');
+  let searchButDesk = document.getElementById('search-button');
   let header = document.getElementById('header');
+  let secondNav = document.getElementById('second-nav');
+  let childButtons = document.getElementsByClassName('has-child--button');
+  var i;
+
+  // close all menus when escape is pressed
+
+
 
   // Primary Navigation Hamburger click functionality
   hamButton.onclick = function hamClick () {
@@ -148,13 +143,11 @@ $(document).ready(function (){
   $('a.menu-item-has-children--link').after('<button class="has-child--button"><svg role="img" aria-label="Down Arrow" class="down-arrow" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Down Arrow</title><g class="Icon/Arrow-Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon class="Path-2" points="0 0 24 0 24 24 0 24"></polygon><polygon class="Path-polygon" fill="#00598C" points="7.41 8.59 12 13.17 16.59 8.59 18 10 12 16 6 10"></polygon></g></svg></button>');
   $('.form-search').attr('placeholder', 'Search');
 
-
-
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
   function desktopSubmenuResize () {
-    let w = $('.nav-wrap').width() - 62,
-      negOffset = (w + 8) * -1;
+    let w = $('.nav-wrap').width() - 10,
+      negOffset = (w - 56) * -1;
 
     //Add the width off the header wrap to the search dropdown
     $('.search-block-form').css({ // <a class="has-child--link">
@@ -182,11 +175,27 @@ $(document).ready(function (){
     // Put the search form at the end of the nav
     $('#block-search').append(searchForm);
 
-    // if ($('li.has-child > a').is(':focus')) {
-    //   $(this).siblings('ul').css('display', 'block');
-    // }
+    $('#entity-wrap').append(secondNav);
 
     $('a.current-page').next('.has-child--button').addClass('current-page');
+
+    $(document).keyup(function(e) {
+       if (e.key === "Escape") { // escape key maps to keycode `27`
+          // if desktop sub menu is focus then unfocus and remove styles
+          if ($('#menu-main-menu ul li a').is(':focus')) {
+            document.activeElement.blur();
+            $('.sub-menu').removeAttr('style');
+            $('.menu-item-has-children--link').removeAttr('style');
+            $('.menu-item').removeAttr('style');
+            $('.has-child--button').removeAttr('style');
+            $('.has-child--button').find('svg > g > .Path-polygon').attr('fill', '#00598C');
+          // else if the mobile menu is open close it, focus on the hamburger and allow scrolling again.
+          } else if (searchButDesk.classList.contains('is-active')) {
+            $('#search-button').trigger('click');
+            $('#search-button').focus();
+          }
+      }
+    });
 
     // Desktop Menu keyboard functionality
     document.onkeydown = function () {
@@ -263,10 +272,13 @@ $(document).ready(function (){
 
     // let desktop = 1024; // For Debuggin' Only
     // console.log('mobile'); // For Debuggin' Only
-    // console.log('MOBILE'); // For Debuggin' Only
+    // console.log(desktop); // For Debuggin' Only
 
     // Put the search form at the beginning of the nav
     $('nav#menu').prepend(searchForm);
+
+    // Put the header buttons at the end of the nav
+    $('ul#menu-main-menu').append(secondNav);
 
     /* Disable Mobile scroll when menu is open CSS for no-scroll in stylesheet*/
     $('#primary-ham').on('click', scrollDisable);
@@ -292,6 +304,30 @@ $(document).ready(function (){
       }
     });
 
+    $(document).keyup(function(e) {
+       if (e.key === "Escape") { // escape key maps to keycode `27`
+         let found = false;
+         // Check each submenu individually to see if any are open
+         for (i = 0; i < childButtons.length; i++) {
+           if (childButtons[i].classList.contains('is-active')) {
+             // if open menus are found close them
+             $('.sub-menu').removeClass('is-active');
+             $('.has-child--button').removeClass('is-active');
+             // Reset the found variable
+             found = true;
+             // stop what is happening, do not close the entire menu
+             break;
+           }
+         }
+         // if submenu is not open close entire menu
+         if(!found && hamButton.classList.contains('is-active')){
+           $('#primary-ham').trigger('click');
+           $('#primary-ham').focus();
+           $('body').removeClass('no-scroll');
+         }
+      }
+    });
+
     // Enable Click functionality for mobile nav submenu.
     $('.has-child--button').removeAttr('tabindex');
 
@@ -300,30 +336,35 @@ $(document).ready(function (){
       let element = document.activeElement;
       /*eslint-disable */
       var evt = evt || window.event;
-      /*eslint-enable */
-      // Start with hamburger at top of page.
-      if ($('.button.mobile').is(':focus')) {
-        if (evt.keyCode === 13) {
 
+      //console.log(element); // debuggin' only
+
+      /*eslint-enable */
+
+      // Start with skip Navigation at the top of the page
+      if ($('#skip-to-nav').is(':focus')) {
+        if (evt.keyCode === 13) {
           if ($('#primary-ham').hasClass('is-active')) {
-            event.preventDefault();
-            $('#menu-item-31').focus();
+            // do nothing
+            // console.log('Menu is already open.');
           } else {
             $('#primary-ham').trigger('click');
-            $('#menu-item-31').focus();
           }
 
         }
+
+      } else if ($('#entity-name').is(':focus') && !$('.hamburger.hamburger--squeeze').hasClass('is-active')) {
+
+        $('#primary-ham').trigger('click');
 
       } else if ($('.hamburger.hamburger--squeeze').is(':focus')) {
 
         if (evt.keyCode === 9 && event.shiftKey) {
 
           if ($('.hamburger.hamburger--squeeze').hasClass('is-active')) {
-
-            event.preventDefault();
             setTimeout(function () {
-              $('#menu > ul > li:last-of-type > a:last-of-type').focus();
+              $('#primary-ham').trigger('click');
+              $('body').removeClass('no-scroll');
             }, 100);
 
           }
@@ -336,7 +377,7 @@ $(document).ready(function (){
 
             event.preventDefault();
             setTimeout(function () {
-              $('#main').find('a:first').focus();
+              $('#content').find('a:first').focus();
             }, 100);
           }
 
@@ -355,46 +396,28 @@ $(document).ready(function (){
         }
 
       // If you're focused on the last link in the main menu
-      } else if ($('.menu-main-menu-container > ul > li:last-of-type > a:last-of-type').is(':focus')) {
+      } else if ($('#second-nav> a:last-of-type').is(':focus')) {
 
-        // If you're focused on the last link in the main menu shitf + tab.
         if (evt.keyCode === 9 && event.shiftKey) {
-          // do nothing
+          // Do nothing
 
-        // If you're focused on the last link in the main menu tab.
         } else if (evt.keyCode === 9) {
-
-          // this sends the focus back to the hamburger.
           event.preventDefault();
           setTimeout(function () {
-            $('#primary-ham').focus();
-          }, 100);
-
-        }
-
-      } else if (!$('.menu-main-menu-container > ul > li:last-of-type > button').hasClass('is-active') && $('#menu > ul > li:last-of-type > button').is(':focus')) {
-
-        if (evt.keyCode === 9) {
-          event.preventDefault();
-          setTimeout(function () {
-            $('#primary-ham').focus();
+            $('#primary-ham').trigger('click');
+            $('#content').find('a:first').focus();
+            $('body').removeClass('no-scroll');
           }, 100);
         }
 
-      } else if ($('#menu > ul > li:last-of-type > ul > li:last-of-type > a:last-of-type').is(':focus')) {
-
-        if (evt.keyCode === 9) {
-          event.preventDefault();
-          setTimeout(function () {
-            $('#primary-ham').focus();
-          }, 100);
-        }
-
-      } else if ($('#main').find('a:first').is(':focus')) {
+      } else if ($('#content a:first').is(':focus') && !hamButton.classList.contains('is-active')) {
         if (evt.keyCode === 9 && event.shiftKey) {
           event.preventDefault();
           setTimeout(function () {
-            $('#primary-ham').focus();
+            $('#primary-ham').trigger('click');
+            $("html, body").animate({ scrollTop: 0 }, 10);
+            $('#second-nav').find('a:last-of-type').focus();
+            $('body').addClass('no-scroll');
           }, 100);
         }
       }
@@ -415,7 +438,7 @@ $(document).ready(function (){
     //console.log('i picked a menu');
 
     // This decides if the window is at dekstop size or not.
-    if (window.screen.width >= desktop) {
+    if (window.innerWidth >= desktop) {
 
       // Reset or remove any menu classes
       $('.has-child--button, #menu, .hamburger, .header, .sub-menu').removeClass('is-active');
@@ -423,14 +446,16 @@ $(document).ready(function (){
 
       // Get and Run the dektop functionality
       desktopMenu();
+      //console.log('i picked the desktop menu');
 
     // This decides if the window is at mobile size or not.
-    } else if (window.screen.width < desktop){
+    } else if (window.innerWidth < desktop){
 
       // Reset or remove any menu classes
 
       // Get and Run the mobile menu functionality
       mobileMenu();
+      //console.log('i picked the mobile menu');
 
     }
   }
