@@ -7,7 +7,7 @@
   <div class="ucla campus">
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
+        <img src="<?php echo get_template_directory_uri() ?>/images/resources-campus.jpg" alt ="Student in front of Bruin statue">
         <div class="card-resources_content">
           <h3 class="mb-16">Campus support</h3>
           <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
@@ -22,7 +22,7 @@
     </div>
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resource-health.jpg" alt="Image of Corona Virus">
+        <img src="<?php echo get_template_directory_uri() ?>/images/resource-health.jpg" alt="Image of Corona Virus">
         <div class="card-resources_content">
           <h3 class="mb-16">COVID-19 information</h3>
           <a target="_blank" href="https://www.uclahealth.org/coronavirus">UCLA Health COVID-19 information</a>
@@ -37,7 +37,7 @@
     </div>
     <div class="col span_3_of_9">
       <div class="card-resources">
-        <img src="/wp-content/themes/ucla-sc/images/resource-media.jpg"  alt="Man Streaming in Video">
+        <img src="<?php echo get_template_directory_uri() ?>/images/resource-media.jpg"  alt="Man Streaming in Video">
         <div class="card-resources_content">
           <h3 class="mb-16">For Journalists</h3>
           <p class="mb-16">UCLA faculty members are available for interviews with news media on a wide range of topics related to COVID-19, including public health and epidemiology, virology and vaccines, mental health, education, law, politics and the economy.</p>

@@ -50,7 +50,11 @@ function ucla_setup() {
       echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
       if ( is_single()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+        if((get_the_category( get_the_ID() )[0]) -> name != null) {
+          echo (get_the_category( get_the_ID() )[0]) -> name;
+        } else {
           echo get_post_type( get_the_ID() );
+        }
               if (is_single()) {
                   echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
                   the_title();

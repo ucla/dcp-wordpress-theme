@@ -11,9 +11,11 @@
       <?php edit_post_link(); ?>
       <p class="intro"><?php
       $key_values = get_post_custom_values( 'intro' );
-
-      foreach ( $key_values as $key => $value ) {
+      
+      if ( $key_values != null) {
+        foreach ( $key_values as $key => $value ) {
           echo $value;
+        }
       }
 
       ?></p>
