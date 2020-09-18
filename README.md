@@ -6,7 +6,17 @@
 * UCLA Strat Comm recommendations on WordPress approved plugins and practices,[go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
 * To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
 
-### How do I get set up? ###
+
+Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
+
+
+### WordPress Install ###
+To install this theme on your WordPress site, download the full zip file of the distribution branch. Install the zip file on your WordPress by going to Appearance > Themes > Add New.
+
+### Child Theme Development ###
+You can download and install the child theme ucla-sc-child [here](https://bitbucket.org/uclaucomm/ucla-sc-child/src/distribution/).
+
+### Development Parent Theme ###
 
 *Get Started*
 
