@@ -76,6 +76,14 @@ function watchJavascript(done) {
 
 exports.default = defaultTask
 
+
+exports.build = series(
+  libraryStyles,
+  themeStyles,
+  themeConcatJs,
+  libraryConcatJs
+);
+
 exports.production = series(
   libraryStyles,
   themeStyles,

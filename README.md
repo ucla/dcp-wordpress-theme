@@ -1,8 +1,7 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.0.1
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-* Tested up to WordPress 5.4
+* Version 0.1.0
+* Tested up to WordPress 5.5.1
 * UCLA Strat Comm recommendations on WordPress approved plugins and practices,[go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
 * To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
 
@@ -11,7 +10,7 @@ Welcome to the official UCLA WordPress theme. This theme was created through a c
 
 
 ### WordPress Install ###
-To install this theme on your WordPress site, download the full zip file of the distribution branch. Install the zip file on your WordPress by going to Appearance > Themes > Add New.
+To install this theme on your WordPress site, download the full zip file of the distribution branch. Go to Appearance > Themes in the left hand menu of the WordPress admin and then select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
 
 ### Child Theme Development ###
 You can download and install the child theme ucla-sc-child [here](https://bitbucket.org/uclaucomm/ucla-sc-child/src/distribution/).
@@ -20,14 +19,14 @@ You can download and install the child theme ucla-sc-child [here](https://bitbuc
 
 *Get Started*
 
-This is an advanced WordPress development environment and in order to understand this documentation there is some required knowledge that is assumed. That is not meant to deter anyone, if you've made it this far you're already on to something. Follow the instructions in this documentation, read the documentation in the links closely, read some stack overflow posts or articles when you run into errors, and you can get started in this theme. Be patient. If you are unfamiliar with these tools and learn how to use this theme, you will become a better developer. Let's get started.
+This is an advanced WordPress development environment and in order to understand this documentation there is some required knowledge that is assumed. Do not let this stop you from learning how to use this theme. If you've made it this far you're already on your way. Follow the instructions in this documentation and learn what you have to. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Read some stack overflow posts or articles when you run into errors, and you can get started in this theme. Be patient. If you are unfamiliar with these tools and learn how to use this theme, you will become a better developer.
 
-Run WordPress on your choice of local setup. If you dont know how to do this there are multiple solutions. Pick the one that works best for you.
+WordPress will need to be installed and run on your local computer. If you dont know how to do this there are multiple solutions. Below are some helpful articles and different ways to setup an environment. Feel free to use one of these or do your own research.
 * [Mac](https://www.themeum.com/install-wordpress-localhost/)
 * [PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
 * [Kinsta](https://kinsta.com/blog/install-wordpress-locally/)
 * [Flywheel](https://localwp.com/)
-* [Google search](https://www.google.com/search?q=setup+wordpress+locally&oq=setup+wordpress+locally&aqs=chrome..69i57j0l7.3734j0j9&sourceid=chrome&ie=UTF-8)
+
 
 Pull this repository into a wp-content/themes/ucla-sc. The ucla-sc folder should be your root folder of the theme.
 * [git](https://git-scm.com/doc)

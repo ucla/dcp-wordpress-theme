@@ -13,8 +13,8 @@
     "gulp-stylelint": "^13.0.0",
     "hamburgers": "^1.1.3",
     "node-sass": "^4.14.1",
-    "stylelint": "^13.3.3",
-    "ucla-bruin-components": "git+https://bitbucket.org/uclaucomm/ucla-bruin-components.git"
+    "stylelint": "^13.7.1",
+    "ucla-bruin-components": "git+ssh://git@bitbucket.org/uclaucomm/ucla-bruin-components.git"
   },
   "devDependencies": {},
   "scripts": {
