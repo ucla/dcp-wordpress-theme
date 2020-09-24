@@ -2,6 +2,7 @@
   "name": "ucla-sc",
   "version": "1.0.0",
   "description": "package for UCLA WordPress theme",
+  "license": "BSD-3-Clause",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^4.0.2",

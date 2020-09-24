@@ -71,8 +71,8 @@ $(document).ready(function (){
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
   function desktopSubmenuResize () {
-    let w = $('.nav-wrap').width() - 10,
-      negOffset = (w - 56) * -1;
+    let w = $('.nav-wrap').width() - 70,
+      negOffset = (w + 10) * -1;
 
     //Add the width off the header wrap to the search dropdown
     $('.search-block-form').css({ // <a class="has-child--link">
