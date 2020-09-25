@@ -5657,6 +5657,28 @@
   transform: rotate(-90deg);
 }
 
+a {
+  color: #00598C;
+}
+
+a:visited {
+  color: #5223B0;
+}
+
+a:hover {
+  color: white;
+  background: #0079BF;
+}
+
+a:active {
+  color: white;
+  background: #003B5C;
+}
+
+a:focus {
+  outline: 1px dotted #00598C;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -7434,99 +7456,6 @@ body.home .univ-ops {
 
 .header h1 {
   padding: 40px 0;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-body.no-scroll {
-  height: 100vh;
-  scrollbar-width: none;
-  -webkit-scrollbar-width: none;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-}
-
-.univ-ops,
-.info-blade,
-.blade-resources {
-  padding: 40px 0 !important;
-}
-
-@media (min-width: breakpoint-min(md)) {
-  .univ-ops,
-  .info-blade,
-  .blade-resources {
-    padding: 80px 0 40px 0 !important;
-  }
-}
-
-.ucla.campus .first-child.col {
-  margin-left: 0;
-}
-
-.ucla.campus p {
-  margin-bottom: 16px;
-}
-
-.ucla.campus .fluid {
-  display: block;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.ucla.campus .fluid .expander {
-  display: block;
-  position: absolute;
-  background: #F7F7F7;
-  margin: 0;
-  padding: 0;
-  left: -24px;
-}
-
-@media (min-width: breakpoint-min(lg)) {
-  .ucla.campus .fluid .expander {
-    left: -12px;
-  }
-}
-
-.ucla.campus .fluid .expander-container {
-  display: block;
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
-
-@media (min-width: breakpoint-min(lg)) {
-  .ucla.campus .fluid .expander-container {
-    padding: 80px 12px;
-  }
-}
-
-.ucla.campus .fluid .expander-container p {
-  margin-bottom: 16px;
-}
-
-.widget-title {
-  font-size: 20px;
-}
-
-.blade-hs {
-  padding: 32px 0 !important;
-}
-
-@media (min-width: breakpoint-min(lg)) {
-  .blade-hs {
-    padding: 52px 0 !important;
-  }
-}
-
-.grey-mar {
-  background: #F7F7F7;
 }
 
 /* this is all from Bootstrap */

@@ -1,7 +1,28 @@
+a {
+  color: $default-state;
+
+  &:visited {
+    color: $visited-state;
+  }
+
+  &:hover {
+    color: white;
+    background: $hover-state;
+  }
+
+  &:active {
+    color: white;
+    background: $active-state;
+  }
+
+  &:focus {
+    outline: 1px dotted $default-state;
+  }
+}
+
 html, body {
   overflow-x: hidden;
 }
-
 
 body.no-scroll {
   height: 100vh;
