@@ -41,7 +41,7 @@ $(document).ready(function (){
   let header = document.getElementById('header');
   let secondNav = document.getElementById('second-nav');
   let childButtons = document.getElementsByClassName('has-child--button');
-  var i;
+  let i;
 
   // close all menus when escape is pressed
 
@@ -64,7 +64,7 @@ $(document).ready(function (){
     }
   };
 
-  $('.menu-item-has-children').children('a').addClass('menu-item-has-children--link');
+  $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
   $('a.menu-item-has-children--link').after('<button class="has-child--button"><svg role="img" aria-label="Down Arrow" class="down-arrow" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Down Arrow</title><g class="Icon/Arrow-Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon class="Path-2" points="0 0 24 0 24 24 0 24"></polygon><polygon class="Path-polygon" fill="#00598C" points="7.41 8.59 12 13.17 16.59 8.59 18 10 12 16 6 10"></polygon></g></svg></button>');
   $('.form-search').attr('placeholder', 'Search');
 
@@ -104,21 +104,21 @@ $(document).ready(function (){
 
     $('a.current-page').next('.has-child--button').addClass('current-page');
 
-    $(document).keyup(function(e) {
-       if (e.key === "Escape") { // escape key maps to keycode `27`
-          // if desktop sub menu is focus then unfocus and remove styles
-          if ($('#menu-main-menu ul li a').is(':focus')) {
-            document.activeElement.blur();
-            $('.sub-menu').removeAttr('style');
-            $('.menu-item-has-children--link').removeAttr('style');
-            $('.menu-item').removeAttr('style');
-            $('.has-child--button').removeAttr('style');
-            $('.has-child--button').find('svg > g > .Path-polygon').attr('fill', '#00598C');
+    $(document).keyup(function (e) {
+      if (e.key === 'Escape') { // escape key maps to keycode `27`
+        // if desktop sub menu is focus then unfocus and remove styles
+        if ($('#menu-main-menu ul li a').is(':focus')) {
+          document.activeElement.blur();
+          $('.sub-menu').removeAttr('style');
+          $('.menu-item-has-children--link').removeAttr('style');
+          $('.menu-item').removeAttr('style');
+          $('.has-child--button').removeAttr('style');
+          $('.has-child--button').find('svg > g > .Path-polygon').attr('fill', '#00598C');
           // else if the mobile menu is open close it, focus on the hamburger and allow scrolling again.
-          } else if (searchButDesk.classList.contains('is-active')) {
-            $('#search-button').trigger('click');
-            $('#search-button').focus();
-          }
+        } else if (searchButDesk.classList.contains('is-active')) {
+          $('#search-button').trigger('click');
+          $('#search-button').focus();
+        }
       }
     });
 
@@ -217,39 +217,42 @@ $(document).ready(function (){
     }
 
     // Click functionality for mobile nav submenu buttons.
-    $('.has-child--button').click(function (){
-      if ($(this).next('ul').hasClass('is-active')) {
-        $(this).removeClass('is-active');
-        $(this).next('ul').removeClass('is-active');
+    $(document).on('click', '.has-child--button', function () {
+      event.preventDefault();
+      let elem = $(this);
+      if (elem.next('ul').hasClass('is-active')) {
+        elem.removeClass('is-active');
+        elem.next('ul').removeClass('is-active');
         //console.log('menu closed'); // For Debuggin' Only
       } else {
-        $(this).addClass('is-active');
-        $(this).next('ul').addClass('is-active');
+        elem.addClass('is-active');
+        elem.next('ul').addClass('is-active');
         //console.log('menu open'); // For Debuggin' Only
       }
+
     });
 
-    $(document).keyup(function(e) {
-       if (e.key === "Escape") { // escape key maps to keycode `27`
-         let found = false;
-         // Check each submenu individually to see if any are open
-         for (i = 0; i < childButtons.length; i++) {
-           if (childButtons[i].classList.contains('is-active')) {
-             // if open menus are found close them
-             $('.sub-menu').removeClass('is-active');
-             $('.has-child--button').removeClass('is-active');
-             // Reset the found variable
-             found = true;
-             // stop what is happening, do not close the entire menu
-             break;
-           }
-         }
-         // if submenu is not open close entire menu
-         if(!found && hamButton.classList.contains('is-active')){
-           $('#primary-ham').trigger('click');
-           $('#primary-ham').focus();
-           $('body').removeClass('no-scroll');
-         }
+    $(document).keyup(function (e) {
+      if (e.key === 'Escape') { // escape key maps to keycode `27`
+        let found = false;
+        // Check each submenu individually to see if any are open
+        for (i = 0; i < childButtons.length; i++) {
+          if (childButtons[i].classList.contains('is-active')) {
+            // if open menus are found close them
+            $('.sub-menu').removeClass('is-active');
+            $('.has-child--button').removeClass('is-active');
+            // Reset the found variable
+            found = true;
+            // stop what is happening, do not close the entire menu
+            break;
+          }
+        }
+        // if submenu is not open close entire menu
+        if (!found && hamButton.classList.contains('is-active')){
+          $('#primary-ham').trigger('click');
+          $('#primary-ham').focus();
+          $('body').removeClass('no-scroll');
+        }
       }
     });
 
@@ -340,7 +343,7 @@ $(document).ready(function (){
           event.preventDefault();
           setTimeout(function () {
             $('#primary-ham').trigger('click');
-            $("html, body").animate({ scrollTop: 0 }, 10);
+            $('html, body').animate({ scrollTop: 0 }, 10);
             $('#second-nav').find('a:last-of-type').focus();
             $('body').addClass('no-scroll');
           }, 100);

@@ -1,0 +1,86 @@
+html, body {
+  overflow-x: hidden;
+}
+
+
+body.no-scroll {
+  height: 100vh;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.univ-ops,
+.info-blade,
+.blade-resources {
+  padding: 40px 0 !important;
+
+  @media (min-width: breakpoint-min(md)) {
+    padding: 80px 0 40px 0 !important;
+  }
+}
+
+.ucla.campus {
+  // First child fix if you put a title above span. See example on templates/health-saftey.php
+  .first-child.col {
+    margin-left: 0;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  .fluid {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    .expander {
+      display: block;
+      position: absolute;
+      background: #F7F7F7;
+      margin: 0;
+      padding: 0;
+      left: -24px;
+
+      @media (min-width: breakpoint-min(lg)) {
+        left: -12px;
+      }
+
+      &-container {
+        display: block;
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 40px 24px;
+
+        @media (min-width: breakpoint-min(lg)) {
+          padding: 80px 12px;
+        }
+
+        p {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.widget-title {
+  font-size: 20px;
+}
+
+.blade-hs {
+  padding: 32px 0 !important;
+
+  @media (min-width: breakpoint-min(lg)) {
+    padding: 52px 0 !important;
+  }
+}
+
+.grey-mar {
+  background: #F7F7F7;
+}

@@ -95,14 +95,15 @@ nav#menu {
             padding-bottom: 0;
           }
         }
-
-        // START LARGE BREAKPOINT
+        // START LARGE BREAKPOINT LIST ITEM
         @media (min-width: breakpoint-min(lg)) {
           height: 44px;
           float: left;
           position: relative;
 
           a {
+            color: $default-state;
+
             ~ ul {
               position: absolute;
               left: 0;
@@ -184,6 +185,7 @@ nav#menu {
           display: inline-block;
           width: calc(100% - 25px);
           border-top: 1px solid $medium-grey3;
+          color: $default-state;
 
           &:hover {
             background: $hover-state;

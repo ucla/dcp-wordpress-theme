@@ -6634,6 +6634,9 @@ nav#menu ul#menu-main-menu li a:hover {
     float: left;
     position: relative;
   }
+  #menu .menu-main-menu-container ul li a {
+    color: #00598C;
+  }
   #menu .menu-main-menu-container ul li a ~ ul {
     position: absolute;
     left: 0;
@@ -6689,6 +6692,7 @@ nav#menu ul#menu-main-menu li a:hover {
   display: inline-block;
   width: calc(100% - 25px);
   border-top: 1px solid #CCCCCC;
+  color: #00598C;
 }
 
 #menu .menu-main-menu-container ul li a:hover {
@@ -7052,6 +7056,93 @@ form.search-form .search-submit {
   width: fit-content;
 }
 
+/*
+
+This stylesheet applies to the side menu on subpages. The side menu is only visible on desktop.
+
+*/
+#menu-sidebar-menu.menu {
+  max-width: 275px;
+  display: block;
+  margin: 0 auto;
+}
+
+#menu-sidebar-menu.menu .menu-item {
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 0;
+}
+
+#menu-sidebar-menu.menu .menu-item::before {
+  display: none;
+}
+
+#menu-sidebar-menu.menu .menu-item:first-child {
+  border-top: 1px solid #CCCCCC;
+}
+
+#menu-sidebar-menu.menu .menu-item a {
+  color: #00598C;
+  display: block;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu-sidebar-menu.menu .menu-item a:hover {
+  background-color: #0079BF;
+  color: #FFFFFF;
+}
+
+#menu-sidebar-menu.menu .menu-item a:focus {
+  outline: 1px dotted #0079BF;
+  outline-offset: -4px;
+}
+
+#menu-sidebar-menu.menu .menu-item a:active {
+  background-color: #003B5C;
+  color: #FFFFFF;
+  outline: none;
+}
+
+#menu-sidebar-menu.menu .menu-item .current-page {
+  border-left: 4px solid #FFD100;
+}
+
+#menu-sidebar-menu.menu .menu-item .has-child--button {
+  display: none;
+}
+
+#menu-sidebar-menu.menu .sub-menu {
+  margin-top: 0;
+  padding-inline-start: 0;
+}
+
+#menu-sidebar-menu.menu .sub-menu .menu-item {
+  background-color: #F2F2F2;
+}
+
+#menu-sidebar-menu.menu .sub-menu .menu-item a {
+  padding-left: 32px;
+}
+
+#menu-sidebar-menu.menu .sub-menu .menu-item:last-child {
+  border: 0 !important;
+}
+
+#menu-sidebar-menu.menu .sub-menu .sub-menu .menu-item {
+  background-color: #E0E0E0;
+}
+
+#menu-sidebar-menu.menu .sub-menu .sub-menu .menu-item a {
+  padding-left: 48px;
+}
+
+#menu-sidebar-menu.menu .sub-menu .sub-menu .menu-item:last-child {
+  border: 0 !important;
+}
+
 /*******
 Skip Navigation necessary on every page of the site and should go above the header in your page template.
 
@@ -7247,6 +7338,67 @@ Skip Navigation necessary on every page of the site and should go above the head
   padding-inline-start: 0;
 }
 
+/* Tables css for WordPress only */
+.wp-block-table.is-style-stripes tbody > tr:nth-child(odd),
+.wp-block-table.is-style-stripes tbody > tr:nth-child(odd) td:nth-child(1) {
+  background-color: #EBEBEB;
+}
+
+.wp-block-table.is-style-stripes tbody > tr:nth-child(even),
+.wp-block-table.is-style-stripes tbody > tr:nth-child(even) td:nth-child(1) {
+  background-color: #FFFFFF;
+}
+
+.wp-block-table.is-style-stripes tbody > tr.blue-total,
+.wp-block-table.is-style-stripes tbody > tr.blue-total td:nth-child(1) {
+  background-color: #DAEBFE;
+  font-weight: bold;
+}
+
+.wp-block-table.is-style-stripes tbody > tr.yellow-total,
+.wp-block-table.is-style-stripes tbody > tr.yellow-total td:nth-child(1) {
+  background-color: #FFD100;
+  font-weight: bold;
+}
+
+.wp-block-table.is-style-stripes tbody > tr.yellow-total > td,
+.wp-block-table.is-style-stripes tbody > tr.yellow-total td:nth-child(1) > td {
+  border: none;
+}
+
+.wp-block-table.is-style-stripes tbody td {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: #333;
+  padding: 8px 16px;
+  word-wrap: break-word;
+}
+
+.wp-block-table.is-style-stripes tfoot > tr.blue-total,
+.wp-block-table.is-style-stripes tfoot > tr.blue-total td:nth-child(1) {
+  background-color: #DAEBFE;
+  font-weight: bold;
+}
+
+.wp-block-table.is-style-stripes tfoot > tr.yellow-total,
+.wp-block-table.is-style-stripes tfoot > tr.yellow-total td:nth-child(1) {
+  background-color: #FFD100;
+  font-weight: bold;
+}
+
+.wp-block-table.is-style-stripes tfoot > tr.yellow-total > td,
+.wp-block-table.is-style-stripes tfoot > tr.yellow-total td:nth-child(1) > td {
+  border: none;
+}
+
+.wp-block-table.is-style-stripes tfoot td {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  color: #333333;
+  padding: 8px 16px;
+  word-wrap: break-word;
+}
+
 .tagcloud .tag-cloud-link {
   border: 2px solid #00598C;
   border-radius: 18px;
@@ -7283,3 +7435,98 @@ body.home .univ-ops {
 .header h1 {
   padding: 40px 0;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  height: 100vh;
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.univ-ops,
+.info-blade,
+.blade-resources {
+  padding: 40px 0 !important;
+}
+
+@media (min-width: breakpoint-min(md)) {
+  .univ-ops,
+  .info-blade,
+  .blade-resources {
+    padding: 80px 0 40px 0 !important;
+  }
+}
+
+.ucla.campus .first-child.col {
+  margin-left: 0;
+}
+
+.ucla.campus p {
+  margin-bottom: 16px;
+}
+
+.ucla.campus .fluid {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.ucla.campus .fluid .expander {
+  display: block;
+  position: absolute;
+  background: #F7F7F7;
+  margin: 0;
+  padding: 0;
+  left: -24px;
+}
+
+@media (min-width: breakpoint-min(lg)) {
+  .ucla.campus .fluid .expander {
+    left: -12px;
+  }
+}
+
+.ucla.campus .fluid .expander-container {
+  display: block;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+@media (min-width: breakpoint-min(lg)) {
+  .ucla.campus .fluid .expander-container {
+    padding: 80px 12px;
+  }
+}
+
+.ucla.campus .fluid .expander-container p {
+  margin-bottom: 16px;
+}
+
+.widget-title {
+  font-size: 20px;
+}
+
+.blade-hs {
+  padding: 32px 0 !important;
+}
+
+@media (min-width: breakpoint-min(lg)) {
+  .blade-hs {
+    padding: 52px 0 !important;
+  }
+}
+
+.grey-mar {
+  background: #F7F7F7;
+}
+
+/* this is all from Bootstrap */
