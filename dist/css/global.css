@@ -5772,6 +5772,31 @@ body.no-scroll {
   background: #F7F7F7;
 }
 
+.wp-block-table {
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.wp-block-table::-webkit-scrollbar {
+  display: none;
+}
+
+.wp-block-table figcaption {
+  display: block;
+  position: relative;
+  font-size: 11px;
+  margin-left: 12px;
+  font-style: italic;
+  padding: 4px;
+}
+
+.wp-block-table.is-style-stripes.total tfoot {
+  background: #FFD100;
+}
+
 .accordion {
   display: block;
   padding: 22px 22px 5px;
@@ -6595,13 +6620,13 @@ nav#menu ul#menu-main-menu li a:hover {
   #menu {
     display: block;
     position: absolute;
-    height: 44px;
+    height: 38px;
     width: fit-content;
     width: max-content;
     max-width: 1176px;
     margin: 0 auto;
     right: 0;
-    top: 31px;
+    top: 37px;
     overflow: visible;
     border: 0;
   }
@@ -6626,6 +6651,7 @@ nav#menu ul#menu-main-menu li a:hover {
   position: absolute;
   right: 0;
   margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 @media (min-width: 1024px) {
@@ -6651,8 +6677,49 @@ nav#menu ul#menu-main-menu li a:hover {
 }
 
 @media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li.current-menu-item:hover a.current-page::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li.current-menu-item:hover button.current-page::after {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li.current-menu-item a.current-page::after {
+    display: block;
+    position: relative;
+    content: '';
+    width: 100%;
+    margin: 0 auto;
+    top: 4px;
+    height: 4px;
+    background: #FFD100;
+    z-index: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li.current-menu-item button.current-page::after {
+    display: block;
+    position: relative;
+    content: '';
+    width: 100%;
+    margin: 0 auto;
+    top: -1px;
+    left: -6px;
+    height: 4px;
+    background: #FFD100;
+    z-index: 5;
+  }
+}
+
+@media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li {
-    height: 44px;
+    height: 38px;
     float: left;
     position: relative;
   }
@@ -6662,7 +6729,6 @@ nav#menu ul#menu-main-menu li a:hover {
   #menu .menu-main-menu-container ul li a ~ ul {
     position: absolute;
     left: 0;
-    top: 44px;
   }
   #menu .menu-main-menu-container ul li a:focus {
     outline: 1px dotted #0079BF;
@@ -6670,6 +6736,7 @@ nav#menu ul#menu-main-menu li a:hover {
   }
   #menu .menu-main-menu-container ul li a:focus ~ ul {
     display: block;
+    top: 38px;
   }
   #menu .menu-main-menu-container ul li:hover {
     background: #0079BF;
@@ -6683,9 +6750,6 @@ nav#menu ul#menu-main-menu li a:hover {
     -moz-appearance: none;
     -webkit-appearance: none;
   }
-  #menu .menu-main-menu-container ul li:hover .has-child--button.current-page {
-    border-bottom: 4px solid #FFD100 !important;
-  }
   #menu .menu-main-menu-container ul li:hover .has-child--button svg g .Path-polygon {
     fill: #FFFFFF;
   }
@@ -6693,7 +6757,7 @@ nav#menu ul#menu-main-menu li a:hover {
     display: block;
     position: absolute;
     left: 0;
-    top: 44px;
+    top: 38px;
   }
   #menu .menu-main-menu-container ul li:hover ul li a {
     color: #2774AE;
@@ -6737,10 +6801,6 @@ nav#menu ul#menu-main-menu li a:hover {
 @media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li a.current-page {
     border-left: 0;
-    border-bottom: 4px solid #FFD100;
-  }
-  #menu .menu-main-menu-container ul li a.current-page + .has-child--button.current-page {
-    border-bottom: 4px solid #FFD100;
   }
 }
 
@@ -6760,21 +6820,10 @@ nav#menu ul#menu-main-menu li a:hover {
 @media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li a.menu-item-has-children--link {
     width: auto;
-    padding-right: 0;
+    padding: 9px 36px 9px 16px;
   }
   #menu .menu-main-menu-container ul li a.menu-item-has-children--link:focus {
-    outline: 0;
-  }
-  #menu .menu-main-menu-container ul li a.menu-item-has-children--link:focus::after {
-    display: block;
-    content: '';
-    z-index: 1;
-    width: 96%;
-    height: 26px;
-    border: 1px dotted #0079BF;
-    position: absolute;
-    left: 0;
-    top: 2px;
+    outline: 1px dotted #0079BF;
   }
 }
 
@@ -6790,13 +6839,16 @@ nav#menu ul#menu-main-menu li a:hover {
   margin-top: -45px;
   border: 1px solid #CCCCCC;
   border-right: 0;
+  z-index: 5;
 }
 
 @media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li .has-child--button {
     position: relative;
     display: inline-block;
+    background: rgba(0, 0, 0, 0);
     width: auto;
+    margin-left: -36px;
     height: 36px;
     border: 0;
   }
@@ -6932,7 +6984,7 @@ Firefox Only styles
     height: 44px;
     width: 56px;
     position: relative;
-    top: -34px;
+    top: -17px;
   }
 }
 

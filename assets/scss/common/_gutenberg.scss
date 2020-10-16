@@ -1,0 +1,24 @@
+.wp-block-table {
+  overflow-y: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  figcaption {
+    display: block;
+    position: relative;
+    font-size: 11px;
+    margin-left: 12px;
+    font-style: italic;
+    padding: 4px;
+  }
+
+  &.is-style-stripes.total {
+    tfoot {
+      background: $default-state-dark;
+    }
+  }
+}

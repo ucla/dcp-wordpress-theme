@@ -164,8 +164,14 @@ $(document).ready(function (){
             $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
           }, 100);
 
-        } else if (evt.keyCode === 9) {
-          // do nothing
+        } else if (evt.keyCode === 9 && $('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus') && $('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
+          console.log('whatup');
+          $(element).parent().parent().removeAttr('style'); // <ul>
+          // Remove styles to top level nav when sublevel is focused
+          $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+          $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+          $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
         }
 
       } else if ($('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
@@ -221,12 +227,16 @@ $(document).ready(function (){
       event.preventDefault();
       let elem = $(this);
       if (elem.next('ul').hasClass('is-active')) {
-        elem.removeClass('is-active');
-        elem.next('ul').removeClass('is-active');
+        setTimeout(function () {
+          elem.removeClass('is-active');
+          elem.next('ul').removeClass('is-active');
+        }, 10);
         //console.log('menu closed'); // For Debuggin' Only
       } else {
-        elem.addClass('is-active');
-        elem.next('ul').addClass('is-active');
+        setTimeout(function () {
+          elem.addClass('is-active');
+          elem.next('ul').addClass('is-active');
+        }, 10);
         //console.log('menu open'); // For Debuggin' Only
       }
 
