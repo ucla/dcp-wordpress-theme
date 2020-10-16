@@ -6879,6 +6879,12 @@ nav#menu ul#menu-main-menu li a:hover {
   display: none;
 }
 
+@media (min-width: 1024px) {
+  #menu .menu-main-menu-container ul li ul {
+    top: 38px;
+  }
+}
+
 #menu .menu-main-menu-container ul li ul.is-active {
   display: block;
   position: inherit;
@@ -6891,6 +6897,10 @@ nav#menu ul#menu-main-menu li a:hover {
     left: 0;
     top: 44px;
   }
+}
+
+#menu .menu-main-menu-container ul li ul li {
+  height: 45px;
 }
 
 #menu .menu-main-menu-container ul li ul li:last-of-type {
@@ -6948,7 +6958,16 @@ nav#menu ul#menu-main-menu li a:hover {
 
 @media (min-width: 1024px) {
   #menu .menu-main-menu-container ul li ul li a.current-page {
-    width: calc(320px - 51px);
+    width: calc(320px - 47px);
+    padding: 14px 24px 14px 20px;
+  }
+  #menu .menu-main-menu-container ul li ul li a.current-page:hover {
+    border-left: 0 !important;
+    width: calc(320px - 46px);
+    padding: 14px 24px 14px 24px;
+  }
+  #menu .menu-main-menu-container ul li ul li a.current-page::after {
+    display: none !important;
   }
 }
 

@@ -339,6 +339,10 @@ nav#menu {
         ul {
           display: none;
 
+          @media (min-width: breakpoint-min(lg)) {
+            top: 38px;
+          }
+
           &.is-active {
             display: block;
             position: inherit;
@@ -352,6 +356,8 @@ nav#menu {
           }
 
           li {
+            height: 45px;
+
             &:last-of-type {
               padding-bottom: 0;
 
@@ -401,7 +407,18 @@ nav#menu {
                 border-left: 4px solid $ucla-gold !important;
 
                 @media (min-width: breakpoint-min(lg)) {
-                  width: calc(320px - 51px);
+                  width: calc(320px - 47px);
+                  padding: 14px 24px 14px 20px;
+
+                  &:hover {
+                    border-left: 0 !important;
+                    width: calc(320px - 46px);
+                    padding: 14px 24px 14px 24px;
+                  }
+
+                  &::after {
+                    display: none !important;
+                  }
                 }
               }
             }
