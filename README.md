@@ -1,4 +1,4 @@
-# Official Strategic Communication WordPress Theme #
+# Official DCP & Strategic Communication WordPress Theme #
 
 * Version 0.1.0
 * Tested up to WordPress 5.5.1
@@ -15,7 +15,7 @@ To install this theme on your WordPress site, download the full zip file of the 
 ### Child Theme Development ###
 You can download and install the child theme ucla-sc-child [here](https://bitbucket.org/uclaucomm/ucla-sc-child/src/distribution/).
 
-### Development Parent Theme ###
+### Parent Theme Development ###
 
 *Get Started*
 
@@ -65,6 +65,16 @@ Production builds compile the css and javascript assets without tabs or spaces. 
 ```
 gulp production
 ```
+
+### Contribution Process ###
+
+Development on this theme is intended to be done on forks, with pull requests made back into this repository.
+
+To fork this theme, select the + icon on the left side of the screen. Within the menu that pops up, select "Fork This Repository" and proceed to naming your version. You can find more info about this on the [Bitbucket Support Portal](https://support.atlassian.com/bitbucket-cloud/docs/fork-a-repository/).
+
+![Image of Plus Button Within Page](https://i.imgur.com/uEwqW3P.png)
+
+Once you've made your changes in your own repository and you want to submit them to theme maintainers, create a pull request from your repo to this one. More detail about this process can be found on the [PR Bitbucket Support Page](https://support.atlassian.com/bitbucket-cloud/docs/create-a-pull-request-to-merge-your-change/).
 
 ### Contribution guidelines ###
 

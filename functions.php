@@ -3,6 +3,15 @@
 // Create Theme Options Page
 require_once( __DIR__ . '/options.php' );
 
+// Set up update checking
+require 'libs/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://bitbucket.org/uclaucomm/ucla-sc',
+	__FILE__,
+	'ucla-sc'
+);
+$updateChecker->setBranch('distribution');
+
 // Theme specific funcitons
 add_action( 'after_setup_theme', 'ucla_setup' );
 
