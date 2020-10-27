@@ -19,7 +19,7 @@
       </div>
 
       <div class="col span_4_of_12 mb-32">
-    		<img src="wp-content/themes/ucla-sc/images/404_not_found.jpg" alt="UCLA Computer">
+    		<img src="wp-content/themes/ucla-wp/images/404_not_found.jpg" alt="UCLA Computer">
 				<p>ARPANET, the computer network that became the internet, was designed and built at UCLA. A team led by Leonard Kleinrock sent the world’s first message over the network on Oct. 29, 1969.</p>
 			</div>
 

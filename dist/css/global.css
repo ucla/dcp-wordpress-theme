@@ -5844,7 +5844,7 @@ body.no-scroll {
 }
 
 .accordion-title:hover::after {
-  background: url(/wp-content/themes/ucla-sc/images/icons/arrow-down-white.svg);
+  background: url(/wp-content/themes/ucla-wp/images/icons/arrow-down-white.svg);
   background-position: center;
   background-size: contain;
   position: absolute;
@@ -5867,7 +5867,7 @@ body.no-scroll {
 .accordion-title::after {
   display: block;
   content: "";
-  background: url(/wp-content/themes/ucla-sc/images/icons/arrow-down-defaultblue.svg);
+  background: url(/wp-content/themes/ucla-wp/images/icons/arrow-down-defaultblue.svg);
   background-position: center;
   background-size: contain;
   position: absolute;
@@ -6142,10 +6142,14 @@ body.no-scroll {
 }
 
 .foot-upper {
-  padding: 32px 24px 0 24px;
+  padding: 32px 24px;
   background: #2774AE;
   color: #FFFFFF;
   font-weight: bold;
+  display: block;
+  position: relative;
+  height: fit-content;
+  height: max-content;
 }
 
 @media (min-width: 1024px) {
@@ -6226,48 +6230,74 @@ body.no-scroll {
 
 .foot-upper_info-menu {
   display: block;
+  position: relative;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
   .foot-upper_info-menu {
     display: inline-block;
-    float: right;
     width: 64%;
+    vertical-align: top;
+    margin-top: 95px;
   }
 }
 
-@media (min-width: 768px) {
-  .foot-upper_info-menu nav#block-footer ul {
-    display: flex;
-    justify-content: space-between;
-  }
+.foot-upper_info-menu .menu {
+  display: block;
 }
 
-.foot-upper_info-menu nav#block-footer ul li {
-  width: 48%;
+.foot-upper_info-menu ul {
+  padding-inline-start: 0 !important;
+  display: block;
+  position: relative;
+}
+
+.foot-upper_info-menu ul li {
   display: inline-block;
-  padding: 0 0 32px 0;
+  vertical-align: top;
+  width: fit-content;
+  padding: 0 24px 32px 0;
   font-size: 12px;
+  min-width: 40%;
 }
 
-@media (min-width: 768px) {
-  .foot-upper_info-menu nav#block-footer ul li {
-    width: unset;
-    display: block;
+@media (min-width: 1024px) {
+  .foot-upper_info-menu ul li {
+    min-width: fit-content;
   }
 }
 
-.foot-upper_info-menu nav#block-footer ul li a:hover {
+.foot-upper_info-menu ul li::before {
+  display: none;
+}
+
+.foot-upper_info-menu ul li a:hover {
   background: #FFE500;
   color: #333;
 }
 
-.foot-upper_info-menu nav#block-footer ul li a:focus {
+.foot-upper_info-menu ul li a:focus {
   outline: 1px dotted #FFFFFF;
 }
 
+.foot-upper_info-menu ul li ul {
+  display: block;
+  margin-top: 12px;
+}
+
+.foot-upper_info-menu ul li ul li {
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.foot-upper_info-menu ul li ul li a {
+  font-weight: normal;
+}
+
 .foot-lower {
+  display: block;
   background: #FFFFFF;
   padding: 32px 24px 0 24px;
 }
@@ -6298,7 +6328,6 @@ body.no-scroll {
   position: relative;
   width: 100%;
   font-size: 12.8px;
-  padding-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -6333,6 +6362,15 @@ body.no-scroll {
 
 .foot-lower-toc ul {
   padding-inline-start: 0;
+  margin-top: 16px;
+  line-height: 16px;
+}
+
+@media (min-width: 768px) {
+  .foot-lower-toc ul {
+    margin-top: 0;
+    line-height: 16px;
+  }
 }
 
 .foot-lower-toc ul li::before {
@@ -6367,6 +6405,7 @@ body.no-scroll {
   position: relative;
   width: 100%;
   max-width: 291px;
+  margin-top: 0;
 }
 
 @media (min-width: 768px) {
@@ -6383,7 +6422,7 @@ body.no-scroll {
     width: auto;
     right: unset;
     position: relative;
-    top: unset;
+    top: -15px;
   }
 }
 
@@ -7080,7 +7119,7 @@ form.search-form::before {
   width: 18px;
   height: 18px;
   position: absolute;
-  background-image: url(/wp-content/themes/ucla-sc/images/icons/search-grey60.svg);
+  background-image: url(/wp-content/themes/ucla-wp/images/icons/search-grey60.svg);
   background-position: center;
   background-size: contain;
   margin: 12px;
