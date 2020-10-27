@@ -11,7 +11,7 @@
           <div class="foot-upper-wrap">
             <div class="foot-upper_address">
 
-              <img src="/wp-content/themes/ucla-sc/images/ucla_logo_white.svg">
+              <img src="/wp-content/themes/ucla-wp/images/ucla_logo_white.svg">
 
 
               <?php
