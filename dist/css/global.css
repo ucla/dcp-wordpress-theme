@@ -7021,14 +7021,38 @@ html.safari body header.header {
 Firefox Only styles
 ************************/
 @media (min-width: 1024px) {
-  html.firefox body #menu {
-    top: 89px;
+  html.firefox body #menu ul li .has-child--button {
+    top: 1.5px;
   }
 }
 
 @media (min-width: 1024px) {
-  html.firefox body #menu ul li .has-child--button {
-    top: 1.5px;
+  html.firefox body #menu ul li .has-child--button.current-page::after {
+    top: -2px;
+    left: -8px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html.firefox body #menu .search-desktop {
+    top: -18px;
+  }
+}
+
+/************************
+IE 11 Only styles
+************************/
+@media (min-width: 1024px) {
+  html.msie body #menu {
+    width: auto;
+    top: 20px;
+  }
+  html.msie body #menu .menu-main-menu-container ul li a ~ ul {
+    top: 23px;
+    left: -20px;
+  }
+  html.msie body #menu .search-desktop {
+    top: -33px;
   }
 }
 
