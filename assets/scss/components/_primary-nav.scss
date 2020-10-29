@@ -447,15 +447,49 @@ Firefox Only styles
 html.firefox {
   body {
     #menu {
-      @media (min-width: breakpoint-min(lg)) {
-        top: 89px;
-      }
-
       ul li {
         .has-child--button {
           @media (min-width: breakpoint-min(lg)) {
             top: 1.5px;
           }
+
+          &.current-page {
+            &::after {
+              @media (min-width: breakpoint-min(lg)) {
+                top: -2px;
+                left: -8px;
+              }
+            }
+          }
+        }
+      }
+
+      .search-desktop {
+        @media (min-width: breakpoint-min(lg)) {
+          top: -18px;
+        }
+      }
+    }
+  }
+}
+
+/************************
+IE 11 Only styles
+************************/
+@media (min-width: breakpoint-min(lg)) {
+  html.msie {
+    body {
+      #menu {
+        width: auto;
+        top: 20px;
+
+        .menu-main-menu-container ul li a ~ ul {
+          top: 23px;
+          left: -20px;
+        }
+
+        .search-desktop {
+          top: -33px;
         }
       }
     }
