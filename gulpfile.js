@@ -17,7 +17,7 @@ function defaultTask(cb) {
 // Compile the theme styles
 function themeStyles() {
   return src('assets/scss/**/*.scss')
-    .pipe(sass.sync({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(concat('global.css'))
     .pipe(dest('dist/css'));
 }
@@ -42,6 +42,7 @@ function watchStyles(done) {
 function libraryStyles() {
   return src('./node_modules/ucla-bruin-components/public/css/ucla-lib.min.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(dest('dist/css/ucla-components-library'));
 }
 
