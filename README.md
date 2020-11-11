@@ -1,12 +1,12 @@
-# Official DCP & Strategic Communication WordPress Theme #
+# Official UCLA DCP & Strategic Communication WordPress Theme #
 
 * Version 0.1.0
 * Tested up to WordPress 5.5.1
-* UCLA Strat Comm recommendations on WordPress approved plugins and practices,[go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
+* [UCLA Strat Comm recommendations on WordPress approved plugins and practices](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
 * To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
 
 
-Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
+Welcome to the official UCLA WordPress theme. This theme was created through a collaborative effort between Strategic Communications and the Disabilities and Computing Program (DCP) to ensure that it aligns with the UCLA brand and the Americans With Disabilities Act (as well as [WCAG](https://www.w3.org/TR/WCAG21/)).
 
 
 ### WordPress Install ###
