@@ -38,20 +38,20 @@ function ucla_setup() {
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
     // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-sc/dist/css/ucla-components-library/ucla-lib.min.css' );
+    wp_enqueue_style( 'lib-style', '/wp-content/themes/ucla-wp/dist/css/ucla-components-library/ucla-lib.min.css' );
     // Install the UCLA Component Library  scripts
-    wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-sc/dist/js/ucla-components-library/ucla-lib-scripts.min.js' );
+    wp_enqueue_script( 'lib-script', '/wp-content/themes/ucla-wp/dist/js/ucla-components-library/ucla-lib-scripts.min.js' );
     // Install the WordPress Theme Styles
-    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-sc/dist/css/global.css' );
+    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css' );
     // Install the WordPress Theme Scripts
-    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-sc/dist/js/scripts.js' );
+    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-wp/dist/js/scripts.js' );
   }
 
   // Load ADMIN Login Styles
   add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
   function my_login_page_remove_back_to_link() {
     // Path the admin page login styles
-    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-sc/admin-styles.css' );
+    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/admin-styles.css' );
   }
 
   // Breadcrumbs

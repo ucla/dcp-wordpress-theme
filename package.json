@@ -1,8 +1,8 @@
 {
-  "name": "ucla-sc",
+  "name": "ucla-wp",
   "version": "1.0.0",
   "description": "package for UCLA WordPress theme",
-  "license": "BSD-3-Clause",
+  "license": "ISC",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^4.0.2",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/uclaucomm/ucla-sc.git"
+    "url": "git+ssh://git@bitbucket.org/uclaucomm/ucla-wp.git"
   },
   "keywords": [
     "wordpress",
@@ -31,5 +31,5 @@
     "ucla"
   ],
   "author": "UCLA DCP & Strategic Communication",
-  "homepage": "https://bitbucket.org/uclaucomm/ucla-sc#readme"
+  "homepage": "https://bitbucket.org/uclaucomm/ucla-wp#readme"
 }

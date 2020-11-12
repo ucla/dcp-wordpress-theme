@@ -13,7 +13,7 @@ Welcome to the official UCLA WordPress theme. This theme was created through a c
 To install this theme on your WordPress site, download the full zip file of the distribution branch. Go to Appearance > Themes in the left hand menu of the WordPress admin and then select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
 
 ### Child Theme Development ###
-You can download and install the child theme ucla-sc-child [here](https://bitbucket.org/uclaucomm/ucla-sc-child/src/distribution/).
+You can download and install the child theme ucla-wp-child [here](https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/).
 
 ### Parent Theme Development ###
 
@@ -28,7 +28,7 @@ WordPress will need to be installed and run on your local computer. If you dont 
 * [Flywheel](https://localwp.com/)
 
 
-Pull this repository into a wp-content/themes/ucla-sc. The ucla-sc folder should be your root folder of the theme.
+Pull this repository into a wp-content/themes/ucla-wp. The ucla-wp folder should be your root folder of the theme.
 * [git](https://git-scm.com/doc)
 * [SourceTree](https://www.sourcetreeapp.com/)
 
