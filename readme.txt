@@ -1,11 +1,11 @@
 === UCLA ===
-Contributors: The UCLA DCP, Strategic Communication, and community
+Contributors: UCLA Strategic Communications, DCP, and community
 Tested up to: 5.5
 Stable tag: 0.1
 License: BSD 3 Clause
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Official DCP & Strategic Communication WordPress Theme
+Official Strategic Communications & DCP WordPress Theme
 
 == Description ==
 

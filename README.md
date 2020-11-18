@@ -1,4 +1,4 @@
-# Official UCLA DCP & Strategic Communication WordPress Theme #
+# Official UCLA Strategic Communications & DCP WordPress Theme #
 
 * Version 0.1.0
 * Tested up to WordPress 5.5.1
