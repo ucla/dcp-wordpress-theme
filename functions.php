@@ -6,9 +6,9 @@ require_once( __DIR__ . '/options.php' );
 // Set up update checking
 require 'libs/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://bitbucket.org/uclaucomm/ucla-sc',
+	'https://bitbucket.org/uclaucomm/ucla-wp',
 	__FILE__,
-	'ucla-sc'
+	'ucla-wp'
 );
 $updateChecker->setBranch('distribution');
 
