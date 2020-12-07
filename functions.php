@@ -4,13 +4,8 @@
 require_once( __DIR__ . '/options.php' );
 
 // Set up update checking
-require 'libs/plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://bitbucket.org/uclaucomm/ucla-wp',
-	__FILE__,
-	'ucla-wp'
-);
-$updateChecker->setBranch('distribution');
+require 'libs/ucla-updater/updater.php';
+new ThemeUpdater(__FILE__, 'uclaucomm/ucla-wp', 'distribution');
 
 // Theme specific funcitons
 add_action( 'after_setup_theme', 'ucla_setup' );
