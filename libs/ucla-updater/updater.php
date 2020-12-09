@@ -74,7 +74,7 @@ if (!class_exists('Updater', false)) :
         $data = wp_remote_retrieve_body($response);
         $parsed = $this->getFileHeader($data, "theme");
         // For debugging uncomment the line below to force update
-        $parsed['Version'] = '2020.2';
+        // $parsed['Version'] = '2020.2';
         if (!empty($parsed)) {
           $this->bitbucketAPIResult = $parsed;
         }
