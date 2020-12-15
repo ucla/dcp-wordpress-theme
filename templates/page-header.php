@@ -12,8 +12,10 @@
       <p class="intro"><?php
       $key_values = get_post_custom_values( 'intro' );
 
-      foreach ( $key_values as $key => $value ) {
+      if (is_array($key_values) || is_object($key_values)) {
+        foreach ( $key_values as $key => $value ) {
           echo $value;
+        }
       }
 
       ?></p>
