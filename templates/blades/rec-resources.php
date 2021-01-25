@@ -13,7 +13,7 @@
           <a target="_blank" href="https://www.bso.ucla.edu/">Bruin Safe Online</a>
           <a target="_blank" href="https://www.studentaffairs.ucla.edu/service-status">Student Affairs service hours</a>
           <a target="_blank" href="https://www.adminvc.ucla.edu/covid-19/campus-services-during-stay-at-home-order">Administrative Offices service hours</a>
-          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychogical Services</a>
+          <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">Counseling & Psychological Services</a>
           <a target="_blank" href="https://docs.google.com/document/d/1Rx1Xi2qe2QFeeBFc54DPhQh0ksmNGdYXyBz9COt7zhs/edit">USAC Emergency Resources</a>
           <a target="_blank" href="https://swc.ucla.edu/covid-19/">Student Wellness Commission</a>
           <a target="_blank" href="https://www.studenthealth.ucla.edu/">Arthur Ashe Student Health & Wellness Center</a>
