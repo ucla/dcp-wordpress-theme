@@ -3,6 +3,10 @@
 // Create Theme Options Page
 require_once( __DIR__ . '/options.php' );
 
+// Set up update checking
+require 'libs/ucla-updater/updater.php';
+new ThemeUpdater(__FILE__, 'uclaucomm/ucla-wp', 'distribution');
+
 // Theme specific funcitons
 add_action( 'after_setup_theme', 'ucla_setup' );
 
