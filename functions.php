@@ -18,7 +18,7 @@ function ucla_setup() {
 
   if ( ! isset( $content_width ) ) { $content_width = 1920; }
     register_nav_menus( array(
-      'main-menu' => esc_html__( 'Main Menu (Menu name must be "Main Menu")', 'ucla' ),
+      'main-menu' => esc_html__( 'Main Menu', 'ucla' ),
       'foot-menu' => esc_html__( 'Foot Menu (Menu name must be "Foot Menu")', 'ucla-foot' )
     ));
   }

@@ -4,7 +4,7 @@
     <div class="first-child col span_3_of_9">
       <div class="card-hs">
         <div class="card-hs--content">
-          <h3 class="mb-16">Current confirmed cases in campus commuinity</h3>
+          <h3 class="mb-16">Current confirmed cases in campus community</h3>
           <?php
           // Get the Post
           $post_24 = get_post(24);

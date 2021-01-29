@@ -2,21 +2,21 @@
   <div class="col span_3_of_12">
     <div class="blade-links grey">
       <div class="blade-links__box">
-        <a href="/" class="blade-links__box-link"><span>Information for Students</span></a>
+        <a href="/" class="blade-links__box-link"><span>Information for students</span></a>
       </div>
     </div>
   </div>
   <div class="col span_3_of_12">
     <div class="blade-links grey">
       <div class="blade-links__box">
-        <a href="/" class="blade-links__box-link"><span>Information for Faculty</span></a>
+        <a href="/" class="blade-links__box-link"><span>Information for faculty</span></a>
       </div>
     </div>
   </div>
   <div class="col span_3_of_12">
     <div class="blade-links grey">
       <div class="blade-links__box">
-        <a href="/" class="blade-links__box-link"><span>Information for Staff</span></a>
+        <a href="/" class="blade-links__box-link"><span>Information for staff</span></a>
       </div>
     </div>
   </div>
