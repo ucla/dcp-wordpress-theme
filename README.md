@@ -78,6 +78,7 @@ gulp production
 ## CHANGELOG ##
 
 *0.5.0 - 1/28/21*
+* update UCLA components library package
 * Remove main menu requirement for primary navigation
 * Fix spelling errors
 * Fix Minor CSS Issues, Category Pages, and Component Library Installation
