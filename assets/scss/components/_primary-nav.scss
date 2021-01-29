@@ -1,6 +1,6 @@
 // List Reset
 nav#menu {
-  ul#menu-main-menu {
+  div[class^="menu"] > ul {
     li {
       margin-bottom: 0;
       line-height: 16px;
@@ -66,7 +66,7 @@ nav#menu {
     transition: right 0.5s ease;
   }
 
-  .menu-main-menu-container {
+  div[class^="menu"] {
     @media (min-width: breakpoint-min(lg)) {
       display: inline-block;
     }
@@ -485,7 +485,7 @@ IE 11 Only styles
         width: auto;
         top: 20px;
 
-        .menu-main-menu-container ul li a ~ ul {
+        div[class^="menu"] ul li a ~ ul {
           top: 23px;
           left: -20px;
         }
