@@ -2,7 +2,7 @@
 
 * Version 0.1.0
 * Tested up to WordPress 5.5.1
-* UCLA Strat Comm recommendations on WordPress approved plugins and practices,[go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
+* UCLA Strat Comm recommendations on WordPress approved plugins and practices, [go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
 * To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
 
 
@@ -68,7 +68,7 @@ gulp production
 
 ### Contribution guidelines ###
 
-* Code review is preformed by Strategic Communications and DCP for ADA compliance if necessary.
+* Code review is performed by Strategic Communications and DCP for ADA compliance if necessary.
 * All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 * This repository follows the same [UCLA Web Component Library contributing guidelines](https://ucla-fractal.s3-us-west-1.amazonaws.com/build/docs/contribute/contributing.html).
 

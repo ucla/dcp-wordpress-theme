@@ -3,7 +3,7 @@
 // Create Theme Options Page
 require_once( __DIR__ . '/options.php' );
 
-// Theme specific funcitons
+// Theme specific functions
 add_action( 'after_setup_theme', 'ucla_setup' );
 
 function ucla_setup() {
@@ -78,7 +78,7 @@ function ucla_setup() {
     register_taxonomy_for_object_type( 'post_tag', 'page' );
   }
 
-  // Title Seperator
+  // Title Separator
   add_filter( 'document_title_separator', 'ucla_document_title_separator' );
   function ucla_document_title_separator( $sep ) {
     $sep = '|';
@@ -113,7 +113,7 @@ function ucla_setup() {
     }
   }
 
-  // Filter the except length to 20 words.
+  // Filter the excerpt length to 20 words.
   function wpdocs_custom_excerpt_length( $length ) {
       return 20;
   }
