@@ -1,9 +1,7 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.1.0
-* Tested up to WordPress 5.5.1
-* UCLA Strat Comm recommendations on WordPress approved plugins and practices, [go here](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
-* To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
+* Version 0.5.0
+* Tested up to WordPress 5.5.1 - 5.6.0
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
@@ -76,3 +74,13 @@ gulp production
 
 * UCLA Strategic Communications Department
 * Repo admin svosburgh@stratcomm.ucla.edu
+
+## CHANGELOG ##
+
+**0.5.0 - 1/28/21**
+
+* update UCLA components library package
+* Remove main menu requirement for primary navigation
+* Fix spelling errors
+* Fix Minor CSS Issues, Category Pages, and Component Library Installation
+* Override line height when editors use Gutenberg typography settings.

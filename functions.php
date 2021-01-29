@@ -12,6 +12,7 @@ function ucla_setup() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form' ) );
+  add_theme_support( 'responsive-embeds' );
 
   global $content_width;
 
