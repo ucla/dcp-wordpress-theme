@@ -1,6 +1,6 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.5.0
+* Version 0.5.1
 * Tested up to WordPress 5.5.1 - 5.6.0
 
 
@@ -17,13 +17,13 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 *Get Started*
 
-This is an advanced WordPress development environment and in order to understand this documentation there is some required knowledge that is assumed. Do not let this stop you from learning how to use this theme. If you've made it this far you're already on your way. Follow the instructions in this documentation and learn what you have to. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Read some stack overflow posts or articles when you run into errors, and you can get started in this theme. Be patient. If you are unfamiliar with these tools and learn how to use this theme, you will become a better developer.
+This is an advanced WordPress development environment and in order to understand this documentation there is some required knowledge that is assumed. Do not let this stop you from learning how to use this theme. If you've made it this far you're already on your way. Follow the instructions in this documentation. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Read some stack overflow posts or articles if you run into errors, and you can get started in this theme. Be patient. If you are unfamiliar with these tools and learn how to use this theme, you will become a better developer.
 
-WordPress will need to be installed and run on your local computer. If you dont know how to do this there are multiple solutions. Below are some helpful articles and different ways to setup an environment. Feel free to use one of these or do your own research.
-* [Mac](https://www.themeum.com/install-wordpress-localhost/)
-* [PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
-* [Kinsta](https://kinsta.com/blog/install-wordpress-locally/)
-* [Flywheel](https://localwp.com/)
+WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple solutions. Below are some helpful articles and different ways to setup an environment. Feel free to use one of these or do your own research.
+* [setup on Mac](https://www.themeum.com/install-wordpress-localhost/)
+* [Setup on PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
+* [Kinsta local development](https://kinsta.com/blog/install-wordpress-locally/)
+* [Flywheel local development](https://localwp.com/)
 
 
 Pull this repository into a wp-content/themes/ucla-wp. The ucla-wp folder should be your root folder of the theme.
@@ -43,12 +43,12 @@ This project requires Gulp. Installing gulp on your machine may require another 
 
 *Build Commands (Run these commands while in theme folder on terminal or command prompt.)*
 
-Test to see that gulp is installed and working.
+Run `gulp` from the themes root folder to see that gulp is installed and working.
 ```
 gulp
 ```
 
-Run gulp watch when you are performing js or scss updates in the ./assets folder. This command automatically compiles the styles and javascript while you edit them. Watch also runs the style and javascript linters. These linters will report errors and the line they are on in your terminal or command prompt when made. Errors will prevent your code from compiling and your page from updating. Errors found in gulp watch will prevent a gulp production run. This will prevent automatic site updates in certain hosting environments. We use these tools in addition to version control to ensure quality websites and deployments with no downtime. Pull requests with watch errors will immediately be rejected.
+Run `gulp watch` when you are performing js or scss updates in the ./assets folder. This command automatically compiles the styles and javascript while you edit them. Watch also runs the style and javascript linters. These linters will report errors and the line they are on in your terminal or command prompt when made. Errors will prevent your code from compiling and your page from updating. Errors found in gulp watch will prevent a gulp production run. This will prevent automatic site updates in certain hosting environments. We use these tools in addition to version control to ensure quality websites and deployments with no downtime. Pull requests with watch errors will immediately be rejected.
 ```
 gulp watch
 ```
@@ -76,6 +76,13 @@ gulp production
 * Repo admin svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+
+**0.5.1 - 1/29/21**
+
+* rename archive page to home.php and finish loop development
+* add unboxed pagination style to WordPress native classes
+* add responsive embed theme support
+* readme updates
 
 **0.5.0 - 1/28/21**
 

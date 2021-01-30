@@ -42,7 +42,7 @@
           wp_reset_postdata();
           ?>
 
-          <div class="pagination">
+          <div class="pagination mb-64">
             <?php echo paginate_links([
               'format'  => 'page/%#%',
               'current' => $paged,
