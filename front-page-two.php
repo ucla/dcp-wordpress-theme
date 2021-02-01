@@ -1,4 +1,4 @@
-<?php /* Template Name: Front Page One */
+<?php /* Template Name: Front Page Two */
 
   global $id;
 
@@ -20,7 +20,7 @@
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-    <?php include 'templates/front-page-one-header.php'; ?>
+    <?php include 'templates/front-page-two-header.php'; ?>
 
 
     <div class="ucla campus entry-content">
