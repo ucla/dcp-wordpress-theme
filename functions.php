@@ -16,13 +16,14 @@ function ucla_setup() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form' ) );
+  add_theme_support( 'responsive-embeds' );
 
   global $content_width;
 
 
   if ( ! isset( $content_width ) ) { $content_width = 1920; }
     register_nav_menus( array(
-      'main-menu' => esc_html__( 'Main Menu (Menu name must be "Main Menu")', 'ucla' ),
+      'main-menu' => esc_html__( 'Main Menu', 'ucla' ),
       'foot-menu' => esc_html__( 'Foot Menu (Menu name must be "Foot Menu")', 'ucla-foot' )
     ));
   }
@@ -82,7 +83,7 @@ function ucla_setup() {
     register_taxonomy_for_object_type( 'post_tag', 'page' );
   }
 
-  // Title Seperator
+  // Title Separator
   add_filter( 'document_title_separator', 'ucla_document_title_separator' );
   function ucla_document_title_separator( $sep ) {
     $sep = '|';
@@ -117,7 +118,7 @@ function ucla_setup() {
     }
   }
 
-  // Filter the except length to 20 words.
+  // Filter the excerpt length to 20 words.
   function wpdocs_custom_excerpt_length( $length ) {
       return 20;
   }

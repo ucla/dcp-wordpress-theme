@@ -1,9 +1,7 @@
 # Official UCLA Strategic Communications & DCP WordPress Theme #
 
-* Version 0.1.0
-* Tested up to WordPress 5.5.1
-* [UCLA Strat Comm recommendations on WordPress approved plugins and practices](https://spaces.ais.ucla.edu/display/ucomm/WordPress).
-* To get linked into the Campus WordFence Central please reach out to svosburgh@stratcomm.ucla.edu
+* Version 0.5.0
+* Tested up to WordPress 5.5.1 - 5.6.0
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaborative effort between Strategic Communications and the Disabilities and Computing Program (DCP) to ensure that it aligns with the UCLA brand and the Americans With Disabilities Act (as well as [WCAG](https://www.w3.org/TR/WCAG21/)).
@@ -78,7 +76,7 @@ Once you've made your changes in your own repository and you want to submit them
 
 ### Contribution guidelines ###
 
-* Code review is preformed by Strategic Communications and DCP for ADA compliance if necessary.
+* Code review is performed by Strategic Communications and DCP for ADA compliance if necessary.
 * All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 * This repository follows the same [UCLA Web Component Library contributing guidelines](https://ucla-fractal.s3-us-west-1.amazonaws.com/build/docs/contribute/contributing.html).
 
@@ -86,3 +84,13 @@ Once you've made your changes in your own repository and you want to submit them
 
 * UCLA Strategic Communications Department
 * Repo admin svosburgh@stratcomm.ucla.edu
+
+## CHANGELOG ##
+
+**0.5.0 - 1/28/21**
+
+* update UCLA components library package
+* Remove main menu requirement for primary navigation
+* Fix spelling errors
+* Fix Minor CSS Issues, Category Pages, and Component Library Installation
+* Override line height when editors use Gutenberg typography settings.
