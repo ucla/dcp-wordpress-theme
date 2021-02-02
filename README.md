@@ -70,10 +70,10 @@ gulp production
 * All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 * This repository follows the same [UCLA Web Component Library contributing guidelines](https://ucla-fractal.s3-us-west-1.amazonaws.com/build/docs/contribute/contributing.html).
 
-### Who do I talk to? ###
+### Have questions on how to consume or contribute to this library? Please reach out to one of our developers: ###
 
-* UCLA Strategic Communications Department
-* Repo admin svosburgh@stratcomm.ucla.edu
+* Scott Vosburgh (Senior Web Developer) - svosburgh@stratcomm.ucla.edu
+* Dillan Tai (Web Developer) - dtai@stratcomm.ucla.edu
 
 ## CHANGELOG ##
 
@@ -83,6 +83,7 @@ gulp production
 * add front page one template and files for front page two template to show naming convention
 * adjust breadcrumb spacing
 * add some Gutenberg specific adjustments for improved branding foolproof
+* Update to readme
 
 **0.5.1 - 1/29/21**
 
