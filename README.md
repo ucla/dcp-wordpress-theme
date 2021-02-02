@@ -77,6 +77,13 @@ gulp production
 
 ## CHANGELOG ##
 
+**0.6.0 - 2/2/21**
+
+* add custom template
+* add front page one template and files for front page two template to show naming convention
+* adjust breadcrumb spacing
+* add some Gutenberg specific adjustments for improved branding foolproof
+
 **0.5.1 - 1/29/21**
 
 * rename archive page to home.php and finish loop development
