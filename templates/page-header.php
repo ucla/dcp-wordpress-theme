@@ -1,4 +1,4 @@
-<header class="header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
+<header class="page-header" <?php if ( has_post_thumbnail() ) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
   <div class="ucla campus">
     <div class="col span_12_of_12">
       <?php if (is_404()) { ?>
