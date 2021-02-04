@@ -1,3 +1,11 @@
+h2, h3, h4, h5 {
+  padding-bottom: 16px;
+
+  @media (min-width: breakpoint-min(md)) {
+    padding-bottom: 24px;
+  }
+}
+
 .wp-block-table {
   overflow-y: hidden;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -30,4 +38,33 @@
 
 .has-huge-font-size {
   line-height: 1.1;
+}
+
+.wp-block {
+  &-group.has-background {
+    padding: 16px;
+    margin: 24px 0 0;
+
+    @media (min-width: breakpoint-min(md)) {
+      padding: 32px;
+      margin: 0;
+    }
+  }
+
+  &-separator {
+    margin: 32px 0;
+
+    @media (min-width: breakpoint-min(md)) {
+      margin: 64px 0;
+    }
+  }
+
+  &-embed {
+    color: #333333;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-style: oblique;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
 }

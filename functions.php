@@ -56,13 +56,13 @@ function ucla_setup() {
       if ( is_single()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
           echo get_post_type( get_the_ID() );
-              if (is_single()) {
-                  echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
-                  the_title();
-              }
+              // if (is_single()) {
+              //     echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
+              //     the_title();
+              // }
       } elseif (is_page()) {
-          echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
-          echo the_title();
+          // echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
+          // echo the_title();
       } elseif (is_search()) {
           echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;Search Results for... ";
           echo '"<em>';
