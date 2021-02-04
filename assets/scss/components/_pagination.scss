@@ -15,13 +15,26 @@
     }
   }
 
+  .nav-links {
+    padding-inline-start: 0;
+    display: flex;
+    gap: 2px;
+  }
   // Current Page
-  span.page-numbers.current {
-    padding: 12px 16px;
+  span.page-numbers {
+    &.dots {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &.current {
+      padding: 12px 16px;
+      color: #757575;
+    }
   }
 }
 
 //Previous and older links
-.nav-links {
+.navigation.posts-navigation {
   display: none;
 }
