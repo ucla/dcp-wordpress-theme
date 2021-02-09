@@ -12,7 +12,8 @@ if ('' != $thumb_id) {
 ?>
 
 <?php get_header(); ?>
-<?php if (get_page_template_slug() == "front-page.php") { ?>
+<?php /* Load the appropriate page template based on user selection */
+  if (get_page_template_slug() == "front-page.php") { ?>
   <main id="main" class="main front-page-one">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
