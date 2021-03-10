@@ -1,0 +1,7 @@
+.main.page-no-banner {
+  padding: 32px 0;
+
+  @media (min-width: breakpoint-min(lg)) {
+    padding: 64px 0;
+  }
+}

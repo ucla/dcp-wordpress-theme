@@ -1,7 +1,7 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.5.1
-* Tested up to WordPress 5.5.1 - 5.6.0
+* Version 0.6.1
+* Tested up to WordPress 5.5.1 - 5.7.0
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
@@ -22,7 +22,6 @@ This is an advanced WordPress development environment and in order to understand
 WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple solutions. Below are some helpful articles and different ways to setup an environment. Feel free to use one of these or do your own research.
 * [setup on Mac](https://www.themeum.com/install-wordpress-localhost/)
 * [Setup on PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
-* [Kinsta local development](https://kinsta.com/blog/install-wordpress-locally/)
 * [Flywheel local development](https://localwp.com/)
 
 
@@ -76,6 +75,14 @@ gulp production
 * Dillan Tai (Web Developer) - dtai@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+**0.6.1 - 3/10/21**
+* Fix front page templating issues
+* Fix minor table issue
+* Adjust image size on custom template banner to prevent blurry images
+* Add custom template with no banner and no sidebar
+* Add custom template with no banner and left sidebar
+* Add custom template with no banner and right sidebar
+* Remove covid website specific templates and CSS
 
 **0.6.0 - 2/2/21**
 

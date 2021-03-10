@@ -5,7 +5,7 @@
   $thumb_id = get_post_thumbnail_id( $id );
 
   if ( '' != $thumb_id ) {
-    $thumb_url  = wp_get_attachment_image_src( $thumb_id, 'actual_size', true );
+    $thumb_url  = wp_get_attachment_image_src( $thumb_id, 'full', true );
     $image      = $thumb_url[0];
   }
 

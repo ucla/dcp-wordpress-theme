@@ -46,11 +46,11 @@
 
 
 
-        <?php if (is_active_sidebar('primary-widget-area')) : ?>
+        <?php if (is_active_sidebar('right-widget-area')) : ?>
 
             <div class="col span_2_of_12"></div>
             <div class="col span_3_of_12">
-                <?php dynamic_sidebar('primary-widget-area'); ?>
+                <?php dynamic_sidebar('right-widget-area'); ?>
             </div>
         <?php endif; ?>
 

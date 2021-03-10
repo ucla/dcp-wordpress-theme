@@ -138,42 +138,27 @@ function ucla_setup() {
   add_image_size( 'actual_size', 1427, 280 );
 
 
-  // Custom nav menu markup
-  // $defaults = array(
-  //   'theme_location' => 'main-menu',
-  //   'container'      => 'ul',
-  //   'menu_class'     => 'nav navbar-nav main-nav',
-  //   'walker'         => new Primary_Walker_Nav_Menu()
-  // );
-  //
-  // class Primary_Walker_Nav_Menu extends Walker_Nav_Menu {
-  //   // custom List Item markup
-  //   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-  //     if (array_search('menu-item-has-children', $item->classes)) {
-  //       $output .= sprintf("\n<li class='dropdown %s'><a href='%s' class=\"dropdown-toggle\" data-toggle=\"dropdown\" >%s</a>\n", ( array_search('current-menu-item', $item->classes) || array_search('current-page-parent', $item->classes) ) ? 'active' : '', $item->url, $item->title
-  //       );
-  //     } else {
-  //       $output .= sprintf("\n<li %s><a href='%s'>%s</a>\n", ( array_search('current-menu-item', $item->classes) ) ? ' class="active"' : '', $item->url, $item->title
-  //       );
-  //     }
-  //   }
-  //
-  //   function start_lvl(&$output, $depth) {
-  //     $indent = str_repeat("\t", $depth);
-  //     $output .= "\n$indent<ul class=\"dropdown-menu\" role=\"menu\">\n";
-  //   }
-  // }
-  // wp_nav_menu( $defaults );
-
   // Add Sidebar widget
-  add_action( 'widgets_init', 'ucla_widgets_init' );
-  function ucla_widgets_init() {
+  add_action( 'widgets_init', 'ucla_right_init' );
+  function ucla_right_init() {
     register_sidebar( array(
-      'name' => esc_html__( 'Sidebar Widget Area', 'ucla' ),
-      'id' => 'primary-widget-area',
+      'name' => esc_html__( 'Right Sidebar Widget Area', 'ucla' ),
+      'id' => 'right-widget-area',
       'before_widget' => '<div class="widget-container %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
+      'after_title' => '</h3>',
+    ) );
+  }
+
+  add_action( 'widgets_init', 'ucla_left_init' );
+  function ucla_left_init() {
+    register_sidebar( array(
+      'name' => esc_html__( 'Left Sidebar Widget Area', 'ucla' ),
+      'id' => 'left-widget-area',
+      'before_widget' => '<div class="left-widget-container %2$s">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3 class="left-widget-title">',
       'after_title' => '</h3>',
     ) );
   }
