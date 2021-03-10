@@ -76,6 +76,7 @@ gulp production
 
 ## CHANGELOG ##
 **0.6.1 - 3/10/21**
+
 * Fix front page templating issues
 * Fix minor table issue
 * Adjust image size on custom template banner to prevent blurry images
