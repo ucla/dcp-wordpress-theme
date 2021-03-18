@@ -151,26 +151,30 @@ function ucla_setup() {
     ) );
   }
 
-  add_action( 'widgets_init', 'ucla_left_init' );
-  function ucla_left_init() {
-    register_sidebar( array(
-      'name' => esc_html__( 'Left Sidebar Widget Area', 'ucla' ),
-      'id' => 'left-widget-area',
-      'before_widget' => '<div class="left-widget-container %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="left-widget-title">',
-      'after_title' => '</h3>',
-    ) );
-  }
 
   // Add Dashboard Training Widget
   add_action('wp_dashboard_setup', 'ucla_custom_dashboard_widgets');
 
   function ucla_custom_dashboard_widgets() {
-    global $wp_meta_boxes;
     wp_add_dashboard_widget('custom_help_widget', 'UCLA Strat. Comm. Theme Support', 'custom_dashboard_help');
+    add_meta_box(
+        'custom_help_widget',
+        esc_html__( 'UCLA Strat. Comm. Theme Support', 'wporg' ),
+        'custom_dashboard_help',
+        'dashboard',
+        'side', 'high'
+    );
+    // Global the $wp_meta_boxes variable (this will allow us to alter the array).
+    global $wp_meta_boxes;
   }
 
+
   function custom_dashboard_help() {
-    echo '<p>Welcome to the Strategic UCLA Communications Theme.</p><p><strong>For WordPress Resources:</strong></p><p>UCLA Spaces Page: <em><a href="https://spaces.ais.ucla.edu/display/ucomm/WordPress" target="_blank">UCLA WordPress</a></em></p><p><strong>Theme Specific Video Resources:</strong></p><iframe width="100%" height="270px" src="https://www.youtube.com/embed/PxB7V7rSvUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Page Intros: <em><a href="https://youtu.be/PxB7V7rSvUE" target="_blank">Add Page Intro Sentence</a></em></p><p>Fluid Class: <em><a href="https://youtu.be/aUKAs9iMDDA" target="_blank">Expand Backgound past content containter</a></em></p>';
+    echo '<h2>Welcome to the UCLA WordPress theme built by Strategic Communications.</h2>' .
+    '<p>We are currently working on more WordPress resources and always looking for contributors. Learn how to get started by visting the links below.</p>' .
+    '<p><a href="#" rel="noopener">UCLA WordPress Resources (Coming Soon)</a></p>'.
+    '<p><a href="https://bitbucket.org/uclaucomm/ucla-wp/src/distribution/" target="_blank" rel="noopener">UCLA Parent Theme Repository (Beta)</a></p>' .
+    '<p><a href="https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/" target="_blank" rel="noopener">UCLA Child Theme Repository</a></p>' .
+    '<p><a href="https://bitbucket.org/uclaucomm/ucla-wp-plugin/src/distribution/" target="_blank" rel="noopener">UCLA Gutenberg Plugin (Beta)</a></p>' .
+    '<p><a href="https://webcomponents.ucla.edu/" target="_blank" rel="noopener">UCLA Component Library</a></p>';
   }

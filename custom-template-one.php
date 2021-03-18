@@ -1,4 +1,4 @@
-<?php /* Template Name: Custom Template One */
+<?php /* Template Name: Custom Template, No Sidebar */
 
   global $id;
 

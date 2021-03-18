@@ -1,4 +1,4 @@
-<?php /* Template Name: Front Page No Banner */
+<?php /* Template Name: Front Page, No Hero */
 
 global $id;
 

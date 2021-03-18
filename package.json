@@ -15,9 +15,8 @@
     "hamburgers": "^1.1.3",
     "node-sass": "^4.14.1",
     "stylelint": "^13.7.1",
-    "ucla-bruin-components": "git+ssh://git@bitbucket.org/uclaucomm/ucla-bruin-components.git#main"
+    "ucla-bruin-components": "bitbucket:uclaucomm/ucla-bruin-components#main"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "mocha"
   },

@@ -1,4 +1,4 @@
-<?php /* Template Name: Page No Banner */
+<?php /* Template Name: No Sidebar, No Hero */
 
 global $id;
 
@@ -22,6 +22,7 @@ if ('' != $thumb_id) {
 
           <div class="col span_12_of_12">
             <div class="breadcrumb mb-24"><?php get_breadcrumb(); ?> / <?php the_title(); ?></div>
+            <h1 class="mb-24 mb-md-32"><?php the_title(); ?></h1>
             <?php the_content(); ?>
 
           </div>
