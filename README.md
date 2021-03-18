@@ -69,12 +69,19 @@ gulp production
 * All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 * This repository follows the same [UCLA Web Component Library contributing guidelines](https://ucla-fractal.s3-us-west-1.amazonaws.com/build/docs/contribute/contributing.html).
 
-### Have questions on how to consume or contribute to this library? Please reach out to one of our developers: ###
+### Have questions on how to consume or contribute to this library? Please reach our development team at Strategic Communications: ###
 
-* Scott Vosburgh (Senior Web Developer) - svosburgh@stratcomm.ucla.edu
-* Dillan Tai (Web Developer) - dtai@stratcomm.ucla.edu
+* Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+**0.7.0 - 4/18/21**
+
+* Improve template naming conventions
+* Remove leftover covid site styles
+* Add margins for ".entry-content" heading only. AKA gutenberg headings
+* Update resources widget and move to top of dashboard
+* Update UCLA Component Library package
+
 **0.6.1 - 3/10/21**
 
 * Fix front page templating issues
