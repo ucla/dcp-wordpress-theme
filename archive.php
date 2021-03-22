@@ -7,7 +7,7 @@
                 <h1 class="entry-title"><?php echo wp_kses_post(get_the_archive_title()); ?></h1>
                 <?php if (get_the_archive_description()) { ?>
                     <b><?php echo wp_kses_post(get_the_archive_description()); ?></b>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </header>
@@ -35,13 +35,12 @@
             <div class="pagination mb-64">
                 <?php echo get_the_posts_pagination([
                     'format'  => 'page/%#%',
-                    'current' => $paged,
+                    'current' => $paged ? $paged : 1,
                     'mid_size'        => 10,
                     'prev_text'       => __('&laquo;'),
                     'next_text'       => __('&raquo;')
                 ]); ?>
             </div>
-
         </div>
 
 
