@@ -19,6 +19,11 @@
     a {
       color: $white;
       text-decoration: none;
+
+      &:hover {
+        background: #ffe500;
+        color: #333;
+      }
     }
 
     &-wrap {
@@ -28,7 +33,7 @@
     }
 
     &_address {
-      padding: 0 0 32px 0;
+      padding: 0;
       max-width: 240px;
       margin-right: 12%;
 
