@@ -12,16 +12,16 @@
 
         <?php //edit_post_link(); ?>
 
-        <p class="front-page-hero__intro">
           <?php  $key_values = get_post_custom_values( 'intro' );
 
             if (is_array($key_values) || is_object($key_values)) {
+              echo '<p class="front-page-hero__intro">';
               foreach ( $key_values as $key => $value ) {
                 echo $value;
               }
+              echo '</p>';
             }
           ?>
-         </p>
 
       </div>
     </div>
