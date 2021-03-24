@@ -74,7 +74,14 @@ gulp production
 * Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
-**0.7.0 - 4/18/21**
+**0.7.1 - 3/24/21**
+
+* Update class naming bug in page templates
+* Add front page no sidebar no hero
+* Add edit post link to page template when logged in
+* Fix search sidebar display bug
+
+**0.7.0 - 3/18/21**
 
 * Improve template naming conventions
 * Remove leftover covid site styles
