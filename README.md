@@ -1,11 +1,10 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.6.1
+* Version 0.7.1
 * Tested up to WordPress 5.5.1 - 5.7.0
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
-
 
 ### WordPress Install ###
 To install this theme on your WordPress site, download the full zip file of the distribution branch. Go to Appearance > Themes in the left hand menu of the WordPress admin and then select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
