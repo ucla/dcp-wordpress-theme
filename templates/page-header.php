@@ -8,9 +8,9 @@
         <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
         <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php } ?>
-      <?php edit_post_link(); ?>
-      <?php
-      $key_values = get_post_custom_values('intro');
+      <p><?php edit_post_link(); ?></p>
+      <p class="intro"><?php
+      $key_values = get_post_custom_values( 'intro' );
 
       if (is_array($key_values) || is_object($key_values)) {
         echo '<p class="intro">';
