@@ -24,6 +24,10 @@
         background: #ffe500;
         color: #333;
       }
+
+      &:focus {
+        outline-color: white;
+      }
     }
 
     &-wrap {
