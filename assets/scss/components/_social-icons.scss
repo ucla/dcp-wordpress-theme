@@ -53,6 +53,7 @@
     opacity: 0;
     display: block;
     height: 0;
+    padding: 0;
   }
 
   ul {
@@ -96,7 +97,7 @@
           &:hover {
             svg g path {
               &:nth-of-type(1) {
-                fill: $white;
+                fill: black;
               }
 
               &:nth-of-type(2) {
@@ -111,7 +112,7 @@
         &.foot-youtube {
           &:hover {
             svg g path {
-              fill: $white;
+              fill: $black;
             }
           }
         }
@@ -162,6 +163,51 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  &.social-dark {
+    margin-top: 12px;
+
+    ul {
+      margin: 0;
+      justify-content: start;
+    }
+
+    li {
+      margin-right: 4px;
+
+      a {
+        border-radius: 2px;
+        height: 28px;
+        width: 28px;
+
+        svg {
+          width: 24px;
+        }
+
+        &:hover {
+          background: $hover-state-dark;
+        }
+
+        &:focus {
+          outline: 1px dotted white;
+          background: none;
+        }
+      }
+    }
+
+    a {
+      svg g path {
+        fill: white;
+        display: inline !important;
+      }
+
+      &:hover {
+        svg g path {
+          fill: black;
         }
       }
     }
