@@ -185,12 +185,16 @@
         width: 28px;
 
         svg {
-          width: 28px;
+          width: 24px;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
           background: $hover-state-dark;
+        }
+
+        &:focus {
+          outline: 1px dotted white;
+          background: none;
         }
       }
     }
@@ -201,8 +205,7 @@
         display: inline !important;
       }
 
-      &:hover,
-      &:focus {
+      &:hover {
         svg g path {
           fill: black;
         }
