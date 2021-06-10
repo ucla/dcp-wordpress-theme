@@ -7,9 +7,9 @@
 
         <div class="ucla campus">
           <div class="col span_12_of_12">
-            <div class="breadcrumb mb-24"><?php get_breadcrumb(); ?> / <?php the_title(); ?></div>
-            <h1 class="mb-24 mb-md-32"><?php the_title(); ?></h1>
-            <p><?php edit_post_link(); ?></p>
+            <div class="breadcrumb"><?php get_breadcrumb(); ?> / <?php the_title(); ?></div>
+            <h1 class="mb-24"><?php the_title(); ?></h1>
+            <?php edit_post_link(); ?>
           </div>
         </div>
 

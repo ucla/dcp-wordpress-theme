@@ -6,7 +6,7 @@
     height: 44px;
     width: 56px;
     position: relative;
-    top: -17px;
+    top: -12px;
   }
 
   #block-search {
@@ -38,11 +38,6 @@
     &:hover {
       background: $hover-state;
       cursor: pointer;
-
-      svg g g g g #Shape {
-        fill: $white;
-        background: $hover-state;
-      }
     }
 
     &.is-active {
@@ -53,20 +48,28 @@
         outline: 1px dotted $white;
         outline-offset: -8px;
 
-        svg g #Shape {
-          fill: $white;
-        }
-
         &:hover {
           background: $hover-state;
           outline: 1px dotted $hover-state;
           outline-offset: -8px;
-
-          svg g #Shape {
-            fill: $white;
-          }
         }
       }
+
+      &:hover > .search-icon,
+      .search-icon:hover,
+      .search-icon {
+        content: url("/wp-content/themes/ucla-wp/images/icons/denotive/close--white.svg");
+      }
+    }
+
+    .search-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover > .search-icon,
+    .search-icon:hover {
+      content: url("/wp-content/themes/ucla-wp/images/icons/denotive/search--white.svg");
     }
   }
 }
