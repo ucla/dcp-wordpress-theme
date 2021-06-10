@@ -50,8 +50,8 @@ body.no-scroll {
 
 .ucla.campus {
   // First child fix if you put a title above span. See example on templates/health-saftey.php
-  .first-child.col {
-    margin-left: 0;
+  .col {
+    margin: 0 0 0 1.6%;
   }
 
   p {

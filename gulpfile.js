@@ -38,14 +38,6 @@ function watchStyles(done) {
   done();
 }
 
-//get the styles from the components library and add them to the theme.
-function libraryStyles() {
-  return src('./node_modules/ucla-bruin-components/public/css/ucla-lib.min.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(dest('dist/css/ucla-components-library'));
-}
-
 function lintJavascript() {
    return src('assets/js/**/*.js')
      .pipe(eslint())
@@ -53,13 +45,6 @@ function lintJavascript() {
      // To have the process exit with an error code (1) on
      // lint error, return the stream and pipe to failAfterError last.
      //.pipe(eslint.failAfterError());
-}
-
-
-// install bruin component library JS
-function libraryConcatJs() {
-  return src('./node_modules/ucla-bruin-components/public/js/ucla-lib-scripts.min.js')
-    .pipe(dest('dist/js/ucla-components-library'));
 }
 
 // Bundle the js added in the theme.
@@ -79,17 +64,13 @@ exports.default = defaultTask
 
 
 exports.build = series(
-  libraryStyles,
   themeStyles,
-  themeConcatJs,
-  libraryConcatJs
+  themeConcatJs
 );
 
 exports.production = series(
-  libraryStyles,
   themeStyles,
-  themeConcatJs,
-  libraryConcatJs
+  themeConcatJs
 );
 
 exports.watch = series(

@@ -24,8 +24,7 @@ nav#menu {
 // Primary Nav
 #menu {
   display: block;
-  right: -102%;
-  top: 17px;
+  right: -100%;
   transition: right 0.5s ease;
   position: absolute;
   background: $white;
@@ -35,6 +34,7 @@ nav#menu {
   overflow-y: scroll;
   overflow-x: hidden;
   border: 1px solid $medium-grey3;
+  top: -7px;
 
   &::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
@@ -42,28 +42,33 @@ nav#menu {
   }
 
   @media (min-width: breakpoint-min(md)) {
-    width: 320px;
-    top: 20px;
+    width: 320px !important;
+    top: 8px;
+    position: absolute !important;
   }
 
   @media (min-width: breakpoint-min(lg)) {
     display: block;
     position: absolute;
     height: 38px;
-    width: fit-content;
-    width: max-content;
+    width: fit-content !important;
+    width: max-content !important;
     max-width: 1176px;
     margin: 0 auto;
     right: 0;
-    top: 37px;
+    top: 97px;
     overflow: visible;
     border: 0;
   }
 
   &.is-active {
     display: block;
-    right: 0;
+    right: 26px;
     transition: right 0.5s ease;
+
+    @media (min-width: breakpoint-min(md)) {
+      right: 24px;
+    }
   }
 
   div[class^="menu"] {
