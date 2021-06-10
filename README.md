@@ -17,15 +17,15 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 *Get Started*
 
-This is an advanced WordPress development environment and in order to understand this documentation there is some required knowledge that is assumed. Do not let this stop you from learning how to use this theme. If you've made it this far you're already on your way. Follow the instructions in this documentation. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Read some stack overflow posts or articles if you run into errors, and you can get started in this theme. Be patient. If you are unfamiliar with these tools and learn how to use this theme, you will become a better developer.
+This is parent theme for WordPress development. Follow the instructions in this documentation. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Be patient if you are unfamiliar with these tools.
 
-WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple solutions. Below are some helpful articles and different ways to setup an environment. Feel free to use one of these or do your own research.
+WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple ways. Below are some helpful articles to setup an environments. Feel free to use one of these or do your own research.
 * [setup on Mac](https://www.themeum.com/install-wordpress-localhost/)
 * [Setup on PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
 * [Flywheel local development](https://localwp.com/)
 
 
-Pull this repository into a wp-content/themes/ucla-wp. The ucla-wp folder should be your root folder of the theme.
+Pull this repository into a `/your-root-site/wp-content/themes/ucla-wp`. The ucla-wp folder should be your root folder of the theme.
 * [git](https://git-scm.com/doc)
 * [SourceTree](https://www.sourcetreeapp.com/)
 
@@ -74,6 +74,11 @@ gulp production
 * Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+**0.7.2 - 6/10/21**
+
+* Remove extra space above headings
+* UCLA component Library Beta v14 update
+
 **0.7.1 - 3/24/21**
 
 * Update class naming bug in page templates
