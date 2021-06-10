@@ -71,7 +71,7 @@ $(document).ready(function (){
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
   function desktopSubmenuResize () {
-    let w = $('.nav-wrap').width() - 70,
+    let w = $('.ucla.campus.header').width() - 48,
       negOffset = (w + 10) * -1;
 
     //Add the width off the header wrap to the search dropdown

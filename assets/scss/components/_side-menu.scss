@@ -7,6 +7,8 @@ This stylesheet applies to the side menu on subpages. The side menu is only visi
   max-width: 275px;
   display: block;
   margin: 0 auto;
+  list-style: none;
+  padding-inline-start: 0;
 
   .menu-item {
     border-bottom: 1px solid $medium-grey3;
@@ -59,6 +61,7 @@ This stylesheet applies to the side menu on subpages. The side menu is only visi
   .sub-menu {
     margin-top: 0;
     padding-inline-start: 0;
+    list-style: none;
 
     .menu-item {
       background-color: $grey-5;
