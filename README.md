@@ -1,7 +1,7 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.7.1
-* Tested up to WordPress 5.5.1 - 5.7.0
+* Version 0.7.2.1
+* Tested up to WordPress 5.5.1 - 5.7.2
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
@@ -73,6 +73,11 @@ gulp production
 * Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+
+**0.7.2.1 - 7/6/21**
+
+* Firefox bug fix for primary navigation line breaking
+
 **0.7.2 - 6/10/21**
 
 * Remove extra space above headings
