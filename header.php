@@ -29,28 +29,33 @@
         </div>
 
         <div class="nav-wrap">
-          <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
-        	  <span class="hamburger-box">
-        	    <span class="hamburger-inner"></span>
-        	  </span>
-        	</button>
 
-          <nav id="menu">
-            <?php get_search_form(); ?>
-            <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+          <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
 
-            <div class="search-desktop">
-              <button id="search-button" class="search-desktop_button">
-                <img id="search-svg" class="search-icon" src="/wp-content/themes/ucla-wp/images/icons/denotive/search--blue.svg" alt="search button">
-              </button>
+            <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
+          	  <span class="hamburger-box">
+          	    <span class="hamburger-inner"></span>
+          	  </span>
+          	</button>
 
-              <div class="search-block-form search-mobile" id="block-search" role="search">
+            <nav id="menu">
+              <?php get_search_form(); ?>
+              <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 
+              <div class="search-desktop">
+                <button id="search-button" class="search-desktop_button">
+                  <img id="search-svg" class="search-icon" src="/wp-content/themes/ucla-wp/images/icons/denotive/search--blue.svg" alt="search button">
+                </button>
+
+                <div class="search-block-form search-mobile" id="block-search" role="search">
+
+                </div>
               </div>
-            </div>
-
-
           </nav>
+
+        <?php } // end if has_nav_menu ?>
+
+
         </div>
       </div>
 

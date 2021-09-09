@@ -167,7 +167,9 @@ $foot_signature = get_option('logo');
       </div>
 
       <div class="foot-upper_info-menu">
-        <?php wp_nav_menu(array('theme_location' => 'foot-menu')); ?>
+        <?php if ( has_nav_menu( 'foot-menu' ) ) {
+                wp_nav_menu(array('theme_location' => 'foot-menu'));
+              } ?>
       </div>
     </div>
   </div>
