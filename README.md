@@ -1,6 +1,6 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.7.2.1
+* Version 0.7.2.2
 * Tested up to WordPress 5.5.1 - 5.7.2
 
 
@@ -83,6 +83,14 @@ gulp production
 * Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+
+
+**0.7.2.2 - 7/6/21**
+
+* Readme updates
+* Fix fluid class bug for Gutenberg groups
+* Add styling for Query loop core block
+* Update <hr> core styling to better reflect UCLA brand
 
 **0.7.2.1 - 7/6/21**
 
