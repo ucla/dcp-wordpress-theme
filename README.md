@@ -1,25 +1,26 @@
 # Official Strategic Communication WordPress Theme #
 
-* Version 0.6.1
-* Tested up to WordPress 5.5.1 - 5.7.0
+* Version 0.7.2.1
+* Tested up to WordPress 5.5.1 - 5.7.2
 
 
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
-
 
 ### Install your WordPress Theme ###
 
 To install this theme on your WordPress site.
 1. Download the full zip file of the distribution branch.
 2. Unzip the downloaded file and change the top level folder name to ucla-wp.
-3. Re-zip the file with the file name ucla-wp.zip.
+3. Re-zip the file with the file name `ucla-wp.zip`.
 4. Log into your WordPress dashboard and go to Appearance > Themes in the left hand menu of the WordPress admin.
 5. Select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
 
 Your theme should now be visible on the front end of the webiste.
 
 ### Child Theme Development ###
-You can download and install the child theme ucla-wp-child [here](https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/).
+There is a child theme available. You can download and install the child theme ucla-wp-child [here](https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/).
+
+<hr/>
 
 ### Contribute to Parent Theme ###
 
@@ -70,11 +71,18 @@ gulp production
 * All commits must be on brand according to the UCLA Brand Guidelines website and ADA compliant.
 * This repository follows the same [UCLA Web Component Library contributing guidelines](https://ucla-fractal.s3-us-west-1.amazonaws.com/build/docs/contribute/contributing.html).
 
+<hr/>
+
 ### Have questions on how to consume or contribute to this library? Please reach our development team at Strategic Communications: ###
 
 * Scott Vosburgh (Senior Frontend Developer) - svosburgh@stratcomm.ucla.edu
 
 ## CHANGELOG ##
+
+**0.7.2.1 - 7/6/21**
+
+* Firefox bug fix for primary navigation line breaking
+
 **0.7.2 - 6/10/21**
 
 * Remove extra space above headings

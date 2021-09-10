@@ -47,6 +47,10 @@ nav#menu {
     position: absolute !important;
   }
 
+  @media only screen and (max-width: 1224px) and (min-width: 1024px) {
+    margin-right: 30px !important;
+  }
+
   @media (min-width: breakpoint-min(lg)) {
     display: block;
     position: absolute;
@@ -130,7 +134,7 @@ nav#menu {
                 content: '';
                 width: 100%;
                 margin: 0 auto;
-                top: 4px;
+                top: 5px;
                 height: 4px;
                 background: $ucla-gold;
                 z-index: 5;
@@ -251,8 +255,7 @@ nav#menu {
 
           @media (min-width: breakpoint-min(lg)) {
             border-top: 0;
-            padding: 9px 16px 9px 16px;
-            width: auto;
+            padding: 9px 9px;
           }
 
           &.current-page {
@@ -273,11 +276,9 @@ nav#menu {
           }
 
           &.menu-item-has-children--link {
-            width: calc(100% - 71px);
-
             @media (min-width: breakpoint-min(lg)) {
-              width: auto;
-              padding: 9px 36px 9px 16px;
+              margin-right: 32px;
+              padding: 9px;
 
               &:focus {
                 outline: 1px dotted $hover-state;
@@ -302,12 +303,10 @@ nav#menu {
             z-index: 5;
 
             @media (min-width: breakpoint-min(lg)) {
-              position: relative;
-              display: inline-block;
               background: rgba(0, 0, 0, 0);
               width: auto;
-              margin-left: -36px;
-              height: 36px;
+              height: 33px;
+              margin-top: -34px;
               border: 0;
             }
 
@@ -474,6 +473,34 @@ html.firefox {
       .search-desktop {
         @media (min-width: breakpoint-min(lg)) {
           top: -18px;
+        }
+      }
+    }
+  }
+}
+
+/************************
+Firefox Only styles
+************************/
+@media (min-width: breakpoint-min(lg)) {
+  html.firefox {
+    body {
+      #menu {
+        div[class^="menu"] {
+          ul {
+            li {
+              .has-child {
+                &--button {
+                  height: 33px;
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+
+        .search-desktop {
+          top: -12px;
         }
       }
     }

@@ -1,4 +1,4 @@
-<?php /* Template Name: Custom Template 3 */
+<?php /* Template Name: Custom Template, Ribbon Hero */
 
   global $id;
 
