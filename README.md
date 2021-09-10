@@ -9,6 +9,7 @@ Welcome to the official UCLA WordPress theme. This theme was created through a c
 ### Install your WordPress Theme ###
 
 To install this theme on your WordPress site.
+
 1. Download the full zip file of the distribution branch.
 2. Unzip the downloaded file and change the top level folder name to ucla-wp.
 3. Re-zip the file with the file name `ucla-wp.zip`.
@@ -25,6 +26,10 @@ There is a child theme available. You can download and install the child theme u
 ### Contribute to Parent Theme ###
 
 *Get Setup Locally*
+
+* Node Version 12.14.1
+* NPM version 6.3.4
+* Gulp version 4.0.2
 
 This is parent theme for WordPress development. Follow the instructions in this documentation. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Be patient if you are unfamiliar with these tools.
 

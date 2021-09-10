@@ -1,4 +1,5 @@
 // Add more stylesheets here. Use @imports to bring in style sheets per element.
+// Any stylesheets overriding WordPress specific classes should start with "wp-".
 
 // Utilities
 @import "./utilities/_variables";
@@ -8,8 +9,10 @@
 @import "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "./common/_common";
 
-// WordPress Gutenberg Core Block Overrides
+// WordPress Gutenberg Core Overrides
 @import "./common/_wp-gutenberg";
+
+// WordPress Gutenberg Core BLOCK Overrides
 @import "./components/_wp-query-loop";
 
 // Components
