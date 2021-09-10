@@ -1,0 +1,21 @@
+// This style sheet overrides the gutenberg core block "Query Loop".
+.wp-block-query {
+  .wp-block-post-title {
+    line-height: 38px;
+    padding-bottom: 0;
+  }
+
+  .wp-block-post-excerpt__excerpt {
+    padding-bottom: 0;
+  }
+
+  time {
+    margin-bottom: 16px;
+  }
+
+  a.wp-block-post-excerpt__more-link:visited {
+    &:hover {
+      color: $white !important;
+    }
+  }
+}

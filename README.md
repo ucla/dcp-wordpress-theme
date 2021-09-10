@@ -60,7 +60,7 @@ gulp build
 ```
 
 Production builds compile the css and javascript assets without tabs or spaces. This causes slightly longer build times in pipelines, but produces faster loading times and better bandwidth management on a production sites. This results in cheaper hosting costs with AWS or other platforms. Pull requests with production errors will immediately be rejected.
-**EACH TIME YOU PULL UPDATES FROM THE REPO YOU MUST RUN "gulp production" TO ENSURE YOU HAVE THE PROPER ASSETS IN THE ./dist FOLDER.**
+**Each time updates are pulled from the repository run `gulp production` to ensure you have the proper assets in the ./dist folder.**
 ```
 gulp production
 ```

@@ -7,7 +7,10 @@
 @import "./utilities/_spacing";
 @import "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "./common/_common";
-@import "./common/_gutenberg";
+
+// WordPress Gutenberg Core Block Overrides
+@import "./common/_wp-gutenberg";
+@import "./components/_wp-query-loop";
 
 // Components
 @import "./components/_accordion";
