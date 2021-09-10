@@ -7,37 +7,38 @@
 Welcome to the official UCLA WordPress theme. This theme was created through a collaboration effort between Strategic Communications and DCP to ensure that it is inline with the UCLA brand and ADA compliant.
 
 
-### WordPress Install ###
-To install this theme on your WordPress site, download the full zip file of the distribution branch. Go to Appearance > Themes in the left hand menu of the WordPress admin and then select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
+### Install your WordPress Theme ###
+
+To install this theme on your WordPress site.
+1. Download the full zip file of the distribution branch.
+2. Unzip the downloaded file and change the top level folder name to ucla-wp.
+3. Re-zip the file with the file name ucla-wp.zip.
+4. Log into your WordPress dashboard and go to Appearance > Themes in the left hand menu of the WordPress admin.
+5. Select the "Add New" button on the themes page. Upload the zip file and activate the new uploaded theme.
+
+Your theme should now be visible on the front end of the webiste.
 
 ### Child Theme Development ###
 You can download and install the child theme ucla-wp-child [here](https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/).
 
-### Development Parent Theme ###
+### Contribute to Parent Theme ###
 
-*Get Started*
+*Get Setup Locally*
 
 This is parent theme for WordPress development. Follow the instructions in this documentation. This theme uses NPM and Gulp, but you do not have to be an expert on these topics. Be patient if you are unfamiliar with these tools.
 
-WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple ways. Below are some helpful articles to setup an environments. Feel free to use one of these or do your own research.
+1. WordPress will need to be installed and run on your local computer. If you don't know how to do this there are multiple ways. Below are some helpful articles to setup an environments. Feel free to use one of these or do your own research.
 * [setup on Mac](https://www.themeum.com/install-wordpress-localhost/)
 * [Setup on PC](https://themeisle.com/blog/install-xampp-and-wordpress-locally/)
 * [Flywheel local development](https://localwp.com/)
-
-
-Pull this repository into a `/your-root-site/wp-content/themes/ucla-wp`. The ucla-wp folder should be your root folder of the theme.
+2. Pull this repository into a `/your-root-site/wp-content/themes/ucla-wp`. The ucla-wp folder should be your root folder of the theme.
 * [git](https://git-scm.com/doc)
 * [SourceTree](https://www.sourcetreeapp.com/)
+3. If not already installed you will need to install Node Package Manager. [install NPM](https://www.npmjs.com/get-npm) on your machine and follow the steps below.
+4. Use terminal on Mac or command prompt on PC and navigate to the theme folder. Run `npm install`
+5. This project requires Gulp. Installing gulp on your machine may require another step. -- https://gulpjs.com/docs/en/getting-started/quick-start
 
-To edit this theme please [install NPM](https://www.npmjs.com/get-npm) on your machine and follow the steps below.
-
-
-Use terminal on Mac or command prompt on PC and navigate to the theme folder. Run npm install
-```
-npm install
-```
-
-This project requires Gulp. Installing gulp on your machine may require another step. -- https://gulpjs.com/docs/en/getting-started/quick-start
+Once gulp is installed you will be able to run the following build commands.
 
 
 *Build Commands (Run these commands while in theme folder on terminal or command prompt.)*
