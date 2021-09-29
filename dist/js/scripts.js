@@ -61,8 +61,12 @@ $(document).ready(function () {
   });
 
   // Add the expander div for full width backgrounds. https://youtu.be/aUKAs9iMDDA
-  $('.fluid').wrapInner('<div class="expander"><div class="expander-container"></div></div>');
   $('.fluid').closest('.col').css('margin', 0);
+  $('.fluid.has-background-grey-40').wrapInner('<div class="expander--grey-40"><div class="expander-container"></div></div>');
+  $('.fluid.has-background-lightest-grey-2').wrapInner('<div class="expander--lightest-grey-2"><div class="expander-container"></div></div>');
+  $('.fluid.has-background-light-grey').wrapInner('<div class="expander--light-grey"><div class="expander-container"></div></div>');
+  $('.fluid.has-background-ucla-blue').wrapInner('<div class="expander--ucla-blue"><div class="expander-container"></div></div>');
+  $('.fluid.has-background-white').wrapInner('<div class="expander--white"><div class="expander-container"></div></div>');
 
   // The expanded group function to go beyond the .ucla.campus container.
   function fluidBlockResize () {
@@ -72,7 +76,7 @@ $(document).ready(function () {
       contentH =$('.expander').height();
 
     //Add the width off the windo wrap to the expander div that was added
-    $('.expander').css({
+    $('.expander--grey-40, .expander--lightest-grey-2, .expander--light-grey, .expander--ucla-blue, .expander--white').css({
       'width': w,
       'margin-left': negOffset
     });

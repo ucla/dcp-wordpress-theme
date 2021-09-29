@@ -1,3 +1,9 @@
+//**********
+//*** Gutenberg Overides
+//*** Fix a bug that cuased between the gutenberg editor and the component library.
+//**********
+//*** Scroll down for Gutenberg extending below
+//**********
 .wp-block-table {
   overflow-y: hidden;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -58,5 +64,35 @@
     font-style: oblique;
     letter-spacing: 0;
     line-height: 24px;
+  }
+}
+
+//**********
+//*** Gutenberg Extension
+//*** Fix a bug that cuased between the gutenberg editor and the component library.
+//**********
+//*** Scroll up for Gutenberg overiding above
+//**********
+
+.ucla.campus {
+  .fluid {
+    .expander {
+      @include fluid-blade-two(); // Mixin found on sass/utilities/_mixins/_mixins.scssß
+
+      &-container {
+        display: block;
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 40px 24px;
+
+        @media (min-width: breakpoint-min(lg)) {
+          padding: 80px 12px;
+        }
+
+        p {
+          margin-bottom: 16px;
+        }
+      }
+    }
   }
 }

@@ -13,6 +13,62 @@ function ucla_setup() {
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'html5', array( 'search-form' ) );
   add_theme_support( 'responsive-embeds' );
+  add_theme_support( 'editor-styles' );
+  add_editor_style( 'style-editor.css' );
+  add_theme_support( 'disable-custom-colors' );
+  // Background class names created in ./assets/scss/mixins/_backgrounds.scss
+  add_theme_support( 'editor-color-palette', array(
+      array(
+          'name'  => esc_attr__( 'White', 'uclaTheme' ),
+          'slug'  => 'white',
+          'color' => '#ffffff',
+      ),
+      array(
+          'name'  => esc_attr__( 'Grey 10', 'uclaTheme' ),
+          'slug'  => 'grey-10',
+          'color' => '#E5E5E5',
+      ),
+      array(
+          'name'  => esc_attr__( 'Grey 40', 'uclaTheme' ),
+          'slug'  => 'grey-40',
+          'color' => '#999',
+      ),
+      array(
+          'name'  => esc_attr__( 'Grey 60', 'uclaTheme' ),
+          'slug'  => 'grey-60',
+          'color' => '#666',
+      ),
+      array(
+          'name'  => esc_attr__( 'Grey 80', 'uclaTheme' ),
+          'slug'  => 'grey-80',
+          'color' => '#333',
+      ),
+      array(
+          'name'  => esc_attr__( 'Black', 'uclaTheme' ),
+          'slug'  => 'black',
+          'color' => '#000',
+      ),
+      array(
+          'name'  => esc_attr__( 'UCLA Blue', 'uclaTheme' ),
+          'slug'  => 'blue',
+          'color' => '#2774ae',
+      ),
+      array(
+          'name'  => esc_attr__( 'UCLA Gold', 'uclaTheme' ),
+          'slug'  => 'gold',
+          'color' => '#ffd100',
+      ),
+      array(
+          'name'  => esc_attr__( 'Darker Blue', 'uclaTheme' ),
+          'slug'  => 'darker-blue',
+          'color' => '#005587',
+      ),
+      array(
+          'name'  => esc_attr__( 'Darkest Blue', 'uclaTheme' ),
+          'slug'  => 'darkest-blue',
+          'color' => '#003b5c',
+      ),
+  ) );
 
   global $content_width;
 
@@ -30,9 +86,9 @@ function ucla_setup() {
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
     // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.14/css/ucla-lib.min.css' );
+    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.16/css/ucla-lib.min.css' );
     // Install the UCLA Component Library  scripts
-    wp_enqueue_script( 'lib-script', 'https://s3-us-west-1.amazonaws.com/webcomponents.ucla.edu/public/1.0.0-beta.14/js/ucla-lib-scripts.min.js' );
+    wp_enqueue_script( 'lib-script', 'https://s3-us-west-1.amazonaws.com/webcomponents.ucla.edu/public/1.0.0-beta.16/js/ucla-lib-scripts.min.js' );
     // Install the WordPress Theme Styles
     wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css' );
     // Install the WordPress Theme Scripts
@@ -43,7 +99,7 @@ function ucla_setup() {
   add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
   function my_login_page_remove_back_to_link() {
     // Path the admin page login styles
-    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/admin-styles.css' );
+    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
   }
 
   // Breadcrumbs
@@ -65,6 +121,38 @@ function ucla_setup() {
           echo the_search_query();
           echo '</em>"';
       }
+  }
+
+  // Blocks on this list are enabled in the block editor.
+  add_filter( 'allowed_block_types_all', 'ucla_allowed_block_types' );
+  function ucla_allowed_block_types( $allowed_blocks ) {
+
+  	return array(
+  		'core/image',
+  		'core/paragraph',
+  		'core/heading',
+  		'core/list',
+      //'core/code',
+      'core/file',
+      'core/video',
+      'core/columns',
+      'core/group',
+      'core/more',
+      'core/page-break',
+      'core/seperator',
+      'core/spacer',
+      'core/archives',
+      'core/categories',
+      //'core/tags',
+      'core/html',
+      'core/query', // query loop & posts lists
+      'core/post-content',
+      'core/post-featured-image',
+      'core/embed',
+      'core/tag-cloud',
+      'core/table'
+  	);
+
   }
 
   // Categories for pages

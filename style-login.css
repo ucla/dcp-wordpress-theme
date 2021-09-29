@@ -1,3 +1,6 @@
+/****** Admin Login Stylesheet
+ This stylesheet is to add some style to WordPress admin login.
+************************************/
 body.login {
   background: white;
 }
@@ -24,4 +27,8 @@ body.login div#login h1 a {
 .login form {
   border: 0;
   box-shadow: none;
+}
+
+.block-editor-block-list__block.wp-block.wp-container-13.has-white-color.has-text-color.has-child-selected.wp-block-group.fluid.has-background-ucla-blue {
+  background: #2774AE;
 }

@@ -20,6 +20,14 @@ a {
   }
 }
 
+.post-edit-link {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  padding: 5px;
+  background: $white;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -56,41 +64,6 @@ body.no-scroll {
 
   p {
     margin-bottom: 16px;
-  }
-
-  .fluid {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-
-    .expander {
-      display: block;
-      position: absolute;
-      background: #F7F7F7;
-      margin: 0;
-      padding: 0;
-      left: -24px;
-
-      @media (min-width: breakpoint-min(lg)) {
-        left: -12px;
-      }
-
-      &-container {
-        display: block;
-        max-width: 1152px;
-        margin: 0 auto;
-        padding: 40px 24px;
-
-        @media (min-width: breakpoint-min(lg)) {
-          padding: 80px 12px;
-        }
-
-        p {
-          margin-bottom: 16px;
-        }
-      }
-    }
   }
 }
 
