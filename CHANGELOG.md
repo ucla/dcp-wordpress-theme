@@ -75,3 +75,5 @@
 * Fix spelling errors
 * Fix Minor CSS Issues, Category Pages, and Component Library Installation
 * Override line height when editors use Gutenberg typography settings.
+
+[Back to Readme](./readme.md)

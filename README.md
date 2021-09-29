@@ -19,20 +19,20 @@ To install this theme on your WordPress site.
 
 Your theme should now be visible on the front end of the webiste.
 
-<hr/>
+---
 
 ### Child Theme Development ###
 You can download and install the child theme ucla-wp-child [here](https://bitbucket.org/uclaucomm/ucla-wp-child/src/distribution/).
 
-<hr/>
+---
 
 [Contribute to this repository](./docs/contribute.md)
 
-<hr/>
+---
 
 ## Most Recent Update ##
 
-**%!CurrentVersion%! - 9/29/21**
+**0.8.0 - 9/29/21**
 
 * Update Readme
 * Add CHANGELOG
