@@ -4,8 +4,8 @@ This theme was created through a collaboration effort between Strategic Communic
 
 ---
 
-* Version 0.8.0-Beta
-* Tested up to WordPress 5.5.1 - 5.8.3
+* Version 0.8.1-Beta
+* Tested up to WordPress 5.5.1 - 5.8.1
 
 ### Install your WordPress Theme ###
 
