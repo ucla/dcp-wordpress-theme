@@ -32,16 +32,11 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 ## Most Recent Update ##
 
-**0.8.0 - 9/29/21**
+**0.8.1 - 10/4/21**
 
-* Update Readme
-* Add CHANGELOG
-* Add custom color palette to admin
-* Add fluid backgrounds for blue, white and three shades of grey.
-* Remove query loops from all template pages since they can now be made in the Gutenberg editor.
-* Remove no sidebar, no hero template because query loops can now be made in editor rendering the template unnecessary.
-* Update list of usable core blocks. Remove blocks that weren't styled for brand or needed in-house compliance testing
-* New files added to theme theme.json, style-editor.css and style-login.css. See comments at top of files for descriptions.
-* Update UCLA component library version to beta-16.
+* Add Fluid <hr> to match UCLA branding
+* Fix separator spelling on functions.php to show separator
+* Remove padding below ribbon hero
+* Fix molecule image link
 
 [Changelog](./CHANGELOG.md)

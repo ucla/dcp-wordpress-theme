@@ -77,7 +77,7 @@ $(document).ready(function () {
       contentH =$('.expander').height();
 
     //Add the width off the windo wrap to the expander div that was added
-    $('.expander--grey-40, .expander--lightest-grey-2, .expander--light-grey, .expander--ucla-blue, .expander--white').css({
+    $('.expander--grey-40, .expander--lightest-grey-2, .expander--light-grey, .expander--ucla-blue, .expander--white, .wp-block-separator.fluid').css({
       'width': w,
       'margin-left': negOffset
     });

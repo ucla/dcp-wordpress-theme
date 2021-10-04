@@ -1,7 +1,6 @@
 .custom-template-hero-three {
   display: block;
   position: relative;
-  padding-bottom: 24px;
 
   &_title {
     display: block;
@@ -21,7 +20,7 @@
       position: absolute;
       margin: -60px 0 0 -60px;
       content: '';
-      background-image: url(https://webcomponents.ucla.edu/img/Molecule.svg);
+      background-image: url(https://webcomponents.ucla.edu/build/1.0.0-beta.16/assets/img/Molecule.svg);
       background-size: cover;
       width: 135px;
       height: 135px;

@@ -139,7 +139,7 @@ function ucla_setup() {
       'core/group',
       'core/more',
       'core/page-break',
-      'core/seperator',
+      'core/separator',
       'core/spacer',
       'core/archives',
       'core/categories',

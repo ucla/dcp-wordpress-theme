@@ -1,5 +1,12 @@
 ## CHANGELOG ##
 
+**0.8.1 - 10/4/21**
+
+* Add .fluid <hr> to match UCLA branding
+* Fix separator spelling on functions.php to show separator
+* Remove padding below ribbon hero
+* Fix molecule image link
+
 **0.8.0-beta - 9/29/21**
 
 * Update Readme
