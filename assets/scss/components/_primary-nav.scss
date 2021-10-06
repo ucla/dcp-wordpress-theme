@@ -450,58 +450,28 @@ html.safari {
 /************************
 Firefox Only styles
 ************************/
-html.firefox {
-  body {
-    #menu {
-      ul li {
-        .has-child--button {
+@media (min-width: breakpoint-min(lg)) {
+  html.firefox body #menu {
+    div[class^="menu"] {
+      ul li .has-child--button {
+        height: 33px;
+        margin-top: -1px;
+        top: 1.5px;
+
+        &.current-page::after {
           @media (min-width: breakpoint-min(lg)) {
-            top: 1.5px;
+            top: -2px;
+            left: -8px;
           }
-
-          &.current-page {
-            &::after {
-              @media (min-width: breakpoint-min(lg)) {
-                top: -2px;
-                left: -8px;
-              }
-            }
-          }
-        }
-      }
-
-      .search-desktop {
-        @media (min-width: breakpoint-min(lg)) {
-          top: -18px;
         }
       }
     }
-  }
-}
 
-/************************
-Firefox Only styles
-************************/
-@media (min-width: breakpoint-min(lg)) {
-  html.firefox {
-    body {
-      #menu {
-        div[class^="menu"] {
-          ul {
-            li {
-              .has-child {
-                &--button {
-                  height: 33px;
-                  margin-top: 4px;
-                }
-              }
-            }
-          }
-        }
+    .search-desktop {
+      top: -12px;
 
-        .search-desktop {
-          top: -12px;
-        }
+      @media (min-width: breakpoint-min(lg)) {
+        top: -18px;
       }
     }
   }
@@ -511,21 +481,17 @@ Firefox Only styles
 IE 11 Only styles
 ************************/
 @media (min-width: breakpoint-min(lg)) {
-  html.msie {
-    body {
-      #menu {
-        width: auto;
-        top: 20px;
+  html.msie body #menu {
+    width: auto;
+    top: 20px;
 
-        div[class^="menu"] ul li a ~ ul {
-          top: 23px;
-          left: -20px;
-        }
+    div[class^="menu"] ul li a ~ ul {
+      top: 23px;
+      left: -20px;
+    }
 
-        .search-desktop {
-          top: -33px;
-        }
-      }
+    .search-desktop {
+      top: -33px;
     }
   }
 }

@@ -216,9 +216,9 @@ $(document).ready(function (){
 
     function scrollDisable () {
       if (hamButton.classList.contains('is-active')) {
-        $('body').addClass('no-scroll');
-      } else {
         $('body').removeClass('no-scroll');
+      } else {
+        $('body').addClass('no-scroll');
       }
     }
 
