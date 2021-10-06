@@ -4,7 +4,7 @@ This theme was created through a collaboration effort between Strategic Communic
 
 ---
 
-* Version 0.8.1-Beta
+* Version 0.8.2-Beta
 * Tested up to WordPress 5.5.1 - 5.8.1
 
 ### Install your WordPress Theme ###
@@ -32,11 +32,12 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 ## Most Recent Update ##
 
-**0.8.1 - 10/4/21**
+**0.8.2 - 10/6/21**
 
-* Add Fluid <hr> to match UCLA branding
-* Fix separator spelling on functions.php to show separator
-* Remove padding below ribbon hero
-* Fix molecule image link
+* Adjust edit button for logged in users
+* Fix search button width in sidebar on tablet view
+* fix scrolling bug caused by the primary navigation
+* Footer global links width adjustment for firefox
+
 
 [Changelog](./CHANGELOG.md)
