@@ -4,7 +4,6 @@
     <div class="col span_12_of_12">
       <div class="breadcrumb pt-sm-32 pt-lg-64"><?php get_breadcrumb(); ?></div>
       <h1 class="mt-12 mb-24 mb-md-32"><?php the_title(); ?></h1>
-      <p><?php edit_post_link(); ?></p>
     </div>
   </div>
 

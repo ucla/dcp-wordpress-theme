@@ -9,7 +9,6 @@
       <div class="front-page-hero__info--wrap">
 
         <h1 class="front-page-hero__title"><?php the_title(); ?></h1>
-        <p><?php edit_post_link(); ?></p>
 
         <?php //edit_post_link(); ?>
 

@@ -18,11 +18,14 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
       </div>
     </header>
 
+    <?php edit_post_link(); //  edit_post_link always goes above page or post content column ?>
+
     <div class="ucla campus">
 
       <div class="col span_9_of_12">
         <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-        <p><?php echo get_the_author_meta( 'user_login', $author_id ); ?></p>
+        <p><?php echo get_the_author(); ?></p>
+
         <?php the_content(); ?>
 
         <?php
