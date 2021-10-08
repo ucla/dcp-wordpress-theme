@@ -9,14 +9,14 @@
     position: relative;
     margin: 0;
     padding: 0;
-    left: -34px;
+    left: -5px;
 
     @media (min-width: breakpoint-min(lg)) {
       left: -22px;
     }
 
     @media (min-width: breakpoint-min(xl)) {
-      left: -10px;
+      left: -5px;
     }
   }
 }
