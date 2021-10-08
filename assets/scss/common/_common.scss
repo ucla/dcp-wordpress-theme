@@ -33,10 +33,6 @@ a {
   border: 5px solid $white;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 body.no-scroll {
   height: 100vh;
   scrollbar-width: none;

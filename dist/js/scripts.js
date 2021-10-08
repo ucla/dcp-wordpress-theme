@@ -73,7 +73,7 @@ $(document).ready(function () {
   function fluidBlockResize () {
     let w = window.innerWidth,
       bodyW =$('.ucla.campus').width(),
-      negOffset = (((w - bodyW) / 2) - 10) * -1,
+      negOffset = (((w - bodyW) / 2) - 34) * -1,
       contentH =$('.expander').height();
 
     //Add the width off the windo wrap to the expander div that was added

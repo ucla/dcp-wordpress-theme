@@ -1,6 +1,6 @@
 .hamburger {
   position: absolute;
-  right: 36px;
+  right: -16px;
   top: -50px;
   width: 40px;
   padding: 12px;
@@ -33,7 +33,7 @@
 
   @media (min-width: breakpoint-min(md)) {
     top: -40px;
-    right: 48px;
+    right: 24px;
   }
 
   @media (min-width: breakpoint-min(lg)) {
