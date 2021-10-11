@@ -12,7 +12,15 @@
     left: -5px;
 
     @media (min-width: breakpoint-min(lg)) {
-      left: -22px;
+      left: 7px;
+    }
+
+    @media (min-width: 1200px) {
+      left: 0;
+    }
+
+    @media (min-width: 1223px) {
+      left: -4px;
     }
 
     @media (min-width: breakpoint-min(xl)) {
