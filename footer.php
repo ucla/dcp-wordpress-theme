@@ -21,7 +21,7 @@ $foot_signature = get_option('logo');
             echo '<p>' . $address_one . '<br/>' . $address_two . '</p>';
           } else { ?>
             <p>
-              10889 Wilshire Blvd., Suite 1400<br />
+              10889 Wilshire Blvd., Suite 1400<br>
               Los Angeles, CA 90024
             </p>
           <?php } ?>
@@ -31,7 +31,7 @@ $foot_signature = get_option('logo');
             myprefix_get_theme_option('phone_input') !== NULL ||
             myprefix_get_theme_option('email_input') !== NULL
           ) {
-            echo '</br>';
+            echo '<br>';
           }
           ?>
 
