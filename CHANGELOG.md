@@ -1,6 +1,10 @@
 ## CHANGELOG ##
 
-**0.8.3 - 10/8/21**
+**0.8.3 - 10/25/21**
+
+* Remove list of useable core blocks. Allow access to all blocks.
+
+**0.8.2 - 10/8/21**
 
 * Adjust ribbon hero to fit invision mockups from StratComm
 * Adjust edit button for logged in users
@@ -8,13 +12,6 @@
 * fix scrolling bug caused by the primary navigation
 * Footer global links width adjustment for firefox
 
-**0.8.2 - 10/6/21**
-
-* Adjust ribbon hero to fit invision mockups from StratComm
-* Adjust edit button for logged in users
-* Fix search button width in sidebar on tablet view
-* fix scrolling bug caused by the primary navigation
-* Footer global links width adjustment for firefox
 
 **0.8.1 - 10/4/21**
 

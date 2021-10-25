@@ -123,38 +123,6 @@ function ucla_setup() {
       }
   }
 
-  // Blocks on this list are enabled in the block editor.
-  add_filter( 'allowed_block_types_all', 'ucla_allowed_block_types' );
-  function ucla_allowed_block_types( $allowed_blocks ) {
-
-  	return array(
-  		'core/image',
-  		'core/paragraph',
-  		'core/heading',
-  		'core/list',
-      //'core/code',
-      'core/file',
-      'core/video',
-      'core/columns',
-      'core/group',
-      'core/more',
-      'core/page-break',
-      'core/separator',
-      'core/spacer',
-      'core/archives',
-      'core/categories',
-      //'core/tags',
-      'core/html',
-      'core/query', // query loop & posts lists
-      'core/post-content',
-      'core/post-featured-image',
-      'core/embed',
-      'core/tag-cloud',
-      'core/table'
-  	);
-
-  }
-
   // Categories for pages
   add_action( 'init', 'ucla_page_categories' );
   function ucla_page_categories() {

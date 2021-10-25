@@ -32,13 +32,9 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 ## Most Recent Update ##
 
-**0.8.3 - 10/8/21**
+**0.8.3 - 10/25/21**
 
-* Adjust ribbon hero to fit invision mockups from StratComm
-* Adjust edit button for logged in users
-* Fix search button width in sidebar on tablet view
-* fix scrolling bug caused by the primary navigation
-* Footer global links width adjustment for firefox
+* Remove list of useable core blocks. Allow access to all blocks.
 
 
 [Changelog](./CHANGELOG.md)
