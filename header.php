@@ -8,6 +8,19 @@
   </head>
 
   <body <?php body_class(); ?>>
+
+    <?php
+    if ( myprefix_get_theme_option('gtm_input') !== NULL ) {
+      $gtm_tag = myprefix_get_theme_option('gtm_input');
+      ?>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_tag;?>
+      height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager" aria-hidden="true"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <?php
+    }
+    ?>
+
     <div id="skip-nav" class="skip-nav" role="navigation" aria-label="Skip navigation">
       <a class="button" href="#menu">Skip to Navigation</a>
       <a class="button mobile" href="#primary-ham">Skip to Navigation</a>
