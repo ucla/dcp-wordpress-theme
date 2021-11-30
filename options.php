@@ -121,6 +121,13 @@ if (!class_exists('UCLA_Theme_Options')) {
 					unset($options['email_input']); // Remove from options if empty
 				}
 
+				// GTM Tag
+				if (!empty($options['gtm_input'])) {
+					$options['gtm_input'] = sanitize_textarea_field($options['gtm_input']);
+				} else {
+					unset($options['gtm_input']); // Remove from options if empty
+				}
+
 				// Social links
 				if (!empty($options['facebook_input'])) {
 					$options['facebook_input'] = sanitize_textarea_field($options['facebook_input']);
@@ -206,6 +213,14 @@ if (!class_exists('UCLA_Theme_Options')) {
 							<td>
 								<?php $email = self::get_theme_option('email_input'); ?>
 								<input type="text" name="theme_options[email_input]" placeholder="contact@ucla.edu" value="<?php echo esc_attr($email); ?>" />
+							</td>
+						</tr>
+
+						<tr valign="top">
+							<th scope="row"><?php esc_html_e('GTM Tag ID', 'text-domain'); ?></th>
+							<td>
+								<?php $gtm = self::get_theme_option('gtm_input'); ?>
+								<input type="text" name="theme_options[gtm_input]" placeholder="id" value="<?php echo esc_attr($gtm); ?>" />
 							</td>
 						</tr>
 
