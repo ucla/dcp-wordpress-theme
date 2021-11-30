@@ -14,7 +14,7 @@
       $gtm_tag = myprefix_get_theme_option('gtm_input');
       ?>
       <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_tag;?>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_tag;?>"
       height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager" aria-hidden="true"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
       <?php
