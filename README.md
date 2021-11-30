@@ -32,9 +32,9 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 ## Most Recent Update ##
 
-**0.8.3 - 10/25/21**
+**0.8.4 - 11/30/21**
 
-* Remove list of useable core blocks. Allow access to all blocks.
+* Add Google Tag Manager ID field.
 
 
 [Changelog](./CHANGELOG.md)
