@@ -4,7 +4,7 @@ This theme was created through a collaboration effort between Strategic Communic
 
 ---
 
-* Version 0.8.3-Beta
+* Version 0.8.4-Beta
 * Tested up to WordPress 5.5.1 - 5.8.1
 
 ### Install your WordPress Theme ###
@@ -32,9 +32,9 @@ You can download and install the child theme ucla-wp-child [here](https://bitbuc
 
 ## Most Recent Update ##
 
-**0.8.3 - 10/25/21**
+**0.8.4 - 11/30/21**
 
-* Remove list of useable core blocks. Allow access to all blocks.
+* Add Google Tag Manager ID field.
 
 
 [Changelog](./CHANGELOG.md)
