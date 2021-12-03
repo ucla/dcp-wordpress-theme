@@ -1,5 +1,9 @@
 ## CHANGELOG ##
 
+**0.8.4 - 11/30/21**
+
+* Add Google Tag Manager ID field.
+
 **0.8.3 - 10/25/21**
 
 * Remove list of useable core blocks. Allow access to all blocks.
