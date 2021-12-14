@@ -1,5 +1,9 @@
 ## CHANGELOG ##
 
+**0.8.5 - 12/13/21**
+
+* Add Theme Update Notification.
+
 **0.8.4 - 11/30/21**
 
 * Add Google Tag Manager ID field.
