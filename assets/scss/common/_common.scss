@@ -6,12 +6,12 @@ a {
   }
 
   &:hover {
-    color: white;
+    color: $white;
     background: $hover-state;
   }
 
   &:active {
-    color: white;
+    color: $white;
     background: $active-state;
   }
 
@@ -20,18 +20,18 @@ a {
   }
 }
 
-.post-edit-link {
-  display: block;
-  position: inherit;
-  width: max-content;
-  padding: 8px 12px 6px;
-  background: $default-state;
-  color: $white !important;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 2px;
-  border: 5px solid $white;
-}
+// .post-edit-link {
+//   display: block;
+//   position: inherit;
+//   width: max-content;
+//   padding: 8px 12px 6px;
+//   background: $default-state;
+//   color: $white !important;
+//   text-decoration: none;
+//   font-weight: bold;
+//   border-radius: 2px;
+//   border: 5px solid $white;
+// }
 
 body.no-scroll {
   height: 100vh;
@@ -43,47 +43,47 @@ body.no-scroll {
   position: absolute;
 }
 
-.ucla.campus.entry-content {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-bottom: 16px;
+// .ucla.campus.entry-content {
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   h6 {
+//     margin-bottom: 16px;
 
-    @media (min-width: breakpoint-min(lg)) {
-      margin-bottom: 24px;
-    }
-  }
-}
+//     @media (min-width: breakpoint-min(lg)) {
+//       margin-bottom: 24px;
+//     }
+//   }
+// }
 
-.ucla.campus {
-  // First child fix if you put a title above span. See example on templates/health-saftey.php
-  .col {
-    margin: 0 0 0 1.6%;
-  }
+// .ucla.campus {
+//   // First child fix if you put a title above span. See example on templates/health-saftey.php
+//   .col {
+//     margin: 0 0 0 1.6%;
+//   }
 
-  p {
-    margin-bottom: 16px;
-  }
-}
+//   p {
+//     margin-bottom: 16px;
+//   }
+// }
 
-.widget-title {
-  font-size: 20px;
-}
+// .widget-title {
+//   font-size: 20px;
+// }
 
-.blade-hs {
-  padding: 32px 0 !important;
+// .blade-hs {
+//   padding: 32px 0 !important;
 
-  @media (min-width: breakpoint-min(lg)) {
-    padding: 52px 0 !important;
-  }
-}
+//   @media (min-width: breakpoint-min(lg)) {
+//     padding: 52px 0 !important;
+//   }
+// }
 
-.grey-mar {
-  background: #F7F7F7;
-}
+// .grey-mar {
+//   background: #F7F7F7;
+// }
 
-.ucla.campus a:not(.page):visited {
-  color: #00598c;
-}
+// .ucla.campus a:not(.page):visited {
+//   color: #00598c;
+// }

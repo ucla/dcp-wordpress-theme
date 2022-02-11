@@ -2,6 +2,6 @@
   <header class="header">
       <div class="breadcrumb pt-sm-32 pt-lg-64"><?php get_breadcrumb(); ?></div>
       <h1 class="front-page-hero__title"><?php the_title(); ?></h1>
-      <p><?php edit_post_link(); ?></p>
+      <?php // edit_post_link(); ?>
   </header>
 </div>

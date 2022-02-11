@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 <main id="main">
-  <div class="ucla campus">
+  <div class="ucla campus masthead">
     <?php if ( have_posts() ) : ?>
     <header class="header">
       <h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'ucla' ), get_search_query() ); ?></h1>
     </header>
-    <div class="ucla campus">
+  </div>
+
+  <div class="ucla campus entry-content">
       <div class="col span_9_of_12">
 
         <?php while ( have_posts() ) : the_post(); ?>
@@ -26,7 +28,6 @@
 
       </div>
     </div>
-  </div>
 </main>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

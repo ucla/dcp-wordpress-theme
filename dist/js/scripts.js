@@ -168,7 +168,7 @@ $(document).ready(function (){
   };
 
   $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
-  $('a.menu-item-has-children--link').after('<button class="has-child--button"><svg role="img" aria-label="Down Arrow" class="down-arrow" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Down Arrow</title><g class="Icon/Arrow-Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon class="Path-2" points="0 0 24 0 24 24 0 24"></polygon><polygon class="Path-polygon" fill="#00598C" points="7.41 8.59 12 13.17 16.59 8.59 18 10 12 16 6 10"></polygon></g></svg></button>');
+  $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
   $('.form-search').attr('placeholder', 'Search');
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
@@ -201,7 +201,7 @@ $(document).ready(function (){
     $('.has-child--button').attr('tabindex', '-1');
 
     // Put the search form at the end of the nav
-    $('#block-search').append(searchForm);
+    // $('#block-search').append(searchForm);
 
     $('#entity-wrap').append(secondNav);
 
@@ -329,16 +329,16 @@ $(document).ready(function (){
     $(document).on('click', '.has-child--button', function () {
       event.preventDefault();
       let elem = $(this);
-      if (elem.next('ul').hasClass('is-active')) {
+      if (elem.next('ul').hasClass('nav-primary__sublist--hidden')) {
         setTimeout(function () {
-          elem.removeClass('is-active');
-          elem.next('ul').removeClass('is-active');
+          elem.addClass('is-open');
+          elem.next('ul').removeClass('nav-primary__sublist--hidden');
         }, 10);
         //console.log('menu closed'); // For Debuggin' Only
       } else {
         setTimeout(function () {
-          elem.addClass('is-active');
-          elem.next('ul').addClass('is-active');
+          elem.removeClass('is-open');
+          elem.next('ul').addClass('nav-primary__sublist--hidden');
         }, 10);
         //console.log('menu open'); // For Debuggin' Only
       }
@@ -350,10 +350,10 @@ $(document).ready(function (){
         let found = false;
         // Check each submenu individually to see if any are open
         for (i = 0; i < childButtons.length; i++) {
-          if (childButtons[i].classList.contains('is-active')) {
+          if (childButtons[i].classList.contains('is-open')) {
             // if open menus are found close them
-            $('.sub-menu').removeClass('is-active');
-            $('.has-child--button').removeClass('is-active');
+            $('.sub-menu').removeClass('is-open');
+            $('.has-child--button').removeClass('is-open');
             // Reset the found variable
             found = true;
             // stop what is happening, do not close the entire menu
@@ -361,7 +361,7 @@ $(document).ready(function (){
           }
         }
         // if submenu is not open close entire menu
-        if (!found && hamButton.classList.contains('is-active')){
+        if (!found && hamButton.classList.contains('is-open')){
           $('#primary-ham').trigger('click');
           $('#primary-ham').focus();
           $('body').removeClass('no-scroll');
@@ -531,7 +531,7 @@ $(document).ready(function (){
 $(document).ready(function (){
 
   let searchButton = document.getElementById('search-button');
-  let svgButton = document.getElementById('search-svg');
+  // let svgButton = document.getElementById('search-svg');
 
   searchButton.onclick = function clickSearch (){
 
@@ -541,7 +541,7 @@ $(document).ready(function (){
 
       $('.search-block-form').removeClass('is-active');
       $(this).removeClass('is-active');
-      svgButton.attr('src', '/wp-content/themes/ucla-wp/images/icons/denotive/search--blue.svg');
+      //svgButton.attr('src', '/wp-content/themes/ucla-wp/images/icons/denotive/search--blue.svg');
 
       // Display other submenus is search menu is not active
       for (let i = 0; i < secondLevelNav.length; i += 1) {
@@ -552,7 +552,7 @@ $(document).ready(function (){
     } else {
       $('.search-block-form').addClass('is-active');
       $(this).addClass('is-active');
-      svgButton.attr('src', '/wp-content/themes/ucla-wp/images/icons/denotive/close--white.svg');
+      //svgButton.attr('src', '/wp-content/themes/ucla-wp/images/icons/denotive/close--white.svg');
 
       // DO NOT Display other submenus is search menu is not active
       for (let i = 0; i < secondLevelNav.length; i += 1) {
