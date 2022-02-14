@@ -288,17 +288,19 @@
           width: 100%;
           margin-bottom: 1rem;
           flex-basis: 50%;
+          white-space: nowrap;
 
           &:not(:last-of-type) {
             margin-right: 0;
 
             @media (min-width: breakpoint-min(sm)) {
-              margin-right: 2rem;
+              margin-right: 4rem;
             }
           }
 
           & > a {
-            margin-bottom: 2px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
             font-size: 1rem;
           }
 
@@ -313,6 +315,11 @@
 
           & > li {
             font-size: 0.75rem;
+            margin-bottom: 0.75rem;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
           }
         }
 
