@@ -499,6 +499,10 @@
 //     }
 //   }
 // }
+html, body {
+  overflow-x: hidden;
+}
+
 .nav-primary__list > .nav-secondary__item {
   display: inline-block;
 

@@ -57,14 +57,16 @@ $(document).ready(function () {
   // The expanded group function to go beyond the .ucla.campus container.
   function fluidBlockResize () {
     let w = window.innerWidth,
+      clientW = document.documentElement.clientWidth,
       bodyW =$('.ucla.campus').width(),
-      negOffset = (((w - bodyW) / 2) - 5) * -1,
+      // negOffset = (((w - bodyW) / 2) - 12) * -1,
       contentH =$('.expander').height();
 
     //Add the width off the windo wrap to the expander div that was added
     $('.expander--grey-40, .expander--lightest-grey-2, .expander--light-grey, .expander--ucla-blue, .expander--white, .wp-block-separator.fluid').css({
-      'width': w,
-      'margin-left': negOffset
+      // 'width': clientW,
+      'width': 'calc(100vw - (' + w + 'px - ' + clientW + 'px))',
+      // 'transform': 'translateX(' + negOffset + 'px)'
     });
 
     $('.fluid').css({
@@ -77,10 +79,11 @@ $(document).ready(function () {
 
 
   $(window).resize(function () {
+    fluidBlockResize();
     //Resize the submenu on all resizes above 1024px.
-    if (window.innerWidth >= 300) {
-      fluidBlockResize();
-    }
+    // if (window.innerWidth >= 300) {
+    //   fluidBlockResize();
+    // }
     //console.log(window.innerWidth); // For Debuggin' Only
   });
 
