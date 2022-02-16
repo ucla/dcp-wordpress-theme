@@ -59,14 +59,13 @@ $(document).ready(function () {
     let w = window.innerWidth,
       clientW = document.documentElement.clientWidth,
       bodyW =$('.ucla.campus').width(),
-      // negOffset = (((w - bodyW) / 2) - 12) * -1,
-      contentH =$('.expander').height();
-
+      negOffset = (((w - bodyW) / 2) - 7.5) * -1,
+      contentH = $('.expander').height();
     //Add the width off the windo wrap to the expander div that was added
     $('.expander--grey-40, .expander--lightest-grey-2, .expander--light-grey, .expander--ucla-blue, .expander--white, .wp-block-separator.fluid').css({
       // 'width': clientW,
       'width': 'calc(100vw - (' + w + 'px - ' + clientW + 'px))',
-      // 'transform': 'translateX(' + negOffset + 'px)'
+      'transform': 'translateX(' + negOffset + 'px)'
     });
 
     $('.fluid').css({
