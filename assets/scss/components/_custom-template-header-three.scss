@@ -1,7 +1,6 @@
 .custom-template-hero-three {
   display: block;
   position: relative;
-  margin-bottom: 24px;
 
   &_title {
     display: block;
@@ -57,9 +56,5 @@
       height: 360px;
       position: relative;
     }
-  }
-
-  @media (min-width: breakpoint-min(lg)) {
-    margin-bottom: 32px;
   }
 }

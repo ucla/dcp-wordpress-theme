@@ -13,9 +13,7 @@
         </div>
         <div class="ucla campus entry-content">
           <div class="col span_12_of_12">
-
             <?php the_content(); ?>
-
           </div>
 
         </div>

@@ -21,8 +21,10 @@ $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
     <div class="ucla campus entry-content">
 
       <div class="col span_<?php echo (is_active_sidebar( 'primary-widget-area' ) ? '9' : '12') ?>_of_12">
-        <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
-        <p><?php echo get_the_author(); ?></p>
+        <div class="post-info">
+          <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
+          <p><?php echo get_the_author(); ?></p>
+        </div>
 
         <?php the_content(); ?>
         <?php edit_post_link(); //  edit_post_link always goes above page or post content column ?>
