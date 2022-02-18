@@ -63,6 +63,7 @@
             'depth' => 1,
             'container_class' => 'nav-secondary',
             'container_id' => 'nav-second',
+            'menu_id' => 'nav-secondary__list',
             'menu_class' => 'nav-secondary__list',
             'container_aria_label' => 'Secondary Menu',
             'list_class' => 'nav-secondary__item',
