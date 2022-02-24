@@ -7,14 +7,13 @@
 
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <div class="ucla campus entry-content">
+        <div class="ucla campus">
 
           <?php include 'templates/front-page-two-header.php'; ?>
-
+        </div>
+        <div class="ucla campus entry-content">
           <div class="col span_12_of_12">
-
             <?php the_content(); ?>
-
           </div>
 
         </div>

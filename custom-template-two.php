@@ -22,8 +22,6 @@
 
     <?php include 'templates/custom-template-header.php'; ?>
 
-    <?php edit_post_link(); //  edit_post_link always goes above page or post content column ?>
-
     <div class="ucla campus entry-content">
       <div class="col span_7_of_12">
         <?php the_content(); ?>
@@ -31,7 +29,7 @@
 
 
       <?php if (is_active_sidebar('right-widget-area')) : ?>
-          <div class="col span_2_of_12"></div>
+          <div class="col span_2_of_12" style="min-height: 1px;"></div>
           <div class="col span_3_of_12">
               <?php dynamic_sidebar('right-widget-area'); ?>
           </div>

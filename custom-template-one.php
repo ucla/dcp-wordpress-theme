@@ -22,12 +22,11 @@
 
     <?php include 'templates/custom-template-header.php'; ?>
 
-    <?php edit_post_link(); //  edit_post_link always goes above page or post content column ?>
+    
 
     <div class="ucla campus entry-content">
 
       <div class="col span_12_of_12">
-
         <?php the_content(); ?>
 
       </div>

@@ -4,68 +4,68 @@
 //**********
 //*** Scroll down for Gutenberg extending below
 //**********
-.wp-block-table {
-  overflow-y: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+// .wp-block-table {
+//   overflow-y: hidden;
+//   -ms-overflow-style: none;  /* IE and Edge */
+//   scrollbar-width: none;  /* Firefox */
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
 
-  figcaption {
-    display: block;
-    position: relative;
-    font-size: 11px;
-    margin-left: 12px;
-    font-style: italic;
-    padding: 4px;
-  }
+//   figcaption {
+//     display: block;
+//     position: relative;
+//     font-size: 11px;
+//     margin-left: 12px;
+//     font-style: italic;
+//     padding: 4px;
+//   }
 
-  &.is-style-stripes.total {
-    tfoot {
-      background: $default-state-dark;
-    }
-  }
-}
+//   &.is-style-stripes.total {
+//     tfoot {
+//       background: $default-state-dark;
+//     }
+//   }
+// }
 
-.has-large-font-size,
-.has-medium-font-size {
-  line-height: 1.2;
-}
+// .has-large-font-size,
+// .has-medium-font-size {
+//   line-height: 1.2;
+// }
 
-.has-huge-font-size {
-  line-height: 1.1;
-}
+// .has-huge-font-size {
+//   line-height: 1.1;
+// }
 
-.wp-block {
-  &-group.has-background {
-    padding: 16px;
-    margin: 24px 0 0;
+// .wp-block {
+//   &-group.has-background {
+//     padding: 16px;
+//     margin: 24px 0 0;
 
-    @media (min-width: breakpoint-min(md)) {
-      padding: 32px;
-      margin: 0;
-    }
-  }
+//     @media (min-width: breakpoint-min(md)) {
+//       padding: 32px;
+//       margin: 0;
+//     }
+//   }
 
-  &-separator {
-    margin: 32px 0;
+//   &-separator {
+//     margin: 32px 0;
 
-    @media (min-width: breakpoint-min(md)) {
-      margin: 64px 0;
-    }
-  }
+//     @media (min-width: breakpoint-min(md)) {
+//       margin: 64px 0;
+//     }
+//   }
 
-  &-embed {
-    color: #333333;
-    font-family: Helvetica;
-    font-size: 16px;
-    font-style: oblique;
-    letter-spacing: 0;
-    line-height: 24px;
-  }
-}
+//   &-embed {
+//     color: #333333;
+//     font-family: Helvetica;
+//     font-size: 16px;
+//     font-style: oblique;
+//     letter-spacing: 0;
+//     line-height: 24px;
+//   }
+// }
 
 //**********
 //*** Gutenberg Extension
@@ -81,16 +81,12 @@
 
       &-container {
         display: block;
-        max-width: 1152px;
+        max-width: 1176px;
         margin: 0 auto;
         padding: 40px 24px;
 
         @media (min-width: breakpoint-min(lg)) {
           padding: 80px 12px;
-        }
-
-        p {
-          margin-bottom: 16px;
         }
       }
     }

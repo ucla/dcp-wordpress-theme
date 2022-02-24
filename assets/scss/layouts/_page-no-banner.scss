@@ -1,7 +1,9 @@
-.main.page-no-banner {
-  padding: 32px 0;
+.ucla.campus {
+  &.entry-content {
+    padding-bottom: 48px;
 
-  @media (min-width: breakpoint-min(lg)) {
-    padding: 64px 0;
+    & > div > *:not(.fluid):not(.post-info):first-child {
+      padding-top: 32px;
+    }
   }
 }

@@ -21,7 +21,6 @@ if ('' != $thumb_id) {
 
           <?php include 'templates/front-page-one-header.php'; ?>
 
-          <?php edit_post_link(); ?>
           
           <div class="ucla campus entry-content">
 

@@ -12,3 +12,14 @@ Text Domain: UCLA
 
 UCLA Strategic Communications WordPress Theme © 2020 UCLA
 */
+
+html { -webkit-font-smoothing: antialiased; }
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    /* remove nested scrollbar */
+    line-height: 1rem;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding: 0;
+}
