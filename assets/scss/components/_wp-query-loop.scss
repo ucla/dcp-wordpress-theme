@@ -1,11 +1,15 @@
 // This style sheet overrides the gutenberg core block "Query Loop".
 .wp-block-query {
+  .wp-block-post {
+    margin-bottom: 2rem;
+  }
+
   .wp-block-post-title {
     margin-bottom: 1rem;
   }
 
   .wp-block-post-excerpt__excerpt {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-bottom: 0;
   }
 
