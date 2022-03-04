@@ -25,3 +25,32 @@
     }
   }
 }
+
+// Styles for /templates/entry-content.php
+
+.article-loop {
+  border-bottom: 1px solid $grey-10;
+  padding: 2rem 0;
+
+  time {
+    display: block;
+    color: $grey-60;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 2rem;
+    border-top: 1px solid $grey-10;
+  }
+}

@@ -1,11 +1,11 @@
 <header class="page-header" <?php if (has_post_thumbnail()) { ?> style="background-image: url(<?php echo $thumbnail[0]; ?>);" <?php } ?>>
-  <div class="ucla campus">
+  <div class="ucla campus masthead">
     <div class="col span_12_of_12">
       <?php if (is_404()) { ?>
-        <div class="breadcrumb"><?php get_breadcrumb(); ?> / 404 Error</div>
+        <?php get_breadcrumb(); ?>
         <h1 class="entry-title"><?php esc_html_e('Page Not Found', 'ucla'); ?></h1>
       <?php } else { ?>
-        <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+        <?php get_breadcrumb(); ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php } ?>
       <p><?php edit_post_link(); ?></p>

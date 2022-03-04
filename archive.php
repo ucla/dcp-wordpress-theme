@@ -1,9 +1,13 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Archives
+*/
+get_header(); ?>
 <main id="main">
     <header class="header">
         <div class="ucla campus masthead">
             <div class="col span_12_of_12">
-                <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+                <?php get_breadcrumb(); ?>
                 <h1 class="entry-title"><?php echo wp_kses_post(get_the_archive_title()); ?></h1>
                 <?php if (get_the_archive_description()) { ?>
                     <b><?php echo wp_kses_post(get_the_archive_description()); ?></b>

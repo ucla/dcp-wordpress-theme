@@ -1,4 +1,4 @@
-<div class="entry-content">
+<div class="article-loop">
   <?php // Entry Meta ?>
   <time class="mb-8" datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 
