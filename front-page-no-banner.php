@@ -7,7 +7,7 @@
 
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <div class="ucla campus">
+        <div class="ucla campus masthead">
 
           <?php include 'templates/front-page-two-header.php'; ?>
         </div>

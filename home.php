@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="main">
     <header class="header">
-        <div class="ucla campus">
+        <div class="ucla campus masthead">
             <div class="col span_12_of_12">
                 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
                 <h1 class="entry-title"><?php single_term_title(); ?></h1>
