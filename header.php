@@ -17,8 +17,9 @@
       }
     ?>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
     <?php wp_head(); ?>
+    <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
   </head>
 
   <body <?php body_class(); ?>>
@@ -50,42 +51,65 @@
         </div>
       </div>
 
-      <div class="ucla campus header">
-        <div class="site-name">
+      <div class="header-wrap clearfix">
+        <div class="site-name clearfix">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
         </div>
 
-        <div class="nav-wrap">
-
+        <?php if ( has_nav_menu( 'secondary-menu' ) ) { ?>
+        <div id="menu-secondary">
+          <?php wp_nav_menu( array(
+            'theme_location' => 'secondary-menu',
+            'depth' => 1,
+            'container_class' => 'nav-secondary',
+            'container_id' => 'nav-second',
+            'menu_id' => 'nav-secondary__list',
+            'menu_class' => 'nav-secondary__list',
+            'container_aria_label' => 'Secondary Menu',
+            'list_class' => 'nav-secondary__item',
+            'link_class' => 'nav-secondary__link'
+          )) ?>
+        </div>
+        <?php } ?>
           <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
-
-            <button id="primary-ham" class="hamburger hamburger--squeeze" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
-          	  <span class="hamburger-box">
-          	    <span class="hamburger-inner"></span>
-          	  </span>
-          	</button>
-
             <nav id="menu">
-              <?php get_search_form(); ?>
-              <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+              <button id="primary-ham" class="hamburger" type="button" aria-label="Menu" aria-controls="navigation" alt="navigation and search">
+                <span class="hamburger__box">
+                  <span class="hamburger__inner"></span>
+                </span>
+              </button>
 
-              <div class="search-desktop">
-                <button id="search-button" class="search-desktop_button">
-                  <img id="search-svg" class="search-icon" src="/wp-content/themes/ucla-wp/images/icons/denotive/search--blue.svg" alt="search button">
-                </button>
-
-                <div class="search-block-form search-mobile" id="block-search" role="search">
-
-                </div>
-              </div>
+              
+              <nav id="nav-main" class="nav-primary" aria-label="Main Menu">
+                <ul class="nav-primary__list" id="menu-primary-menu">
+                  <?php
+                  wp_nav_menu( array(
+                    'theme_location' => 'main-menu',
+                    'container' => false,
+                    'depth' => 2,
+                    // 'menu_class' => 'nav-primary__list',
+                    'items_wrap' => '%3$s',
+                    'walker' => new ucla_header_menu_walker()
+                  ));
+                  if ( has_nav_menu( 'secondary-menu' ) ) { 
+                    wp_nav_menu( array(
+                      'theme_location' => 'secondary-menu',
+                      'depth' => 1,
+                      'items_wrap' => '%3$s',
+                      'list_class' => 'nav-secondary__item',
+                      'link_class' => 'nav-secondary__link',
+                      'container' => false
+                    ));
+                  }
+                  ?>
+                </ul>
+              </nav>
+              
           </nav>
 
         <?php } // end if has_nav_menu ?>
 
 
-        </div>
       </div>
-
-      <!-- <div id="search"></div> -->
 
     </header>

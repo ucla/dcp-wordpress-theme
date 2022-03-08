@@ -1,6 +1,7 @@
 .front-page-hero {
   background: $lightest-blue;
   padding-bottom: 32px;
+  // margin-bottom: 32px;
 
   @media (min-width: breakpoint-min(lg)) {
     padding-bottom: 0;
@@ -42,7 +43,7 @@
   }
 
   &__title {
-    padding-bottom: 16px;
+    margin-bottom: 16px;
   }
 
   &__intro {

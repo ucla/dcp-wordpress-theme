@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 <main id="main">
-  <div class="ucla campus">
+  <div class="ucla campus masthead">
     <?php if ( have_posts() ) : ?>
     <header class="header">
       <h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'ucla' ), get_search_query() ); ?></h1>
     </header>
-    <div class="ucla campus">
-      <div class="col span_9_of_12">
+  </div>
+
+  <div class="ucla campus entry-content">
+      <div class="col span_<?php echo (is_active_sidebar('right-widget-area') ? '7' : '12') ?>_of_12">
 
         <?php while ( have_posts() ) : the_post(); ?>
           <?php include 'templates/entry-content.php'; ?>
@@ -25,8 +27,14 @@
         <?php endif; ?>
 
       </div>
+      <?php if (is_active_sidebar('right-widget-area')) : ?>
+
+      <div class="col span_2_of_12" style="min-height: 1px;"></div>
+      <div class="col span_3_of_12">
+          <?php dynamic_sidebar('right-widget-area'); ?>
+      </div>
+      <?php endif; ?>
     </div>
-  </div>
 </main>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
