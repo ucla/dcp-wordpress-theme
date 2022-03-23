@@ -3,11 +3,12 @@
 const { src, series, dest, parallel, watch, task } = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
+const sass = require('gulp-sass')
 const gulpStylelint = require('gulp-stylelint');
 const concat = require('gulp-concat');
 const eslint = require('gulp-eslint');
 
-sass.compiler = require('node-sass');
+sass.compiler = require('sass')
 
 // For debugging, make sure gulp is installed
 function defaultTask(cb) {
