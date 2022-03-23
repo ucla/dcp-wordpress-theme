@@ -19,8 +19,17 @@
   "author": "UCLA Strategic Communications",
   "homepage": "https://bitbucket.org/uclaucomm/ucla-wp#readme",
   "devDependencies": {
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-minify": "^3.1.0",
     "gulp-sass": "^5.1.0",
-    "sass": "^1.49.9"
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylelint": "^13.0.0",
+    "sass": "^1.49.9",
+    "stylelint": "^14.6.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^3.0.0"
   }
 }
