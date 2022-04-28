@@ -26,6 +26,8 @@
     "gulp-minify": "^3.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.49.9"
+    "gulp-stylelint": "^13.0.0",
+    "sass": "^1.49.9",
+    "stylelint": "^13.13.1"
   }
 }
