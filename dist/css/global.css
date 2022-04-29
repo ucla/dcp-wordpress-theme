@@ -6279,6 +6279,23 @@ html, body {
   }
 }
 
+.nav-secondary__link--active {
+  color: initial;
+  background-color: transparent;
+}
+
+.nav-secondary__link--active > .nav-secondary__link {
+  color: #FFFFFF;
+  border-radius: 2px;
+  background-color: #00598C;
+}
+.nav-secondary__link--active > .nav-secondary__link:visited, .nav-secondary__link--active > .nav-secondary__link:active, .nav-secondary__link--active > .nav-secondary__link:focus {
+  color: #FFFFFF;
+}
+.nav-secondary__link--active > .nav-secondary__link:hover, .nav-secondary__link--active > .nav-secondary__link:focus {
+  background-color: #0079BF;
+}
+
 form input.wp-block-search__input {
   color: #666;
   border: 1px solid #808080;
