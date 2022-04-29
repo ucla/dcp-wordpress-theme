@@ -510,3 +510,22 @@ html, body {
     display: none;
   }
 }
+
+.nav-secondary__link--active {
+  color: initial;
+  background-color: transparent;
+}
+
+.nav-secondary__link--active > .nav-secondary__link {
+  color: $white;
+  border-radius: 2px;
+  background-color: $default-state;
+
+  &:visited, &:active, &:focus {
+    color: $white;
+  }
+
+  &:hover, &:focus {
+    background-color: $hover-state;
+  }
+}
