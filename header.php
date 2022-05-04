@@ -86,7 +86,7 @@
                   wp_nav_menu( array(
                     'theme_location' => 'main-menu',
                     'container' => false,
-                    'depth' => 2,
+                    'depth' => 3,
                     // 'menu_class' => 'nav-primary__list',
                     'items_wrap' => '%3$s',
                     'walker' => new ucla_header_menu_walker()

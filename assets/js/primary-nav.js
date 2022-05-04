@@ -64,8 +64,12 @@ $(document).ready(function (){
     }
   };
 
-  $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
-  $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
+  // Adds Button to 1st tier of primary nav
+  $('#nav-main .nav-primary__list .nav-primary__link--has-children').children('a').after('<button class="nav-primary__toggle has-child--button"></button>');
+  $('.nav-primary__sublist .nav-primary__link-2--has-children').children('a').after('<button class="nav-primary__toggle-2 has-child--button"></button>');
+
+  // $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
+  // $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
   $('.form-search').attr('placeholder', 'Search');
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
