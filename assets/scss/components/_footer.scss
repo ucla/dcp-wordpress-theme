@@ -314,15 +314,15 @@
             display: block;
 
             & > li {
-              font-size: 0.8rem;
+              font-size: 0.875rem;
               margin-bottom: 0.75rem;
+
+              a {
+                font-weight: 400;
+              }
 
               &:last-of-type {
                 margin-bottom: 0;
-              }
-
-              & > a {
-                font-weight: 400;
               }
             }
           }
