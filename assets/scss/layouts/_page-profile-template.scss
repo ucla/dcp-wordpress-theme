@@ -5,3 +5,9 @@
         display: block;
     }
 }
+
+.profile-heading::before {
+    content: '';
+    margin-right: 1rem;
+    border-left: 8px solid #FFD100;
+}

@@ -598,3 +598,56 @@ add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
     
 //   }
 // }
+
+add_action( 'init', function() {
+
+  $args = array(
+
+      'public' => true,
+
+      'label'  => 'Profile',
+
+      'show_in_rest' => true,
+
+      'template_lock' => 'all',
+
+      'template' => array(
+
+          array( 'core/columns', array(), 
+            array(
+              array( 'core/column', array( 'width' => '33.33%' ), array(
+                array( 'core/image', array() ),
+                array( 'core/post-title', array() ),
+              ) ),
+              array( 'core/column', array( 'width' => '66.66%'), array(
+                array( 'core/heading', array(
+
+                  'placeholder' => 'Biography',
+                  'level' => 2,
+                  'className' => 'profile-heading'
+
+                ) ),
+                array( 'core/paragraph', array(
+                  'placeholder' => 'Biography body copy...'
+                ) ),
+                array( 'core/heading', array(
+
+                  'placeholder' => 'Publications',
+                  'level' => 2,
+                  'className' => 'profile-heading'
+
+                ) ),
+                array( 'core/paragraph', array(
+                  'placeholder' => 'Publication body copy...'
+                ) ),
+              ) ),
+            )
+          )
+
+      ),
+
+  );
+
+  register_post_type( 'profile', $args );
+
+} );
