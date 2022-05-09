@@ -279,7 +279,7 @@
     &--links-wrapper {
       display: block;
 
-      & > ul {
+      & > ul#menu-footer-menu {
         display: inline-flex;
         flex-wrap: wrap;
         margin: 0;
@@ -302,23 +302,28 @@
             display: inline-block;
             margin-bottom: 0.75rem;
             font-size: 1rem;
+            font-weight: bold;
           }
 
           @media (min-width: breakpoint-min(md)) {
             flex-basis: auto;
             margin-bottom: 0;
           }
-        }
+          
+          & ul {
+            display: block;
 
-        & ul {
-          display: block;
+            & > li {
+              font-size: 0.75rem;
+              margin-bottom: 0.75rem;
 
-          & > li {
-            font-size: 0.75rem;
-            margin-bottom: 0.75rem;
+              &:last-of-type {
+                margin-bottom: 0;
+              }
 
-            &:last-of-type {
-              margin-bottom: 0;
+              & > a {
+                font-weight: 400;
+              }
             }
           }
         }
