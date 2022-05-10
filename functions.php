@@ -598,18 +598,37 @@ add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
     
 //   }
 // }
+function profile_cpt() {
 
-add_action( 'init', function() {
+  $labels = array(
+    'name'            => _x( 'Profiles', 'Post Type Name' ),
+    'singular_name'   => _x( 'Profile', 'Post Type Singular Name' ),
+    'search_items'    => __( 'Search Profiles' ),
+    'all_items'       => __( 'All Profiles' ),
+    'edit_item'       => __( 'Edit Profile' ),
+    'update_item'     => __( 'Update Profile' ),
+    'add_new_item'       => __( 'Add New Profile' ),
+    'new_item_name'   => __( 'New Profile' ),
+    'menu_name'       => __( 'Profiles' ),
+  );
 
   $args = array(
 
       'public' => true,
 
-      'label'  => 'Profile',
+      'publicly_queryable' => true,
+
+      'labels'  => $labels,
 
       'show_in_rest' => true,
 
       'template_lock' => 'all',
+
+      'rewrite' => array( 'slug' => 'profile' ),
+
+      'capability_type' => 'post',
+
+      'query_var'          => true,
 
       'template' => array(
 
@@ -650,4 +669,23 @@ add_action( 'init', function() {
 
   register_post_type( 'profile', $args );
 
-} );
+}
+add_action( 'init', 'profile_cpt', 0 );
+
+// add_action('add_meta_boxes', 'profile_details');
+
+// function profile_details() {
+//   add_meta_box(
+//     'profile_details',
+//     __('Profile Details'),
+//     'profile_details_content',
+//     'profile',
+//     'side',
+//     'high'
+//   );
+// }
+
+// function profile_details_content($post) {
+//   wp_nonce_field(plugin_basename(__FILE__), 'profile_details_content_nonce');
+
+// }
