@@ -1,0 +1,55 @@
+.carousel-pagination-internal {
+	margin-top: -50px !important;
+	position: absolute;
+	background-color: rgb(0, 0, 0, 0.5);
+	border-radius: 20px;
+	padding: 5px !important;
+	margin-left: 40vw !important;
+	width: fit-content !important;
+}
+
+.carousel-arrows {
+	z-index: 3;
+	position: absolute;
+	display: inline-block;
+	margin-top: 35vh !important;
+	margin-right: 15px !important;
+	margin-left: 15px !important;
+	border-radius: 50% !important;
+	background-color: rgb(0, 0, 0, 0.7) !important;
+	height: 35px !important;
+	width: 35px !important;
+}
+
+.carousel-arrow-right {
+  right: 0px;
+}
+
+.title-image {
+	position: absolute;
+	left: 5%;
+	top: 15%;
+	z-index: 1;
+}
+.title-text {
+	position: absolute;
+	left: 13%;
+	top: 20%;
+	font-size: 44px;
+	color: white;
+	z-index: 1;
+	padding: 4px;
+	max-width: 540px;
+	text-transform: uppercase;
+	line-height: 60px;
+}
+.title-word {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: -8px;
+	margin-right: -8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	background-color: #2774AE;
+	display: inline-block;
+}
