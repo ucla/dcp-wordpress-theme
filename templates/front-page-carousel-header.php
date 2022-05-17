@@ -2,7 +2,7 @@
   <div class="front-page-hero">
     <?php
       $post_meta_value = get_post_meta( $post->ID, 'carousel-title', true );
-      if ($post_meta_value !== null) {
+      if ($post_meta_value !== '') {
         echo '<img class="title-image" src="./wp-content/themes/ucla-wp/images/Molecule.svg" />';
         echo '<h1 class="title-text">';
         $title_words = explode(" ", $post_meta_value);
@@ -32,8 +32,12 @@
                     $img_title = get_the_title($attachment_id);
                     if(strpos($img_title, "__carousel") == false)
                       continue;
+                    $is_link = strpos($img_title, "__carousel-link");
+                    $img_link = get_the_excerpt($attachment_id);
                     echo '<li class="splide__slide"><div class="splide__slide__container">';
-                    echo '<img src="' . $img_url . '" width="auto" height="auto">';                    
+                    if ($is_link != false) echo '<a href="' . $img_link . '" target="_blank">';
+                    echo '<img src="' . $img_url . '" width="100%" height="auto">';
+                    if ($is_link != false) echo '</a>';
                     echo '</div></li>';
                   }
                 }
