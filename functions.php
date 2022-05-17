@@ -598,6 +598,8 @@ add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
     
 //   }
 // }
+
+require get_template_directory() . '/classes/class-profile-information-meta-box.php';
 function profile_cpt() {
 
   $labels = array(
@@ -610,6 +612,10 @@ function profile_cpt() {
     'add_new_item'       => __( 'Add New Profile' ),
     'new_item_name'   => __( 'New Profile' ),
     'menu_name'       => __( 'Profiles' ),
+    'featured_image'  => __( 'Profile Image' ),
+    'set_featured_image' => __( 'Set Profile Image' ),
+    'use_featured_image' => __('Use as Profile Image'),
+    'remove_featured_image' => __('Remove Profile Image')
   );
 
   $args = array(
@@ -622,24 +628,18 @@ function profile_cpt() {
 
       'show_in_rest' => true,
 
-      'template_lock' => 'all',
-
       'rewrite' => array( 'slug' => 'profile' ),
 
       'capability_type' => 'post',
 
       'query_var'          => true,
 
-      'template' => array(
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 
-          array( 'core/columns', array(), 
-            array(
-              array( 'core/column', array( 'width' => '33.33%' ), array(
-                array( 'core/image', array() ),
-                array( 'core/post-title', array() ),
-              ) ),
-              array( 'core/column', array( 'width' => '66.66%'), array(
-                array( 'core/heading', array(
+      'has_archive' => true,
+
+      'template' => array(
+                  array( 'core/heading', array(
 
                   'placeholder' => 'Biography',
                   'level' => 2,
@@ -649,6 +649,7 @@ function profile_cpt() {
                 array( 'core/paragraph', array(
                   'placeholder' => 'Biography body copy...'
                 ) ),
+                array( 'core/separator', array() ),
                 array( 'core/heading', array(
 
                   'placeholder' => 'Publications',
@@ -659,33 +660,60 @@ function profile_cpt() {
                 array( 'core/paragraph', array(
                   'placeholder' => 'Publication body copy...'
                 ) ),
-              ) ),
-            )
-          )
-
       ),
 
+      // 'template' => array(
+      //     array( 'core/columns', array(), 
+      //       array(
+      //         array( 'core/column', array( 'width' => '33.33%' ), array(
+      //           array( 'core/post-featured-image', array() ),
+      //           array( 'core/post-title', array() ),
+      //           array( 'core/paragraph', array(
+      //             'content' =>  'Test meta data'
+      //           ) )
+      //         ) ),
+      //         array( 'core/column', array( 'width' => '66.66%'), array(
+      //           array( 'core/heading', array(
+
+      //             'placeholder' => 'Biography',
+      //             'level' => 2,
+      //             'className' => 'profile-heading'
+
+      //           ) ),
+      //           array( 'core/paragraph', array(
+      //             'placeholder' => 'Biography body copy...'
+      //           ) ),
+      //           array( 'core/heading', array(
+
+      //             'placeholder' => 'Publications',
+      //             'level' => 2,
+      //             'className' => 'profile-heading'
+
+      //           ) ),
+      //           array( 'core/paragraph', array(
+      //             'placeholder' => 'Publication body copy...'
+      //           ) ),
+      //         ) ),
+      //       )
+      //     )
+
+      // ),
+
+      'template_lock' => 'all',
+
   );
-
   register_post_type( 'profile', $args );
-
 }
-add_action( 'init', 'profile_cpt', 0 );
 
-// add_action('add_meta_boxes', 'profile_details');
+add_action( 'init', 'profile_cpt' );
 
-// function profile_details() {
-//   add_meta_box(
-//     'profile_details',
-//     __('Profile Details'),
-//     'profile_details_content',
-//     'profile',
-//     'side',
-//     'high'
-//   );
-// }
+function profile_title($input) {
+  if ('profile' === get_post_type()) {
+    return __('Enter name here');
+  }
+  return $input;
+}
+add_filter('enter_title_here', 'profile_title');
 
-// function profile_details_content($post) {
-//   wp_nonce_field(plugin_basename(__FILE__), 'profile_details_content_nonce');
 
-// }
+// https://www.youtube.com/watch?v=yTDE6pJjOKs
