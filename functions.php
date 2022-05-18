@@ -638,6 +638,8 @@ function profile_cpt() {
 
       'has_archive' => true,
 
+      'menu_icon' => 'dashicons-groups',
+
       'template' => array(
                   array( 'core/heading', array(
 
