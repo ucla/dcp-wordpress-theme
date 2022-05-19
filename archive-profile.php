@@ -27,16 +27,24 @@ get_header(); ?>
                             $image      = $thumb_url[0];
                         }
                         ?>
-                        <h2 class="mb-8"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h2>
-                        <p class="profile-pronoun"><?php echo get_post_meta($post->ID,'profile-pronouns', true) ?></p>
+                        <div class="profile-header">
+                            <h2 class="profile-name"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h2>
+                            <?php
+                                if (get_post_meta($post->ID,'profile-pronouns', true) !== 'Prefer not to say') {            
+                            ?>
+                            <?php } ?>
+                        </div>
                         <p><?php echo get_post_meta($post->ID,'profile-title', true) ?></p>
                         <div class="profile-card">
-                            <figure>
-                                <img src="<?php if ( has_post_thumbnail() ) { echo $image; } ?>" class="profile-img" alt="">
+                            <figure class="profile-img">
+                                <a href="<?php echo get_permalink( $post->ID ); ?>">
+                                    <img src="<?php if ( has_post_thumbnail() ) { echo $image; } ?>" alt="">
+                                </a>
                             </figure>
                             <div><?php echo get_the_excerpt() ?></div>
                             <div class="profile-contact-information">
-                                <h3 class="mx-auto">Contact Information</h3>
+                                <h3 class="profile-contact-information-header">Contact Information</h3>
+                                <p class="profile-pronoun pb-0"><strong>Pronouns: </strong><?php echo get_post_meta($post->ID,'profile-pronouns', true) ?></p>
                                 <address>
                                     <p class="profile-office"><strong>Office:</strong> <?php echo get_post_meta($post->ID, 'profile-office', true) ?></p>
                                     <p class="profile-email"><strong>Email:</strong> <a href="mailto:<?php echo get_post_meta($post->ID, 'profile-email', true) ?>"><?php echo get_post_meta($post->ID, 'profile-email', true) ?></a></p>
@@ -54,27 +62,11 @@ get_header(); ?>
                 endif;
                 wp_reset_postdata();
             ?>
-
-            <div class="pagination mb-64">
-                <?php echo get_the_posts_pagination([
-                    'format'  => 'page/%#%',
-                    'current' => $paged ? $paged : 1,
-                    'mid_size'        => 10,
-                    'prev_text'       => __('&laquo;'),
-                    'next_text'       => __('&raquo;')
-                ]); ?>
-            </div>
         </div>
-
-
-
-        <?php if (is_active_sidebar('right-widget-area')) : ?>
-
-            <div class="col span_1_of_12" style="min-height: 1px;"></div>
-            <div class="col span_2_of_12">
-                <?php dynamic_sidebar('right-widget-area'); ?>
-            </div>
-        <?php endif; ?>
+        <div class="col span_1_of_12" style="min-height: 1px;"></div>
+        <div class="col span_2_of_12">
+            Right sidebar goes here
+        </div>
 
     </div>
 
