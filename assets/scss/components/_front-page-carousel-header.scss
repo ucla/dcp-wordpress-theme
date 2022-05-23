@@ -31,6 +31,7 @@
 	top: 29%;
 	z-index: 1;
 }
+
 .title-text {
 	position: absolute;
 	left: 7%;
@@ -43,6 +44,7 @@
 	text-transform: uppercase;
 	line-height: 60px;
 }
+
 .title-word {
 	margin-top: 2px;
 	margin-bottom: 2px;
@@ -52,4 +54,17 @@
 	padding-right: 16px;
 	background-color: #2774AE;
 	display: inline-block;
+}
+
+.play-pause-button {
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 50%;
+	margin-left: 3vw;
+	position: absolute;
+	bottom: 3vh;
+	z-index: 3;
+	display: inline-block
 }

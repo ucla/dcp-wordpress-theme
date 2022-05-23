@@ -15,31 +15,52 @@
       }
     ?>
     <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js'></script>
+    <?php
+      $carousel_title = get_theme_mod( 'carousel_title', '' );
+      if ($carousel_title !== '') {
+        echo '<img
+          src="./wp-content/themes/ucla-wp/images/Molecule.svg"
+          class="title-image"
+        />
+        <h1 class="title-text">';
+        foreach (explode(" ", $carousel_title) as $title_word) {
+          echo '<span class="title-word">' . $title_word .'</span>';
+        }
+        echo '</h1>';
+      }
+    ?>
     <div id="splide-front-page-carousel" class="splide">
+      <?php
+        $carousel_autoplay = get_theme_mod( 'carousel_autoplay', false );
+        if ($carousel_autoplay) {
+          echo '<div class="splide-autoplay-controls">
+            <img
+              class="play-pause-button toggle-splide-front-page-carousel"
+              src="./wp-content/themes/ucla-wp/images/pause-white.svg"
+              alt="Pause Carousel"
+            />
+          </div>';
+        }
+      ?>
       <div class="splide__slider">
         <div class="splide__track">
           <ul class="splide__list">
-
             <?php
-              $images = &get_children( array (
-                'post_mime_type' => 'image'
-              ));
-              if ( !empty($images) ) {
-                foreach ( $images as $attachment_id => $attachment ) {
-                  $image_attributes = wp_get_attachment_image_src($attachment_id);                  
-                  if ( $image_attributes ) {
-                    $img_url = $image_attributes[0];
-                    $img_title = get_the_title($attachment_id);
-                    if(strpos($img_title, "__carousel") == false)
-                      continue;
-                    $is_link = strpos($img_title, "__carousel-link");
-                    $img_link = get_the_excerpt($attachment_id);
-                    echo '<li class="splide__slide"><div class="splide__slide__container">';
-                    if ($is_link != false) echo '<a href="' . $img_link . '" target="_blank">';
-                    echo '<img src="' . $img_url . '" width="100%" height="auto">';
-                    if ($is_link != false) echo '</a>';
-                    echo '</div></li>';
-                  }
+              get_theme_mod( 'carousel_interval', 'default' );
+              for ($x = 1; $x <= 6; $x++) {
+                $carousel_image_id = get_theme_mod( 'carousel_image_' . strval($x), '' );
+                if ($carousel_image_id == '')
+                  continue;
+                $image_attributes = wp_get_attachment_image_src($carousel_image_id);                  
+                if ( $image_attributes ) {
+                  $img_url = $image_attributes[0];
+                  $img_alt = get_theme_mod( 'carousel_alt_' . strval($x), 'image number ' . strval($x) );
+                  $img_link = get_theme_mod( 'carousel_link_' . strval($x), '' );
+                  echo '<li class="splide__slide"><div class="splide__slide__container">';
+                  if ($img_link !== '') echo '<a href="' . $img_link . '" target="_blank">';
+                  echo '<img src="' . $img_url . '" alt="' . $img_alt . '" width="100%" height="auto">';
+                  if ($img_link !== '') echo '</a>';
+                  echo '</div></li>';
                 }
               }
             ?>
@@ -49,24 +70,68 @@
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function(event) {
-        new Splide("#splide-front-page-carousel", {
-            type: 'loop',
-            width: '100%',
-            height: '70vh',
-            cover: true,
-            classes: {
-                arrow: 'splide__arrow carousel-arrows',
-                next: 'splide__arrow--next carousel-arrow-right',
-                pagination: 'splide__pagination carousel-pagination-internal'
+        var frontPageSplide = new Splide("#splide-front-page-carousel", {
+          type: 'loop',
+          width: '100%',
+          height: '70vh',
+          cover: true,
+          classes: {
+            arrow: 'splide__arrow carousel-arrows',
+            next: 'splide__arrow--next carousel-arrow-right',
+            pagination: 'splide__pagination carousel-pagination-internal'
+          },
+          pauseOnHover: false,
+          pauseOnFocus: false,
+          speed: 800,
+          autoplay: <?php
+              $carousel_autoplay = get_theme_mod( 'carousel_autoplay', false );
+              $autoplay_str = $carousel_autoplay ? 'true' : 'false';
+              echo $autoplay_str;
+            ?>,
+          interval: Number(
+              <?php
+                $carousel_interval = get_theme_mod( 'carousel_interval', 5);
+                if ($carousel_interval < 5)
+                  $carousel_interval = 5;
+                echo strval($carousel_interval);
+              ?>
+            ) * 1000,
+        });
+        if (<?php
+            $carousel_autoplay = get_theme_mod( 'carousel_autoplay', false );
+            $autoplay_str = $carousel_autoplay ? 'true' : 'false';
+            echo $autoplay_str;
+          ?>
+        ) {
+          var toggleButton = frontPageSplide.root.querySelector( '.toggle-splide-front-page-carousel' );
+
+          frontPageSplide.on( 'autoplay:play', function () {
+            toggleButton.src = './wp-content/themes/ucla-wp/images/pause-white.svg';
+            toggleButton.alt = 'Pause Carousel';
+          } );
+
+          frontPageSplide.on( 'autoplay:pause', function () {
+            toggleButton.src = './wp-content/themes/ucla-wp/images/play-white.svg';
+            toggleButton.alt = 'Play Carousel';
+          } );
+
+          toggleButton.addEventListener( 'click', function () {
+            var Autoplay = frontPageSplide.Components.Autoplay;
+            if ( toggleButton.alt == 'Play Carousel' ) {
+              Autoplay.play();
+            } else {
+              Autoplay.pause();
             }
-        }).mount();
+          });
+        }
+        frontPageSplide.mount();
       });
     </script>
 
     <div class="front-page-hero__info">
       <div class="front-page-hero__info--wrap">
 
-        <h1 class="front-page-hero__title"><?php the_title(); ?></h1>
+        <!-- <h1 class="front-page-hero__title"><?php the_title(); ?></h1> -->
 
         <?php //edit_post_link(); ?>
 
