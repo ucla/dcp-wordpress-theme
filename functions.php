@@ -87,9 +87,9 @@ function ucla_setup() {
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
     // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.16/css/ucla-lib.min.css' );
+    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0/css/ucla-lib.min.css' );
     // Install the UCLA Component Library  scripts
-    wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.16/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
+    wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
     // Install the WordPress Theme Styles
     wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css', array( 'lib-style' ) );
     // Install the WordPress Theme Scripts
@@ -598,3 +598,100 @@ add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
     
 //   }
 // }
+
+require get_template_directory() . '/classes/class-profile-information-meta-box.php';
+
+function profile_cpt() {
+
+  $labels = array(
+    'name'                  => _x( 'Profiles', 'Post Type Name' ),
+    'singular_name'         => _x( 'Profile', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search Profiles' ),
+    'all_items'             => __( 'All Profiles' ),
+    'edit_item'             => __( 'Edit Profile' ),
+    'update_item'           => __( 'Update Profile' ),
+    'add_new_item'          => __( 'Add New Profile' ),
+    'new_item_name'         => __( 'New Profile' ),
+    'menu_name'             => __( 'Profiles' ),
+    'featured_image'        => __( 'Profile Image' ),
+    'set_featured_image'    => __( 'Set Profile Image' ),
+    'use_featured_image'    => __('Use as Profile Image'),
+    'remove_featured_image' => __('Remove Profile Image')
+  );
+
+  $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'labels'  => $labels,
+      'show_in_rest' => true,
+      'rewrite' => array( 'slug' => 'profile', 'with_front' => true ),
+      'capability_type' => 'post',
+      'query_var'          => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'has_archive' => true,
+      'menu_icon' => 'dashicons-groups',
+      'taxonomies' => array('profile_position'),
+      'template' => array(
+          array( 'core/heading', array(
+            'placeholder' => 'Biography',
+            'level' => 2
+          ) ),
+          array( 'core/paragraph', array(
+            'placeholder' => 'Biography body copy...'
+          ) ),
+          array( 'core/separator', array() ),
+      ),
+  );
+  register_post_type( 'profile', $args );
+}
+add_action( 'init', 'profile_cpt' );
+
+function register_profile_position_taxonomy() {
+  $labels = array(
+    'name'                  => _x( 'Roles', 'Taxonomy General Name' ),
+    'singular_name'         => _x( 'Role', 'Taxonomy Singular Name' ),
+    'update_item' => __( 'Update Role' ),
+    'add_new_item' => __( 'Add New Role' ),
+    'new_item_name' => __( 'New Role' ),
+    'menu_name' => __( 'Roles' ),
+  );
+  $args = array(
+    'labels'        => $labels,
+    'hierarchical' => false,
+    'show_ui'      => true,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array('slug' => 'profiles', 'with_front' => true),
+    'show_in_rest' => true,
+    'query_var'          => true,
+    'has_archive' => 'profile'
+  );
+  register_taxonomy('profile_position', array('profile'), $args);
+}
+
+add_action( 'init', 'register_profile_position_taxonomy');
+
+function profile_title($input) {
+  if ('profile' === get_post_type()) {
+    return __('Enter name here');
+  }
+  return $input;
+}
+add_filter('enter_title_here', 'profile_title');
+
+function remove_archive_pretitle($title) {
+  if (is_category()) {
+    $title = single_cat_title('', false);
+} elseif (is_tag()) {
+    $title = single_tag_title('', false);
+} elseif (is_author()) {
+    $title = '<span class="vcard">' . get_the_author() . '</span>';
+} elseif (is_tax()) { //for custom post types
+    $title = sprintf(__('%1$s'), single_term_title('', false));
+} elseif (is_post_type_archive()) {
+    $title = post_type_archive_title('', false);
+}
+  return $title;
+}
+
+add_filter('get_the_archive_title', 'remove_archive_pretitle');
