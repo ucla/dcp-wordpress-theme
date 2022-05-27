@@ -4,7 +4,6 @@
 class ProfileInformationMetaBox{
 
 	private $screen = array(
-		'post',
                 'profile',        
 	);
 

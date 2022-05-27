@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Archives - Profiles
+Template Name: Taxonomy
 */
 get_header(); ?>
 <main id="main" class="profile-archive">

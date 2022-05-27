@@ -11,10 +11,17 @@
     get_header();
 ?>
     <main id="main" class="main profile-page">
+        <div class="ucla campus pt-24">
+            <div class="col span_4_of_12" style="min-height: 1px"></div>
+            <div class="col span_8_of_12">
+
+            <a href="/profile" class="btn btn--sm btn--lightbg" style="display:inline-block;color:#fff;">View All</a>
+            </div>
+        </div>
         <div class="ucla campus entry-content">
             <div class="col span_3_of_12">
                 <figure>
-                <img src="<?php if ( has_post_thumbnail() ) { echo $image; } ?>" class="profile-img" alt="">
+                <img src="<?php echo (has_post_thumbnail() ? $image : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'); ?>" class="profile-img" alt="">
                     <figcaption>
                         <h1 class="profile-name"><?php the_title(); ?></h1>
                         <?php
