@@ -6401,7 +6401,96 @@ Skip Navigation necessary on every page of the site and should go above the head
 .ucla.campus.entry-content {
   padding-bottom: 3rem;
 }
-.ucla.campus.entry-content > div > *:not(.fluid):not(.post-info):first-child {
+.ucla.campus.entry-content > div > *:not(.fluid):not(.post-info):first-child, .ucla.campus.entry-content > div > .wp-block-column {
   padding-top: 2rem;
+}
+
+.profile-page .entry-content .profile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+.profile-page .entry-content .profile-name {
+  color: #00598C;
+  margin-bottom: 0;
+  font-size: 1.75rem;
+  line-height: 1.1em;
+}
+.profile-page .entry-content .profile-title {
+  font-size: 1.125rem;
+}
+.profile-page .entry-content .profile-pronoun {
+  color: #666;
+  padding-bottom: 0;
+}
+.profile-page .entry-content h2 {
+  color: #00598C;
+  padding-top: 1.75rem;
+}
+.profile-page .entry-content h2::before {
+  content: "";
+  margin-right: 1rem;
+  border-left: 8px solid #FFD100;
+}
+
+.profile-archive .entry-title {
+  color: #00598C;
+}
+.profile-archive .entry-title::before {
+  content: "";
+  margin-right: 1rem;
+  border-left: 8px solid #FFD100;
+}
+.profile-archive .entry-content .profile-header {
+  display: flex;
+}
+.profile-archive .entry-content .profile-header .profile-name {
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 0;
+}
+.profile-archive .entry-content .profile-header .profile-name a {
+  text-decoration: none;
+  color: #00598C;
+}
+.profile-archive .entry-content .profile-header .profile-name a:hover {
+  color: white;
+}
+.profile-archive .entry-content .profile-header .profile-pronoun {
+  align-self: flex-end;
+  padding-bottom: 0;
+  margin-left: 0.5rem;
+}
+.profile-archive .entry-content .profile-card {
+  display: flex;
+}
+.profile-archive .entry-content .profile-card .profile-img > a {
+  display: inline-flex;
+}
+.profile-archive .entry-content .profile-card .profile-img > a > img {
+  max-width: 190px;
+  height: auto;
+}
+.profile-archive .entry-content .profile-card .profile-contact-information {
+  width: 243px;
+  padding: 1rem;
+  background-color: #E5E5E5;
+  flex-shrink: 0;
+  display: block;
+  margin-left: auto;
+}
+.profile-archive .entry-content .profile-card .profile-contact-information-header {
+  color: #00598C;
+  font-weight: normal;
+}
+.profile-archive .entry-content .profile-card .profile-contact-information > address > p {
+  padding-bottom: 0;
+}
+.profile-archive .entry-content .profile-card > * {
+  margin-right: 1rem;
+}
+.profile-archive .entry-content .profile-card > *:last-child {
+  margin-right: 0;
 }
 /*# sourceMappingURL=global.css.map */
