@@ -1,3 +1,7 @@
+.splide {
+	float: left;
+}
+
 .carousel-pagination-internal {
 	margin-top: -50px !important;
 	position: absolute;
@@ -26,21 +30,27 @@
 }
 
 .title-image {
-	position: absolute;
-	left: 2%;
-	top: 29%;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	margin-left: 20px;
+	margin-bottom: -145px;
+	margin-top: 0px;
 	z-index: 1;
 }
 
 .title-text {
-	position: absolute;
-	left: 7%;
-	top: 33%;
+	position: relative;
+	left: 0px;
+	margin-left: 70px;
+	top: 0px;
+	margin-bottom: -1000px;
+	margin-top: 40px;
 	font-size: 44px;
 	color: white;
 	z-index: 1;
 	padding: 4px;
-	max-width: 540px;
+	max-width: 40%;
 	text-transform: uppercase;
 	line-height: 60px;
 }
