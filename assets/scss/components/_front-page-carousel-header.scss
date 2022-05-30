@@ -81,5 +81,9 @@
 	position: absolute;
 	bottom: 3vh;
 	z-index: 3;
-	display: inline-block
+	display: inline-block;
+
+	&:hover {
+		filter: brightness(0);
+	}
 }
