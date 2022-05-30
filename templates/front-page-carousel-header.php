@@ -1,17 +1,19 @@
 <header class="header">
   <?php
-    $carousel_title = get_theme_mod( 'carousel_title', '' );
-    if ($carousel_title !== '') {
-      echo '<img
-        src="./wp-content/themes/ucla-wp/images/Molecule.svg"
-        class="title-image"
-      />
-      <h1 class="title-text">';
-      foreach (explode(" ", $carousel_title) as $title_word) {
-        echo '<span class="title-word">' . $title_word .'</span>';
-      }
-      echo '</h1>';
+    $carousel_title_1 = get_theme_mod( 'carousel_title_1', '' );
+    $isHidden = 'hidden';
+    if ($carousel_title_1 !== '')
+      $isHidden = '';
+    echo '<img
+      src="./wp-content/themes/ucla-wp/images/Molecule.svg"
+      class="title-image ' . $isHidden . '"
+      id="carousel-title-image"
+    />
+    <h1 class="title-text " id="carousel-title-text">';
+    foreach (explode(" ", $carousel_title_1) as $title_word) {
+      echo '<span class="title-word ' . $isHidden . '">' . $title_word .'</span>';
     }
+    echo '</h1>';
   ?>
   <div id="splide-front-page-carousel" class="splide">
     <?php
@@ -109,6 +111,49 @@
           }
         });
       }
+
+      // Prepare titles for individual slides
+      frontPageSplide.on( 'move', function (newIndex) {
+        const titleList = new Array(6);
+        <?php
+          for ($x = 1; $x <= 6; $x++){
+            $carousel_title = get_theme_mod( 'carousel_title_' . strval($x), '' );
+            $carousel_title = str_replace('"', '', $carousel_title);
+            $carousel_title = str_replace("'", '', $carousel_title);
+            echo 'titleList[' . strval($x-1) . '] = ("' . $carousel_title . '");';
+          }
+        ?>
+
+        const imageElement = document.getElementById('carousel-title-image');
+        const titleElement = document.getElementById('carousel-title-text');
+        if (!titleElement)
+          return;
+
+        while (titleElement.lastChild)
+          titleElement.removeChild(titleElement.lastChild);
+
+        const titleText = titleList[newIndex];
+        for (const word of titleText.split(" ")) {
+          const wordElement = document.createElement("span");
+          wordElement.innerText = word;
+          wordElement.classList.add('title-word')
+          titleElement.appendChild(wordElement);
+        }
+
+        // Do not display the title if there isn't one
+        if (titleText !== '') {
+          if (imageElement.classList.contains('hidden'))
+            imageElement.classList.remove('hidden');
+          if (titleElement.classList.contains('hidden'))
+            titleElement.classList.remove('hidden');
+        } else {
+          if (!imageElement.classList.contains('hidden'))
+            imageElement.classList.add('hidden');
+          if (!titleElement.classList.contains('hidden'))
+            titleElement.classList.add('hidden');
+        }
+      } );
+
       frontPageSplide.mount();
     });
   </script>

@@ -107,9 +107,6 @@ function ucla_setup() {
   // Add custom controls for the front page carousel
   function themeslug_customize_register( $wp_customize ) {
     // Settings that store values
-    $wp_customize->add_setting( 'carousel_title', array(
-      'type' => 'theme_mod',
-    ) );
     $wp_customize->add_setting( 'carousel_autoplay', array(
       'type' => 'theme_mod',
     ) );
@@ -118,6 +115,9 @@ function ucla_setup() {
     ) );
     for ($x = 1; $x <= 6; $x++) {
       $wp_customize->add_setting( 'carousel_image_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_title_' . strval($x), array(
         'type' => 'theme_mod',
       ) );
       $wp_customize->add_setting( 'carousel_alt_' . strval($x), array(
@@ -129,11 +129,6 @@ function ucla_setup() {
     }
 
     // Control displays
-    $wp_customize->add_control( 'carousel_title', array(
-      'label' => __( 'Title' ),
-      'type' => 'text',
-      'section' => 'front_page_carousel',
-    ) );
     $wp_customize->add_control( 'carousel_autoplay', array(
       'label' => __( 'Autoplay' ),
       'type' => 'checkbox',
@@ -148,17 +143,22 @@ function ucla_setup() {
     ) );
     for ($x = 1; $x <= 6; $x++) {
       $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'carousel_image_' . strval($x), array(
-        'label' => __( 'Carousel Image ' . strval($x)),
+        'label' => __( 'Slide ' . strval($x) . ' Image'),
         'section' => 'front_page_carousel',
         'mime_type' => 'image',
       ) ) );
+      $wp_customize->add_control( 'carousel_title_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Title' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
       $wp_customize->add_control( 'carousel_alt_' . strval($x), array(
-        'label' => __( 'Carousel Image ' . strval($x) . ' alt text' ),
+        'label' => __( 'Slide ' . strval($x) . ' Alt Text' ),
         'type' => 'text',
         'section' => 'front_page_carousel',
       ) );
       $wp_customize->add_control( 'carousel_link_' . strval($x), array(
-        'label' => __( 'Carousel Image ' . strval($x) . ' Link' ),
+        'label' => __( 'Slide ' . strval($x) . ' Link' ),
         'description' => __( 'Where the image links to. Leave empty for no link.' ),
         'type' => 'text',
         'section' => 'front_page_carousel',
