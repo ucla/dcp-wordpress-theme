@@ -43,10 +43,6 @@ $(document).ready(function (){
   let childButtons = document.getElementsByClassName('has-child--button');
   let i;
 
-  // close all menus when escape is pressed
-
-
-
   // Primary Navigation Hamburger click functionality
   hamButton.onclick = function hamClick () {
     hamButton.classList.toggle('is-active');
@@ -71,6 +67,11 @@ $(document).ready(function (){
   // $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
   // $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
   $('.form-search').attr('placeholder', 'Search');
+
+
+  // Add labels to all nav open buttons
+  $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+  $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
@@ -135,6 +136,7 @@ $(document).ready(function (){
         $(this).siblings('.nav-primary__sublist').attr('aria-expanded', 'false');
         $(this).attr('aria-label', 'expand');
       }
+      $(this).attr('aria-label', 'collapse sublist');
       $(this).siblings('.nav-primary__sublist').toggleClass('nav-primary__sublist--hidden');
       $(this).toggleClass('is-open');
     });
@@ -148,41 +150,47 @@ $(document).ready(function (){
         $(this).siblings('.nav-primary__sublist-2').attr('aria-expanded', 'false');
         $(this).attr('aria-label', 'expand');
       }
+      $(this).attr('aria-label', 'collapse sublist');
       $(this).siblings('.nav-primary__sublist-2').toggleClass('nav-primary__sublist-2--hidden');
       $(this).toggleClass('is-open');
     });
 
     // Properly orient the arrow button after mouse leave
     $(document).on('mouseleave', '#nav-main .nav-primary__link--has-children', function() {
+      $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
       $('.nav-primary__toggle').removeClass('is-open');
     });
     $(document).on('mouseleave', '#nav-main .nav-primary__link-2--has-children', function() {
+      $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
       $('.nav-primary__toggle-2').removeClass('is-open');
     });
 
     // Properly orient the arrow buttons after tab or escape
     document.addEventListener('keydown', function(e) {
-
-      console.log(e);
       let keyCode = e.keyCode || e.which;
-      console.log(keyCode);
 
       // Tab key was pressed
       if (keyCode === 9) {
         setTimeout(function() {
           const currentElement = document.activeElement;
           const nextElement = currentElement.nextSibling;
+
           if (currentElement.classList.contains('nav-primary__search-desktop-button')) {
+            $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+            $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
             $('.nav-primary__toggle').removeClass('is-open');
             $('.nav-primary__toggle-2').removeClass('is-open');
           } else {
             if (currentElement.classList.contains('nav-primary__link') &&
                 nextElement && nextElement.classList.contains('nav-primary__toggle')) {
+              $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+              $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
               $('.nav-primary__toggle').removeClass('is-open');
               $('.nav-primary__toggle-2').removeClass('is-open');
             }
             if (currentElement.classList.contains('nav-primary__link') &&
                 nextElement && nextElement.classList.contains('nav-primary__toggle-2')) {
+              $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
               $('.nav-primary__toggle-2').removeClass('is-open');
             }
           }
@@ -192,6 +200,8 @@ $(document).ready(function (){
       // Escape key was pressed
       if (keyCode === 27) {
         setTimeout(function() {
+          $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+          $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
           $('.nav-primary__toggle').removeClass('is-open');
           $('.nav-primary__toggle-2').removeClass('is-open');
         }, 10);
