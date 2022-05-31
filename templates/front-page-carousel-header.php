@@ -69,7 +69,7 @@
         },
         pauseOnHover: false,
         pauseOnFocus: false,
-        speed: 800,
+        speed: 1200,
         autoplay: <?php
             $carousel_autoplay = get_theme_mod( 'carousel_autoplay', false );
             $autoplay_str = $carousel_autoplay ? 'true' : 'false';
