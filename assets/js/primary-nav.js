@@ -99,7 +99,7 @@ $(document).ready(function (){
     desktopSubmenuResize();
 
     // Disable Click functionality for mobile nav submenu.
-    $('.has-child--button').attr('tabindex', '-1');
+    // $('.has-child--button').attr('tabindex', '-1');
 
     // Put the search form at the end of the nav
     // $('#block-search').append(searchForm);
@@ -123,6 +123,78 @@ $(document).ready(function (){
           $('#search-button').trigger('click');
           $('#search-button').focus();
         }
+      }
+    });
+
+    // Clicking the arrow dropdown button
+    $(document).on('click', '.nav-primary__toggle', function() {
+      if ($(this).siblings('.nav-primary__sublist').hasClass('nav-primary__sublist--hidden')) {
+        $(this).siblings('.nav-primary__sublist').attr('aria-expanded', 'true');
+        $(this).attr('aria-label', 'collapse');
+      } else {
+        $(this).siblings('.nav-primary__sublist').attr('aria-expanded', 'false');
+        $(this).attr('aria-label', 'expand');
+      }
+      $(this).siblings('.nav-primary__sublist').toggleClass('nav-primary__sublist--hidden');
+      $(this).toggleClass('is-open');
+    });
+
+    // Clicking the arrow dropdown button on the sublist
+    $(document).on('click', '.nav-primary__toggle-2', function() {
+      if ($(this).siblings('.nav-primary__sublist-2').hasClass('nav-primary__sublist-2--hidden')) {
+        $(this).siblings('.nav-primary__sublist-2').attr('aria-expanded', 'true');
+        $(this).attr('aria-label', 'collapse');
+      } else {
+        $(this).siblings('.nav-primary__sublist-2').attr('aria-expanded', 'false');
+        $(this).attr('aria-label', 'expand');
+      }
+      $(this).siblings('.nav-primary__sublist-2').toggleClass('nav-primary__sublist-2--hidden');
+      $(this).toggleClass('is-open');
+    });
+
+    // Properly orient the arrow button after mouse leave
+    $(document).on('mouseleave', '#nav-main .nav-primary__link--has-children', function() {
+      $('.nav-primary__toggle').removeClass('is-open');
+    });
+    $(document).on('mouseleave', '#nav-main .nav-primary__link-2--has-children', function() {
+      $('.nav-primary__toggle-2').removeClass('is-open');
+    });
+
+    // Properly orient the arrow buttons after tab or escape
+    document.addEventListener('keydown', function(e) {
+
+      console.log(e);
+      let keyCode = e.keyCode || e.which;
+      console.log(keyCode);
+
+      // Tab key was pressed
+      if (keyCode === 9) {
+        setTimeout(function() {
+          const currentElement = document.activeElement;
+          const nextElement = currentElement.nextSibling;
+          if (currentElement.classList.contains('nav-primary__search-desktop-button')) {
+            $('.nav-primary__toggle').removeClass('is-open');
+            $('.nav-primary__toggle-2').removeClass('is-open');
+          } else {
+            if (currentElement.classList.contains('nav-primary__link') &&
+                nextElement && nextElement.classList.contains('nav-primary__toggle')) {
+              $('.nav-primary__toggle').removeClass('is-open');
+              $('.nav-primary__toggle-2').removeClass('is-open');
+            }
+            if (currentElement.classList.contains('nav-primary__link') &&
+                nextElement && nextElement.classList.contains('nav-primary__toggle-2')) {
+              $('.nav-primary__toggle-2').removeClass('is-open');
+            }
+          }
+        }, 10);
+      }
+
+      // Escape key was pressed
+      if (keyCode === 27) {
+        setTimeout(function() {
+          $('.nav-primary__toggle').removeClass('is-open');
+          $('.nav-primary__toggle-2').removeClass('is-open');
+        }, 10);
       }
     });
 
