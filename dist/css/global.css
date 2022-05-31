@@ -6490,6 +6490,7 @@ Skip Navigation necessary on every page of the site and should go above the head
 }
 .profile-archive .entry-content .profile-card .profile-contact-information > address > p {
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 .profile-archive .entry-content .profile-card > * {
   margin-right: 1rem;

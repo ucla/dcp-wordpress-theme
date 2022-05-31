@@ -44,7 +44,7 @@ get_header(); ?>
                             <div><?php echo get_the_excerpt() ?></div>
                             <div class="profile-contact-information">
                                 <h3 class="profile-contact-information-header">Contact Information</h3>
-                                <p class="profile-pronoun pb-0"><strong>Pronouns: </strong><?php echo get_post_meta($post->ID,'profile-pronouns', true) ?></p>
+                                <p class="profile-pronoun pb-0 mb-0"><strong>Pronouns: </strong><?php echo get_post_meta($post->ID,'profile-pronouns', true) ?></p>
                                 <address>
                                     <p class="profile-office"><strong>Office:</strong> <?php echo get_post_meta($post->ID, 'profile-office', true) ?></p>
                                     <p class="profile-email"><strong>Email:</strong> <a href="mailto:<?php echo get_post_meta($post->ID, 'profile-email', true) ?>"><?php echo get_post_meta($post->ID, 'profile-email', true) ?></a></p>
