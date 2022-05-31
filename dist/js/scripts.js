@@ -148,10 +148,6 @@ $(document).ready(function (){
   let childButtons = document.getElementsByClassName('has-child--button');
   let i;
 
-  // close all menus when escape is pressed
-
-
-
   // Primary Navigation Hamburger click functionality
   hamButton.onclick = function hamClick () {
     hamButton.classList.toggle('is-active');
@@ -169,9 +165,18 @@ $(document).ready(function (){
     }
   };
 
-  $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
-  $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
+  // Adds Button to 1st tier of primary nav
+  $('#nav-main .nav-primary__list .nav-primary__link--has-children').children('a').after('<button class="nav-primary__toggle has-child--button"></button>');
+  $('.nav-primary__sublist .nav-primary__link-2--has-children').children('a').after('<button class="nav-primary__toggle-2 has-child--button"></button>');
+
+  // $('#menu .menu-item-has-children').children('a').addClass('menu-item-has-children--link');
+  // $('a.menu-item-has-children--link').after('<button class="nav-primary__toggle has-child--button"></button>');
   $('.form-search').attr('placeholder', 'Search');
+
+
+  // Add labels to all nav open buttons
+  $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+  $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
 
   /* Select the size on load or reset the size of the submenu for dekstop only. Resize the submenu when
 	================================================================= */
@@ -200,7 +205,7 @@ $(document).ready(function (){
     desktopSubmenuResize();
 
     // Disable Click functionality for mobile nav submenu.
-    $('.has-child--button').attr('tabindex', '-1');
+    // $('.has-child--button').attr('tabindex', '-1');
 
     // Put the search form at the end of the nav
     // $('#block-search').append(searchForm);
@@ -227,76 +232,157 @@ $(document).ready(function (){
       }
     });
 
-    // Desktop Menu keyboard functionality
-    document.onkeydown = function () {
+    // Clicking the arrow dropdown button
+    $(document).on('click', '.nav-primary__toggle', function() {
+      if ($(this).siblings('.nav-primary__sublist').hasClass('nav-primary__sublist--hidden')) {
+        $(this).siblings('.nav-primary__sublist').attr('aria-expanded', 'true');
+        $(this).attr('aria-label', 'collapse');
+      } else {
+        $(this).siblings('.nav-primary__sublist').attr('aria-expanded', 'false');
+        $(this).attr('aria-label', 'expand');
+      }
+      $(this).attr('aria-label', 'collapse sublist');
+      $(this).siblings('.nav-primary__sublist').toggleClass('nav-primary__sublist--hidden');
+      $(this).toggleClass('is-open');
+    });
 
-      let element = document.activeElement;
-      /*eslint-disable */
-      var evt = evt || window.event;
-      /*eslint-enable */
+    // Clicking the arrow dropdown button on the sublist
+    $(document).on('click', '.nav-primary__toggle-2', function() {
+      if ($(this).siblings('.nav-primary__sublist-2').hasClass('nav-primary__sublist-2--hidden')) {
+        $(this).siblings('.nav-primary__sublist-2').attr('aria-expanded', 'true');
+        $(this).attr('aria-label', 'collapse');
+      } else {
+        $(this).siblings('.nav-primary__sublist-2').attr('aria-expanded', 'false');
+        $(this).attr('aria-label', 'expand');
+      }
+      $(this).attr('aria-label', 'collapse sublist');
+      $(this).siblings('.nav-primary__sublist-2').toggleClass('nav-primary__sublist-2--hidden');
+      $(this).toggleClass('is-open');
+    });
 
-      if ($('.menu-item-has-children--link').is(':focus')) {
+    // Properly orient the arrow button after mouse leave
+    $(document).on('mouseleave', '#nav-main .nav-primary__link--has-children', function() {
+      $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+      $('.nav-primary__toggle').removeClass('is-open');
+    });
+    $(document).on('mouseleave', '#nav-main .nav-primary__link-2--has-children', function() {
+      $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
+      $('.nav-primary__toggle-2').removeClass('is-open');
+    });
 
-        $(element).siblings('ul').css('display', 'block');
+    // Properly orient the arrow buttons after tab or escape
+    document.addEventListener('keydown', function(e) {
+      let keyCode = e.keyCode || e.which;
 
-        if (evt.keyCode === 9 && event.shiftKey) {
-          setTimeout(function () {
-            $(element).siblings('ul').css('display', '');
-          }, 100);
-        } else if (evt.keyCode === 9) {
-          // add styles to top level nav when sublevel is focused
-          $(element).parent().css('background', '#0079BF'); // <li class="menu-item-has-children--link">
-          $(element).css({ // <a>
-            'border-bottom': '0',
-            'color': '#fff'
-          });
-          $(element).next('button').css({ // <a class="has-child--link">
-            'border-bottom': '0',
-            'background': '#0079BF'
-          });
-          $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
-        }
+      // Tab key was pressed
+      if (keyCode === 9) {
+        setTimeout(function() {
+          const currentElement = document.activeElement;
+          const nextElement = currentElement.nextSibling;
 
-      } else if ($('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus')) {
-
-        if (evt.keyCode === 9 && event.shiftKey) {
-
-          setTimeout(function () {
-            // Remove styles to top level nav when sublevel is focused
-            $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-            $(element).parent().parent().prev().prev('a').removeAttr('style'); // <a class="has-child--link">
-            $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-            $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-          }, 100);
-
-        } else if (evt.keyCode === 9 && $('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus') && $('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
-          console.log('whatup');
-          $(element).parent().parent().removeAttr('style'); // <ul>
-          // Remove styles to top level nav when sublevel is focused
-          $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-          $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-          $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-          $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-        }
-
-      } else if ($('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
-
-        if (evt.keyCode === 9 && event.shiftKey) {
-          // do nothing
-        } else if (evt.keyCode === 9) {
-
-          $(element).parent().parent().removeAttr('style'); // <ul>
-          // Remove styles to top level nav when sublevel is focused
-          $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
-          $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
-          $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
-          $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
-
-        }
+          if (currentElement.classList.contains('nav-primary__search-desktop-button')) {
+            $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+            $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
+            $('.nav-primary__toggle').removeClass('is-open');
+            $('.nav-primary__toggle-2').removeClass('is-open');
+          } else {
+            if (currentElement.classList.contains('nav-primary__link') &&
+                nextElement && nextElement.classList.contains('nav-primary__toggle')) {
+              $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+              $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
+              $('.nav-primary__toggle').removeClass('is-open');
+              $('.nav-primary__toggle-2').removeClass('is-open');
+            }
+            if (currentElement.classList.contains('nav-primary__link') &&
+                nextElement && nextElement.classList.contains('nav-primary__toggle-2')) {
+              $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
+              $('.nav-primary__toggle-2').removeClass('is-open');
+            }
+          }
+        }, 10);
       }
 
+      // Escape key was pressed
+      if (keyCode === 27) {
+        setTimeout(function() {
+          $('.nav-primary__toggle').attr('aria-label', 'expand sublist');
+          $('.nav-primary__toggle-2').attr('aria-label', 'expand sublist');
+          $('.nav-primary__toggle').removeClass('is-open');
+          $('.nav-primary__toggle-2').removeClass('is-open');
+        }, 10);
+      }
+    });
 
-    };
+    // Desktop Menu keyboard functionality
+    // document.onkeydown = function () {
+
+    //   let element = document.activeElement;
+    //   /*eslint-disable */
+    //   var evt = evt || window.event;
+    //   /*eslint-enable */
+
+    //   if ($('.menu-item-has-children--link').is(':focus')) {
+
+    //     $(element).siblings('ul').css('display', 'block');
+
+    //     if (evt.keyCode === 9 && event.shiftKey) {
+    //       setTimeout(function () {
+    //         $(element).siblings('ul').css('display', '');
+    //       }, 100);
+    //     } else if (evt.keyCode === 9) {
+    //       // add styles to top level nav when sublevel is focused
+    //       $(element).parent().css('background', '#0079BF'); // <li class="menu-item-has-children--link">
+    //       $(element).css({ // <a>
+    //         'border-bottom': '0',
+    //         'color': '#fff'
+    //       });
+    //       $(element).next('button').css({ // <a class="has-child--link">
+    //         'border-bottom': '0',
+    //         'background': '#0079BF'
+    //       });
+    //       $(element).next('button').find('svg > g > .Path-polygon').attr('fill', '#fff'); // dropdown svg
+    //     }
+
+    //   } else if ($('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus')) {
+
+    //     if (evt.keyCode === 9 && event.shiftKey) {
+
+    //       setTimeout(function () {
+    //         // Remove styles to top level nav when sublevel is focused
+    //         $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+    //         $(element).parent().parent().prev().prev('a').removeAttr('style'); // <a class="has-child--link">
+    //         $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+    //         $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+    //       }, 100);
+
+    //     } else if (evt.keyCode === 9 && $('li.menu-item-has-children > ul > li:first-of-type > a').is(':focus') && $('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
+    //       console.log('whatup');
+    //       $(element).parent().parent().removeAttr('style'); // <ul>
+    //       // Remove styles to top level nav when sublevel is focused
+    //       $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+    //       $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
+    //       $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+    //       $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+    //     }
+
+    //   } else if ($('li.menu-item-has-children > ul > li:last-of-type > a').is(':focus')) {
+
+    //     if (evt.keyCode === 9 && event.shiftKey) {
+    //       // do nothing
+    //     } else if (evt.keyCode === 9) {
+
+    //       $(element).parent().parent().removeAttr('style'); // <ul>
+    //       // Remove styles to top level nav when sublevel is focused
+    //       $(element).parent().parent().parent().removeAttr('style'); // <li class="has-child">
+    //       $(element).parent().parent().prev().prev().removeAttr('style'); // <a class="has-child--link">
+    //       $(element).parent().parent().prev().removeAttr('style'); // <a class="has-child--link">
+    //       $(element).parent().parent().prev().find('svg > g > .Path-polygon').attr('fill', '#0079BF'); // dropdown svg
+
+    //     }
+    //   }
+
+
+    // };
 
   }
 
