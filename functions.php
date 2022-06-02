@@ -103,6 +103,75 @@ function ucla_setup() {
     wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
   }
 
+
+  // Add custom controls for the front page carousel
+  function themeslug_customize_register( $wp_customize ) {
+    // Settings that store values
+    $wp_customize->add_setting( 'carousel_autoplay', array(
+      'type' => 'theme_mod',
+    ) );
+    $wp_customize->add_setting( 'carousel_interval', array(
+      'type' => 'theme_mod',
+    ) );
+    for ($x = 1; $x <= 6; $x++) {
+      $wp_customize->add_setting( 'carousel_image_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_title_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_alt_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_link_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+    }
+
+    // Control displays
+    $wp_customize->add_control( 'carousel_autoplay', array(
+      'label' => __( 'Autoplay' ),
+      'type' => 'checkbox',
+      'section' => 'front_page_carousel',
+    ) );
+    $wp_customize->add_control( 'carousel_interval', array(
+      'label' => __( 'Autoplay Interval (seconds)' ),
+      'description' => __( 'Must be at least 5 seconds.' ),
+      'type' => 'number',
+      'default' => '5',
+      'section' => 'front_page_carousel',
+    ) );
+    for ($x = 1; $x <= 6; $x++) {
+      $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'carousel_image_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Image'),
+        'section' => 'front_page_carousel',
+        'mime_type' => 'image',
+      ) ) );
+      $wp_customize->add_control( 'carousel_title_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Title' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+      $wp_customize->add_control( 'carousel_alt_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Alt Text' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+      $wp_customize->add_control( 'carousel_link_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Link' ),
+        'description' => __( 'Where the image links to. Leave empty for no link.' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+    }
+    $wp_customize->add_section( 'front_page_carousel' , array(
+      'title' => __( 'Front Page Carousel', 'themename' ),
+      'priority' => 105, // Before Widgets.
+    ) );
+  }
+  add_action( 'customize_register', 'themeslug_customize_register' );
+
+
   // Breadcrumbs
   function get_breadcrumb() {
   // Check if is front/home page, return

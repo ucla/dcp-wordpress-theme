@@ -29,5 +29,8 @@
     "gulp-stylelint": "^13.0.0",
     "sass": "^1.49.9",
     "stylelint": "^13.13.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.0.2"
   }
 }
