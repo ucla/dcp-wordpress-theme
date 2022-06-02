@@ -37,7 +37,7 @@
               $carousel_image_id = get_theme_mod( 'carousel_image_' . strval($x), '' );
               if ($carousel_image_id == '')
                 continue;
-              $image_attributes = wp_get_attachment_image_src($carousel_image_id);                  
+              $image_attributes = wp_get_attachment_image_src($carousel_image_id, 'full');                  
               if ( $image_attributes ) {
                 $img_url = $image_attributes[0];
                 $img_alt = get_theme_mod( 'carousel_alt_' . strval($x), 'image number ' . strval($x) );
