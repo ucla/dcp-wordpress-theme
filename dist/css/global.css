@@ -6239,6 +6239,131 @@ body.no-scroll {
   }
 }
 
+.splide {
+  float: left;
+}
+
+.carousel-pagination-internal {
+  margin-top: -50px !important;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 5px !important;
+  margin-left: 45vw !important;
+  width: fit-content !important;
+}
+
+.carousel-arrows {
+  z-index: 3;
+  position: absolute;
+  display: inline-block;
+  margin-top: 35vh !important;
+  margin-right: 15px !important;
+  margin-left: 15px !important;
+  border-radius: 50% !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  height: 35px !important;
+  width: 35px !important;
+}
+
+.carousel-arrow-right {
+  right: 0px;
+}
+
+.title-image {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin-left: 20px;
+  margin-bottom: -145px;
+  margin-top: 0px;
+  z-index: 1;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.title-text {
+  position: relative;
+  left: 0px;
+  margin-left: 70px;
+  top: 0px;
+  margin-bottom: -1000px;
+  margin-top: 40px;
+  font-size: 44px;
+  color: white;
+  z-index: 1;
+  padding: 4px;
+  max-width: 40%;
+  text-transform: uppercase;
+  line-height: 60px;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@media (max-width: 767.98px) {
+  .title-text {
+    max-width: 80%;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.title-word {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-right: 6px;
+  padding-left: 6px;
+  background-color: #2774AE;
+  display: inline-block;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.play-pause-button {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  margin-left: 3vw;
+  position: absolute;
+  bottom: 3vh;
+  z-index: 3;
+  display: inline-block;
+}
+.play-pause-button:hover {
+  filter: brightness(0);
+}
+
 .site-name a {
   color: #000000;
   text-decoration: none;
