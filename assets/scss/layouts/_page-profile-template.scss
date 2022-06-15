@@ -36,7 +36,6 @@
 
 // Profile Listing
 .profile-archive {
-
   .entry-title {
     color: $default-state;
 
@@ -75,6 +74,7 @@
 
     .profile-card {
       display: flex;
+      flex-direction: column;
 
       .profile-img {
         & > a {
@@ -87,13 +87,21 @@
         }
       }
 
+      .profile-summary {
+        margin-top: 1rem;
+
+        @media (min-width: breakpoint-min(md)) {
+          margin-top: 0;
+        }
+      }
+
       .profile-contact-information {
-        width: 243px;
+        width: inherit;
         padding: 1rem;
         background-color: $grey-10;
         flex-shrink: 0;
         display: block;
-        margin-left: auto;
+        margin-top: 1rem;
 
         &-header {
           color: $default-state;
@@ -104,6 +112,12 @@
           padding-bottom: 0;
           margin-bottom: 0;
         }
+
+        @media (min-width: breakpoint-min(md)) {
+          margin-top: 0;
+          margin-left: auto;
+          width: 243px;
+        }
       }
 
       & > * {
@@ -112,6 +126,10 @@
         &:last-child {
           margin-right: 0;
         }
+      }
+
+      @media (min-width: breakpoint-min(md)) {
+        flex-direction: row;
       }
     }
   }

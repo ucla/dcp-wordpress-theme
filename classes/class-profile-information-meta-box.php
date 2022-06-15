@@ -4,10 +4,16 @@
 class ProfileInformationMetaBox{
 
 	private $screen = array(
-                'profile',        
+                'person',        
 	);
 
 	private $meta_fields = array(
+				array(
+					'label' => 'Last Name (for sorting order)',
+					'id' => 'profile-last-name',
+					'type' => 'text',
+				),
+
                 array(
                     'label' => 'Title',
                     'id' => 'profile-title',

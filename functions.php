@@ -557,37 +557,20 @@ function add_search_to_navigation($items, $args) {
 }
 add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
 
-// class ucla_footer_menu_walker extends Walker_Nav_Menu {
-//   /**
-//    * @see Walker::start_el()
-//    * @since 3.0.0
-//    *
-//    * @param string $output Passed by reference. Used to append additional content.
-//    * @param object $item Menu item data object.
-//    * @param int $depth Depth of menu item. Used for padding.
-//    * @param int $current_page Menu item ID.
-//    * @param object $args
-//    */
-//   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
-//   {
-    
-//   }
-// }
-
 require get_template_directory() . '/classes/class-profile-information-meta-box.php';
 
 function profile_cpt() {
 
   $labels = array(
-    'name'                  => _x( 'Profiles', 'Post Type Name' ),
-    'singular_name'         => _x( 'Profile', 'Post Type Singular Name' ),
-    'search_items'          => __( 'Search Profiles' ),
-    'all_items'             => __( 'All Profiles' ),
-    'edit_item'             => __( 'Edit Profile' ),
-    'update_item'           => __( 'Update Profile' ),
-    'add_new_item'          => __( 'Add New Profile' ),
-    'new_item_name'         => __( 'New Profile' ),
-    'menu_name'             => __( 'Profiles' ),
+    'name'                  => _x( 'People', 'Post Type Name' ),
+    'singular_name'         => _x( 'People', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search People' ),
+    'all_items'             => __( 'All People' ),
+    'edit_item'             => __( 'Edit Person' ),
+    'update_item'           => __( 'Update Person' ),
+    'add_new_item'          => __( 'Add New Person' ),
+    'new_item_name'         => __( 'New Person' ),
+    'menu_name'             => __( 'People' ),
     'featured_image'        => __( 'Profile Image' ),
     'set_featured_image'    => __( 'Set Profile Image' ),
     'use_featured_image'    => __('Use as Profile Image'),
@@ -599,11 +582,11 @@ function profile_cpt() {
       'publicly_queryable' => true,
       'labels'  => $labels,
       'show_in_rest' => true,
-      'rewrite' => array( 'slug' => 'profile', 'with_front' => true ),
+      'rewrite' => array( 'slug' => 'person', 'with_front' => true ),
       'capability_type' => 'post',
       'query_var'          => true,
       'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-      'has_archive' => true,
+      'has_archive' => 'people',
       'menu_icon' => 'dashicons-groups',
       'taxonomies' => array('profile_position'),
       'template' => array(
@@ -617,7 +600,7 @@ function profile_cpt() {
           array( 'core/separator', array() ),
       ),
   );
-  register_post_type( 'profile', $args );
+  register_post_type( 'person', $args );
 }
 add_action( 'init', 'profile_cpt' );
 
@@ -636,12 +619,12 @@ function register_profile_position_taxonomy() {
     'show_ui'      => true,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array('slug' => 'profiles', 'with_front' => true),
+    'rewrite' => array('slug' => 'people', 'with_front' => true),
     'show_in_rest' => true,
     'query_var'          => true,
-    'has_archive' => 'profile'
+    'has_archive' => 'people'
   );
-  register_taxonomy('profile_position', array('profile'), $args);
+  register_taxonomy('profile_position', array('person'), $args);
 }
 
 add_action( 'init', 'register_profile_position_taxonomy');

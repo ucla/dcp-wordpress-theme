@@ -17,6 +17,14 @@ get_header(); ?>
         <div class="col span_<?php echo (is_active_sidebar('right-widget-area') ? '9' : '12') ?>_of_12">
             <hr />
             <?php
+                $args = array(
+                    'post_type'=>'person',
+                    'meta_key'=>'profile-last-name',
+                    'orderby'=>'meta_value',
+                    'order'=>'ASC'
+                );
+                query_posts($args);
+                
                 if (have_posts()) :
                     // Start the Loop
                     while (have_posts()) : the_post();
@@ -41,7 +49,7 @@ get_header(); ?>
                                     <img src="<?php echo (has_post_thumbnail() ? $image : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'); ?>" alt="">
                                 </a>
                             </figure>
-                            <div><?php echo get_the_excerpt() ?></div>
+                            <p class="profile-summary"><?php echo get_the_excerpt() ?></p>
                             <div class="profile-contact-information">
                                 <h3 class="profile-contact-information-header">Contact Information</h3>
                                 <p class="profile-pronoun pb-0 mb-0"><strong>Pronouns: </strong><?php echo get_post_meta($post->ID,'profile-pronouns', true) ?></p>
