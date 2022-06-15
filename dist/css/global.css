@@ -6593,6 +6593,7 @@ Skip Navigation necessary on every page of the site and should go above the head
 }
 .profile-archive .entry-content .profile-card {
   display: flex;
+  flex-direction: column;
 }
 .profile-archive .entry-content .profile-card .profile-img > a {
   display: inline-flex;
@@ -6601,13 +6602,21 @@ Skip Navigation necessary on every page of the site and should go above the head
   max-width: 190px;
   height: auto;
 }
+.profile-archive .entry-content .profile-card .profile-summary {
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .profile-archive .entry-content .profile-card .profile-summary {
+    margin-top: 0;
+  }
+}
 .profile-archive .entry-content .profile-card .profile-contact-information {
-  width: 243px;
+  width: inherit;
   padding: 1rem;
   background-color: #E5E5E5;
   flex-shrink: 0;
   display: block;
-  margin-left: auto;
+  margin-top: 1rem;
 }
 .profile-archive .entry-content .profile-card .profile-contact-information-header {
   color: #00598C;
@@ -6617,10 +6626,22 @@ Skip Navigation necessary on every page of the site and should go above the head
   padding-bottom: 0;
   margin-bottom: 0;
 }
+@media (min-width: 768px) {
+  .profile-archive .entry-content .profile-card .profile-contact-information {
+    margin-top: 0;
+    margin-left: auto;
+    width: 243px;
+  }
+}
 .profile-archive .entry-content .profile-card > * {
   margin-right: 1rem;
 }
 .profile-archive .entry-content .profile-card > *:last-child {
   margin-right: 0;
+}
+@media (min-width: 768px) {
+  .profile-archive .entry-content .profile-card {
+    flex-direction: row;
+  }
 }
 /*# sourceMappingURL=global.css.map */
