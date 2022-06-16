@@ -6376,7 +6376,7 @@ body.no-scroll {
   color: #00598C;
 }
 
-.nav-secondary__list a:hover, .nav-primary__list a:hover {
+.nav-secondary__list a:hover, .nav-primary__list > li.nav-primary__item > a:hover {
   color: #FFFFFF !important;
 }
 

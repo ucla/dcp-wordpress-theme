@@ -11,7 +11,7 @@
   color: $default-state;
 }
 
-.nav-secondary__list a:hover, .nav-primary__list a:hover {
+.nav-secondary__list a:hover, .nav-primary__list > li.nav-primary__item > a:hover {
   color: $white !important; // Override for Chrome
 }
 // #header {
