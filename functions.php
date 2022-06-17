@@ -630,7 +630,7 @@ function register_profile_position_taxonomy() {
 add_action( 'init', 'register_profile_position_taxonomy');
 
 function profile_title($input) {
-  if ('profile' === get_post_type()) {
+  if ('person' === get_post_type()) {
     return __('Enter name here');
   }
   return $input;
