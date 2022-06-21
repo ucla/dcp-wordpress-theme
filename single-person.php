@@ -15,7 +15,7 @@
             <div class="col span_4_of_12" style="min-height: 1px"></div>
             <div class="col span_8_of_12">
 
-            <a href="/profile" class="btn btn--sm btn--lightbg" style="display:inline-block;color:#fff;">View All</a>
+            <a href="/people" class="btn btn--sm btn--lightbg" style="display:inline-block;color:#fff;">View All</a>
             </div>
         </div>
         <div class="ucla campus entry-content">
