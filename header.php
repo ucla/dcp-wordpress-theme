@@ -47,7 +47,7 @@
 
       <div class="header-logo">
         <div class="header-logo__wrap">
-       	  <a href="http://ucla.edu"><img class="header-logo__image" src="/wp-content/themes/ucla-wp/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
+       	  <a href="http://ucla.edu"><img class="header-logo__image" src="<?php echo get_template_directory_uri(); ?>/images/ucla_logo_white.svg" alt="UCLA Logo" /></a>
         </div>
       </div>
 
@@ -86,7 +86,7 @@
                   wp_nav_menu( array(
                     'theme_location' => 'main-menu',
                     'container' => false,
-                    'depth' => 2,
+                    'depth' => 3,
                     // 'menu_class' => 'nav-primary__list',
                     'items_wrap' => '%3$s',
                     'walker' => new ucla_header_menu_walker()

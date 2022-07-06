@@ -1,0 +1,136 @@
+.profile-page .entry-content {
+  .profile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .profile-name {
+    color: $default-state;
+    margin-bottom: 0;
+    font-size: 1.75rem;
+    line-height: 1.1em;
+  }
+
+  .profile-title {
+    font-size: 1.125rem;
+  }
+
+  .profile-pronoun {
+    color: $grey-60;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    color: $default-state;
+    padding-top: 1.75rem;
+
+    &::before {
+      content: '';
+      margin-right: 1rem;
+      border-left: 8px solid #FFD100;
+    }
+  }
+}
+
+// Profile Listing
+.profile-archive {
+  .entry-title {
+    color: $default-state;
+
+    &::before {
+      content: '';
+      margin-right: 1rem;
+      border-left: 8px solid #FFD100;
+    }
+  }
+  
+  .entry-content {
+    .profile-header {
+      display: flex;
+
+      .profile-name {
+        font-weight: normal;
+        line-height: 1;
+        margin-bottom: 0;
+
+        a {
+          text-decoration: none;
+          color: $default-state;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      .profile-pronoun {
+        align-self: flex-end;
+        padding-bottom: 0;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+
+      .profile-img {
+        & > a {
+          display: inline-flex;
+
+          & > img {
+            max-width: 190px;
+            height: auto;
+          }
+        }
+      }
+
+      .profile-summary {
+        margin-top: 1rem;
+
+        @media (min-width: breakpoint-min(md)) {
+          margin-top: 0;
+        }
+      }
+
+      .profile-contact-information {
+        width: inherit;
+        padding: 1rem;
+        background-color: $grey-10;
+        flex-shrink: 0;
+        display: block;
+        margin-top: 1rem;
+
+        &-header {
+          color: $default-state;
+          font-weight: normal;
+        }
+
+        & > address > p {
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+          margin-top: 0;
+          margin-left: auto;
+          width: 243px;
+        }
+      }
+
+      & > * {
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media (min-width: breakpoint-min(md)) {
+        flex-direction: row;
+      }
+    }
+  }
+}

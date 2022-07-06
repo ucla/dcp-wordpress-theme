@@ -87,9 +87,9 @@ function ucla_setup() {
     // CDN jQuery from Google
     wp_enqueue_script( 'jq', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
     // Install the UCLA Component library styles
-    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.16/css/ucla-lib.min.css' );
+    wp_enqueue_style( 'lib-style', 'https://cdn.webcomponents.ucla.edu/1.0.0/css/ucla-lib.min.css' );
     // Install the UCLA Component Library  scripts
-    wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0-beta.16/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
+    wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
     // Install the WordPress Theme Styles
     wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css', array( 'lib-style' ) );
     // Install the WordPress Theme Scripts
@@ -102,6 +102,75 @@ function ucla_setup() {
     // Path the admin page login styles
     wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
   }
+
+
+  // Add custom controls for the front page carousel
+  function themeslug_customize_register( $wp_customize ) {
+    // Settings that store values
+    $wp_customize->add_setting( 'carousel_autoplay', array(
+      'type' => 'theme_mod',
+    ) );
+    $wp_customize->add_setting( 'carousel_interval', array(
+      'type' => 'theme_mod',
+    ) );
+    for ($x = 1; $x <= 6; $x++) {
+      $wp_customize->add_setting( 'carousel_image_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_title_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_alt_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+      $wp_customize->add_setting( 'carousel_link_' . strval($x), array(
+        'type' => 'theme_mod',
+      ) );
+    }
+
+    // Control displays
+    $wp_customize->add_control( 'carousel_autoplay', array(
+      'label' => __( 'Autoplay' ),
+      'type' => 'checkbox',
+      'section' => 'front_page_carousel',
+    ) );
+    $wp_customize->add_control( 'carousel_interval', array(
+      'label' => __( 'Autoplay Interval (seconds)' ),
+      'description' => __( 'Must be at least 5 seconds.' ),
+      'type' => 'number',
+      'default' => '5',
+      'section' => 'front_page_carousel',
+    ) );
+    for ($x = 1; $x <= 6; $x++) {
+      $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'carousel_image_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Image'),
+        'section' => 'front_page_carousel',
+        'mime_type' => 'image',
+      ) ) );
+      $wp_customize->add_control( 'carousel_title_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Title' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+      $wp_customize->add_control( 'carousel_alt_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Alt Text' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+      $wp_customize->add_control( 'carousel_link_' . strval($x), array(
+        'label' => __( 'Slide ' . strval($x) . ' Link' ),
+        'description' => __( 'Where the image links to. Leave empty for no link.' ),
+        'type' => 'text',
+        'section' => 'front_page_carousel',
+      ) );
+    }
+    $wp_customize->add_section( 'front_page_carousel' , array(
+      'title' => __( 'Front Page Carousel', 'themename' ),
+      'priority' => 105, // Before Widgets.
+    ) );
+  }
+  add_action( 'customize_register', 'themeslug_customize_register' );
+
 
   // Breadcrumbs
   function get_breadcrumb() {
@@ -436,102 +505,8 @@ function ucla_setup() {
     '<p><a href="https://webcomponents.ucla.edu/" target="_blank" rel="noopener">UCLA Component Library</a></p>';
   }
 
-  // Web Component Library Navigation
-class ucla_header_menu_walker extends Walker_Nav_Menu {
-  /**
-   * @see Walker::display_element()
-   * @since 2.5.0
-	 *
-	 * @param object $element           Data object.
-	 * @param array  $children_elements List of elements to continue traversing (passed by reference).
-	 * @param int    $max_depth         Max depth to traverse.
-	 * @param int    $depth             Depth of current element.
-	 * @param array  $args              An array of arguments.
-	 * @param string $output            Used to append additional content (passed by reference).
-   */
-  function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output)
-  {
-    $id_field = $this->db_fields['id'];
-    if ( is_object( $args[0] ) ) {
-      $args[0]->has_children = !empty( $children_elements[$element->$id_field] );
-    }
-    return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-  }
-
-  /**
-   * @see Walker::start_el()
-   * @since 3.0.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param object $item Menu item data object.
-   * @param int $depth Depth of menu item. Used for padding.
-   * @param int $current_page Menu item ID.
-   * @param object $args
-   */
-  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-    if ( $args->has_children && $depth == 0 ) {
-      $item->classes[] = 'nav-primary__link--has-children';
-    }
-    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-    $class_names = $value = '';
-    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-    $classes[] = 'nav-primary__item menu-item-' . $item->ID;
-
-    $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-    $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-    $output .= $indent . '<li' . $class_names .'>';
-
-    $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-    $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-    $attributes .= ' class="nav-primary__link' . (in_array("current_page_item", $item->classes) || in_array("current-menu-parent", $item->classes) ? ' nav-primary__link--current-page' : '') . '"';
-
-    $item_output = $args->before;
-    $item_output .= '<a'. $attributes .'>';
-    $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-    $item_output .= '</a>';
-    $item_output .= $args->after;
-
-    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-}
-
-  /**
-   * @see Walker::start_lvl()
-   * @since 3.0.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param int $depth Depth of page. Used for padding.
-   */
-  function start_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "\n<ul class=\"nav-primary__sublist\">$indent</li>\n";
-  }
-
-  /**
-   * @see Walker::end_lvl()
-   * @since 3.0.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param int $depth Depth of page. Used for padding.
-   */
-  function end_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat("\t", $depth);
-    $output .= "$indent</ul>\n";
-  }
-
-  /**
-   * @see Walker::end_el()
-   * @since 3.0.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param object $item Page data object. Not used.
-   * @param int $depth Depth of page. Not Used.
-   */
-  function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    $output .= "</li>\n";
-  }
-}
+// Custom Walker Navigation (Primary Nav)
+require get_template_directory() . '/classes/class-ucla-wp-walker-navigation.php';
 
 // Add Class to Nav List
 function add_additional_class_on_li($classes, $item, $args) {
@@ -582,19 +557,99 @@ function add_search_to_navigation($items, $args) {
 }
 add_filter( 'wp_nav_menu_items', 'add_search_to_navigation', 10, 2 );
 
-// class ucla_footer_menu_walker extends Walker_Nav_Menu {
-//   /**
-//    * @see Walker::start_el()
-//    * @since 3.0.0
-//    *
-//    * @param string $output Passed by reference. Used to append additional content.
-//    * @param object $item Menu item data object.
-//    * @param int $depth Depth of menu item. Used for padding.
-//    * @param int $current_page Menu item ID.
-//    * @param object $args
-//    */
-//   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
-//   {
-    
-//   }
-// }
+require get_template_directory() . '/classes/class-profile-information-meta-box.php';
+
+function profile_cpt() {
+
+  $labels = array(
+    'name'                  => _x( 'People', 'Post Type Name' ),
+    'singular_name'         => _x( 'People', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search People' ),
+    'all_items'             => __( 'All People' ),
+    'edit_item'             => __( 'Edit Person' ),
+    'update_item'           => __( 'Update Person' ),
+    'add_new_item'          => __( 'Add New Person' ),
+    'new_item_name'         => __( 'New Person' ),
+    'menu_name'             => __( 'People' ),
+    'featured_image'        => __( 'Profile Image' ),
+    'set_featured_image'    => __( 'Set Profile Image' ),
+    'use_featured_image'    => __('Use as Profile Image'),
+    'remove_featured_image' => __('Remove Profile Image')
+  );
+
+  $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'labels'  => $labels,
+      'show_in_rest' => true,
+      'rewrite' => array( 'slug' => 'person', 'with_front' => true ),
+      'capability_type' => 'post',
+      'query_var'          => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'has_archive' => 'people',
+      'menu_icon' => 'dashicons-groups',
+      'taxonomies' => array('profile_position'),
+      'template' => array(
+          array( 'core/heading', array(
+            'placeholder' => 'Biography',
+            'level' => 2
+          ) ),
+          array( 'core/paragraph', array(
+            'placeholder' => 'Biography body copy...'
+          ) ),
+          array( 'core/separator', array() ),
+      ),
+  );
+  register_post_type( 'person', $args );
+}
+add_action( 'init', 'profile_cpt' );
+
+function register_profile_position_taxonomy() {
+  $labels = array(
+    'name'                  => _x( 'Roles', 'Taxonomy General Name' ),
+    'singular_name'         => _x( 'Role', 'Taxonomy Singular Name' ),
+    'update_item' => __( 'Update Role' ),
+    'add_new_item' => __( 'Add New Role' ),
+    'new_item_name' => __( 'New Role' ),
+    'menu_name' => __( 'Roles' ),
+  );
+  $args = array(
+    'labels'        => $labels,
+    'hierarchical' => false,
+    'show_ui'      => true,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array('slug' => 'people', 'with_front' => true),
+    'show_in_rest' => true,
+    'query_var'          => true,
+    'has_archive' => 'people'
+  );
+  register_taxonomy('profile_position', array('person'), $args);
+}
+
+add_action( 'init', 'register_profile_position_taxonomy');
+
+function profile_title($input) {
+  if ('person' === get_post_type()) {
+    return __('Enter name here');
+  }
+  return $input;
+}
+add_filter('enter_title_here', 'profile_title');
+
+function remove_archive_pretitle($title) {
+  if (is_category()) {
+    $title = single_cat_title('', false);
+} elseif (is_tag()) {
+    $title = single_tag_title('', false);
+} elseif (is_author()) {
+    $title = '<span class="vcard">' . get_the_author() . '</span>';
+} elseif (is_tax()) { //for custom post types
+    $title = sprintf(__('%1$s'), single_term_title('', false));
+} elseif (is_post_type_archive()) {
+    $title = post_type_archive_title('', false);
+}
+  return $title;
+}
+
+add_filter('get_the_archive_title', 'remove_archive_pretitle');

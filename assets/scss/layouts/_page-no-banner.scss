@@ -2,7 +2,8 @@
   &.entry-content {
     padding-bottom: 3rem;
 
-    & > div > *:not(.fluid):not(.post-info):first-child {
+    & > div > *:not(.fluid):not(.post-info):first-child,
+    & > div > .wp-block-column {
       padding-top: 2rem;
     }
   }
