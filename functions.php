@@ -653,3 +653,40 @@ function remove_archive_pretitle($title) {
 }
 
 add_filter('get_the_archive_title', 'remove_archive_pretitle');
+
+// Gallery CPT 
+require get_template_directory() . '/classes/class-gallery-information-meta-box.php';
+
+function gallery_cpt() {
+
+  $labels = array(
+    'name'                  => _x( 'Gallery', 'Post Type Name' ),
+    'singular_name'         => _x( 'Images', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search Gallery' ),
+    'all_items'             => __( 'All Galleries' ),
+    'edit_item'             => __( 'Edit Gallery' ),
+    'update_item'           => __( 'Update Gallery' ),
+    'add_new_item'          => __( 'Add New Images' ),
+    'new_item_name'         => __( 'New Image' ),
+    'menu_name'             => __( 'Gallery' ),
+    'featured_image'        => __( 'Featured Gallery Image' ),
+    'set_featured_image'    => __( 'Set Gallery Image' ),
+    'use_featured_image'    => __('Use as Gallery Image'),
+    'remove_featured_image' => __('Remove Gallery Image')
+  );
+
+  $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'labels'  => $labels,
+      'show_in_rest' => true,
+      'rewrite' => array( 'slug' => 'gallery', 'with_front' => true ),
+      'capability_type' => 'post',
+      'query_var'          => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'has_archive' => 'gallery',
+      'menu_icon' => 'dashicons-format-gallery',
+  );
+  register_post_type( 'gallery', $args );
+}
+add_action( 'init', 'gallery_cpt' );
