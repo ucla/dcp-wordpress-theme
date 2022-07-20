@@ -6652,6 +6652,21 @@ Skip Navigation necessary on every page of the site and should go above the head
   padding-top: 0;
 }
 .gallery-archive .basic-card, .gallery-archive .basic-card-grey, .gallery-archive .basic-card-gray {
+  width: 31%;
   max-width: 31%;
+}
+.gallery-archive .basic-card a, .gallery-archive .basic-card-grey a, .gallery-archive .basic-card-gray a {
+  color: #333;
+  text-decoration: none;
+}
+.gallery-archive .basic-card a:hover, .gallery-archive .basic-card-grey a:hover, .gallery-archive .basic-card-gray a:hover {
+  color: #333;
+}
+.gallery-archive .basic-card a:not(.page):visited, .gallery-archive .basic-card-grey a:not(.page):visited, .gallery-archive .basic-card-gray a:not(.page):visited {
+  color: #333;
+}
+
+.gallery-page .gallery-img {
+  width: 100%;
 }
 /*# sourceMappingURL=global.css.map */

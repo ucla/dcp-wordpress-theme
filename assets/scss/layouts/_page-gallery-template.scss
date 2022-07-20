@@ -6,6 +6,25 @@
     }
 
     .basic-card, .basic-card-grey, .basic-card-gray {
+        width: 31%;
         max-width: 31%;
+     
+        a {
+            color: $grey;
+            text-decoration: none;
+        }
+        a:hover {
+            color: $grey;
+        }
+
+        a:not(.page):visited {
+            color: $grey;
+        }
+    }
+}
+
+.gallery-page {
+    .gallery-img {
+        width: 100%;
     }
 }
