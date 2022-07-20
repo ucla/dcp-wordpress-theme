@@ -690,3 +690,28 @@ function gallery_cpt() {
   register_post_type( 'gallery', $args );
 }
 add_action( 'init', 'gallery_cpt' );
+
+function register_gallery_position_taxonomy() {
+  $labels = array(
+    'name'                  => _x( 'Categories', 'Taxonomy General Name' ),
+    'singular_name'         => _x( 'Category', 'Taxonomy Singular Name' ),
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category' ),
+    'menu_name' => __( 'Categories' ),
+  );
+  $args = array(
+    'labels'        => $labels,
+    'hierarchical' => false,
+    'show_ui'      => true,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array('slug' => 'gallery', 'with_front' => true),
+    'show_in_rest' => true,
+    'query_var'          => true,
+    'has_archive' => 'gallery'
+  );
+  register_taxonomy('gallery_position', array('gallery'), $args);
+}
+
+add_action( 'init', 'register_gallery_position_taxonomy');

@@ -1,0 +1,11 @@
+.gallery-archive {
+    background: linear-gradient(0deg,#f2f2f2 75%,#fff 0);
+
+    .ucla.campus.entry-content > div > *:not(.fluid):not(.post-info):first-child, .ucla.campus.entry-content > div > .wp-block-column {
+        padding-top: 0;
+    }
+
+    .basic-card, .basic-card-grey, .basic-card-gray {
+        max-width: 31%;
+    }
+}

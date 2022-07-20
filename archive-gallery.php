@@ -14,6 +14,30 @@ get_header(); ?>
     </header>
     <div class="ucla campus entry-content">
         <div class="col span_12_of_12">
+        <div id="nav-second" class="nav-secondary" aria-label="Secondary Menu">
+            <ul class="nav-secondary__list">
+                <?php
+                    $gallery_position = get_terms(
+                        array(
+                            'taxonomy' => 'gallery_position'
+                        )
+                        );
+                    if (! empty( $gallery_position ) && is_array( $gallery_position )) {
+                        foreach ($gallery_position as $position) {
+                ?>
+                    <li class="nav-secondary__item">
+                        <a class="nav-secondary__link" href="<?php echo esc_url( get_term_link( $position ) ) ?>">
+                            <?php echo $position->name; ?>
+                        </a>
+                    </li>
+                <?php
+                        }
+                    }
+                ?>
+            </ul>
+        </div>
+        </div>
+        <div class="col span_12_of_12">
             <?php
                 $args = array(
                     'post_type'=>'gallery'
@@ -31,7 +55,7 @@ get_header(); ?>
                         }
                         ?>
                         
-                        <article class="basic-card-grey">
+                        <article class="basic-card">
                             <a href="<?php echo get_permalink( $post->ID ); ?>"><img class="basic-card__image" src="<?php echo (has_post_thumbnail() ? $image : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'); ?>" alt=<?php the_title(); ?>></a>
                             <div class="basic-card__info-wrapper">
                                 <h1 class="basic-card__title"><span><?php the_title(); ?></span></h1>
