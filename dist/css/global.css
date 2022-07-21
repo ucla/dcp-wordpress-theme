@@ -6669,4 +6669,10 @@ Skip Navigation necessary on every page of the site and should go above the head
 .gallery-page .gallery-img {
   width: 100%;
 }
+.gallery-page .section-wrapper {
+  background: #E5E5E5;
+}
+.gallery-page #related-card {
+  width: 100%;
+}
 /*# sourceMappingURL=global.css.map */
