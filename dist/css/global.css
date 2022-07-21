@@ -6675,4 +6675,20 @@ Skip Navigation necessary on every page of the site and should go above the head
 .gallery-page #related-card {
   width: 100%;
 }
+.gallery-page .basic-card, .gallery-page .basic-card-grey, .gallery-page .basic-card-gray {
+  display: block;
+  margin: 0 auto 28px;
+}
+@media (min-width: 1280px) {
+  .gallery-page .splide__arrow {
+    position: absolute;
+    top: 45%;
+  }
+  .gallery-page .splide__arrow--prev {
+    left: -3rem;
+  }
+  .gallery-page .splide__arrow--next {
+    right: -3rem;
+  }
+}
 /*# sourceMappingURL=global.css.map */

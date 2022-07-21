@@ -35,4 +35,24 @@
     #related-card {
         width: 100%;
     }
+
+    .basic-card, .basic-card-grey, .basic-card-gray {
+        display: block;
+        margin: 0 auto 28px;
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+        .splide__arrow {
+            position: absolute;
+            top: 45%;
+    
+            &--prev {
+                left: -3rem;
+            }
+            &--next {
+                right: -3rem;
+            }
+    
+        }
+    }
 }
