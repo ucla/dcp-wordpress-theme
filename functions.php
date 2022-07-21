@@ -267,7 +267,6 @@ function ucla_setup() {
     if( is_tax() ) {
       // Get posts type
       $post_type = get_post_type();
-
       // If post type is not post
       if( $post_type != 'post' ) {
 
@@ -279,12 +278,12 @@ function ucla_setup() {
       }
 
       $custom_tax_name = get_queried_object()->name;
+      
       echo '<li class="breadcrumb__item breadcrumb__item--current">'. $custom_tax_name .'</li>';
 
     } else if ( is_category() ) {
 
       $parent = get_queried_object()->category_parent;
-
       if ( $parent !== 0 ) {
 
         $parent_category = get_category( $parent );
@@ -348,9 +347,8 @@ function ucla_setup() {
       echo '<li class="breadcrumb__item--current breadcrumb__item">'. 'Author: '. $userdata->display_name . '</li>';
 
     } else {
-
-      echo '<li class="breadcrumb__item breadcrumb__item--current">'. post_type_archive_title() .'</li>';
-
+      $obj = get_queried_object();
+      echo '<li class="breadcrumb__item breadcrumb__item--current">' . $obj->label . '</li>';
     }
 
   } else if ( is_page() ) {
