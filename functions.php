@@ -682,7 +682,7 @@ function gallery_cpt() {
       'capability_type' => 'post',
       'query_var'          => true,
       'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-      'has_archive' => 'gallery',
+      'has_archive' => 'galleries',
       'menu_icon' => 'dashicons-format-gallery',
       'taxonomies' => array('gallery_position')
   );
@@ -705,10 +705,10 @@ function register_gallery_position_taxonomy() {
     'show_ui'      => true,
     'show_admin_column' => true,
     'public' => true,
-    'rewrite' => array('slug' => 'gallery', 'with_front' => true),
+    'rewrite' => array('slug' => 'galleries', 'with_front' => true),
     'show_in_rest' => true,
     'query_var' => true,
-    'has_archive' => 'gallery'
+    'has_archive' => 'galleries'
   );
   register_taxonomy('gallery_position', array('gallery'), $args);
 }
