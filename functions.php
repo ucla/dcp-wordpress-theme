@@ -684,6 +684,7 @@ function gallery_cpt() {
       'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
       'has_archive' => 'gallery',
       'menu_icon' => 'dashicons-format-gallery',
+      'taxonomies' => array('gallery_position')
   );
   register_post_type( 'gallery', $args );
 }
@@ -706,7 +707,7 @@ function register_gallery_position_taxonomy() {
     'public' => true,
     'rewrite' => array('slug' => 'gallery', 'with_front' => true),
     'show_in_rest' => true,
-    'query_var'          => true,
+    'query_var' => true,
     'has_archive' => 'gallery'
   );
   register_taxonomy('gallery_position', array('gallery'), $args);

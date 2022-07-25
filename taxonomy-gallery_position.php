@@ -3,9 +3,6 @@
 Template Name: Taxonomy - Gallery
 */
 get_header(); ?>
-<?php
-$term = get_queried_object();
-?>
 <main id="main" class="gallery-archive">
     <header class="header">
         <div class="ucla campus masthead">
@@ -42,12 +39,7 @@ $term = get_queried_object();
         </div>
         <div class="col span_12_of_12">
             <?php
-                $args = array(
-                    'post_type' => 'gallery',
-                    'gallery_position' => $term->slug
-                );
-                $query = new WP_Query( $args );
-                if ( $the_query->have_posts()) :
+                if ( have_posts()) :
                     // Start the Loop
                     while (have_posts()) : the_post();
                         // Loop Content
