@@ -21,7 +21,13 @@
         </header>
         <div class="ucla campus entry-content">
             <div class="col span_8_of_12">
-                <img src="<?php echo (has_post_thumbnail() ? $image : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'); ?>" class="gallery-img" alt="">
+                <?php 
+                if (has_post_thumbnail()) {
+                    $title_name = get_the_title();
+                    $featured_caption = get_post_meta($post->ID,'featured_caption', true);
+                    echo '<img src="' . $image .'" class="gallery-img" alt="' . $title_name . '"><p class="featured-caption">' . $featured_caption . '</p>';
+                }
+                ?>
                 <?php the_content(); ?>
                 <?php edit_post_link(); ?>
             </div>
@@ -64,10 +70,10 @@
         perPage: 3,
         rewind: true, 
         breakpoints: {
-            1024: {
+            1280: {
                 perPage: 2,
             },
-            600: {
+            1024: {
                 perPage: 1,
             },
         }
