@@ -12,8 +12,6 @@ if ('' != $thumb_id) {
 ?>
 
 <?php get_header(); ?>
-<?php /* Load the appropriate page template based on user selection */
-  if (get_page_template_slug() == "front-page-carousel.php") { ?>
   <main id="main" class="main front-page-one">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -35,10 +33,4 @@ if ('' != $thumb_id) {
 
   </main>
 
-<?php
-
-} else {
-  include get_page_template_slug();
-}
-
-get_footer(); ?>
+<?php get_footer(); ?>
