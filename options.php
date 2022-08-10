@@ -93,6 +93,13 @@ if (!class_exists('UCLA_Theme_Options')) {
 			// If we have options lets sanitize them
 			if ($options) {
 
+				// Address Heading/Unit Name	
+				if (!empty($options['address_heading'])) {
+					$options['address_heading'] = sanitize_textarea_field($options['address_heading']);
+			} else {
+					unset($options['address_heading']); // Remove from options if empty
+			}
+
 				// Address Line One
 				if (!empty($options['address_input_one'])) {
 					$options['address_input_one'] = sanitize_textarea_field($options['address_input_one']);
@@ -191,6 +198,13 @@ if (!class_exists('UCLA_Theme_Options')) {
 					<table class="form-table UCLA-custom-admin-login-table">
 						<?php // Text input example 
 						?>
+						<tr valign="top">
+              <th scope="row"><?php esc_html_e('Footer Name', 'text-domain'); ?></th>
+              <td>
+								<?php $address_heading = self::get_theme_option('address_heading'); ?>
+								<input type="text" name="theme_options[address_heading]" placeholder="Add name of academic unit" value="<?php echo esc_attr($address_heading); ?>" />
+							</td>
+            </tr>
 						<tr valign="top">
 							<th scope="row"><?php esc_html_e('Footer Address', 'text-domain'); ?></th>
 							<td>
