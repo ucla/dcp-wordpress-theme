@@ -74,21 +74,44 @@
 //*** Scroll up for Gutenberg overiding above
 //**********
 
+// Updated Fluid removed from jquery
+.fluid {
+  position: relative;
+  padding: 40px 24px;
+  &:before{
+    content: "";
+    padding: 0 100vw;
+    margin: 0 -100vw;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &.has-background{
+    @include fluid-blade-three(); // Mixin found on sass/utilities/_mixins/_mixins.scssß
+  }
+  @media (min-width: breakpoint-min(lg)) {
+    padding: 80px 12px;
+  }
+}
+
 .ucla.campus {
-  .fluid {
-    .expander {
-      @include fluid-blade-two(); // Mixin found on sass/utilities/_mixins/_mixins.scssß
+    .fluid {
+      .expander {
+        @include fluid-blade-two(); // Mixin found on sass/utilities/_mixins/_mixins.scssß
 
-      &-container {
-        display: block;
-        max-width: 1176px;
-        margin: 0 auto;
-        padding: 40px 24px;
+        &-container {
+          display: block;
+          max-width: 1176px;
+          margin: 0 auto;
+          padding: 40px 24px;
 
-        @media (min-width: breakpoint-min(lg)) {
-          padding: 80px 12px;
+          @media (min-width: breakpoint-min(lg)) {
+            padding: 80px 12px;
+          }
         }
       }
     }
   }
-}
+
