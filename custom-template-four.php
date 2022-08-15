@@ -1,4 +1,4 @@
-<?php /* Template Name: Custom Template, Right Sidebar */
+<?php /* Template Name: Custom Template, Left Sidebar */
 
   global $id;
 
@@ -23,17 +23,18 @@
     <?php include 'templates/custom-template-header.php'; ?>
 
     <div class="ucla campus entry-content">
-      <div class="col span_7_of_12">
-        <?php the_content(); ?>
-      </div>
+
 
 
       <?php if (is_active_sidebar('right-widget-area')) : ?>
-          <div class="col span_2_of_12" style="min-height: 1px;"></div>
           <div class="col span_3_of_12">
               <?php dynamic_sidebar('right-widget-area'); ?>
           </div>
+          <div class="col span_2_of_12" style="min-height: 1px;"></div>
       <?php endif; ?>
+      <div class="col span_7_of_12">
+        <?php the_content(); ?>
+      </div>
 
     </div>
 

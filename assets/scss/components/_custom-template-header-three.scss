@@ -8,42 +8,42 @@
     padding: 185px 0 0 24px;
     max-width: 95%;
 
-    @media (min-width: breakpoint-min(lg)) {
-      width: 1176px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      padding: 0 0 0 24px;
-      top: 80px;
-      position: absolute;
-    }
+  //   @media (min-width: breakpoint-min(lg)) {
+  //     width: 1176px;
+  //     left: 0;
+  //     right: 0;
+  //     margin: auto;
+  //     padding: 0 0 0 24px;
+  //     top: 80px;
+  //     position: absolute;
+  //   }
 
-    &::before {
-      display: block;
-      position: absolute;
-      margin: -60px 0 0 -60px;
-      content: '';
-      background-image: url(https://webcomponents.ucla.edu/build/1.0.0-beta.16/assets/img/Molecule.svg);
-      background-size: cover;
-      width: 135px;
-      height: 89px;
+  //   &::before {
+  //     display: block;
+  //     position: absolute;
+  //     margin: -60px 0 0 -60px;
+  //     content: '';
+  //     background-image: url(https://webcomponents.ucla.edu/build/1.0.0-beta.16/assets/img/Molecule.svg);
+  //     background-size: cover;
+  //     width: 135px;
+  //     height: 89px;
 
-      @media (min-width: breakpoint-min(lg)) {
-        width: 135px;
-        height: 135px;
-        margin: -60px 0 0 -60px;
-        background-size: cover;
-      }
-    }
+  //     @media (min-width: breakpoint-min(lg)) {
+  //       width: 135px;
+  //       height: 135px;
+  //       margin: -60px 0 0 -60px;
+  //       background-size: cover;
+  //     }
+  //   }
 
-    h1 {
-      @media (min-width: breakpoint-min(lg)) {
-        max-width: 680px;
-      }
-    }
+  //   h1 {
+  //     @media (min-width: breakpoint-min(lg)) {
+  //       max-width: 680px;
+  //     }
+  //   }
   }
 
-  img {
+  img.custom-template-hero__image {
     display: block;
     position: absolute;
     top: 0;
@@ -55,6 +55,42 @@
     @media (min-width: breakpoint-min(lg)) {
       height: 360px;
       position: relative;
+    }
+  }
+
+  .ribbon {
+    max-width: 776px;
+    position: absolute;
+    top: 0;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #2774ae;
+      color: #fff;
+      line-height: 1.6;
+      display: inline;
+      text-transform: uppercase;
+      padding: 4px 0 4px 8px;
+      box-shadow: 10px 0 0 #2774ae;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      
+      z-index: 2;
+
+      @media (min-width: breakpoint-min(md)) {
+        font-size: 3rem;
+        padding: 4px 0 4px 12px;
+        box-shadow: 14px 0 0 #2774ae;
+        line-height: 1.4;
+      }
+    }
+
+    &-molecule {
+      position: absolute;
+      top: 0;
+      left: -20px;
+      z-index: 1;
     }
   }
 }
