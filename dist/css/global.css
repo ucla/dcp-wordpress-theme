@@ -5818,19 +5818,84 @@ body.no-scroll {
   position: absolute;
 }
 
+.fluid {
+  position: relative;
+  padding: 40px 24px;
+}
+.fluid:before {
+  content: "";
+  padding: 0 100vw;
+  margin: 0 -100vw;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.fluid.has-background-grey-40 {
+  background: #999;
+}
+.fluid.has-background-grey-40:before {
+  background: #999;
+}
+.fluid.has-background-lightest-grey-2 {
+  background: #EBEBEB;
+}
+.fluid.has-background-lightest-grey-2:before {
+  background: #EBEBEB;
+}
+.fluid.has-background-light-grey {
+  background: #E7E7E8;
+}
+.fluid.has-background-light-grey:before {
+  background: #E7E7E8;
+}
+.fluid.has-background-ucla-blue {
+  background: #2774AE;
+}
+.fluid.has-background-ucla-blue:before {
+  background: #2774AE;
+}
+.fluid.has-background-white {
+  background: #FFFFFF;
+}
+.fluid.has-background-white:before {
+  background: #FFFFFF;
+}
+@media (min-width: 1024px) {
+  .fluid {
+    padding: 80px 12px;
+  }
+}
+
 .ucla.campus .fluid .expander--grey-40 {
+  background: #999;
+}
+.ucla.campus .fluid .expander--grey-40:before {
   background: #999;
 }
 .ucla.campus .fluid .expander--lightest-grey-2 {
   background: #EBEBEB;
 }
+.ucla.campus .fluid .expander--lightest-grey-2:before {
+  background: #EBEBEB;
+}
 .ucla.campus .fluid .expander--light-grey {
+  background: #E7E7E8;
+}
+.ucla.campus .fluid .expander--light-grey:before {
   background: #E7E7E8;
 }
 .ucla.campus .fluid .expander--ucla-blue {
   background: #2774AE;
 }
+.ucla.campus .fluid .expander--ucla-blue:before {
+  background: #2774AE;
+}
 .ucla.campus .fluid .expander--white {
+  background: #FFFFFF;
+}
+.ucla.campus .fluid .expander--white:before {
   background: #FFFFFF;
 }
 .ucla.campus .fluid .expander-container {
@@ -5928,41 +5993,7 @@ body.no-scroll {
   padding: 185px 0 0 24px;
   max-width: 95%;
 }
-@media (min-width: 1024px) {
-  .custom-template-hero-three_title {
-    width: 1176px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    padding: 0 0 0 24px;
-    top: 80px;
-    position: absolute;
-  }
-}
-.custom-template-hero-three_title::before {
-  display: block;
-  position: absolute;
-  margin: -60px 0 0 -60px;
-  content: "";
-  background-image: url(https://webcomponents.ucla.edu/build/1.0.0-beta.16/assets/img/Molecule.svg);
-  background-size: cover;
-  width: 135px;
-  height: 89px;
-}
-@media (min-width: 1024px) {
-  .custom-template-hero-three_title::before {
-    width: 135px;
-    height: 135px;
-    margin: -60px 0 0 -60px;
-    background-size: cover;
-  }
-}
-@media (min-width: 1024px) {
-  .custom-template-hero-three_title h1 {
-    max-width: 680px;
-  }
-}
-.custom-template-hero-three img {
+.custom-template-hero-three img.custom-template-hero__image {
   display: block;
   position: absolute;
   top: 0;
@@ -5972,10 +6003,43 @@ body.no-scroll {
   object-position: center;
 }
 @media (min-width: 1024px) {
-  .custom-template-hero-three img {
+  .custom-template-hero-three img.custom-template-hero__image {
     height: 360px;
     position: relative;
   }
+}
+.custom-template-hero-three .ribbon {
+  max-width: 776px;
+  position: absolute;
+  top: 0;
+}
+.custom-template-hero-three .ribbon h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #2774ae;
+  color: #fff;
+  line-height: 1.6;
+  display: inline;
+  text-transform: uppercase;
+  padding: 4px 0 4px 8px;
+  box-shadow: 10px 0 0 #2774ae;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .custom-template-hero-three .ribbon h1 {
+    font-size: 3rem;
+    padding: 4px 0 4px 12px;
+    box-shadow: 14px 0 0 #2774ae;
+    line-height: 1.4;
+  }
+}
+.custom-template-hero-three .ribbon-molecule {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  z-index: 1;
 }
 
 .footer__dept--links-wrapper {

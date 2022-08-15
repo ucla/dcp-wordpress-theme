@@ -62,6 +62,7 @@ $(document).ready(function () {
 
   // Add the expander div for full width backgrounds. https://youtu.be/aUKAs9iMDDA
   // add the class .fluid.has-background-**** to any classes box in the admin to remove margins and padding and add a background color.
+  /*
   $('.fluid').closest('.col').css('margin', 0);
   $('.fluid.has-background-grey-40').wrapInner('<div class="expander--grey-40"><div class="expander-container"></div></div>');
   $('.fluid.has-background-lightest-grey-2').wrapInner('<div class="expander--lightest-grey-2"><div class="expander-container"></div></div>');
@@ -100,6 +101,7 @@ $(document).ready(function () {
     // }
     //console.log(window.innerWidth); // For Debuggin' Only
   });
+*/
 
 });
 
