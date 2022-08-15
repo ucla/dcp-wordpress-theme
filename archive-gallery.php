@@ -56,9 +56,7 @@ get_header(); ?>
                         ?>
                         
                         <article class="basic-card">
-                            <a href="<?php echo get_permalink( $post->ID ); ?>">
-                                <img class="basic-card__image" src="<?php echo (has_post_thumbnail() ? $image : '/wp-content/themes/ucla-wp/images/overlay.jpg'); ?>" alt=<?php the_title(); ?>>
-                            </a>
+                            <a href="<?php echo get_permalink( $post->ID ); ?>"><img class="basic-card__image" src="<?php echo (has_post_thumbnail() ? $image : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y&s=400'); ?>" alt=<?php the_title(); ?>></a>
                             <div class="basic-card__info-wrapper">
                                 <a href="<?php echo get_permalink( $post->ID ); ?>">
                                     <h1 class="basic-card__title"><span><?php the_title(); ?></span></h1>
