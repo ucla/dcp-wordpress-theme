@@ -6708,4 +6708,68 @@ Skip Navigation necessary on every page of the site and should go above the head
     flex-direction: row;
   }
 }
+
+.gallery-archive {
+  background: linear-gradient(0deg, #f2f2f2 90%, #fff 0);
+}
+@media (min-width: 1024px) {
+  .gallery-archive {
+    background: linear-gradient(0deg, #f2f2f2 70%, #fff 0);
+  }
+}
+.gallery-archive .ucla.campus.entry-content > div > *:not(.fluid):not(.post-info):first-child, .gallery-archive .ucla.campus.entry-content > div > .wp-block-column {
+  padding-top: 0;
+}
+@media (max-width: 768px) {
+  .gallery-archive .basic-card, .gallery-archive .basic-card-grey, .gallery-archive .basic-card-gray {
+    display: block;
+    margin: 32px auto 0;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery-archive .basic-card, .gallery-archive .basic-card-grey, .gallery-archive .basic-card-gray {
+    width: 31%;
+    max-width: 31%;
+  }
+}
+.gallery-archive .basic-card a, .gallery-archive .basic-card-grey a, .gallery-archive .basic-card-gray a {
+  color: #333;
+  text-decoration: none;
+}
+.gallery-archive .basic-card a:hover, .gallery-archive .basic-card-grey a:hover, .gallery-archive .basic-card-gray a:hover {
+  color: #333;
+}
+.gallery-archive .basic-card a:not(.page):visited, .gallery-archive .basic-card-grey a:not(.page):visited, .gallery-archive .basic-card-gray a:not(.page):visited {
+  color: #333;
+}
+
+.gallery-page .gallery-img {
+  width: 100%;
+  padding-bottom: 6px;
+}
+.gallery-page .featured-caption {
+  font-size: 12px;
+}
+.gallery-page .section-wrapper {
+  background: #E5E5E5;
+}
+.gallery-page #related-card {
+  width: 100%;
+}
+.gallery-page .basic-card, .gallery-page .basic-card-grey, .gallery-page .basic-card-gray {
+  display: block;
+  margin: 0 auto 28px;
+}
+@media (min-width: 1280px) {
+  .gallery-page .splide__arrow {
+    position: absolute;
+    top: 45%;
+  }
+  .gallery-page .splide__arrow--prev {
+    left: -3rem;
+  }
+  .gallery-page .splide__arrow--next {
+    right: -3rem;
+  }
+}
 /*# sourceMappingURL=global.css.map */
