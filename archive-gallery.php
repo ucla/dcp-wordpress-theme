@@ -61,7 +61,7 @@ get_header(); ?>
                             </a>
                             <div class="basic-card__info-wrapper">
                                 <a href="<?php echo get_permalink( $post->ID ); ?>">
-                                    <h1 class="basic-card__title"><span><?php the_title(); ?></span></h1>
+                                    <h2 class="basic-card__title"><span><?php the_title(); ?></span></h2>
                                     <p class="basic-card__description"><?php the_excerpt(); ?></p>
                                 </a>
                             </div>
