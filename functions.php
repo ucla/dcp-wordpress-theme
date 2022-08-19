@@ -267,7 +267,6 @@ function ucla_setup() {
     if( is_tax() ) {
       // Get posts type
       $post_type = get_post_type();
-
       // If post type is not post
       if( $post_type != 'post' ) {
 
@@ -279,12 +278,12 @@ function ucla_setup() {
       }
 
       $custom_tax_name = get_queried_object()->name;
+      
       echo '<li class="breadcrumb__item breadcrumb__item--current">'. $custom_tax_name .'</li>';
 
     } else if ( is_category() ) {
 
       $parent = get_queried_object()->category_parent;
-
       if ( $parent !== 0 ) {
 
         $parent_category = get_category( $parent );
@@ -348,9 +347,8 @@ function ucla_setup() {
       echo '<li class="breadcrumb__item--current breadcrumb__item">'. 'Author: '. $userdata->display_name . '</li>';
 
     } else {
-
-      echo '<li class="breadcrumb__item breadcrumb__item--current">'. post_type_archive_title() .'</li>';
-
+      $obj = get_queried_object();
+      echo '<li class="breadcrumb__item breadcrumb__item--current">' . $obj->label . '</li>';
     }
 
   } else if ( is_page() ) {
@@ -653,3 +651,66 @@ function remove_archive_pretitle($title) {
 }
 
 add_filter('get_the_archive_title', 'remove_archive_pretitle');
+
+// Gallery CPT 
+require get_template_directory() . '/classes/class-gallery-information-meta-box.php';
+
+function gallery_cpt() {
+
+  $labels = array(
+    'name'                  => _x( 'Gallery', 'Post Type Name' ),
+    'singular_name'         => _x( 'Images', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search Gallery' ),
+    'all_items'             => __( 'All Galleries' ),
+    'edit_item'             => __( 'Edit Gallery' ),
+    'update_item'           => __( 'Update Gallery' ),
+    'add_new_item'          => __( 'Add New Images' ),
+    'new_item_name'         => __( 'New Image' ),
+    'menu_name'             => __( 'Gallery' ),
+    'featured_image'        => __( 'Featured Gallery Image' ),
+    'set_featured_image'    => __( 'Set Gallery Image' ),
+    'use_featured_image'    => __('Use as Gallery Image'),
+    'remove_featured_image' => __('Remove Gallery Image')
+  );
+
+  $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'labels'  => $labels,
+      'show_in_rest' => true,
+      'rewrite' => array( 'slug' => 'gallery', 'with_front' => true ),
+      'capability_type' => 'post',
+      'query_var'          => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'has_archive' => 'galleries',
+      'menu_icon' => 'dashicons-format-gallery',
+      'taxonomies' => array('gallery_position')
+  );
+  register_post_type( 'gallery', $args );
+}
+add_action( 'init', 'gallery_cpt' );
+
+function register_gallery_position_taxonomy() {
+  $labels = array(
+    'name'                  => _x( 'Categories', 'Taxonomy General Name' ),
+    'singular_name'         => _x( 'Category', 'Taxonomy Singular Name' ),
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category' ),
+    'menu_name' => __( 'Categories' ),
+  );
+  $args = array(
+    'labels'        => $labels,
+    'hierarchical' => false,
+    'show_ui'      => true,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array('slug' => 'galleries', 'with_front' => true),
+    'show_in_rest' => true,
+    'query_var' => true,
+    'has_archive' => 'galleries'
+  );
+  register_taxonomy('gallery_position', array('gallery'), $args);
+}
+
+add_action( 'init', 'register_gallery_position_taxonomy');

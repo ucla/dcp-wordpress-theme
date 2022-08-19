@@ -33,21 +33,75 @@
 
   &--grey-40 {
     background: $grey-40;
+    &:before{
+      background: $grey-40;
+    }
   }
 
   &--lightest-grey-2 {
     background: $lightest-grey-2;
+    &:before{
+      background: $lightest-grey-2;
+    }
   }
 
   &--light-grey {
     background: $light-grey;
+    &:before{
+      background: $light-grey;
+    }
   }
 
   &--ucla-blue {
     background: $ucla-blue;
+    &:before{
+      background: $ucla-blue;
+    }
   }
 
   &--white {
     background: $white;
+    &:before{
+      background: $white;
+    }
+  }
+}
+
+@mixin fluid-blade-three() {
+  @include fluid-blade();
+
+  &-grey-40 {
+    background: $grey-40;
+    &:before{
+      background: $grey-40;
+    }
+  }
+
+  &-lightest-grey-2 {
+    background: $lightest-grey-2;
+    &:before{
+      background: $lightest-grey-2;
+    }
+  }
+
+  &-light-grey {
+    background: $light-grey;
+    &:before{
+      background: $light-grey;
+    }
+  }
+
+  &-ucla-blue {
+    background: $ucla-blue;
+    &:before{
+      background: $ucla-blue;
+    }
+  }
+
+  &-white {
+    background: $white;
+    &:before{
+      background: $white;
+    }
   }
 }
