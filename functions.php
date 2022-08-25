@@ -100,7 +100,7 @@ function ucla_setup() {
   add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
   function my_login_page_remove_back_to_link() {
     // Path the admin page login styles
-    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
+    wp_enqueue_style( 'login-style', get_template_directory_uri() . '/style-login.css' );
   }
 
 
