@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Taxonomy - Gallery
-*/
 get_header(); ?>
 <main id="main" class="gallery-archive">
     <header class="header">

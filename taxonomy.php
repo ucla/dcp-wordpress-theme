@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Taxonomy
-*/
 get_header(); ?>
 <main id="main" class="profile-archive">
     <header class="header">

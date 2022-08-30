@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Archives
-*/
 get_header(); ?>
 <main id="main">
     <header class="header">
