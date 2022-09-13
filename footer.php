@@ -61,7 +61,7 @@ $template_dir = get_template_directory_uri();
             }
             $has_dept_social_links = true;
             $social_list .= <<<EOT
-                <a class="foot-$lcompany footer__dept--social-$lcompany" href="$$url">
+                <a class="foot-$lcompany footer__dept--social-$lcompany" href="$url">
                     <img src="$template_dir/images/icons/social/$lcompany--white.svg" alt="$company" />
                 </a>
             EOT;
