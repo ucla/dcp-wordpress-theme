@@ -16,6 +16,8 @@ function ucla_setup() {
   add_theme_support( 'editor-styles' );
   add_editor_style( 'style-editor.css' );
   add_theme_support( 'disable-custom-colors' );
+  remove_theme_support( 'core-block-patterns' );
+  add_theme_support( 'block-templates' );
   // Background class names created in ./assets/scss/mixins/_backgrounds.scss
   add_theme_support( 'editor-color-palette', array(
       array(
@@ -466,8 +468,8 @@ function ucla_setup() {
   add_action( 'widgets_init', 'ucla_right_init' );
   function ucla_right_init() {
     register_sidebar( array(
-      'name' => esc_html__( 'Right Sidebar Widget Area', 'ucla' ),
-      'id' => 'right-widget-area',
+      'name' => esc_html__( 'Sidebar Widget Area', 'ucla' ),
+      'id' => 'primary-widget-area',
       'before_widget' => '<div class="widget-container %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
@@ -714,3 +716,10 @@ function register_gallery_position_taxonomy() {
 }
 
 add_action( 'init', 'register_gallery_position_taxonomy');
+
+if ( function_exists( 'register_block_pattern_category' ) ) {
+  register_block_pattern_category(
+    'homepage',
+    array( 'label' => __( 'Homepage', 'ucla-wp' ) )
+ );
+}

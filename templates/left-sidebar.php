@@ -1,12 +1,7 @@
 <?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- */
+/* Template Name: Left Sidebar */
 get_header(); ?>
-  <main class="page-template">
+<main class="left-sidebar-template">
       <?php
       /* Start the Loop */
       while ( have_posts() ) :

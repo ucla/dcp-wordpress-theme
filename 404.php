@@ -4,8 +4,6 @@
 
   <article  id="post-0" class="post not-found">
 
-    <?php include 'templates/page-header.php'; ?>
-
     <div class="ucla campus">
 
       <div class="col span_8_of_12">

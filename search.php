@@ -12,9 +12,7 @@
 
         <?php while ( have_posts() ) : the_post(); ?>
           <?php include 'templates/entry-content.php'; ?>
-        <?php endwhile; ?>
-        <?php get_template_part( 'nav', 'below' ); ?>
-        <?php else : ?>
+        <?php endwhile; else : ?>
         <article id="post-0" class="post no-results not-found">
           <header class="header">
             <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'ucla' ); ?></h1>
