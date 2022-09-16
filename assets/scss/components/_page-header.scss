@@ -40,13 +40,30 @@
   }
 }
 
-.page-template__featured-image img {
-  width: 100vw;
-  height: 120px;
-  object-fit: cover;
-  object-position: center;
+.page-template__featured-image {
+  margin-bottom: 2rem;
 
-  @media (min-width: 768px) {
-    height: 240px;
+  img {
+    width: 100vw;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+
+    @media (min-width: 768px) {
+      height: 240px;
+    }
+  }
+
+  // If Fluid is the next sibling
+  & ~ .entry-content {
+    .span_12_of_12 .fluid:first-child {
+      margin-top: -2rem;
+      
+    }
+    .span_7_of_12 .fluid:first-child {
+      @media (min-width: 768px) {
+        margin-top: -2rem;
+      }
+    }
   }
 }
