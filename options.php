@@ -227,7 +227,7 @@ if (!class_exists('UCLA_Theme_Options')) {
 
                     </table>
                         <!-- Social Links -->
-                    <h2><?php esc_html_e('Department or Function Specific Footer Social Links', 'text-domain'); ?></h2>
+                    <h2><?php esc_html_e('Department or Initiative Specific Footer Social Links', 'text-domain'); ?></h2>
                     <p><?php esc_html_e('(Leave blank if you do not have your own department or function specific social profile)', 'text-domain'); ?></p>
                     <table class="form-table UCLA-custom-admin-login-table">
                         <tr valign="top">
