@@ -8,10 +8,10 @@
   </div>
 
   <div class="ucla campus entry-content">
-      <div class="col span_<?php echo (is_active_sidebar('right-widget-area') ? '7' : '12') ?>_of_12">
+      <div class="col span_<?php echo (is_active_sidebar('primary-widget-area') ? '7' : '12') ?>_of_12">
 
         <?php while ( have_posts() ) : the_post(); ?>
-          <?php include 'templates/entry-content.php'; ?>
+          <?php get_template_part( 'template-parts/content/content' ); ?>
         <?php endwhile; else : ?>
         <article id="post-0" class="post no-results not-found">
           <header class="header">
@@ -25,14 +25,13 @@
         <?php endif; ?>
 
       </div>
-      <?php if (is_active_sidebar('right-widget-area')) : ?>
+      <?php if (is_active_sidebar('primary-widget-area')) : ?>
 
       <div class="col span_2_of_12" style="min-height: 1px;"></div>
       <div class="col span_3_of_12">
-          <?php dynamic_sidebar('right-widget-area'); ?>
+        <?php get_sidebar(); ?>
       </div>
       <?php endif; ?>
     </div>
 </main>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

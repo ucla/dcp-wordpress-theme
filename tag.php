@@ -50,7 +50,7 @@ get_header(); ?>
             while ( $the_query->have_posts() ) : $the_query->the_post();
 
             // Loop Content
-            include 'templates/entry-content.php';
+            get_template_part( 'template-parts/content/content' );
 
             // End the Loop
             endwhile;

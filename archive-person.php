@@ -11,7 +11,7 @@ get_header(); ?>
     </header>
     <div class="ucla campus entry-content">
 
-        <div class="col span_<?php echo (is_active_sidebar('right-widget-area') ? '9' : '12') ?>_of_12">
+        <div class="col span_<?php echo (is_active_sidebar('primary-widget-area') ? '9' : '12') ?>_of_12">
             <hr />
             <?php
                 $args = array(
@@ -94,6 +94,5 @@ get_header(); ?>
 
     </div>
 
-    <?php get_template_part('nav', 'below'); ?>
 </main>
 <?php get_footer(); ?>

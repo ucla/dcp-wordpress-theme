@@ -69,6 +69,5 @@ get_header(); ?>
         <div class="col span_1_of_12" style="min-height: 1px;"></div>
     </div>
 
-    <?php get_template_part('nav', 'below'); ?>
 </main>
 <?php get_footer(); ?>
