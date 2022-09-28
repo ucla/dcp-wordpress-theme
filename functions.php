@@ -16,6 +16,8 @@ function ucla_setup() {
   add_theme_support( 'editor-styles' );
   add_editor_style( 'style-editor.css' );
   add_theme_support( 'disable-custom-colors' );
+  remove_theme_support( 'core-block-patterns' );
+  add_theme_support( 'block-templates' );
   // Background class names created in ./assets/scss/mixins/_backgrounds.scss
   add_theme_support( 'editor-color-palette', array(
       array(
@@ -91,16 +93,16 @@ function ucla_setup() {
     // Install the UCLA Component Library  scripts
     wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
     // Install the WordPress Theme Styles
-    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css', array( 'lib-style' ) );
+    wp_enqueue_style( 'ucla-style', get_template_directory_uri() . '/dist/css/global.css', array( 'lib-style' ) );
     // Install the WordPress Theme Scripts
-    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-wp/dist/js/scripts.js', array( 'lib-script' ), '', true );
+    wp_enqueue_script( 'ucla-script', get_template_directory_uri() . '/dist/js/scripts.js', array( 'lib-script' ), '', true );
   }
 
   // Load ADMIN Login Styles
   add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
   function my_login_page_remove_back_to_link() {
     // Path the admin page login styles
-    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
+    wp_enqueue_style( 'login-style', get_template_directory_uri() . '/style-login.css' );
   }
 
 
@@ -466,8 +468,8 @@ function ucla_setup() {
   add_action( 'widgets_init', 'ucla_right_init' );
   function ucla_right_init() {
     register_sidebar( array(
-      'name' => esc_html__( 'Right Sidebar Widget Area', 'ucla' ),
-      'id' => 'right-widget-area',
+      'name' => esc_html__( 'Sidebar Widget Area', 'ucla' ),
+      'id' => 'primary-widget-area',
       'before_widget' => '<div class="widget-container %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
@@ -714,3 +716,10 @@ function register_gallery_position_taxonomy() {
 }
 
 add_action( 'init', 'register_gallery_position_taxonomy');
+
+if ( function_exists( 'register_block_pattern_category' ) ) {
+  register_block_pattern_category(
+    'homepage',
+    array( 'label' => __( 'Homepage', 'ucla-wp' ) )
+ );
+}

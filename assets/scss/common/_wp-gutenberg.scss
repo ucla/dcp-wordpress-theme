@@ -92,7 +92,7 @@
     @include fluid-blade-three(); // Mixin found on sass/utilities/_mixins/_mixins.scssß
   }
   @media (min-width: breakpoint-min(lg)) {
-    padding: 80px 12px;
+    padding: 80px 0;
   }
 }
 
@@ -105,10 +105,10 @@
           display: block;
           max-width: 1176px;
           margin: 0 auto;
-          padding: 40px 24px;
+          padding: 40px 0;
 
           @media (min-width: breakpoint-min(lg)) {
-            padding: 80px 12px;
+            padding: 80px 0;
           }
         }
       }

@@ -1,5 +1,4 @@
 <?php
-    /* Template Name: Gallery Template */
     global $id;
 
     $thumb_id = get_post_thumbnail_id( $id );
