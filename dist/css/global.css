@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
@@ -5864,7 +5865,7 @@ body.no-scroll {
 }
 @media (min-width: 1024px) {
   .fluid {
-    padding: 80px 12px;
+    padding: 80px 0;
   }
 }
 
@@ -5902,11 +5903,11 @@ body.no-scroll {
   display: block;
   max-width: 1176px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 40px 0;
 }
 @media (min-width: 1024px) {
   .ucla.campus .fluid .expander-container {
-    padding: 80px 12px;
+    padding: 80px 0;
   }
 }
 
@@ -6459,6 +6460,29 @@ body.no-scroll {
   }
 }
 
+.page-template__featured-image {
+  margin-bottom: 2rem;
+}
+.page-template__featured-image img {
+  width: 100vw;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (min-width: 768px) {
+  .page-template__featured-image img {
+    height: 240px;
+  }
+}
+.page-template__featured-image ~ .entry-content .span_12_of_12 .fluid:first-child {
+  margin-top: -2rem;
+}
+@media (min-width: 768px) {
+  .page-template__featured-image ~ .entry-content .span_7_of_12 .fluid:first-child {
+    margin-top: -2rem;
+  }
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -6589,13 +6613,6 @@ Skip Navigation necessary on every page of the site and should go above the head
   .skip-nav .button.mobile {
     display: none;
   }
-}
-
-.ucla.campus.entry-content {
-  padding-bottom: 3rem;
-}
-.ucla.campus.entry-content > div > *:not(.fluid):not(.post-info):first-child, .ucla.campus.entry-content > div > .wp-block-column {
-  padding-top: 2rem;
 }
 
 .profile-page .entry-content .profile-img {
@@ -6771,5 +6788,50 @@ Skip Navigation necessary on every page of the site and should go above the head
   .gallery-page .splide__arrow--next {
     right: -3rem;
   }
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+ul li {
+  line-height: 1.5;
+}
+ul ul {
+  list-style-type: circle;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+ul ul ul {
+  list-style-type: square;
+}
+
+.ucla-list--bulleted li::before {
+  content: "▪";
+}
+.ucla-list--bulleted ul {
+  margin-top: 16px;
+  padding-left: 20px;
+  list-style-type: none;
+}
+.ucla-list--bulleted ul li::before {
+  content: "▫";
+}
+.ucla-list--bulleted ul ul {
+  list-style-type: none;
+}
+.ucla-list--bulleted ul ul li::before {
+  content: "▪";
+}
+.ucla-list--bulleted ul ul ul {
+  list-style-type: none;
+}
+.ucla-list--bulleted ul ul ul li::before {
+  content: "▫";
 }
 /*# sourceMappingURL=global.css.map */
