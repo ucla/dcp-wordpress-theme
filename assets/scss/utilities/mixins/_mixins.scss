@@ -1,35 +1,12 @@
 /* Mixin helpers go here */
-@mixin fluid-blade() {
-  &--grey-40,
-  &--lightest-grey-2,
-  &--light-grey,
-  &--ucla-blue,
-  &--white {
-    // margin-left: 50%;
-    // transform: translateX(-50%);
-    // display: block;
-    // position: relative;
-    // margin: 0;
-    // padding: 0;
-    // left: -5px;
-
-
-    // @media (min-width: 1200px) {
-    //   left: 0;
-    // }
-
-    // @media (min-width: 1223px) {
-    //   left: -4px;
-    // }
-
-    // @media (min-width: breakpoint-min(sm)) {
-    //   left: -5px;
-    // }
-  }
-}
-
 @mixin fluid-blade-two() {
-  @include fluid-blade();
+
+  &--grey-05 {
+    background: $grey-5;
+    &:before{
+      background: $grey-5;
+    }
+  }
 
   &--grey-40 {
     background: $grey-40;
@@ -59,6 +36,13 @@
     }
   }
 
+  &--darker-blue {
+    background: $darker-blue;
+    &:before{
+      background: $darker-blue;
+    }
+  }
+
   &--white {
     background: $white;
     &:before{
@@ -68,7 +52,6 @@
 }
 
 @mixin fluid-blade-three() {
-  @include fluid-blade();
 
   &-grey-40 {
     background: $grey-40;
@@ -95,6 +78,13 @@
     background: $ucla-blue;
     &:before{
       background: $ucla-blue;
+    }
+  }
+
+  &-darker-blue {
+    background: $darker-blue;
+    &:before{
+      background: $darker-blue;
     }
   }
 

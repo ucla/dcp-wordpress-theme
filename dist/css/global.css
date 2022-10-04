@@ -5857,6 +5857,12 @@ body.no-scroll {
 .fluid.has-background-ucla-blue:before {
   background: #2774AE;
 }
+.fluid.has-background-darker-blue {
+  background: #005587;
+}
+.fluid.has-background-darker-blue:before {
+  background: #005587;
+}
 .fluid.has-background-white {
   background: #FFFFFF;
 }
@@ -5869,6 +5875,12 @@ body.no-scroll {
   }
 }
 
+.ucla.campus .fluid .expander--grey-05 {
+  background: #F2F2F2;
+}
+.ucla.campus .fluid .expander--grey-05:before {
+  background: #F2F2F2;
+}
 .ucla.campus .fluid .expander--grey-40 {
   background: #999;
 }
@@ -5892,6 +5904,12 @@ body.no-scroll {
 }
 .ucla.campus .fluid .expander--ucla-blue:before {
   background: #2774AE;
+}
+.ucla.campus .fluid .expander--darker-blue {
+  background: #005587;
+}
+.ucla.campus .fluid .expander--darker-blue:before {
+  background: #005587;
 }
 .ucla.campus .fluid .expander--white {
   background: #FFFFFF;
