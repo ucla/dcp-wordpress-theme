@@ -48,23 +48,60 @@ $template_dir = get_template_directory_uri();
         </address>
         <?php
 
-        $companies = ['Facebook', 'Instagram', 'Twitter', 'Snapchat', 'LinkedIn', 'YouTube', 'TikTok'];
+        // $companies = ['Facebook', 'Instagram', 'Twitter', 'Snapchat', 'LinkedIn', 'YouTube', 'TikTok'];
+
+        $footer_social = [
+          [
+            'company' => 'Facebook',
+            'url' => 'https://www.facebook.com/UCLA/'
+          ],
+          [
+            'company' => 'Twitter',
+            'url' => 'https://twitter.com/ucla'
+          ],
+          [
+            'company' => 'Instagram',
+            'url' => 'https://www.instagram.com/ucla/'
+          ],
+          [
+            'company' => 'Snapchat',
+            'url' => 'https://www.snapchat.com/add/uclaofficial'
+          ],
+          [
+            'company' => 'LinkedIn',
+            'url' => 'https://www.linkedin.com/company/ucla'
+          ],
+          [
+            'company' => 'YouTube',
+            'url' => 'https://www.youtube.com/user/UCLA'
+          ],
+          [
+            'company' => 'TikTok',
+            'url' => 'https://www.tiktok.com/@ucla'
+          ]
+        ];
 
         $has_dept_social_links = false;
         $social_list = '<div id="footer-social-menu" class="footer__dept--social">';
         
-        foreach ($companies as $company) {
-            $lcompany = strtolower($company);
-            $url = myprefix_get_theme_option("${lcompany}_input");
+        foreach ($footer_social as $social) {
+            $lsocial = strtolower($social['company']);
+            $url = myprefix_get_theme_option("${lsocial}_input");
             if (is_null($url)) {
                 continue;
             }
             $has_dept_social_links = true;
-            $social_list .= <<<EOT
-                <a class="foot-$lcompany footer__dept--social-$lcompany" href="$url">
-                    <img src="$template_dir/images/icons/social/$lcompany--white.svg" alt="$company" />
-                </a>
-            EOT;
+            // $social_list .= <<<EOT
+            //     <a class="foot-$lcompany footer__dept--social-$lcompany" href="$url">
+            //         <img src="$template_dir/images/icons/social/$lcompany--white.svg" alt="$company" />
+            //     </a>
+            // EOT;
+            $social_list .= sprintf(
+              '<a href="%1$s" class="foot-%2$s footer__dept--social-%2$s"><img src="'. $template_dir .'/images/icons/social/%2$s--white.svg" alt="%3$s" /></a>',
+              $social['url'],
+              $lsocial,
+              $social['company']
+            );
         }
         $social_list .= '</div>';
         if ($has_dept_social_links) {
@@ -94,29 +131,19 @@ $template_dir = get_template_directory_uri();
       <div class="foot-lower-social">
         <h2 class="visuallyhidden">Social Media</h2>
         <ul>
-          <li>
-            <a href="https://www.facebook.com/UCLA/">
-              <img src="<?php echo $template_dir; ?>/images/icons/social/facebook--brand.svg" alt="Facebook" />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/ucla'">
-              <img src="<?php echo $template_dir; ?>/images/icons/social/twitter--brand.svg" alt="Twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/ucla/">
-              <img src="<?php echo $template_dir; ?>/images/icons/social/instagram--brand.svg" alt="Instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.snapchat.com/add/uclaofficial">
-              <img src="<?php echo $template_dir; ?>/images/icons/social/snapchat--brand.svg" alt="Snapchat" />
-            </a>
-          </li>
-          <li><a href="https://www.linkedin.com/company/ucla"><img src="<?php echo $template_dir; ?>/images/icons/social/linkedin--brand.svg" alt="LinkedIn" /></a></li>
-          <li><a href="https://www.youtube.com/user/UCLA"><img src="<?php echo $template_dir; ?>/images/icons/social/youtube--brand.svg" alt="YouTube"></a></li>
-          <li><a href="https://www.tiktok.com/@ucla"><img src="<?php echo $template_dir; ?>/images/icons/social/tiktok--brand.svg" alt="TikTok"></a></li>
+          <?php
+            foreach ($footer_social as $social) {
+              //echo $social['company'];
+              echo '
+                <li>
+                  <a href="'.$social['url'].'" title="UCLA '.$social['company'].'">
+                    <span class="social-icon social-icon--'.strtolower($social['company']).'"></span>
+                    <span class="visuallyhidden">'.$social['company'].'</span>
+                  </a>
+                </li>
+              ';
+            }
+          ?>
         </ul>
       </div>
       <div class="foot-lower-info">

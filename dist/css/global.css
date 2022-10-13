@@ -6186,8 +6186,54 @@ body.no-scroll {
   display: inline-block;
   line-height: 0;
 }
-.footer .foot-lower-social ul li a img {
+.footer .foot-lower-social ul li a .social-icon {
   width: 36px;
+  height: 36px;
+  display: block;
+  content: "";
+  background-size: contain;
+}
+.footer .foot-lower-social ul li a .social-icon--facebook {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/facebook--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--twitter {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/twitter--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--instagram {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/instagram--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--snapchat {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/snapchat--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--linkedin {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/linkedin--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--youtube {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/youtube--brand.svg");
+}
+.footer .foot-lower-social ul li a .social-icon--tiktok {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/tiktok--brand.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--facebook {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/facebook--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--twitter {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/twitter--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--instagram {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/instagram--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--snapchat {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/snapchat--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--linkedin {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/linkedin--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--youtube {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/youtube--white.svg");
+}
+.footer .foot-lower-social ul li a:hover .social-icon--tiktok {
+  background-image: url("https://webcomponents.ucla.edu/build/1.0.0/icons/social/tiktok--white.svg");
 }
 @media (min-width: 600px) {
   .footer .foot-lower-social {
