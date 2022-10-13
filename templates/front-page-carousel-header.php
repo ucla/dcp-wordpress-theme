@@ -5,7 +5,7 @@
     if ($carousel_title_1 !== '')
       $isHidden = '';
     echo '<img
-      src="./wp-content/themes/ucla-wp/images/Molecule.svg"
+      src="' . get_template_directory_uri() . '/images/Molecule.svg"
       class="title-image ' . $isHidden . '"
       id="carousel-title-image"
     />

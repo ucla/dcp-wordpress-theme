@@ -16,6 +16,8 @@ function ucla_setup() {
   add_theme_support( 'editor-styles' );
   add_editor_style( 'style-editor.css' );
   add_theme_support( 'disable-custom-colors' );
+  remove_theme_support( 'core-block-patterns' );
+  add_theme_support( 'block-templates' );
   // Background class names created in ./assets/scss/mixins/_backgrounds.scss
   add_theme_support( 'editor-color-palette', array(
       array(
@@ -91,16 +93,16 @@ function ucla_setup() {
     // Install the UCLA Component Library  scripts
     wp_enqueue_script( 'lib-script', 'https://cdn.webcomponents.ucla.edu/1.0.0/js/ucla-lib-scripts.min.js', array( 'jq' ), '', true );
     // Install the WordPress Theme Styles
-    wp_enqueue_style( 'ucla-style', '/wp-content/themes/ucla-wp/dist/css/global.css', array( 'lib-style' ) );
+    wp_enqueue_style( 'ucla-style', get_template_directory_uri() . '/dist/css/global.css', array( 'lib-style' ) );
     // Install the WordPress Theme Scripts
-    wp_enqueue_script( 'ucla-script', '/wp-content/themes/ucla-wp/dist/js/scripts.js', array( 'lib-script' ), '', true );
+    wp_enqueue_script( 'ucla-script', get_template_directory_uri() . '/dist/js/scripts.js', array( 'lib-script' ), '', true );
   }
 
   // Load ADMIN Login Styles
   add_action( 'login_enqueue_scripts', 'my_login_page_remove_back_to_link' );
   function my_login_page_remove_back_to_link() {
     // Path the admin page login styles
-    wp_enqueue_style( 'login-style', '/wp-content/themes/ucla-wp/style-login.css' );
+    wp_enqueue_style( 'login-style', get_template_directory_uri() . '/style-login.css' );
   }
 
 
@@ -267,7 +269,6 @@ function ucla_setup() {
     if( is_tax() ) {
       // Get posts type
       $post_type = get_post_type();
-
       // If post type is not post
       if( $post_type != 'post' ) {
 
@@ -279,12 +280,12 @@ function ucla_setup() {
       }
 
       $custom_tax_name = get_queried_object()->name;
+      
       echo '<li class="breadcrumb__item breadcrumb__item--current">'. $custom_tax_name .'</li>';
 
     } else if ( is_category() ) {
 
       $parent = get_queried_object()->category_parent;
-
       if ( $parent !== 0 ) {
 
         $parent_category = get_category( $parent );
@@ -348,9 +349,8 @@ function ucla_setup() {
       echo '<li class="breadcrumb__item--current breadcrumb__item">'. 'Author: '. $userdata->display_name . '</li>';
 
     } else {
-
-      echo '<li class="breadcrumb__item breadcrumb__item--current">'. post_type_archive_title() .'</li>';
-
+      $obj = get_queried_object();
+      echo '<li class="breadcrumb__item breadcrumb__item--current">' . $obj->label . '</li>';
     }
 
   } else if ( is_page() ) {
@@ -468,8 +468,8 @@ function ucla_setup() {
   add_action( 'widgets_init', 'ucla_right_init' );
   function ucla_right_init() {
     register_sidebar( array(
-      'name' => esc_html__( 'Right Sidebar Widget Area', 'ucla' ),
-      'id' => 'right-widget-area',
+      'name' => esc_html__( 'Sidebar Widget Area', 'ucla' ),
+      'id' => 'primary-widget-area',
       'before_widget' => '<div class="widget-container %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h3 class="widget-title">',
@@ -653,3 +653,73 @@ function remove_archive_pretitle($title) {
 }
 
 add_filter('get_the_archive_title', 'remove_archive_pretitle');
+
+// Gallery CPT 
+require get_template_directory() . '/classes/class-gallery-information-meta-box.php';
+
+function gallery_cpt() {
+
+  $labels = array(
+    'name'                  => _x( 'Gallery', 'Post Type Name' ),
+    'singular_name'         => _x( 'Images', 'Post Type Singular Name' ),
+    'search_items'          => __( 'Search Gallery' ),
+    'all_items'             => __( 'All Galleries' ),
+    'edit_item'             => __( 'Edit Gallery' ),
+    'update_item'           => __( 'Update Gallery' ),
+    'add_new_item'          => __( 'Add New Images' ),
+    'new_item_name'         => __( 'New Image' ),
+    'menu_name'             => __( 'Gallery' ),
+    'featured_image'        => __( 'Featured Gallery Image' ),
+    'set_featured_image'    => __( 'Set Gallery Image' ),
+    'use_featured_image'    => __('Use as Gallery Image'),
+    'remove_featured_image' => __('Remove Gallery Image')
+  );
+
+  $args = array(
+      'public' => true,
+      'publicly_queryable' => true,
+      'labels'  => $labels,
+      'show_in_rest' => true,
+      'rewrite' => array( 'slug' => 'gallery', 'with_front' => true ),
+      'capability_type' => 'post',
+      'query_var'          => true,
+      'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+      'has_archive' => 'galleries',
+      'menu_icon' => 'dashicons-format-gallery',
+      'taxonomies' => array('gallery_position')
+  );
+  register_post_type( 'gallery', $args );
+}
+add_action( 'init', 'gallery_cpt' );
+
+function register_gallery_position_taxonomy() {
+  $labels = array(
+    'name'                  => _x( 'Categories', 'Taxonomy General Name' ),
+    'singular_name'         => _x( 'Category', 'Taxonomy Singular Name' ),
+    'update_item' => __( 'Update Category' ),
+    'add_new_item' => __( 'Add New Category' ),
+    'new_item_name' => __( 'New Category' ),
+    'menu_name' => __( 'Categories' ),
+  );
+  $args = array(
+    'labels'        => $labels,
+    'hierarchical' => false,
+    'show_ui'      => true,
+    'show_admin_column' => true,
+    'public' => true,
+    'rewrite' => array('slug' => 'galleries', 'with_front' => true),
+    'show_in_rest' => true,
+    'query_var' => true,
+    'has_archive' => 'galleries'
+  );
+  register_taxonomy('gallery_position', array('gallery'), $args);
+}
+
+add_action( 'init', 'register_gallery_position_taxonomy');
+
+if ( function_exists( 'register_block_pattern_category' ) ) {
+  register_block_pattern_category(
+    'homepage',
+    array( 'label' => __( 'Homepage', 'ucla-wp' ) )
+ );
+}

@@ -3,6 +3,7 @@
 	"version": 2,
 	"settings": {
 		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
 		"layout": {
 			"contentSize": "1176px",
 			"wideSize": "1320px"
@@ -123,6 +124,9 @@
 		}
 	},
 	"styles": {
+		"spacing": {
+			"blockGap": "0"
+		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--helvetica)",
 			"fontWeight": "400",

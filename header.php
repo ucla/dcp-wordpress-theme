@@ -25,6 +25,7 @@
   <body <?php body_class(); ?>>
 
     <?php
+    wp_body_open();
     if ( myprefix_get_theme_option('gtm_input') !== NULL ) {
       $gtm_tag = myprefix_get_theme_option('gtm_input');
       ?>

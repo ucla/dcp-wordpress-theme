@@ -27,7 +27,9 @@ class ProfileInformationMetaBox{
                     'options' => array(
                         'They/Them/Theirs',
                         'He/Him/His',
+						'He/They',
                         'She/Her/Hers',
+						'She/They',
                         'Xe/Xem/Xyr(s)',
                         'Ze/Hir/Hir(s)',
                         'Ze/Zir/Zirs',

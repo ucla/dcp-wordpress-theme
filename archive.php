@@ -1,39 +1,48 @@
 <?php
-/*
-Template Name: Archives
-*/
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ */
 get_header(); ?>
-<main id="main">
+<main id="main" class="archive-template">
     <header class="header">
         <div class="ucla campus masthead">
             <div class="col span_12_of_12">
                 <?php get_breadcrumb(); ?>
                 <h1 class="entry-title"><?php echo wp_kses_post(get_the_archive_title()); ?></h1>
-                <?php if (get_the_archive_description()) { ?>
-                    <b><?php echo wp_kses_post(get_the_archive_description()); ?></b>
-                <?php } ?>
             </div>
         </div>
     </header>
     <div class="ucla campus entry-content">
 
-        <div class="col span_<?php echo (is_active_sidebar('right-widget-area') ? '7' : '12') ?>_of_12">
+        <div class="col span_<?php echo (is_active_sidebar('primary-widget-area') ? '7' : '12') ?>_of_12">
 
             <?php
 
-            if (have_posts()) :
-                // Start the Loop
-                while (have_posts()) : the_post();
-                    // Loop Content
-                    include 'templates/entry-content.php';
-                // End the Loop
-                endwhile;
-            else :
-                // If no posts match this query, output this text.
-                _e('Sorry, no results match your criteria.', 'textdomain');
-            endif;
-
-            wp_reset_postdata();
+if ( have_posts() ) {
+    // Load posts loop.
+    while ( have_posts() ) {
+      the_post();
+      get_template_part( 'template-parts/content/content' );
+    }
+    the_posts_pagination(
+      array(
+        'mid_size' => 2,
+        'prev_text' => sprintf(
+          '<span class="pagination-prev"></span>'
+        ),
+        'next_text' => sprintf(
+          '<span class="pagination-next"></span>'
+        )
+      )
+    );
+  } else {
+    // If no content, include the "No posts found" template.
+      get_template_part( 'template-parts/content/content-none' );
+  }
             ?>
 
             <div class="pagination mb-64">
@@ -49,16 +58,15 @@ get_header(); ?>
 
 
 
-        <?php if (is_active_sidebar('right-widget-area')) : ?>
+        <?php if (is_active_sidebar('primary-widget-area')) : ?>
 
             <div class="col span_2_of_12" style="min-height: 1px;"></div>
             <div class="col span_3_of_12">
-                <?php dynamic_sidebar('right-widget-area'); ?>
+                <?php get_sidebar(); ?>
             </div>
         <?php endif; ?>
 
     </div>
 
-    <?php get_template_part('nav', 'below'); ?>
 </main>
 <?php get_footer(); ?>
