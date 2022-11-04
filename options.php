@@ -56,7 +56,7 @@ if (!class_exists('UCLA_Theme_Options')) {
          */
         public static function add_admin_menu()
         {
-            add_menu_page(esc_html__('Theme Settings', 'text-domain'), esc_html__('Theme Settings', 'text-domain'), 'manage_options', 'theme-settings', ['UCLA_Theme_Options', 'create_admin_page']);
+            add_menu_page(esc_html__('Theme Settings', 'ucla-dcp'), esc_html__('Theme Settings', 'ucla-dcp'), 'manage_options', 'theme-settings', ['UCLA_Theme_Options', 'create_admin_page']);
         }
 
         /**
@@ -176,7 +176,7 @@ if (!class_exists('UCLA_Theme_Options')) {
 
             <div class="wrap">
 
-                <h1><?php esc_html_e('Theme Options', 'text-domain'); ?></h1>
+                <h1><?php esc_html_e('Theme Options', 'ucla-dcp'); ?></h1>
 
                 <form method="post" action="options.php">
 
@@ -186,21 +186,21 @@ if (!class_exists('UCLA_Theme_Options')) {
             <?php // Text input example
             ?>
                                     <tr valign="top">
-                            <th scope="row"><?php esc_html_e('GTM Tag ID', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('GTM Tag ID', 'ucla-dcp'); ?></th>
                             <td>
             <?php $gtm = self::get_theme_option('gtm_input'); ?>
                                 <input type="text" name="theme_options[gtm_input]" placeholder="id" value="<?php echo esc_attr($gtm); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Footer Name', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Footer Name', 'ucla-dcp'); ?></th>
                             <td>
             <?php $address_heading = self::get_theme_option('address_heading'); ?>
                                 <input type="text" name="theme_options[address_heading]" placeholder="Add name of academic unit" value="<?php echo esc_attr($address_heading); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Footer Address', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Footer Address', 'ucla-dcp'); ?></th>
                             <td>
             <?php $address_one = self::get_theme_option('address_input_one'); ?>
                                 <input type="text" name="theme_options[address_input_one]" placeholder="1602 Molecular Science Building" value="<?php echo esc_attr($address_one); ?>" />
@@ -210,14 +210,14 @@ if (!class_exists('UCLA_Theme_Options')) {
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Footer Phone', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Footer Phone', 'ucla-dcp'); ?></th>
                             <td>
             <?php $phone = self::get_theme_option('phone_input'); ?>
                                 <input type="text" name="theme_options[phone_input]" placeholder="123-45-678" value="<?php echo esc_attr($phone); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Footer Email', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Footer Email', 'ucla-dcp'); ?></th>
                             <td>
             <?php $email = self::get_theme_option('email_input'); ?>
                                 <input type="text" name="theme_options[email_input]" placeholder="contact@ucla.edu" value="<?php echo esc_attr($email); ?>" />
@@ -227,53 +227,53 @@ if (!class_exists('UCLA_Theme_Options')) {
 
                     </table>
                         <!-- Social Links -->
-                    <h2><?php esc_html_e('Department or Initiative Specific Footer Social Links', 'text-domain'); ?></h2>
-                    <p><?php esc_html_e('(Leave blank if you do not have your own department or function specific social profile)', 'text-domain'); ?></p>
+                    <h2><?php esc_html_e('Department or Initiative Specific Footer Social Links', 'ucla-dcp'); ?></h2>
+                    <p><?php esc_html_e('(Leave blank if you do not have your own department or function specific social profile)', 'ucla-dcp'); ?></p>
                     <table class="form-table UCLA-custom-admin-login-table">
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Facebook Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Facebook Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $facebook = self::get_theme_option('facebook_input'); ?>
                                 <input type="text" name="theme_options[facebook_input]" placeholder="facebook.com/" value="<?php echo esc_attr($facebook); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Instagram Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Instagram Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $instagram = self::get_theme_option('instagram_input'); ?>
                                 <input type="text" name="theme_options[instagram_input]" placeholder="instagram.com/" value="<?php echo esc_attr($instagram); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Twitter Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Twitter Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $twitter = self::get_theme_option('twitter_input'); ?>
                                 <input type="text" name="theme_options[twitter_input]" placeholder="twitter.com/" value="<?php echo esc_attr($twitter); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Snapchat Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Snapchat Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $snapchat = self::get_theme_option('snapchat_input'); ?>
                                 <input type="text" name="theme_options[snapchat_input]" placeholder="snapchat.com/" value="<?php echo esc_attr($snapchat); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Linkedin Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Linkedin Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $linkedin = self::get_theme_option('linkedin_input'); ?>
                                 <input type="text" name="theme_options[linkedin_input]" placeholder="linkedin.com/" value="<?php echo esc_attr($linkedin); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Youtube Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Youtube Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $youtube = self::get_theme_option('youtube_input'); ?>
                                 <input type="text" name="theme_options[youtube_input]" placeholder="youtube.com/" value="<?php echo esc_attr($youtube); ?>" />
                             </td>
                         </tr>
                         <tr valign="top">
-                            <th scope="row"><?php esc_html_e('Tiktok Link', 'text-domain'); ?></th>
+                            <th scope="row"><?php esc_html_e('Tiktok Link', 'ucla-dcp'); ?></th>
                             <td>
             <?php $tiktok = self::get_theme_option('tiktok_input'); ?>
                                 <input type="text" name="theme_options[tiktok_input]" placeholder="tiktok.com/" value="<?php echo esc_attr($tiktok); ?>" />

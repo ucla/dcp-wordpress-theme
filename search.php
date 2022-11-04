@@ -3,7 +3,7 @@
   <div class="ucla campus masthead">
     <?php if ( have_posts() ) : ?>
     <header class="header">
-      <h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'ucla' ), get_search_query() ); ?></h1>
+      <h1 class="entry-title"><?php _e('Search Results for', 'ucla-dcp') ?>: <?=get_search_query()?></h1>
     </header>
   </div>
 
@@ -15,10 +15,10 @@
         <?php endwhile; else : ?>
         <article id="post-0" class="post no-results not-found">
           <header class="header">
-            <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'ucla' ); ?></h1>
+            <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'ucla-dcp' ); ?></h1>
           </header>
           <div class="entry-content">
-            <p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'ucla' ); ?></p>
+            <p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'ucla-dcp' ); ?></p>
             <?php get_search_form(); ?>
           </div>
         </article>

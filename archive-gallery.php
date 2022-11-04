@@ -66,7 +66,7 @@ get_header(); ?>
                     endwhile;
                 else :
                     // If no posts match this query, output this text.
-                    _e('Sorry, no results match your criteria.', 'textdomain');
+                    _e('Sorry, no results match your criteria.', 'ucla-dcp');
                 endif;
                 wp_reset_postdata();
             ?>

@@ -18,55 +18,56 @@ function ucla_setup() {
   add_theme_support( 'disable-custom-colors' );
   remove_theme_support( 'core-block-patterns' );
   add_theme_support( 'block-templates' );
+  load_theme_textdomain( 'ucla-dcp', get_template_directory().'/languages' );
   // Background class names created in ./assets/scss/mixins/_backgrounds.scss
   add_theme_support( 'editor-color-palette', array(
       array(
-          'name'  => esc_attr__( 'White', 'uclaTheme' ),
+          'name'  => esc_attr__( 'White', 'ucla-dcp' ),
           'slug'  => 'white',
           'color' => '#ffffff',
       ),
       array(
-          'name'  => esc_attr__( 'Grey 10', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Grey 10', 'ucla-dcp' ),
           'slug'  => 'grey-10',
           'color' => '#E5E5E5',
       ),
       array(
-          'name'  => esc_attr__( 'Grey 40', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Grey 40', 'ucla-dcp' ),
           'slug'  => 'grey-40',
           'color' => '#999',
       ),
       array(
-          'name'  => esc_attr__( 'Grey 60', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Grey 60', 'ucla-dcp' ),
           'slug'  => 'grey-60',
           'color' => '#666',
       ),
       array(
-          'name'  => esc_attr__( 'Grey 80', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Grey 80', 'ucla-dcp' ),
           'slug'  => 'grey-80',
           'color' => '#333',
       ),
       array(
-          'name'  => esc_attr__( 'Black', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Black', 'ucla-dcp' ),
           'slug'  => 'black',
           'color' => '#000',
       ),
       array(
-          'name'  => esc_attr__( 'UCLA Blue', 'uclaTheme' ),
+          'name'  => esc_attr__( 'UCLA Blue', 'ucla-dcp' ),
           'slug'  => 'blue',
           'color' => '#2774ae',
       ),
       array(
-          'name'  => esc_attr__( 'UCLA Gold', 'uclaTheme' ),
+          'name'  => esc_attr__( 'UCLA Gold', 'ucla-dcp' ),
           'slug'  => 'gold',
           'color' => '#ffd100',
       ),
       array(
-          'name'  => esc_attr__( 'Darker Blue', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Darker Blue', 'ucla-dcp' ),
           'slug'  => 'darker-blue',
           'color' => '#005587',
       ),
       array(
-          'name'  => esc_attr__( 'Darkest Blue', 'uclaTheme' ),
+          'name'  => esc_attr__( 'Darkest Blue', 'ucla-dcp' ),
           'slug'  => 'darkest-blue',
           'color' => '#003b5c',
       ),
@@ -77,9 +78,9 @@ function ucla_setup() {
 
   if ( ! isset( $content_width ) ) { $content_width = 1920; }
     register_nav_menus( array(
-      'main-menu' => esc_html__( 'Main Menu', 'ucla' ),
-      'secondary-menu' => esc_html__( 'Secondary Menu', 'ucla-secondary' ),
-      'foot-menu' => esc_html__( 'Foot Menu (Menu name must be "Foot Menu")', 'ucla-foot' )
+      'main-menu' => esc_html__( 'Main Menu', 'ucla-dcp' ),
+      'secondary-menu' => esc_html__( 'Secondary Menu', 'ucla-dcp' ),
+      'foot-menu' => esc_html__( 'Foot Menu (Menu name must be "Foot Menu")', 'ucla-dcp' )
     ));
   }
 
@@ -167,7 +168,7 @@ function ucla_setup() {
       ) );
     }
     $wp_customize->add_section( 'front_page_carousel' , array(
-      'title' => __( 'Front Page Carousel', 'themename' ),
+      'title' => __( 'Front Page Carousel', 'ucla-dcp' ),
       'priority' => 105, // Before Widgets.
     ) );
   }
@@ -188,7 +189,7 @@ function ucla_setup() {
   $defaults = array(
     'id'          =>  'breadcrumb',
     'classes'     =>  'breadcrumb',
-    'home_title'  =>  esc_html__( 'Home', '' )
+    'home_title'  =>  esc_html__( 'Home', 'ucla-dcp' )
   );
 
   // $sep  = '<li class="seperator">'. esc_html( $defaults['seperator'] ) .'</li>';
@@ -314,28 +315,28 @@ function ucla_setup() {
       // Day archive
 
       // Year link
-      echo '<li class="breadcrumb__item--year breadcrumb__item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' Archives</a></li>';
+      echo '<li class="breadcrumb__item--year breadcrumb__item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' ' . __('Archives', 'ucla-dcp') . '</a></li>';
 
       // Month link
-      echo '<li class="breadcrumb__item--month breadcrumb__item"><a href="'. get_month_link( get_the_time('Y'), get_the_time('m') ) .'">'. get_the_time('M') .' Archives</a></li>';
+      echo '<li class="breadcrumb__item--month breadcrumb__item"><a href="'. get_month_link( get_the_time('Y'), get_the_time('m') ) .'">'. get_the_time('M') . ' ' . __('Archives', 'ucla-dcp') . '</a></li>';
 
       // Day display
-      echo '<li class="breadcrumb__item--current breadcrumb__item">'. get_the_time('jS') .' '. get_the_time('M'). ' Archives</li>';
+      echo '<li class="breadcrumb__item--current breadcrumb__item">'. get_the_time('jS') .' '. get_the_time('M'). ' ' . __('Archives', 'ucla-dcp') . '</li>';
 
     } else if( is_month() ) {
 
       // Month archive
 
       // Year link
-      echo '<li class="breadcrumb__item--year breadcrumb__item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' Archives</a></li>';
+      echo '<li class="breadcrumb__item--year breadcrumb__item"><a href="'. get_year_link( get_the_time('Y') ) .'">'. get_the_time('Y') . ' ' . __('Archives', 'ucla-dcp') . '</a></li>';
 
       // Month Display
-      echo '<li class="breadcrumb__item--month breadcrumb__item--current breadcrumb__item">'. get_the_time('M') .' Archives</li>';
+      echo '<li class="breadcrumb__item--month breadcrumb__item--current breadcrumb__item">'. get_the_time('M') .' ' . __('Archives', 'ucla-dcp') . '</li>';
 
     } else if ( is_year() ) {
 
       // Year Display
-      echo '<li class="breadcrumb__item--year breadcrumb__item--current breadcrumb__item">'. get_the_time('Y') .' Archives</li>';
+      echo '<li class="breadcrumb__item--year breadcrumb__item--current breadcrumb__item">'. get_the_time('Y') .' ' . __('Archives', 'ucla-dcp') . '</li>';
 
     } else if ( is_author() ) {
 
@@ -388,12 +389,12 @@ function ucla_setup() {
   } else if ( is_search() ) {
 
     // Search results page
-    echo '<li class="breadcrumb__item--current breadcrumb__item">Search results for: '. get_search_query() .'</li>';
+    echo '<li class="breadcrumb__item--current breadcrumb__item">' . __('Search results for', 'ucla-dcp'). ': ' . get_search_query() .'</li>';
 
   } else if ( is_404() ) {
 
     // 404 page
-    echo '<li class="breadcrumb__item--current breadcrumb__item">' . 'Error 404' . '</li>';
+    echo '<li class="breadcrumb__item--current breadcrumb__item">' . __('Error 404', 'ucla-dcp') . '</li>';
 
   }
 
@@ -434,7 +435,7 @@ function ucla_setup() {
   add_filter( 'the_content_more_link', 'ucla_read_more_link' );
   function ucla_read_more_link() {
     if ( ! is_admin() ) {
-      return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">More on this topic.</a>';
+      return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">' . _e('More on this topic.', 'ucla-dcp') . '</a>';
     }
   }
 
@@ -444,7 +445,7 @@ function ucla_setup() {
     if ( ! is_admin() ) {
       global $post;
       return '';
-      return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">More on this topic.</a>';
+      return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">' . _e('More on this topic.', 'ucla-dcp') . '</a>';
     }
   }
 
@@ -468,7 +469,7 @@ function ucla_setup() {
   add_action( 'widgets_init', 'ucla_right_init' );
   function ucla_right_init() {
     register_sidebar( array(
-      'name' => esc_html__( 'Sidebar Widget Area', 'ucla' ),
+      'name' => esc_html__( 'Sidebar Widget Area', 'ucla-dcp' ),
       'id' => 'primary-widget-area',
       'before_widget' => '<div class="widget-container %2$s">',
       'after_widget' => '</div>',
@@ -485,7 +486,7 @@ function ucla_setup() {
     wp_add_dashboard_widget('custom_help_widget', 'UCLA Strat. Comm. Theme Support', 'custom_dashboard_help');
     add_meta_box(
         'custom_help_widget',
-        esc_html__( 'UCLA Strat. Comm. Theme Support', 'wporg' ),
+        'UCLA Strat. Comm. Theme Support',
         'custom_dashboard_help',
         'dashboard',
         'side', 'high'
@@ -562,8 +563,8 @@ require get_template_directory() . '/classes/class-profile-information-meta-box.
 function profile_cpt() {
 
   $labels = array(
-    'name'                  => _x( 'People', 'Post Type Name' ),
-    'singular_name'         => _x( 'People', 'Post Type Singular Name' ),
+    'name'                  => _x( 'People', 'Post Type Name', 'ucla-dcp' ),
+    'singular_name'         => _x( 'People', 'Post Type Singular Name', 'ucla-dcp' ),
     'search_items'          => __( 'Search People' ),
     'all_items'             => __( 'All People' ),
     'edit_item'             => __( 'Edit Person' ),
@@ -606,8 +607,8 @@ add_action( 'init', 'profile_cpt' );
 
 function register_profile_position_taxonomy() {
   $labels = array(
-    'name'                  => _x( 'Roles', 'Taxonomy General Name' ),
-    'singular_name'         => _x( 'Role', 'Taxonomy Singular Name' ),
+    'name'                  => _x( 'Roles', 'Taxonomy General Name', 'ucla-dcp' ),
+    'singular_name'         => _x( 'Role', 'Taxonomy Singular Name', 'ucla-dcp' ),
     'update_item' => __( 'Update Role' ),
     'add_new_item' => __( 'Add New Role' ),
     'new_item_name' => __( 'New Role' ),
@@ -660,8 +661,8 @@ require get_template_directory() . '/classes/class-gallery-information-meta-box.
 function gallery_cpt() {
 
   $labels = array(
-    'name'                  => _x( 'Gallery', 'Post Type Name' ),
-    'singular_name'         => _x( 'Images', 'Post Type Singular Name' ),
+    'name'                  => _x( 'Gallery', 'Post Type Name', 'ucla-dcp' ),
+    'singular_name'         => _x( 'Images', 'Post Type Singular Name', 'ucla-dcp' ),
     'search_items'          => __( 'Search Gallery' ),
     'all_items'             => __( 'All Galleries' ),
     'edit_item'             => __( 'Edit Gallery' ),
@@ -694,8 +695,8 @@ add_action( 'init', 'gallery_cpt' );
 
 function register_gallery_position_taxonomy() {
   $labels = array(
-    'name'                  => _x( 'Categories', 'Taxonomy General Name' ),
-    'singular_name'         => _x( 'Category', 'Taxonomy Singular Name' ),
+    'name'                  => _x( 'Categories', 'Taxonomy General Name', 'ucla-dcp' ),
+    'singular_name'         => _x( 'Category', 'Taxonomy Singular Name', 'ucla-dcp' ),
     'update_item' => __( 'Update Category' ),
     'add_new_item' => __( 'Add New Category' ),
     'new_item_name' => __( 'New Category' ),
@@ -720,6 +721,6 @@ add_action( 'init', 'register_gallery_position_taxonomy');
 if ( function_exists( 'register_block_pattern_category' ) ) {
   register_block_pattern_category(
     'homepage',
-    array( 'label' => __( 'Homepage', 'ucla-wp' ) )
+    array( 'label' => __( 'Homepage', 'ucla-dcp' ) )
  );
 }
