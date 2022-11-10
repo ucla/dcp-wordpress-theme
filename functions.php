@@ -565,17 +565,17 @@ function profile_cpt() {
   $labels = array(
     'name'                  => _x( 'People', 'Post Type Name', 'ucla-dcp' ),
     'singular_name'         => _x( 'People', 'Post Type Singular Name', 'ucla-dcp' ),
-    'search_items'          => __( 'Search People' ),
-    'all_items'             => __( 'All People' ),
-    'edit_item'             => __( 'Edit Person' ),
-    'update_item'           => __( 'Update Person' ),
-    'add_new_item'          => __( 'Add New Person' ),
-    'new_item_name'         => __( 'New Person' ),
-    'menu_name'             => __( 'People' ),
-    'featured_image'        => __( 'Profile Image' ),
-    'set_featured_image'    => __( 'Set Profile Image' ),
-    'use_featured_image'    => __('Use as Profile Image'),
-    'remove_featured_image' => __('Remove Profile Image')
+    'search_items'          => __( 'Search People', 'ucla-dcp' ),
+    'all_items'             => __( 'All People', 'ucla-dcp' ),
+    'edit_item'             => __( 'Edit Person', 'ucla-dcp' ),
+    'update_item'           => __( 'Update Person', 'ucla-dcp' ),
+    'add_new_item'          => __( 'Add New Person', 'ucla-dcp' ),
+    'new_item_name'         => __( 'New Person', 'ucla-dcp' ),
+    'menu_name'             => __( 'People', 'ucla-dcp' ),
+    'featured_image'        => __( 'Profile Image', 'ucla-dcp' ),
+    'set_featured_image'    => __( 'Set Profile Image', 'ucla-dcp' ),
+    'use_featured_image'    => __('Use as Profile Image', 'ucla-dcp'),
+    'remove_featured_image' => __('Remove Profile Image', 'ucla-dcp')
   );
 
   $args = array(
@@ -609,10 +609,10 @@ function register_profile_position_taxonomy() {
   $labels = array(
     'name'                  => _x( 'Roles', 'Taxonomy General Name', 'ucla-dcp' ),
     'singular_name'         => _x( 'Role', 'Taxonomy Singular Name', 'ucla-dcp' ),
-    'update_item' => __( 'Update Role' ),
-    'add_new_item' => __( 'Add New Role' ),
-    'new_item_name' => __( 'New Role' ),
-    'menu_name' => __( 'Roles' ),
+    'update_item' => __( 'Update Role', 'ucla-dcp' ),
+    'add_new_item' => __( 'Add New Role', 'ucla-dcp' ),
+    'new_item_name' => __( 'New Role', 'ucla-dcp' ),
+    'menu_name' => __( 'Roles', 'ucla-dcp' ),
   );
   $args = array(
     'labels'        => $labels,
@@ -663,17 +663,17 @@ function gallery_cpt() {
   $labels = array(
     'name'                  => _x( 'Gallery', 'Post Type Name', 'ucla-dcp' ),
     'singular_name'         => _x( 'Images', 'Post Type Singular Name', 'ucla-dcp' ),
-    'search_items'          => __( 'Search Gallery' ),
-    'all_items'             => __( 'All Galleries' ),
-    'edit_item'             => __( 'Edit Gallery' ),
-    'update_item'           => __( 'Update Gallery' ),
-    'add_new_item'          => __( 'Add New Images' ),
-    'new_item_name'         => __( 'New Image' ),
-    'menu_name'             => __( 'Gallery' ),
-    'featured_image'        => __( 'Featured Gallery Image' ),
-    'set_featured_image'    => __( 'Set Gallery Image' ),
-    'use_featured_image'    => __('Use as Gallery Image'),
-    'remove_featured_image' => __('Remove Gallery Image')
+    'search_items'          => __( 'Search Gallery', 'ucla-dcp' ),
+    'all_items'             => __( 'All Galleries', 'ucla-dcp' ),
+    'edit_item'             => __( 'Edit Gallery', 'ucla-dcp' ),
+    'update_item'           => __( 'Update Gallery', 'ucla-dcp' ),
+    'add_new_item'          => __( 'Add New Images', 'ucla-dcp' ),
+    'new_item_name'         => __( 'New Image', 'ucla-dcp' ),
+    'menu_name'             => __( 'Gallery', 'ucla-dcp' ),
+    'featured_image'        => __( 'Featured Gallery Image', 'ucla-dcp' ),
+    'set_featured_image'    => __( 'Set Gallery Image', 'ucla-dcp' ),
+    'use_featured_image'    => __('Use as Gallery Image', 'ucla-dcp'),
+    'remove_featured_image' => __('Remove Gallery Image', 'ucla-dcp')
   );
 
   $args = array(
@@ -697,10 +697,10 @@ function register_gallery_position_taxonomy() {
   $labels = array(
     'name'                  => _x( 'Categories', 'Taxonomy General Name', 'ucla-dcp' ),
     'singular_name'         => _x( 'Category', 'Taxonomy Singular Name', 'ucla-dcp' ),
-    'update_item' => __( 'Update Category' ),
-    'add_new_item' => __( 'Add New Category' ),
-    'new_item_name' => __( 'New Category' ),
-    'menu_name' => __( 'Categories' ),
+    'update_item' => __( 'Update Category', 'ucla-dcp' ),
+    'add_new_item' => __( 'Add New Category', 'ucla-dcp' ),
+    'new_item_name' => __( 'New Category', 'ucla-dcp' ),
+    'menu_name' => __( 'Categories', 'ucla-dcp' ),
   );
   $args = array(
     'labels'        => $labels,

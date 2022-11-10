@@ -38,10 +38,10 @@
     ?>
 
     <div id="skip-nav" class="skip-nav" role="navigation" aria-label="Skip navigation">
-      <a class="button" href="#menu">Skip to Navigation</a>
-      <a class="button mobile" href="#primary-ham">Skip to Navigation</a>
-      <a class="button" href="#main">Skip to Main Content</a>
-    	<a class="button" href="#footer">Skip to Footer Links</a>
+      <a class="button" href="#menu"><?php _e('Skip to Navigation', 'ucla-dcp') ?></a>
+      <a class="button mobile" href="#primary-ham"><?php _e('Skip to Navigation') ?></a>
+      <a class="button" href="#main"><?php _e('Skip to Main Content', 'ucla-dcp') ?></a>
+    	<a class="button" href="#footer"><?php _e('Skip to Footer Links', 'ucla-dcp') ?></a>
     </div>
 
     <header id="header" class="">

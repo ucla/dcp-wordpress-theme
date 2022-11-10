@@ -129,7 +129,7 @@ $template_dir = get_template_directory_uri();
   <div class="ucla campus foot-lower">
     <div class="foot-lower-wrap">
       <div class="foot-lower-social">
-        <h2 class="visuallyhidden">Social Media</h2>
+        <h2 class="visuallyhidden"><?php _e('Social Media', 'ucla-dcp') ?></h2>
         <ul>
           <?php
             foreach ($footer_social as $social) {
@@ -153,9 +153,9 @@ $template_dir = get_template_directory_uri();
 
         <div class="foot-lower-toc">
           <ul>
-            <li><a href="https://www.bso.ucla.edu/">Emergency</a></li>
-            <li><a href="http://www.ucla.edu/accessibility">Accessibility</a></li>
-            <li><a href="http://www.ucla.edu/terms-of-use/">Privacy &amp; Terms of Use</a></li>
+            <li><a href="https://www.bso.ucla.edu/"><?php _e('Emergency', 'ucla-dcp') ?></a></li>
+            <li><a href="http://www.ucla.edu/accessibility"><?php _e('Accessibility', 'ucla-dcp') ?></a></li>
+            <li><a href="http://www.ucla.edu/terms-of-use/"><?php _e('Privacy & Terms of Use', 'ucla-dcp') ?></a></li>
           </ul>
         </div>
       </div>  
