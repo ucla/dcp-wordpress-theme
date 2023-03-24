@@ -1,5 +1,5 @@
 <?php get_header(); ?> 
-<article id="primary" class="site-content">
+<article id="primary" class="card-gallery">
     <header class="archive-header">
         <h1 class="archive-title"><?php single_cat_title(); ?></h1>
         
@@ -48,9 +48,10 @@
 
                     while ( $cpt_query->have_posts() ) : $cpt_query->the_post();
                 ?>
-                <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );?>
-                <div class="category-card" style="background: url('<?php echo $backgroundImg[0]; ?>');">
-                    <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                <!-- <div class="category-card" style="background: url('<?php echo $backgroundImg[0]; ?>');"> -->
+                <div class="category-card" onclick="window.location.href = '<?php the_permalink() ?>';">
+                    <?php //$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );?>
+                    <h2><?php the_title(); ?></h2>
                 </div>
                 <?php endwhile; ?>
             </div>
