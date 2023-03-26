@@ -1,26 +1,26 @@
 <?php get_header(); ?> 
 <article id="primary" class="card-gallery">
-    <header class="archive-header">
-        <h1 class="archive-title"><?php single_cat_title(); ?></h1>
-        
-        <!-- Display the parent category breadcrumb -->
+    <header class="category-header">
+        <h1 class="category-title"><?php single_cat_title(); ?></h1>
         <?php
             if ( is_category() ) {
                 $query_obj = get_queried_object();
                 $term_id = $query_obj->term_id;
+                echo '<div class="category-breadcrumb">';
                 echo get_term_parents_list( $term_id, 'category' );
+                echo '</div>';
             }
         ?>
     </header>
     
     <div class="ucla campus entry-content">
-        <aside class="col span_3_of_12">
+        <aside class="col span_2_of_12">
             <?php
                 if ( is_category() ) {
-                    echo "<h3>Subcategories</h3>";
+                    echo "<h3 class='subcategories-title'>Subcategories</h3>";
                     $query_obj = get_queried_object();
                     $term_id   = $query_obj->term_id;
-                    echo '<ul>';
+                    echo '<ul class="subcategories-list">';
                     $categories = get_categories( array(
                         'orderby' => 'name',
                         'parent'  => $term_id
@@ -36,9 +36,8 @@
                 }
             ?>
         </aside>
-        <div class="col span_1_of_12" style="min-height:1px;"></div>
-        <div class="col span_7_of_12">
-            <div style="display: grid; grid-template-columns: auto auto auto; padding: 10px;">
+        <div class="col span_10_of_12">
+            <div class="grid">
                 <?php
                     $query_obj = get_queried_object();
                     $term_id   = $query_obj->term_id;
@@ -48,10 +47,19 @@
 
                     while ( $cpt_query->have_posts() ) : $cpt_query->the_post();
                 ?>
-                <!-- <div class="category-card" style="background: url('<?php echo $backgroundImg[0]; ?>');"> -->
-                <div class="category-card" onclick="window.location.href = '<?php the_permalink() ?>';">
-                    <?php //$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );?>
-                    <h2><?php the_title(); ?></h2>
+                <div class="grid-item">
+                    <div class="card" onclick="window.location.href = '<?php the_permalink() ?>';">
+                        <?php
+                            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );
+                            if(!$img_src)
+                                $img_src = get_template_directory_uri() . "/images/card-default-image.jpg";
+                            else
+                                $img_src = $img_src[0];
+                            $img_alt = "UCLA logo";
+                            echo "<img class='card-img' src='" . $img_src . "' alt='" . $img_alt . "'></img>";
+                        ?>
+                        <h2 class="card-title"><?php the_title(); ?></h2>
+                    </div>
                 </div>
                 <?php endwhile; ?>
             </div>
