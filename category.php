@@ -50,12 +50,15 @@
                 <div class="grid-item">
                     <div class="card" onclick="window.location.href = '<?php the_permalink() ?>';">
                         <?php
-                            $img_src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );
+                            $img_id = get_post_thumbnail_id($post->ID);
+                            $img_src = wp_get_attachment_image_src($img_id, 'post-thumbnail' );
                             if(!$img_src)
                                 $img_src = get_template_directory_uri() . "/images/card-default-image.jpg";
                             else
                                 $img_src = $img_src[0];
-                            $img_alt = "UCLA logo";
+                            $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', TRUE);
+                            if (!$img_alt)
+                                $img_alt = "UCLA logo";
                             echo "<img class='card-img' src='" . $img_src . "' alt='" . $img_alt . "'></img>";
                         ?>
                         <h2 class="card-title"><?php the_title(); ?></h2>
